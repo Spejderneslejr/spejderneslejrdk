@@ -1,0 +1,39 @@
+tools:
+  php_code_sniffer:
+    extensions:
+      - inc
+      - install
+      - module
+      - php
+      - profile
+      - test
+      - theme
+    config:
+      standard: Drupal
+  eslint:
+    use_native_config: true
+
+build:
+  environment:
+    php: '5.6.16'
+    node: 'v4.2.2'
+  dependencies:
+    after:
+      - 'npm install -g eslint'
+  tests:
+    override:
+      -
+        command: 'composer phpunit-custom-clover'
+        coverage:
+          file: 'tests/reports/clover.xml'
+          format: 'php-clover'
+
+build_failure_conditions:
+  # No new issues allowed.
+  - 'issues.new.exists'
+
+filter:
+    paths:
+      - 'web/modules/custom/*'
+      - 'web/profiles/custom/*'
+      - 'web/themes/custom/*'
