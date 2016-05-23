@@ -1,6 +1,8 @@
 checks:
   php:
     code_rating: true
+    excluded_dependencies:
+      - drupal/core
 tools:
   php_code_sniffer:
     extensions:
@@ -43,4 +45,3 @@ filter:
     dependency_paths:
         - web/core
         - vendor
-
