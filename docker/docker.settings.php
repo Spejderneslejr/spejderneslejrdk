@@ -12,7 +12,7 @@ $databases['default']['default'] = array(
 );
 
 $config_directories = array(
-  CONFIG_SYNC_DIRECTORY => '/var/www/html/config/sync',
+  CONFIG_SYNC_DIRECTORY => __DIR__ . '/../../../config/drupal_cmi_sync',
 );
 
 $settings['hash_salt'] = 'hardcodedsaltshouldneverbeusedoutsidedocker';
