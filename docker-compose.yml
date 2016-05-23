@@ -60,9 +60,10 @@ services:
   webroot:
     image: tianon/true
     volumes:
-      - './web:/var/www/web'
-      - './vendor:/var/www/vendor'
-      - './docker/docker.settings.php:/var/www/web/sites/default/settings.php:rw'
+      - './web:/var/www/web:rw'
+      - './vendor:/var/www/vendor:ro'
+      - './config:/var/www/config:rw'
+      - './docker/docker.settings.php:/var/www/web/sites/default/settings.php:ro'
       - './docker/docker.services.yml:/var/www/web/sites/default/services.yml:ro'
       - './docker/docker.settings.local.php:/var/www/web/sites/default/settings.local.php:ro'
       - './docker/docker.development.services.yml:/var/www/web/sites/development.services.yml:ro'
