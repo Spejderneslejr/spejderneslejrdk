@@ -1,0 +1,9 @@
+main:
+  version: '1.0'
+  css:
+    theme:
+      css/camp.main.css: {}
+  js:
+  dependencies:
+    - core/jquery
+    - core/drupal
