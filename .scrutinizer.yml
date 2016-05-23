@@ -1,3 +1,8 @@
+checks:
+  php:
+    code_rating: true
+    excluded_dependencies:
+      - drupal/core
 tools:
   php_code_sniffer:
     extensions:
@@ -37,3 +42,6 @@ filter:
       - 'web/modules/custom/*'
       - 'web/profiles/custom/*'
       - 'web/themes/custom/*'
+    dependency_paths:
+        - web/core
+        - vendor
