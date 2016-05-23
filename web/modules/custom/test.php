@@ -1,4 +1,4 @@
 <?php
-function some_function() {
-  dpm("Test code to be removed");
+function some_function(){
+  dpm ("Test code to be removed");
 }
