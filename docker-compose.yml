@@ -40,8 +40,8 @@ services:
       MYSQL_DATABASE: db
       MYSQL_USER: db
       MYSQL_PASSWORD: db
-    volumes:
-      - './docker/db/initdb.d:/docker-entrypoint-initdb.d'
+    volumes_from:
+      - db-data
 
   drush:
     image: reload/drupal-php7-fpm
@@ -67,3 +67,6 @@ services:
       - './docker/docker.services.yml:/var/www/web/sites/default/services.yml:ro'
       - './docker/docker.settings.local.php:/var/www/web/sites/default/settings.local.php:ro'
       - './docker/docker.development.services.yml:/var/www/web/sites/development.services.yml:ro'
+
+  db-data:
+    image: reload/spejderneslejr:db-datadir-test
