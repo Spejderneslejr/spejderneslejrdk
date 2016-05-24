@@ -1,0 +1,22 @@
+uuid: 5705968b-d3d6-4629-bb46-8043f18fedab
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - camp
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: camp_breadcrumbs
+theme: camp
+region: header
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }
