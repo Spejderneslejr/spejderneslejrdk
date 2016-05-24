@@ -1,6 +1,6 @@
 name: Camp
 type: theme
-base theme: classy
+base theme: bartik
 description: 'Camp - Theme for Spejdernes lejr 2017'
 libraries:
   - camp/main
