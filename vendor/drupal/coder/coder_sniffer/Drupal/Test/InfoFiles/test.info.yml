@@ -1,0 +1,13 @@
+# core: 8.x
+name: Test
+
+# These should not be here, will be added by drupal.org packaging.
+# project: test
+timestamp: 1234567
+# version: 1.2
+
+# Information added by Drupal.org packaging script on 2016-04-08
+version: '8.x-2.7'
+core: '8.x'
+project: 'coder'
+datestamp: 1460126343

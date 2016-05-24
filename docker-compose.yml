@@ -4,7 +4,7 @@ services:
   web:
     image: reload/drupal-apache-fpm
     ports:
-      - '80/tcp:80/tcp'
+      - '8080:80'
     volumes_from:
       - webroot
     links:
@@ -15,33 +15,42 @@ services:
     ports:
       - '443:443'
     environment:
-      HITCH_PARAMS: --backend=[web]:80 --frontend=[*]:443
+      HITCH_PARAMS: --backend=[proxy]:6081 --frontend=[*]:443
+    links:
+      - proxy
+
+  proxy:
+    image: eeacms/varnish:debian
+    ports:
+      - '80:6081'
     links:
       - web
+    environment:
+      BACKENDS: web
 
   php:
     image: reload/drupal-php7-fpm
     ports:
-      - '9000/tcp:9000/tcp'
+      - '9000:9000'
     volumes_from:
       - webroot
     links:
       - db
     environment:
       # Make Composer commands universally available
-      PATH: "/var/www/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      PATH: '/var/www/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
 
   db:
     image: mariadb:10
     ports:
-      - '3306/tcp:3306/tcp'
+      - '3306:3306'
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: db
       MYSQL_USER: db
       MYSQL_PASSWORD: db
-    volumes:
-      - './docker/db/initdb.d:/docker-entrypoint-initdb.d'
+    volumes_from:
+      - db-data
 
   drush:
     image: reload/drupal-php7-fpm
@@ -53,16 +62,20 @@ services:
       - db
     environment:
       # Make Composer commands universally available
-      PATH: "/var/www/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      PATH: '/var/www/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
 
   # Webroot and volumned paths needs to be accessible from multiple containers so
   # we set up all paths once and for all via a single volumne-container.
   webroot:
     image: tianon/true
     volumes:
-      - './web:/var/www/web'
-      - './vendor:/var/www/vendor'
-      - './docker/docker.settings.php:/var/www/web/sites/default/settings.php:rw'
+      - './web:/var/www/web:rw'
+      - './vendor:/var/www/vendor:ro'
+      - './config:/var/www/config:rw'
+      - './docker/docker.settings.php:/var/www/web/sites/default/settings.php:ro'
       - './docker/docker.services.yml:/var/www/web/sites/default/services.yml:ro'
       - './docker/docker.settings.local.php:/var/www/web/sites/default/settings.local.php:ro'
       - './docker/docker.development.services.yml:/var/www/web/sites/development.services.yml:ro'
+
+  db-data:
+    image: reload/spejderneslejr:db-datadir-test
