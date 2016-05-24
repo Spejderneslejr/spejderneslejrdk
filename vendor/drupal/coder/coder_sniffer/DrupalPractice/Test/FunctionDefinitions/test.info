@@ -1,0 +1,10 @@
+name = Test module
+description = Test
+core = 7.x
+
+; Information added by Drupal.org packaging script on 2016-04-08
+version = "8.x-2.7"
+core = "8.x"
+project = "coder"
+datestamp = "1460126343"
+
