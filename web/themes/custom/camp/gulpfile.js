@@ -1,12 +1,11 @@
 // Get modules.
-var
-  gulp = require('gulp'),
-  notify = require('gulp-notify'),
-  sass = require('gulp-sass'),
-  jshint = require('gulp-jshint'),
-  stylish = require('jshint-stylish'),
-  autoprefixer = require('gulp-autoprefixer'),
-  sourcemaps = require('gulp-sourcemaps');
+var gulp = require('gulp');
+var notify = require('gulp-notify');
+var sass = require('gulp-sass');
+var jshint = require('gulp-jshint');
+var stylish = require('jshint-stylish');
+var autoprefixer = require('gulp-autoprefixer');
+var sourcemaps = require('gulp-sourcemaps');
 
 // Sass.
 gulp.task('sass', function () {
@@ -32,7 +31,7 @@ gulp.task('sass:watch', function () {
 });
 
 // JsHint.
-gulp.task('jshint', function() {
+gulp.task('jshint', function () {
   return gulp.src(['gulfile.js', './js/*.js'])
     .pipe(jshint())
     // Get stylish output.
