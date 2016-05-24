@@ -1,0 +1,22 @@
+uuid: f8b13629-4cc2-43bb-a237-0ef5f3b6d9f1
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - camp
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: camp_content
+theme: camp
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }
