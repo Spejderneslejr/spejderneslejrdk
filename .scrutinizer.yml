@@ -45,3 +45,6 @@ filter:
     dependency_paths:
         - web/core
         - vendor
+    excluded_paths:
+        - web/core/*
+        - vendor
