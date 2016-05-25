@@ -24,7 +24,7 @@ build:
     node: 'v4.2.2'
   dependencies:
     after:
-      - 'npm install -g eslint'
+      - 'npm install eslint'
   tests:
     override:
       -
@@ -32,6 +32,11 @@ build:
         coverage:
           file: 'tests/reports/clover.xml'
           format: 'php-clover'
+      -
+          command: './node_modules/.bin/eslint ./ --format checkstyle --output-file eslint-data'
+          analysis:
+              file: 'eslint-data'
+              format: 'eslint-checkstyle'     # The supported format by Scrutinizer
 
 build_failure_conditions:
   # No new issues allowed.
@@ -48,3 +53,5 @@ filter:
     excluded_paths:
         - web/core/*
         - vendor
+
+
