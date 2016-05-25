@@ -1,5 +1,4 @@
-/*eslint no-undef: "error"*/
-/*eslint-env node*/
+/* eslint-env node */
 
 // Get modules.
 var gulp = require('gulp');
