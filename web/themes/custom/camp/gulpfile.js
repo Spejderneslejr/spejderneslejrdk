@@ -31,16 +31,10 @@ gulp.task('sass:watch', function () {
 });
 
 // JsHint.
-gulp.task('jshint', function () {
-  return gulp.src(['gulfile.js', './js/*.js'])
-    .pipe(jshint())
-    // Get stylish output.
-    .pipe(jshint.reporter(stylish))
-    // Add fail reporter and send it to notification API.
-    .pipe(jshint.reporter('fail'))
-    .on('error', notify.onError(function (error) {
-          return 'JSHint error: ' + error.message;
-    }));
+gulp.task('jshint', function() {
+    return gulp.src(['gulpfile.js', './js/*.js'])
+      .pipe(jshint())
+      .pipe(jshint.reporter('default'));
 });
 
 // JsHint watch.
