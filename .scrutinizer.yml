@@ -1,15 +1,4 @@
 tools:
-  php_code_sniffer:
-    extensions:
-      - inc
-      - install
-      - module
-      - php
-      - profile
-      - test
-      - theme
-    config:
-      standard: Drupal
   eslint:
     use_native_config: true
 checks:
