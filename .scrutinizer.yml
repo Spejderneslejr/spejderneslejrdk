@@ -47,5 +47,3 @@ filter:
     excluded_paths:
         - web/core/*
         - vendor
-
-
