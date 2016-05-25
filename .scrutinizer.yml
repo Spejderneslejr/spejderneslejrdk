@@ -13,7 +13,7 @@ build:
     node: 'v4.2.2'
   dependencies:
     after:
-      - 'npm install eslint'
+      - 'cd web/themes/custom/camp/ && npm install'
   tests:
     override:
       -
@@ -22,7 +22,7 @@ build:
           file: 'tests/reports/clover.xml'
           format: 'php-clover'
       -
-        command: './node_modules/.bin/eslint ./ --format checkstyle --output-file eslint-data'
+        command: 'web/themes/custom/camp/node_modules/.bin/eslint --config web/themes/custom/camp/.eslintrc --ignore-path web/themes/custom/camp/.eslintignore --format checkstyle --output-file eslint-data web/modules/custom web/themes/custom/camp/'
         analysis:
             file: 'eslint-data'
             format: 'eslint-checkstyle'     # The supported format by Scrutinizer
