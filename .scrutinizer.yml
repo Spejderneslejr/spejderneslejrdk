@@ -13,7 +13,7 @@ build:
     node: 'v4.2.2'
   dependencies:
     after:
-      - 'cd web/themes/custom/camp/ && npm install'
+      - 'cd web/themes/custom/camp/ && npm install && cd -'
   tests:
     override:
       -
