@@ -3,7 +3,6 @@ var gulp = require('gulp');
 var notify = require('gulp-notify');
 var sass = require('gulp-sass');
 var jshint = require('gulp-jshint');
-var stylish = require('jshint-stylish');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 
@@ -32,9 +31,9 @@ gulp.task('sass:watch', function () {
 
 // JsHint.
 gulp.task('jshint', function() {
-    return gulp.src(['gulpfile.js', './js/*.js'])
-      .pipe(jshint())
-      .pipe(jshint.reporter('default'));
+  return gulp.src(['gulpfile.js', './js/*.js'])
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
 });
 
 // JsHint watch.
