@@ -32,6 +32,11 @@ build:
         coverage:
           file: 'tests/reports/clover.xml'
           format: 'php-clover'
+      -
+        command: 'composer phpcs-checkstyle'
+        analysis:
+          file: 'tests/reports/phpcs-checkstyle.xml'
+          format: 'php-cs-checkstyle'
 
 build_failure_conditions:
   # No new issues allowed.
