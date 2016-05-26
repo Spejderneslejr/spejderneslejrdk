@@ -1,8 +1,7 @@
 vcl 4.0;
-acl purge {
-    "localhost";    # myself
-}
+
 include "backends.vcl";
+include "acl.vcl";
 
 sub vcl_recv {
     # Happens before we check if we have this in cache already.
@@ -18,17 +17,19 @@ sub vcl_recv {
             return (synth(403, "Not allowed."));
         }
 
-        # Logic for the ban, using the X-Cache-Tags header.
-        if (req.http.X-Cache-Tags) {
-            ban("obj.http.X-Cache-Tags ~ " + req.http.X-Cache-Tags);
+        # Logic for the ban, using the Purge-Cache-Tags header. For more info
+        # see https://github.com/geerlingguy/drupal-vm/issues/397.
+        if (req.http.Purge-Cache-Tags) {
+            ban("obj.http.Purge-Cache-Tags ~ " + req.http.Purge-Cache-Tags);
         }
         else {
-            return (synth(403, "X-Cache-Tags header missing."));
+            return (synth(403, "Purge-Cache-Tags header missing."));
         }
 
-        # Throw a synthetic page so the request wont go to the backend.
+        # Throw a synthetic page so the request won't go to the backend.
         return (synth(200, "Ban added."));
-    }}
+    }
+}
 
 sub vcl_backend_response {
     # Happens after we have read the response headers from the backend.
@@ -39,7 +40,8 @@ sub vcl_backend_response {
     # Cachetags support
     # Set ban-lurker friendly custom headers.
     set beresp.http.X-Url = bereq.url;
-    set beresp.http.X-Host = bereq.http.host;}
+    set beresp.http.X-Host = bereq.http.host;
+}
 
 sub vcl_deliver {
     # Happens when we have all the pieces we need, and are about to send the
@@ -51,7 +53,6 @@ sub vcl_deliver {
     # Remove ban-lurker friendly custom headers when delivering to client.
     unset resp.http.X-Url;
     unset resp.http.X-Host;
-    # Comment these for easier Drupal cache tag debugging in development.
-    unset resp.http.X-Cache-Tags;
-    unset resp.http.X-Cache-Contexts;
+    unset resp.http.Purge-Cache-Tags;
+
 }
