@@ -1,72 +1,76 @@
-web:
-  image: reload/drupal-apache-fpm
-  ports:
-    - '8080:80'
-  volumes_from:
-    - webroot
-  links:
-    - php:fpm
+version: "2"
 
-https:
-  image: zazukoians/hitch
-  ports:
-    - '443:443'
-  environment:
-    HITCH_PARAMS: --backend=[proxy]:80 --frontend=[*]:443
-  links:
-    - proxy
+services:
+  web:
+    image: reload/drupal-apache-fpm
+    ports:
+      - '8080:80'
+    volumes_from:
+      - webroot
+    links:
+      - php:fpm
 
-proxy:
-  image: zazukoians/varnish
-  ports:
-    - '80:80'
-  links:
-    - web
-  environment:
-    VCL_CONFIG: /vcl/sl2017.vcl
-    VARNISHD_PARAMS: "-p vcl_dir=/vcl"
-  volumes:
-    - './documentation/environment-setup/test/varnish/sl2017.vcl:/vcl/sl2017.vcl'
-    - './docker/proxy/backends.vcl:/vcl/backends.vcl'
+  https:
+    image: zazukoians/hitch
+    ports:
+      - '443:443'
+    environment:
+      HITCH_PARAMS: --backend=[proxy]:80 --frontend=[*]:443
+    links:
+      - proxy
 
-php:
-  image: reload/drupal-php7-fpm
-  ports:
-    - '9000:9000'
-  volumes_from:
-    - webroot
-  links:
-    - db
-  environment:
-    # Make Composer commands universally available
-    PATH: '/var/www/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+  proxy:
+    image: zazukoians/varnish
+    ports:
+      - '80:80'
+    links:
+      - web
+    environment:
+      VCL_CONFIG: /vcl/sl2017.vcl
+      VARNISHD_PARAMS: "-p vcl_dir=/vcl"
+    volumes:
+      - './documentation/environment-setup/test/varnish/sl2017.vcl:/vcl/sl2017.vcl'
+      - './docker/proxy/backends.vcl:/vcl/backends.vcl'
+      - './docker/proxy/acl.vcl:/vcl/acl.vcl'
 
-db:
-  image: reload/spejderneslejr:mariadb-10-test
-  ports:
-    - '3306:3306'
+  php:
+    image: reload/drupal-php7-fpm
+    ports:
+      - '9000:9000'
+    volumes_from:
+      - webroot
+    links:
+      - db
+    environment:
+      # Make Composer commands universally available
+      PATH: '/var/www/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
 
-drush:
-  image: reload/drupal-php7-fpm
-  entrypoint: /usr/local/bin/drush
-  volumes_from:
-    - webroot
-  working_dir: /var/www/web
-  links:
-    - db
-  environment:
-    # Make Composer commands universally available
-    PATH: '/var/www/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+  db:
+    image: reload/spejderneslejr:mariadb-10-test
+    ports:
+      - '3306:3306'
 
-# Webroot and volumned paths needs to be accessible from multiple containers so
-# we set up all paths once and for all via a single volumne-container.
-webroot:
-  image: tianon/true
-  volumes:
-    - './web:/var/www/web:rw'
-    - './vendor:/var/www/vendor:ro'
-    - './config:/var/www/config:rw'
-    - './docker/docker.settings.php:/var/www/web/sites/default/settings.php:ro'
-    - './docker/docker.services.yml:/var/www/web/sites/default/services.yml:ro'
-    - './docker/docker.settings.local.php:/var/www/web/sites/default/settings.local.php:ro'
-    - './docker/docker.development.services.yml:/var/www/web/sites/development.services.yml:ro'
+  drush:
+    image: reload/drupal-php7-fpm
+    entrypoint: /usr/local/bin/drush
+    volumes_from:
+      - webroot
+    working_dir: /var/www/web
+    links:
+      - db
+    environment:
+      # Make Composer commands universally available
+      PATH: '/var/www/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+
+  # Webroot and volumned paths needs to be accessible from multiple containers so
+  # we set up all paths once and for all via a single volumne-container.
+  webroot:
+    image: tianon/true
+    volumes:
+      - './web:/var/www/web:rw'
+      - './vendor:/var/www/vendor:ro'
+      - './config:/var/www/config:rw'
+      - './docker/docker.settings.php:/var/www/web/sites/default/settings.php:ro'
+      - './docker/docker.services.yml:/var/www/web/sites/default/services.yml:ro'
+      - './docker/docker.settings.local.php:/var/www/web/sites/default/settings.local.php:ro'
+      - './docker/docker.development.services.yml:/var/www/web/sites/development.services.yml:ro'
