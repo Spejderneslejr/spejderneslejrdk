@@ -25,3 +25,5 @@ if (file_exists(__DIR__ . '/settings.local.php')) {
 }
 
 $settings['install_profile'] = 'standard';
+
+$settings['trusted_host_patterns'] = ['local.docker'];
