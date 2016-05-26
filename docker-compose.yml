@@ -42,16 +42,9 @@ php:
     PATH: '/var/www/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
 
 db:
-  image: mariadb:10
+  image: reload/spejderneslejr:mariadb-10-test
   ports:
     - '3306:3306'
-  environment:
-    MYSQL_ROOT_PASSWORD: root
-    MYSQL_DATABASE: db
-    MYSQL_USER: db
-    MYSQL_PASSWORD: db
-  volumes_from:
-    - db-data
 
 drush:
   image: reload/drupal-php7-fpm
@@ -77,6 +70,3 @@ webroot:
     - './docker/docker.services.yml:/var/www/web/sites/default/services.yml:ro'
     - './docker/docker.settings.local.php:/var/www/web/sites/default/settings.local.php:ro'
     - './docker/docker.development.services.yml:/var/www/web/sites/development.services.yml:ro'
-
-db-data:
-  image: reload/spejderneslejr:db-datadir-test
