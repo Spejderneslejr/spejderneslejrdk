@@ -1,4 +1,4 @@
-version: '2'
+version: "2"
 
 services:
   web:
@@ -15,18 +15,23 @@ services:
     ports:
       - '443:443'
     environment:
-      HITCH_PARAMS: --backend=[proxy]:6081 --frontend=[*]:443
+      HITCH_PARAMS: --backend=[proxy]:80 --frontend=[*]:443
     links:
       - proxy
 
   proxy:
-    image: eeacms/varnish:debian
+    image: zazukoians/varnish
     ports:
-      - '80:6081'
+      - '80:80'
     links:
       - web
     environment:
-      BACKENDS: web
+      VCL_CONFIG: /vcl/sl2017.vcl
+      VARNISHD_PARAMS: "-p vcl_dir=/vcl"
+    volumes:
+      - './documentation/environment-setup/test/varnish/sl2017.vcl:/vcl/sl2017.vcl'
+      - './docker/proxy/backends.vcl:/vcl/backends.vcl'
+      - './docker/proxy/acl.vcl:/vcl/acl.vcl'
 
   php:
     image: reload/drupal-php7-fpm
@@ -41,16 +46,9 @@ services:
       PATH: '/var/www/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
 
   db:
-    image: mariadb:10
+    image: reload/spejderneslejr:mariadb-10-test
     ports:
       - '3306:3306'
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: db
-      MYSQL_USER: db
-      MYSQL_PASSWORD: db
-    volumes_from:
-      - db-data
 
   drush:
     image: reload/drupal-php7-fpm
@@ -76,6 +74,3 @@ services:
       - './docker/docker.services.yml:/var/www/web/sites/default/services.yml:ro'
       - './docker/docker.settings.local.php:/var/www/web/sites/default/settings.local.php:ro'
       - './docker/docker.development.services.yml:/var/www/web/sites/development.services.yml:ro'
-
-  db-data:
-    image: reload/spejderneslejr:db-datadir-test
