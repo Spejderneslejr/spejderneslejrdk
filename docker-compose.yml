@@ -17,13 +17,17 @@ https:
     - proxy
 
 proxy:
-  image: eeacms/varnish:debian
+  image: zazukoians/varnish
   ports:
-    - '80:6081'
+    - '80:80'
   links:
     - web
   environment:
-    BACKENDS: web
+    VCL_CONFIG: /vcl/sl2017.vcl
+    VARNISHD_PARAMS: "-p vcl_dir=/vcl"
+  volumes:
+    - './documentation/environment-setup/test/varnish/sl2017.vcl:/vcl/sl2017.vcl'
+    - './docker/proxy/backends.vcl:/vcl/backends.vcl'
 
 php:
   image: reload/drupal-php7-fpm
