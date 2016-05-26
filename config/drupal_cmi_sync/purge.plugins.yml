@@ -1,4 +1,8 @@
-purgers: {  }
+purgers:
+  -
+    order_index: 1
+    instance_id: f26d5a05c9
+    plugin_id: http
 processors: {  }
 queuers: {  }
 queue: database
