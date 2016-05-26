@@ -1,0 +1,6 @@
+purgers: {  }
+processors: {  }
+queuers: {  }
+queue: database
+_core:
+  default_config_hash: zszQgrpbU_SwoV7zSROlOcgRTndttz24blQTCXuJlUU
