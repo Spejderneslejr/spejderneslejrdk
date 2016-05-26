@@ -323,65 +323,6 @@
         ]
     },
     {
-        "name": "jcalderonzumba/gastonjs",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/jcalderonzumba/gastonjs.git",
-            "reference": "4ff4a788d4995ae0d4b45fdcb1b76650e2eec72a"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/jcalderonzumba/gastonjs/zipball/4ff4a788d4995ae0d4b45fdcb1b76650e2eec72a",
-            "reference": "4ff4a788d4995ae0d4b45fdcb1b76650e2eec72a",
-            "shasum": ""
-        },
-        "require": {
-            "guzzlehttp/guzzle": "~5.0|~6.0",
-            "php": ">=5.4"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "~4.6",
-            "silex/silex": "~1.2",
-            "symfony/phpunit-bridge": "~2.7",
-            "symfony/process": "~2.1"
-        },
-        "time": "2016-05-04 16:27:07",
-        "type": "phantomjs-api",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.1.x-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "Zumba\\GastonJS\\": "src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Juan Francisco Calderón Zumba",
-                "email": "juanfcz@gmail.com",
-                "homepage": "http://github.com/jcalderonzumba"
-            }
-        ],
-        "description": "PhantomJS API based server for webpage automation",
-        "homepage": "https://github.com/jcalderonzumba/gastonjs",
-        "keywords": [
-            "api",
-            "automation",
-            "browser",
-            "headless",
-            "phantomjs"
-        ]
-    },
-    {
         "name": "twig/twig",
         "version": "v1.24.0",
         "version_normalized": "1.24.0.0",
@@ -6070,5 +6011,143 @@
             "phpcs",
             "standards"
         ]
+    },
+    {
+        "name": "drupal/purge",
+        "version": "8.3.0-beta4",
+        "version_normalized": "8.3.0.0-beta4",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/purge",
+            "reference": "a09ece09dd46167abf1fb3c2ba0f651bba792a3e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/purge-8.x-3.0-beta4.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "drupal/core": "8.*"
+        },
+        "replace": {
+            "drupal/purge_drush": "self.version",
+            "drupal/purge_processor_cron": "self.version",
+            "drupal/purge_processor_lateruntime": "self.version",
+            "drupal/purge_queuer_coretags": "self.version",
+            "drupal/purge_tokens": "self.version",
+            "drupal/purge_ui": "self.version"
+        },
+        "suggest": {
+            "drupal/core": "Required by drupal/purge_drush, drupal/purge_processor_cron, drupal/purge_processor_lateruntime, drupal/purge_queuer_coretags, drupal/purge_tokens, drupal/purge_ui"
+        },
+        "time": "2016-04-01 15:45:42",
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-8.x-3.x": "8.3.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.drupal-composer.org/downloads/",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "description": "Provides a generic external cache invalidation API and queue service.",
+        "homepage": "https://www.drupal.org/project/purge"
+    },
+    {
+        "name": "jcalderonzumba/gastonjs",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jcalderonzumba/gastonjs.git",
+            "reference": "4ff4a788d4995ae0d4b45fdcb1b76650e2eec72a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jcalderonzumba/gastonjs/zipball/4ff4a788d4995ae0d4b45fdcb1b76650e2eec72a",
+            "reference": "4ff4a788d4995ae0d4b45fdcb1b76650e2eec72a",
+            "shasum": ""
+        },
+        "require": {
+            "guzzlehttp/guzzle": "~5.0|~6.0",
+            "php": ">=5.4"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.6",
+            "silex/silex": "~1.2",
+            "symfony/phpunit-bridge": "~2.7",
+            "symfony/process": "~2.1"
+        },
+        "time": "2016-05-04 16:27:07",
+        "type": "phantomjs-api",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Zumba\\GastonJS\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Juan Francisco Calderón Zumba",
+                "email": "juanfcz@gmail.com",
+                "homepage": "http://github.com/jcalderonzumba"
+            }
+        ],
+        "description": "PhantomJS API based server for webpage automation",
+        "homepage": "https://github.com/jcalderonzumba/gastonjs",
+        "keywords": [
+            "api",
+            "automation",
+            "browser",
+            "headless",
+            "phantomjs"
+        ]
+    },
+    {
+        "name": "drupal/purge_purger_http",
+        "version": "8.1.0-beta3",
+        "version_normalized": "8.1.0.0-beta3",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/purge_purger_http.git",
+            "reference": "76086e350796373547a10c9fe22e65a87d3ae9f1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/purge_purger_http-8.x-1.0-beta3.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "drupal/core": "8.*",
+            "drupal/purge": "8.*",
+            "drupal/purge_tokens": "8.*"
+        },
+        "time": "2016-03-31 11:31:00",
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-8.x-1.x": "8.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.drupal-composer.org/downloads/",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "description": "Generic and highly configurable purger that makes HTTP requests, best suits custom configurations.",
+        "homepage": "https://www.drupal.org/project/purge_purger_http"
     }
 ]
