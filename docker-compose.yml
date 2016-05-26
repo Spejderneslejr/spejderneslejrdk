@@ -12,7 +12,7 @@ https:
   ports:
     - '443:443'
   environment:
-    HITCH_PARAMS: --backend=[proxy]:6081 --frontend=[*]:443
+    HITCH_PARAMS: --backend=[proxy]:80 --frontend=[*]:443
   links:
     - proxy
 
