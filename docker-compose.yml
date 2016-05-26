@@ -1,81 +1,78 @@
-version: '2'
+web:
+  image: reload/drupal-apache-fpm
+  ports:
+    - '8080:80'
+  volumes_from:
+    - webroot
+  links:
+    - php:fpm
 
-services:
-  web:
-    image: reload/drupal-apache-fpm
-    ports:
-      - '8080:80'
-    volumes_from:
-      - webroot
-    links:
-      - php:fpm
+https:
+  image: zazukoians/hitch
+  ports:
+    - '443:443'
+  environment:
+    HITCH_PARAMS: --backend=[proxy]:6081 --frontend=[*]:443
+  links:
+    - proxy
 
-  https:
-    image: zazukoians/hitch
-    ports:
-      - '443:443'
-    environment:
-      HITCH_PARAMS: --backend=[proxy]:6081 --frontend=[*]:443
-    links:
-      - proxy
+proxy:
+  image: eeacms/varnish:debian
+  ports:
+    - '80:6081'
+  links:
+    - web
+  environment:
+    BACKENDS: web
 
-  proxy:
-    image: eeacms/varnish:debian
-    ports:
-      - '80:6081'
-    links:
-      - web
-    environment:
-      BACKENDS: web
+php:
+  image: reload/drupal-php7-fpm
+  ports:
+    - '9000:9000'
+  volumes_from:
+    - webroot
+  links:
+    - db
+  environment:
+    # Make Composer commands universally available
+    PATH: '/var/www/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
 
-  php:
-    image: reload/drupal-php7-fpm
-    ports:
-      - '9000:9000'
-    volumes_from:
-      - webroot
-    links:
-      - db
-    environment:
-      # Make Composer commands universally available
-      PATH: '/var/www/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+db:
+  image: mariadb:10
+  ports:
+    - '3306:3306'
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+    MYSQL_DATABASE: db
+    MYSQL_USER: db
+    MYSQL_PASSWORD: db
+  volumes_from:
+    - db-data
 
-  db:
-    image: mariadb:10
-    ports:
-      - '3306:3306'
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: db
-      MYSQL_USER: db
-      MYSQL_PASSWORD: db
-    volumes_from:
-      - db-data
+drush:
+  image: reload/drupal-php7-fpm
+  entrypoint: /usr/local/bin/drush
+  volumes_from:
+    - webroot
+  working_dir: /var/www/web
+  links:
+    - db
+  environment:
+    # Make Composer commands universally available
+    PATH: '/var/www/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
 
-  drush:
-    image: reload/drupal-php7-fpm
-    entrypoint: /usr/local/bin/drush
-    volumes_from:
-      - webroot
-    working_dir: /var/www/web
-    links:
-      - db
-    environment:
-      # Make Composer commands universally available
-      PATH: '/var/www/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+# Webroot and volumned paths needs to be accessible from multiple containers so
+# we set up all paths once and for all via a single volumne-container.
+webroot:
+  image: tianon/true
+  volumes:
+    - './web:/var/www/web:rw'
+    - './vendor:/var/www/vendor:ro'
+    - './config:/var/www/config:rw'
+    - './docker/docker.settings.php:/var/www/web/sites/default/settings.php:ro'
+    - './docker/docker.services.yml:/var/www/web/sites/default/services.yml:ro'
+    - './docker/docker.settings.local.php:/var/www/web/sites/default/settings.local.php:ro'
+    - './docker/docker.development.services.yml:/var/www/web/sites/development.services.yml:ro'
 
-  # Webroot and volumned paths needs to be accessible from multiple containers so
-  # we set up all paths once and for all via a single volumne-container.
-  webroot:
-    image: tianon/true
-    volumes:
-      - './web:/var/www/web:rw'
-      - './vendor:/var/www/vendor:ro'
-      - './config:/var/www/config:rw'
-      - './docker/docker.settings.php:/var/www/web/sites/default/settings.php:ro'
-      - './docker/docker.services.yml:/var/www/web/sites/default/services.yml:ro'
-      - './docker/docker.settings.local.php:/var/www/web/sites/default/settings.local.php:ro'
-      - './docker/docker.development.services.yml:/var/www/web/sites/development.services.yml:ro'
-
-  db-data:
-    image: reload/spejderneslejr:db-datadir-test
+db-data:
+  image: reload/spejderneslejr:db-datadir-test
