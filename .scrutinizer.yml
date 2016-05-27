@@ -9,11 +9,14 @@ checks:
 
 build:
   environment:
-    php: '7.0.0'
+    php: '7.0.6'
     node: 'v4.2.2'
   dependencies:
     after:
       - 'cd web/themes/custom/camp/ && npm install && cd -'
+    # Disable inferred dependencies - we where getting postgresql and redis.
+    override:
+      - true
   tests:
     override:
       -
