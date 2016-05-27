@@ -43,7 +43,9 @@ filter:
       - 'web/themes/custom/*'
     dependency_paths:
         - web/core
+        - web/modules/contrib
         - vendor
     excluded_paths:
         - web/core/*
+        - web/modules/contrib
         - vendor
