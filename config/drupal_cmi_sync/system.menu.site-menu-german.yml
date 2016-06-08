@@ -1,0 +1,8 @@
+uuid: 4956221e-047b-4810-98d6-5489ca543836
+langcode: de
+status: true
+dependencies: {  }
+id: site-menu-german
+label: 'Site Menu German'
+description: 'Site menu for german content'
+locked: false
