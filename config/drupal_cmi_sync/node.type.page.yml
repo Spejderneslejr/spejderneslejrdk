@@ -1,7 +1,16 @@
 uuid: 74b5c8fc-3189-4e39-98e2-533bc004323c
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - site-menu-danish
+      - site-menu-english
+      - site-menu-german
+    parent: 'site-menu-danish:'
 _core:
   default_config_hash: zhtPXoRcC6REiepM0k16zw__FDW5YOXDR6U2WlldTrs
 name: 'Basic page'
