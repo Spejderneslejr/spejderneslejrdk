@@ -1,0 +1,8 @@
+uuid: 337a9f73-4dc1-4842-a985-b2a1b39d5178
+langcode: en
+status: true
+dependencies: {  }
+id: site-menu-english
+label: 'Site Menu English'
+description: 'Site menu for english content'
+locked: false
