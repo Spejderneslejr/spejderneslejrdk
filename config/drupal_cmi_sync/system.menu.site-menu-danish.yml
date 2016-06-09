@@ -1,0 +1,8 @@
+uuid: 6d7dae86-1810-45c8-b9c3-b4851191f6a0
+langcode: da
+status: true
+dependencies: {  }
+id: site-menu-danish
+label: 'Site Menu Danish'
+description: 'Site menu for danish content'
+locked: false
