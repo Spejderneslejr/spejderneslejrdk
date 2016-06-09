@@ -6057,6 +6057,41 @@
         "homepage": "https://www.drupal.org/project/purge"
     },
     {
+        "name": "drupal/purge_purger_http",
+        "version": "8.1.0-beta3",
+        "version_normalized": "8.1.0.0-beta3",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/purge_purger_http.git",
+            "reference": "76086e350796373547a10c9fe22e65a87d3ae9f1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/purge_purger_http-8.x-1.0-beta3.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "drupal/core": "8.*",
+            "drupal/purge": "8.*",
+            "drupal/purge_tokens": "8.*"
+        },
+        "time": "2016-03-31 11:31:00",
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-8.x-1.x": "8.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.drupal-composer.org/downloads/",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "description": "Generic and highly configurable purger that makes HTTP requests, best suits custom configurations.",
+        "homepage": "https://www.drupal.org/project/purge_purger_http"
+    },
+    {
         "name": "jcalderonzumba/gastonjs",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -6114,40 +6149,5 @@
             "headless",
             "phantomjs"
         ]
-    },
-    {
-        "name": "drupal/purge_purger_http",
-        "version": "8.1.0-beta3",
-        "version_normalized": "8.1.0.0-beta3",
-        "source": {
-            "type": "git",
-            "url": "https://git.drupal.org/project/purge_purger_http.git",
-            "reference": "76086e350796373547a10c9fe22e65a87d3ae9f1"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://ftp.drupal.org/files/projects/purge_purger_http-8.x-1.0-beta3.zip",
-            "reference": null,
-            "shasum": null
-        },
-        "require": {
-            "drupal/core": "8.*",
-            "drupal/purge": "8.*",
-            "drupal/purge_tokens": "8.*"
-        },
-        "time": "2016-03-31 11:31:00",
-        "type": "drupal-module",
-        "extra": {
-            "branch-alias": {
-                "dev-8.x-1.x": "8.1.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "notification-url": "https://packagist.drupal-composer.org/downloads/",
-        "license": [
-            "GPL-2.0+"
-        ],
-        "description": "Generic and highly configurable purger that makes HTTP requests, best suits custom configurations.",
-        "homepage": "https://www.drupal.org/project/purge_purger_http"
     }
 ]
