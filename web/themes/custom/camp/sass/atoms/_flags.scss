@@ -1,0 +1,53 @@
+.language-flags {
+  list-style-type: none;
+  position: absolute;
+  top: -20px;
+  right: 0px;
+  width: auto;
+  height: 60px;
+  min-width: 100px;
+  padding-right: 25px;
+  float: none;
+
+  li {
+    float: left;
+    width: 35px;
+  }
+
+  // TODO(ts) -  we hide the flags for now
+  // but we will have to reimplement them, when we makes the menu
+  // where the flags will be placed on mobile and tablet portrait.
+  @include media($tablet-p) {
+    display: none;
+  }
+}
+
+.language-flag {
+  width: 25px;
+  height: 50px;
+  background-position: 50% 50%;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  float: left;
+  @include filter(grayscale(70%));
+
+  &:hover {
+    @include filter(grayscale(0%));
+  }
+
+  &.active {
+    @include filter(grayscale(0%));
+  }
+}
+
+.language-flag--uk {
+  background-image: url("../svg/uk.svg");
+}
+
+.language-flag--dk {
+  background-image: url("../svg/dk.svg");
+}
+
+.language-flag--de {
+  background-image: url("../svg/de.svg");
+}
