@@ -1,6 +1,6 @@
 uuid: 5705968b-d3d6-4629-bb46-8043f18fedab
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -10,8 +10,8 @@ _core:
   default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
 id: camp_breadcrumbs
 theme: camp
-region: header
-weight: 0
+region: '-1'
+weight: -6
 provider: null
 plugin: system_breadcrumb_block
 settings:

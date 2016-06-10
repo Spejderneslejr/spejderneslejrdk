@@ -1,6 +1,6 @@
 uuid: 81075f29-d6fa-4592-adbb-2f9a7f04c21a
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.account
@@ -12,8 +12,8 @@ _core:
   default_config_hash: DweBpscQZdG0-fHkSpUzdYucrNH45G_KF7Z82V-oyQM
 id: camp_account_menu
 theme: camp
-region: header
-weight: 0
+region: '-1'
+weight: -2
 provider: null
 plugin: 'system_menu_block:account'
 settings:
