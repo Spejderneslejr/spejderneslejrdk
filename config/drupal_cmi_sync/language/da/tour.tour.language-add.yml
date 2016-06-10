@@ -1,0 +1,8 @@
+label: 'Tilføjelse af sprog'
+tips:
+  language-add-overview:
+    label: 'Tilføjelse af sprog'
+  language-add-choose:
+    label: 'Vælg sprog'
+  language-add-continue:
+    label: 'Fortsætter på'

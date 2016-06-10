@@ -20,7 +20,9 @@ module:
   help: 0
   history: 0
   image: 0
+  language: 0
   link: 0
+  locale: 0
   menu_ui: 0
   node: 0
   options: 0
@@ -57,3 +59,4 @@ theme:
   camp: 0
 _core:
   default_config_hash: m2GVq11UAOVuNgj8x0t5fMOPujpvQQ_zxLoaly1BMEU
+langcode: da
