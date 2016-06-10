@@ -1,5 +1,5 @@
 uuid: 9a0b746a-8b5a-4c66-8224-c423af22489f
-langcode: en
+langcode: da
 status: true
 dependencies:
   config:
@@ -49,6 +49,11 @@ content:
   field_tags:
     type: entity_reference_autocomplete_tags
     weight: 3
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
     settings: {  }
     third_party_settings: {  }
   path:
