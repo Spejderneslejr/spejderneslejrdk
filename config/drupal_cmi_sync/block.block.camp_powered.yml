@@ -1,6 +1,6 @@
 uuid: f31fce2c-d17f-47bc-a979-8152ad02cf40
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -10,8 +10,8 @@ _core:
   default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
 id: camp_powered
 theme: camp
-region: header
-weight: 10
+region: '-1'
+weight: -1
 provider: null
 plugin: system_powered_by_block
 settings:

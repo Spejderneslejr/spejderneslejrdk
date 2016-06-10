@@ -1,5 +1,31 @@
 <?php
+
+use Drupal\Core\Url;
+
 /**
  * @file
  * Functions to support theming in the camp theme.
  */
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function camp_preprocess_block(&$variables) {
+  switch ($variables['base_plugin_id']) {
+    case 'system_branding_block':
+      // Sønderborg logo.
+      $variables['sonderborg_logo'] = '/' . drupal_get_path('theme', 'camp') . '/images/sonderborg_logo.png';
+
+      // Site logo.
+      $variables['logo'] = '/' . drupal_get_path('theme', 'camp') . '/svg/logo.svg';
+
+      // TODO(ts) - Event info. Hardcoded for now, should be a config variable.
+      $variables['event_info'] = 'Sønderborg 22.-30. juli 2017';
+
+      // Get language id. We use this to get correct homepage based on language.
+      $variables['language_id'] = \Drupal::languageManager()
+        ->getCurrentLanguage()
+        ->getId();
+      break;
+  }
+}
