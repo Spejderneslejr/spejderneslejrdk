@@ -1,0 +1,14 @@
+label: Sprog
+tips:
+  language-overview:
+    label: Sprog
+  language-add:
+    label: 'Tilføjelse af sprog'
+  language-reorder:
+    label: 'Omorganisering af sprog'
+  language-default:
+    label: 'Vælg standardsprog'
+  language-operations:
+    label: 'Tilpasning af sprog'
+  language-continue:
+    label: 'Fortsætter på'
