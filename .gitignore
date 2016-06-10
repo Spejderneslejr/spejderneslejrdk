@@ -17,3 +17,6 @@
 
 # Ignore vendor git-repositories
 /vendor/**/.git
+
+# Ignore composer-override
+docker-compose.override.yml
