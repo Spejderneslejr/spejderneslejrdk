@@ -1,6 +1,6 @@
 uuid: 31055af4-4813-4920-b3f2-f910a69c6b04
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -10,8 +10,8 @@ _core:
   default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
 id: camp_messages
 theme: camp
-region: header
-weight: 0
+region: '-1'
+weight: -3
 provider: null
 plugin: system_messages_block
 settings:

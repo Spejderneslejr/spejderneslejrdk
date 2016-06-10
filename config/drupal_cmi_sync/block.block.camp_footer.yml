@@ -1,6 +1,6 @@
 uuid: 8b61ec25-90eb-41eb-822f-9523b29647c2
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.footer
@@ -12,8 +12,8 @@ _core:
   default_config_hash: kkISXE1LT2FJEoYnqCrCpeFB-2pmGmMxMklVk7rQcfg
 id: camp_footer
 theme: camp
-region: header
-weight: 0
+region: '-1'
+weight: -5
 provider: null
 plugin: 'system_menu_block:footer'
 settings:

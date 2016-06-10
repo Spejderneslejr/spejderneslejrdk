@@ -1,0 +1,29 @@
+.clock {
+  text-transform: capitalize;
+  font-size: 0;
+  font-weight: bold;
+
+  span {
+    font-size: 28px;
+
+    @include media($tablet-l) {
+      font-size: 20px;
+    }
+
+    @include media($tablet-p) {
+      font-size: 16px;
+    }
+
+    &.clock__unit {
+      padding-right: 10px;
+    }
+  }
+}
+
+.clock__number {
+  color: $black-medium;
+}
+
+.clock__unit {
+  color: $gray;
+}
