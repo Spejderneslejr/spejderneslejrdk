@@ -24,7 +24,8 @@
         "drupal/paragraphs": "^8.1",
         "drush/drush": "~8.1",
         "drupal/purge": "~8.3",
-        "drupal/purge_purger_http": "^8.1@beta"
+        "drupal/purge_purger_http": "^8.1@beta",
+        "drupal/file_entity": "^8"
     },
     "require-dev": {
         "behat/mink": "~1.6",
