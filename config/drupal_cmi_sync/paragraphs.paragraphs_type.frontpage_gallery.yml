@@ -1,0 +1,6 @@
+uuid: cd9ad384-a389-4724-9f72-f23d2785f956
+langcode: en
+status: true
+dependencies: {  }
+id: frontpage_gallery
+label: 'Frontpage Gallery'
