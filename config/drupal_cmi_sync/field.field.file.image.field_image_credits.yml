@@ -1,0 +1,19 @@
+uuid: c97abba7-ee3a-471d-bc80-a0fd2a90362b
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.file.field_image_credits
+    - file_entity.type.image
+id: file.image.field_image_credits
+field_name: field_image_credits
+entity_type: file
+bundle: image
+label: Credits
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
