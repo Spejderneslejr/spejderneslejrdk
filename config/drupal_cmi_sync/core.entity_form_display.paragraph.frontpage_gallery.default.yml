@@ -1,0 +1,23 @@
+uuid: fa376b5e-8a39-4eba-aa2e-68893530fa6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.frontpage_gallery.field_frontpage_gallery_image
+    - paragraphs.paragraphs_type.frontpage_gallery
+  module:
+    - file_entity
+id: paragraph.frontpage_gallery.default
+targetEntityType: paragraph
+bundle: frontpage_gallery
+mode: default
+content:
+  field_frontpage_gallery_image:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_editable
+hidden:
+  created: true
+  uid: true
