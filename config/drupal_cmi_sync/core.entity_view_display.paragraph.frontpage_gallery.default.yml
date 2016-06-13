@@ -1,0 +1,26 @@
+uuid: 5e0b5f76-cf9f-4c4b-ad28-9703309a019c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.frontpage_gallery.field_frontpage_gallery_image
+    - image.style.large
+    - paragraphs.paragraphs_type.frontpage_gallery
+  module:
+    - image
+id: paragraph.frontpage_gallery.default
+targetEntityType: paragraph
+bundle: frontpage_gallery
+mode: default
+content:
+  field_frontpage_gallery_image:
+    weight: 0
+    label: above
+    settings:
+      image_style: large
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+hidden:
+  created: true
+  uid: true

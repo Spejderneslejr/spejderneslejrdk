@@ -1,9 +1,10 @@
 uuid: a7dd345d-39e3-4b28-a00c-9d4b898e633d
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - file
+    - file_entity
     - user
 _core:
   default_config_hash: rRWxAX-IQkJ5viACQRovRkC784EyCl9493GU_G23n2Q
