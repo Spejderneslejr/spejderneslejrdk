@@ -3,13 +3,16 @@ $black-medium: rgb(51, 51, 51);
 $gray: rgb(194, 194, 194);
 $gray-medium: rgb(174, 174, 174);
 
+// Icon font.
+@include font-face("icomoon", "../fonts/icomoon", $file-formats: ttf woff svg eot);
+
 // Base font vars.
 $base-font-size: 16px;
 
 /**
  * Breakpoints.
  */
-$phone: new-breakpoint(max-width 480px);
+$phone: new-breakpoint(max-width 767px);
 $tablet-p: new-breakpoint(max-width 768px);
 $tablet-l: new-breakpoint(max-width 1024px);
 $screen: new-breakpoint(min-width 1025px);

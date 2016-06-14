@@ -18,6 +18,7 @@ function camp_preprocess_block(&$variables) {
 
       // Site logo.
       $variables['logo'] = '/' . drupal_get_path('theme', 'camp') . '/svg/logo.svg';
+      $variables['logo_alt'] = '/' . drupal_get_path('theme', 'camp') . '/svg/logo_alt.svg';
 
       // TODO(ts) - Event info. Hardcoded for now, should be a config variable.
       $variables['event_info'] = 'Sønderborg 22.-30. juli 2017';
