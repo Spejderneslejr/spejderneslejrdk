@@ -1,0 +1,5 @@
+name: Multilingual Frontpage
+type: module
+description: Redirects the user to the correct of multiple frontpages.
+core: 8.x
+package: Custom
