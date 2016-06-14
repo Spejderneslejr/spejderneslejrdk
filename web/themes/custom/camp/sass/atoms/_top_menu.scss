@@ -1,0 +1,347 @@
+@import "icons";
+
+nav.menu--site-menu-danish {
+  position: relative;
+  left: 50%;
+  float: left;
+  clear: both;
+  margin: 10px 0;
+  text-align: left;
+
+  @include media($phone) {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: auto;
+    z-index: 9998;
+    display: block;
+    overflow: auto;
+    width: 60%;
+    height: 100vh;
+    margin: 0;
+    padding-top: 60px;
+    padding-left: 31px;
+    background-color: #fff;
+    box-shadow: 1px 1px 16px 0 rgba(0, 0, 0, .36);
+
+    // Transition.
+    -webkit-transform: translate(100%, 0px);
+    -ms-transform: translate(100%, 0px);
+    transition: transform 200ms;
+
+    &.js-mobile-active {
+      transform: translateX(0px) translateY(0px) translateZ(0px);
+      transition: transform 200ms;
+    }
+  }
+}
+
+ul.menu a.is-active {
+
+  &:hover {
+    color: #2bb6b7;
+  }
+}
+
+.menu-item--expanded {
+  list-style-image: none;
+  list-style-type: none;
+}
+
+ul.menu-level--0 {
+
+  li {
+    float: left;
+  }
+
+  > .menu-item {
+    margin: 0 30px;
+  }
+
+  li {
+    font-size: 20px;
+  }
+
+  > li {
+    &:last-child {
+
+      a {
+        @extend .btn;
+        color: white;
+      }
+    }
+  }
+
+  padding: 10px 20px;
+  position: relative;
+  left: -50%;
+  text-align: left;
+
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    &:hover {
+      color: #2bb6b7;
+    }
+  }
+
+  li.menu-item--expanded {
+
+    > a {
+      &:before {
+        @include icon('.icon-arrow_down');
+        float: right;
+        position: relative;
+        margin-left: 13px;
+        font-size: em(12, $base-font-size);
+        line-height: em(22, $base-font-size);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        transition: all 300ms ease-out;
+
+        @include media($tablet-p) {
+          content: "";
+        }
+      }
+
+      &.open:before {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  @include media($tablet-p) {
+    padding: 0;
+    position: relative;
+    left: auto;
+
+    li {
+      float: none;
+
+      &:last-child {
+
+        a {
+          background: none;
+          color: black;
+          padding: 0;
+          font-size: 18px;
+          text-shadow: none;
+        }
+      }
+    }
+
+    > .menu-item {
+      margin: 0;
+      font-size: em(18, $base-font-size);
+    }
+  }
+}
+
+ul.menu-level--1 {
+
+  // Layout.
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  z-index: 1;
+  background-color: white;
+  padding: 50px 10% 20vh;
+  margin: 0;
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, .3);
+  margin-top: 20px;
+
+  // Transition.
+  transition: opacity 350ms, transform 250ms;
+
+  li {
+    @include span-columns(4);
+    margin: 0;
+    padding-right: em(30, $base-font-size);
+
+    a {
+      margin: 0;
+      padding-bottom: 4px;
+      border-bottom: 1px dashed #2bb6b7;
+      width: 100%;
+      display: inline-block;
+      padding-top: 20px;
+    }
+  }
+
+  @include media($tablet-p) {
+
+    & {
+      opacity: 1;
+      position: relative;
+      width: auto;
+      height: auto;
+      box-shadow: none;
+      padding: 0 0 0 15px;
+    }
+
+    li {
+
+      float: none;
+
+      a {
+        padding-left: 16px;
+        float: none;
+        color: #a79d96;
+        font-size: em(14, $base-font-size);
+        margin: 0;
+        padding: 3px 0;
+        border: none;
+
+        &.is-active {
+          color: #a79d96;
+        }
+      }
+    }
+  }
+}
+
+.main-nav-scrolled {
+  position: fixed !important;
+  left: 0px !important;
+  top: 0px !important;
+  right: 0px !important;
+  width: 100%;
+  z-index: 3001;
+  height: 60px;
+  padding-left: 23px;
+  border-bottom: 2px dashed #a79d96;
+  background-color: hsla(0, 0%, 100%, .95);
+}
+
+.js-inactive {
+  // Transition.
+  opacity: 0;
+  -webkit-transform: translate(0px, -20px) scale(1, 0.95);
+  -ms-transform: translate(0px, -20px) scale(1, 0.95);
+  transform: translate(0px, -20px) scale(1, 0.95);
+}
+
+.js-active {
+  opacity: 1;
+  transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1);
+  display: block;
+}
+
+.logo_alt {
+  display: none;
+}
+
+/**
+ * Fixed top menu.
+ */
+.main-nav-scrolled {
+
+  .region--header__sonderborg,
+  .region--header__tasks {
+    display: none;
+  }
+
+  .region--header__logo {
+    margin: 0;
+    padding: 10px 0;
+    width: auto;
+  }
+
+  #block-camp-branding {
+    height: auto;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    min-height: 1px;
+  }
+
+  nav {
+    clear: none;
+    float: right;
+    position: relative;
+    left: -50%;
+    text-align: left;
+  }
+
+  ul.menu-level--0 {
+    list-style: none;
+    position: relative;
+    left: 50%;
+    margin: 0;
+    padding: 6px;
+
+    li {
+      font-size: em(18, $base-font-size);
+    }
+
+    > li {
+
+      &:last-child {
+
+        position: fixed;
+        right: 20px;
+        padding: 0;
+        margin: 0;
+
+        a {
+          @extend .btn-small
+        }
+      }
+    }
+  }
+
+  .logo_alt {
+    display: block;
+    height: 40px;
+  }
+
+  .logo {
+    display: none;
+  }
+}
+
+// Burger mneu toggle.
+.menu-toggle {
+
+  // Layout.
+  position: fixed;
+  top: 8px;
+  right: 0px;
+  z-index: 9999;
+  cursor: pointer;
+
+  // Transition.
+  transition: transform 200ms;
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(-0.014px) translateZ(0px);
+
+  &.active {
+    .menu-toggle__item-1 {
+      transition: transform 200ms;
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(45deg) translateX(2px) translateY(5px) translateZ(0px);
+    }
+
+    .menu-toggle__item-2 {
+      transition: transform 200ms;
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(-45deg) translateX(0px) translateY(-4px) translateZ(0px);
+    }
+  }
+
+  &__item-1,
+  &__item-2 {
+    width: 25px;
+    height: 3px;
+    background-color: rgba(0, 0, 0, .6);
+    margin-bottom: 5px;
+  }
+}
+
+
+// Testing TODO(ts) - remove !IMPORTANT remove.
+#main-content {
+  height: 22200px;
+}
+

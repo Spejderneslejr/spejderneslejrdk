@@ -4,6 +4,7 @@ main:
     theme:
       css/camp.main.css: {}
   js:
+    js/camp.main.js: {}
     js/countdown.js: {}
   dependencies:
     - core/jquery
