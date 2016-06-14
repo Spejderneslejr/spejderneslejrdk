@@ -1,7 +1,7 @@
 multilingual_frontpage.redirectendpoint:
   path: '/multifront'
   defaults:
-    _controller: '\Drupal\multilingual_frontpage\FrontpageController::content'
+    _controller: '\Drupal\multilingual_frontpage\MultilingualFrontpageController::content'
   requirements:
     _access: 'TRUE'
 

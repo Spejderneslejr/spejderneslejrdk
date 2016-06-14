@@ -4,11 +4,14 @@
 namespace Drupal\multilingual_frontpage;
 
 
-use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
+/**
+ * Configuration-form for multilingual_frontpage.
+ */
 class MultilingualFrontpageConfigForm extends ConfigFormBase {
+
   /**
    * {@inheritdoc}
    */
@@ -31,15 +34,15 @@ class MultilingualFrontpageConfigForm extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('multilingual_frontpage.settings');
 
-    $paths = "";
-    if (is_array($config->get('paths'))) {
-      $paths = implode("\n", $config->get('paths'));
+    $nids = "";
+    if (is_array($config->get('nids'))) {
+      $nids = implode("\n", $config->get('nids'));
     }
 
-    $form['paths'] = array(
+    $form['nids'] = array(
       '#type' => 'textarea',
       '#title' => $this->t('Node IDs'),
-      '#default_value' => $paths,
+      '#default_value' => $nids,
       '#description' => $this->t('Newline terminated list of nodes to use as frontpages. The nodes must have a language, if a match cannot be resolved the first node will be used.'),
     );
 
@@ -51,12 +54,13 @@ class MultilingualFrontpageConfigForm extends ConfigFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
-    if (!empty($form_state->getValue('paths'))) {
-      $paths = explode("\n", $form_state->getValue('paths'));
-      $paths = array_map('trim', $paths);
-      $this->config('multilingual_frontpage.settings')->set('paths', $paths)->save();
+    if (!empty($form_state->getValue('nids'))) {
+      $nids = explode("\n", $form_state->getValue('nids'));
+      $nids = array_map('trim', $nids);
+      $this->config('multilingual_frontpage.settings')->set('nids', $nids)->save();
     }
 
     parent::submitForm($form, $form_state);
   }
+
 }

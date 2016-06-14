@@ -3,75 +3,43 @@
 namespace Drupal\multilingual_frontpage;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\node\Entity\Node;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 /**
- * Class FrontpageController
- *
- * Renderes the correct node for this path determined by language.
- *
- * @package Drupal\multilingual_frontpage
+ * Renders the correct node for this path determined by language.
  */
-class FrontpageController extends ControllerBase implements ContainerInjectionInterface {
-
-  /**
-   * @var HttpKernelInterface
-   */
-  protected $httpKernel;
-
-  public function __construct(HttpKernelInterface $http_kernel) {
-    $this->httpKernel = $http_kernel;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container) {
-    return new static(
-      $container->get('http_kernel')
-    );
-  }
+class MultilingualFrontpageController extends ControllerBase {
 
   /**
    * Views a node based on the current language.
    *
    * @return array|\Symfony\Component\HttpFoundation\Response
+   *   The response.
    */
   public function content() {
     // Get our settings.
     $config = $this->config('multilingual_frontpage.settings');
-    $paths = $config->get('paths');
+    $nids = $config->get('nids');
 
     // Get the current active language.
     $active_language = $this->languageManager()->getCurrentLanguage()->getId();
 
     // 404 if we're missing configuration.
-    if (empty($paths) || !is_array($paths)) {
-      $paths = [];
+    if (empty($nids) || !is_array($nids)) {
+      $nids = [];
     }
 
-    // Load all nodes.
-    /**
-     * @var Node[] $nodes
-     */
-    $nodes = Node::loadMultiple(array_filter($paths, 'is_numeric'));
+    /** @var Node[] $nodes */
+    $nodes = Node::loadMultiple(array_filter($nids, 'is_numeric'));
 
-    /**
-     * @var Node $selected_node
-     *   A node with a matching language.
-     */
+    // A node with a matching language.
+    /** @var Node $selected_node */
     $selected_node = NULL;
 
-    /**
-     * @var Node $selected_node
-     *   The first configured node - we will fall back to this if we cannot find
-     *   a match.
-     */
+    // The first configured node - we will fall back to this if we cannot find
+    // a match.
+    /** @var Node $selected_node */
     $first_node = reset($nodes);
     foreach ($nodes as $node) {
       if ($node->language()->getId() == $active_language) {
@@ -97,4 +65,5 @@ class FrontpageController extends ControllerBase implements ContainerInjectionIn
     );
     return $render_controller->view($selected_node, 'frontpage');
   }
+
 }
