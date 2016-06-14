@@ -1,0 +1,6 @@
+multilingual_frontpage.settings_form:
+  title: 'Multilingual frontpage'
+  description: 'Determines the frontpage based on language'
+  weight: 10
+  route_name: multilingual_frontpage.settings_form
+  parent: system.admin_config_system
