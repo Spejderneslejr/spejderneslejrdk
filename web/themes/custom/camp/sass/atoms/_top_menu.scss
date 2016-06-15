@@ -2,12 +2,15 @@
 
 // Target all menus that starts with "menu--site-menu-".
 [class^="menu--site-menu-"], [class*=" menu--site-menu-"] {
-  position: relative;
-  left: 50%;
-  float: left;
-  clear: both;
-  margin: 10px 0;
-  text-align: left;
+
+  @include media($desktop) {
+    position: relative;
+    left: 50%;
+    float: left;
+    clear: both;
+    margin: 10px 0;
+    text-align: left;
+  }
 
   // On mobile we go right.
   @include media($phone) {
@@ -22,7 +25,7 @@
     height: 100vh;
     margin: 0;
     padding-top: 70px;
-    padding-left: 15px;
+    padding-left: 31px;
     background-color: #fff;
     box-shadow: 1px 1px 16px 0 rgba(0, 0, 0, .36);
 
@@ -45,19 +48,49 @@ ul.menu a.is-active {
   }
 }
 
+.menu-item {
+  @include media($tablet-p) {
+    padding: 0;
+    display: inline-block;
+    width: 100%;
+  }
+}
+
 .menu-item--expanded {
   list-style-image: none;
   list-style-type: none;
 }
 
+// Reset.
+ul.menu {
+  @include media($tablet-p) {
+    margin-left: 0;
+  }
+}
+
 ul.menu-level--0 {
 
+  @include media($desktop) {
+
+    & {
+      padding: 10px 20px;
+      position: relative;
+      left: -50%;
+      text-align: left;
+    }
+  }
+
   li {
-    float: left;
+    @include media($desktop) {
+      float: left;
+    }
   }
 
   > .menu-item {
-    margin: 0 20px;
+
+    @include media($desktop) {
+      margin: 0 20px;
+    }
 
     @include media($tablet-l) {
       margin: 0 10px;
@@ -65,7 +98,9 @@ ul.menu-level--0 {
   }
 
   li {
-    font-size: em(20, $base-font-size);
+    @include media($desktop) {
+      font-size: em(20, $base-font-size);
+    }
 
     @include media($tablet-l) {
       font-size: em(18, $base-font-size);
@@ -82,11 +117,6 @@ ul.menu-level--0 {
     }
   }
 
-  padding: 10px 20px;
-  position: relative;
-  left: -50%;
-  text-align: left;
-
   a {
     text-decoration: none;
     text-transform: uppercase;
@@ -101,15 +131,18 @@ ul.menu-level--0 {
 
     > a {
       &:before {
-        @include icon('.icon-arrow_down');
-        float: right;
-        position: relative;
-        margin-left: 13px;
-        font-size: em(12, $base-font-size);
-        line-height: em(22, $base-font-size);
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-        transition: all 300ms ease-out;
+
+        @include media($desktop) {
+          @include icon('.icon-arrow_down');
+          float: right;
+          position: relative;
+          margin-left: 13px;
+          font-size: em(12, $base-font-size);
+          line-height: em(22, $base-font-size);
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+          transition: all 300ms ease-out;
+        }
 
         @include media($tablet-p) {
           content: "";
@@ -137,12 +170,7 @@ ul.menu-level--0 {
           background: none;
           color: black;
           padding: 0;
-          font-size: 18px;
           text-shadow: none;
-
-          @include media($tablet-p) {
-            font-size: 17.5px;
-          }
         }
       }
     }
@@ -161,28 +189,33 @@ ul.menu-level--0 {
   > li:nth-child(1) {
 
     > ul li {
-      @include span-columns(4);
-      margin: 0;
-      font-size: 20px;
-      padding-right: 30px;
+
+      @include media($desktop) {
+        @include span-columns(4);
+        margin: 0;
+        font-size: 20px;
+        padding-right: 30px;
+      }
 
       // Go full width on mobile.
       @include media($tablet-p) {
         @include span-columns(12);
+        padding: 4px 0;
       }
 
       a {
-        margin: 0;
-        padding-bottom: 4px;
-        border-bottom: 1px dashed #2bb6b7;
-        width: 100%;
-        display: inline-block;
-        padding-top: 20px;
+
+        @include media($desktop) {
+          margin: 0;
+          padding-bottom: 4px;
+          border-bottom: 1px dashed #2bb6b7;
+          width: 100%;
+          display: inline-block;
+          padding-top: 20px;
+        }
 
         @include media($tablet-p) {
           border: none;
-          padding: 4px 0;
-          font-size: 18px;
         }
       }
     }
@@ -195,11 +228,14 @@ ul.menu-level--0 {
   > li:nth-child(2) {
 
     > ul li {
-      @include span-columns(4);
-      margin: 0 0 20px;
-      font-size: 20px;
-      text-align: center;
-      padding-right: 0;
+
+      @include media($desktop) {
+        @include span-columns(4);
+        margin: 0 0 20px;
+        font-size: 20px;
+        text-align: center;
+        padding-right: 0;
+      }
 
       // Go full width on mobile.
       @include media($tablet-p) {
@@ -208,23 +244,28 @@ ul.menu-level--0 {
         display: inline-block;
         width: 100%;
         text-align: left;
-        padding: 0;
+        padding: 4px 0;
         margin: 0;
       }
 
       a {
-        margin: 0;
-        padding-bottom: 4px;
-        border-left: 1px dashed #2bb6b7;
-        width: 100%;
-        display: inline-block;
-        padding-top: 20px;
+
+        @include media($desktop) {
+          margin: 0;
+          padding-bottom: 4px;
+          border-left: 1px dashed #2bb6b7;
+          width: 100%;
+          display: inline-block;
+          padding-top: 20px;
+
+          &:before {
+            display: block;
+            font-size: 70px;
+            margin-bottom: 25px;
+          }
+        }
 
         @include media($tablet-p) {
-
-          border: none !important;
-          padding: 4px 0;
-          font-size: 18px;
 
           &:before {
             // Make sure no icons are shown.
@@ -232,20 +273,17 @@ ul.menu-level--0 {
             margin: 0 !important;
           }
         }
-
-        &:before {
-          display: block;
-          font-size: 70px;
-          margin-bottom: 25px;
-        }
       }
 
       &:nth-child(1) {
         a {
           &:before {
             @include icon('.icon-scout');
-            margin-top: 26px;
-            font-size: 44px;
+
+            @include media($desktop) {
+              margin-top: 26px;
+              font-size: 44px;
+            }
           }
         }
       }
@@ -260,7 +298,11 @@ ul.menu-level--0 {
 
       &:nth-child(3) {
         a {
-          border-right: 1px dashed #2bb6b7;
+
+          @include media($desktop) {
+            border-right: 1px dashed #2bb6b7;
+          }
+
           &:before {
             @include icon('.icon-knife');
           }
@@ -277,6 +319,7 @@ ul.menu-level--0 {
 
       &:nth-child(5) {
         a {
+
           &:before {
             @include icon('.icon-piggy_bank');
           }
@@ -285,7 +328,11 @@ ul.menu-level--0 {
 
       &:nth-child(6) {
         a {
-          border-right: 1px dashed #2bb6b7;
+
+          @include media($desktop) {
+            border-right: 1px dashed #2bb6b7;
+          }
+
           &:before {
             @include icon('.icon-microphone');
           }
@@ -298,20 +345,22 @@ ul.menu-level--0 {
 // general theming of submenu.
 ul.menu-level--1 {
 
-  // Layout.
-  position: fixed;
-  left: 0px;
-  right: 0px;
-  width: 100%;
-  z-index: 1;
-  background-color: white;
-  padding: 50px 10% 20vh;
-  margin: 0;
-  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, .3);
-  margin-top: 20px;
+  @include media($desktop) {
+    // Layout.
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    z-index: 1;
+    background-color: white;
+    padding: 50px 10% 20vh;
+    margin: 0;
+    box-shadow: 0 8px 24px -6px rgba(0, 0, 0, .3);
+    margin-top: 20px;
 
-  // Transition.
-  transition: opacity 350ms, transform 250ms;
+    // Transition.
+    transition: opacity 350ms, transform 250ms;
+  }
 
   @include media($tablet-p) {
 
@@ -322,8 +371,6 @@ ul.menu-level--1 {
       height: auto;
       box-shadow: none;
       padding: 0 0 0 15px;
-      margin-top: 5px;
-      transform: initial;
     }
 
     li {
@@ -334,7 +381,7 @@ ul.menu-level--1 {
         padding-left: 16px;
         float: none;
         color: #a79d96;
-        font-size: em(14, $base-font-size);
+        font-size: 16px;
         margin: 0;
         padding: 3px 0;
         border: none;
@@ -347,31 +394,22 @@ ul.menu-level--1 {
   }
 }
 
-.main-nav-scrolled {
-  position: fixed !important;
-  left: 0px !important;
-  top: 0px !important;
-  right: 0px !important;
-  width: 100%;
-  z-index: 3001;
-  height: 60px;
-  padding-left: 23px;
-  border-bottom: 2px dashed #a79d96;
-  background-color: hsla(0, 0%, 100%, .95);
-}
-
 .js-inactive {
   // Transition.
-  opacity: 0;
-  -webkit-transform: translate(0px, -20px) scale(1, 0.95);
-  -ms-transform: translate(0px, -20px) scale(1, 0.95);
-  transform: translate(0px, -20px) scale(1, 0.95);
+  @include media($desktop) {
+    opacity: 0;
+    -webkit-transform: translate(0px, -20px) scale(1, 0.95);
+    -ms-transform: translate(0px, -20px) scale(1, 0.95);
+    transform: translate(0px, -20px) scale(1, 0.95);
+  }
 }
 
 .js-active {
-  opacity: 1;
-  transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1);
-  display: block;
+  @include media($desktop) {
+    opacity: 1;
+    transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1);
+    display: block;
+  }
 }
 
 .logo_alt {
@@ -382,6 +420,19 @@ ul.menu-level--1 {
  * Fixed top menu.
  */
 .main-nav-scrolled {
+
+  & {
+    position: fixed !important;
+    left: 0px !important;
+    top: 0px !important;
+    right: 0px !important;
+    width: 100%;
+    z-index: 3001;
+    height: 60px;
+    padding-left: 23px;
+    border-bottom: 2px dashed #a79d96;
+    background-color: hsla(0, 0%, 100%, .95);
+  }
 
   // Hide stuff.
   .region--header__sonderborg,
