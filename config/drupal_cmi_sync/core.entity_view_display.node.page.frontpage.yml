@@ -1,8 +1,9 @@
-uuid: 2acd7cde-f06d-46d6-80df-b5943ac10cd6
+uuid: 0dc691a2-b4d7-4f64-b313-91d05ee525e6
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.frontpage
     - field.field.node.page.field_paragraphs
     - node.type.page
   module:
@@ -10,10 +11,10 @@ dependencies:
     - user
 _core:
   default_config_hash: oZ-7vpIJxjxL2up9B5KrJGD0lazQ9aN0P-fIPo6OrSU
-id: node.page.default
+id: node.page.frontpage
 targetEntityType: node
 bundle: page
-mode: default
+mode: frontpage
 content:
   field_paragraphs:
     type: entity_reference_revisions_entity_view
