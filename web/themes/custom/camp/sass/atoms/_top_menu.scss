@@ -1,6 +1,7 @@
 @import "icons";
 
-nav.menu--site-menu-danish {
+// Target all menus that starts with "menu--site-menu-".
+[class^="menu--site-menu-"], [class*=" menu--site-menu-"] {
   position: relative;
   left: 50%;
   float: left;
@@ -8,6 +9,7 @@ nav.menu--site-menu-danish {
   margin: 10px 0;
   text-align: left;
 
+  // On mobile we go right.
   @include media($phone) {
     position: fixed;
     top: 0px;
@@ -19,8 +21,8 @@ nav.menu--site-menu-danish {
     width: 60%;
     height: 100vh;
     margin: 0;
-    padding-top: 60px;
-    padding-left: 31px;
+    padding-top: 70px;
+    padding-left: 15px;
     background-color: #fff;
     box-shadow: 1px 1px 16px 0 rgba(0, 0, 0, .36);
 
@@ -55,11 +57,19 @@ ul.menu-level--0 {
   }
 
   > .menu-item {
-    margin: 0 30px;
+    margin: 0 20px;
+
+    @include media($tablet-l) {
+      margin: 0 10px;
+    }
   }
 
   li {
-    font-size: 20px;
+    font-size: em(20, $base-font-size);
+
+    @include media($tablet-l) {
+      font-size: em(18, $base-font-size);
+    }
   }
 
   > li {
@@ -129,17 +139,163 @@ ul.menu-level--0 {
           padding: 0;
           font-size: 18px;
           text-shadow: none;
+
+          @include media($tablet-p) {
+            font-size: 17.5px;
+          }
         }
       }
     }
 
     > .menu-item {
       margin: 0;
-      font-size: em(18, $base-font-size);
+      font-size: em(17, $base-font-size);
+      padding: 4px 0;
     }
   }
 }
 
+// 1st submenu.
+ul.menu-level--0 {
+
+  > li:nth-child(1) {
+
+    > ul li {
+      @include span-columns(4);
+      margin: 0;
+      font-size: 20px;
+      padding-right: 30px;
+
+      // Go full width on mobile.
+      @include media($tablet-p) {
+        @include span-columns(12);
+      }
+
+      a {
+        margin: 0;
+        padding-bottom: 4px;
+        border-bottom: 1px dashed #2bb6b7;
+        width: 100%;
+        display: inline-block;
+        padding-top: 20px;
+
+        @include media($tablet-p) {
+          border: none;
+          padding: 4px 0;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+// 2nd submenu.
+ul.menu-level--0 {
+
+  > li:nth-child(2) {
+
+    > ul li {
+      @include span-columns(4);
+      margin: 0 0 20px;
+      font-size: 20px;
+      text-align: center;
+      padding-right: 0;
+
+      // Go full width on mobile.
+      @include media($tablet-p) {
+        @include span-columns(12);
+        float: none;
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+      }
+
+      a {
+        margin: 0;
+        padding-bottom: 4px;
+        border-left: 1px dashed #2bb6b7;
+        width: 100%;
+        display: inline-block;
+        padding-top: 20px;
+
+        @include media($tablet-p) {
+
+          border: none !important;
+          padding: 4px 0;
+          font-size: 18px;
+
+          &:before {
+            // Make sure no icons are shown.
+            content: "" !important;
+            margin: 0 !important;
+          }
+        }
+
+        &:before {
+          display: block;
+          font-size: 70px;
+          margin-bottom: 25px;
+        }
+      }
+
+      &:nth-child(1) {
+        a {
+          &:before {
+            @include icon('.icon-scout');
+            margin-top: 26px;
+            font-size: 44px;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        a {
+          &:before {
+            @include icon('.icon-watch');
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        a {
+          border-right: 1px dashed #2bb6b7;
+          &:before {
+            @include icon('.icon-knife');
+          }
+        }
+      }
+
+      &:nth-child(4) {
+        a {
+          &:before {
+            @include icon('.icon-bird');
+          }
+        }
+      }
+
+      &:nth-child(5) {
+        a {
+          &:before {
+            @include icon('.icon-piggy_bank');
+          }
+        }
+      }
+
+      &:nth-child(6) {
+        a {
+          border-right: 1px dashed #2bb6b7;
+          &:before {
+            @include icon('.icon-microphone');
+          }
+        }
+      }
+    }
+  }
+}
+
+// general theming of submenu.
 ul.menu-level--1 {
 
   // Layout.
@@ -157,21 +313,6 @@ ul.menu-level--1 {
   // Transition.
   transition: opacity 350ms, transform 250ms;
 
-  li {
-    @include span-columns(4);
-    margin: 0;
-    padding-right: em(30, $base-font-size);
-
-    a {
-      margin: 0;
-      padding-bottom: 4px;
-      border-bottom: 1px dashed #2bb6b7;
-      width: 100%;
-      display: inline-block;
-      padding-top: 20px;
-    }
-  }
-
   @include media($tablet-p) {
 
     & {
@@ -181,6 +322,8 @@ ul.menu-level--1 {
       height: auto;
       box-shadow: none;
       padding: 0 0 0 15px;
+      margin-top: 5px;
+      transform: initial;
     }
 
     li {
@@ -240,8 +383,10 @@ ul.menu-level--1 {
  */
 .main-nav-scrolled {
 
+  // Hide stuff.
   .region--header__sonderborg,
-  .region--header__tasks {
+  .region--header__tasks,
+  .language-flags {
     display: none;
   }
 
@@ -307,10 +452,14 @@ ul.menu-level--1 {
 // Burger mneu toggle.
 .menu-toggle {
 
+  // Hide on bigger screens.
+  display: none;
+
   // Layout.
   position: fixed;
-  top: 8px;
+  top: 40px;
   right: 0px;
+  width: 50px;
   z-index: 9999;
   cursor: pointer;
 
@@ -330,6 +479,7 @@ ul.menu-level--1 {
     }
   }
 
+  // Burger styling.
   &__item-1,
   &__item-2 {
     width: 25px;
@@ -337,8 +487,12 @@ ul.menu-level--1 {
     background-color: rgba(0, 0, 0, .6);
     margin-bottom: 5px;
   }
-}
 
+  // Show on mobile(tablet portrait).
+  @include media($tablet-p) {
+    display: block;
+  }
+}
 
 // Testing TODO(ts) - remove !IMPORTANT remove.
 #main-content {

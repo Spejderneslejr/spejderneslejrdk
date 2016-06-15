@@ -29,8 +29,24 @@
     @extend %icon;
 }
 
-.icon-arrow_down {
-    &:before {
-        content: "\e900";
-    }
+.icon-microphone:before {
+    content: "\e901";
+}
+.icon-scout:before {
+    content: "\e902";
+}
+.icon-watch:before {
+    content: "\e903";
+}
+.icon-piggy_bank:before {
+    content: "\e904";
+}
+.icon-knife:before {
+    content: "\e905";
+}
+.icon-bird:before {
+    content: "\e906";
+}
+.icon-arrow_down:before {
+    content: "\e900";
 }
