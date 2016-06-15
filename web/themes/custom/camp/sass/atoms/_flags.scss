@@ -1,6 +1,6 @@
 .language-flags {
   list-style-type: none;
-  position: absolute;
+  position: fixed;
   top: -20px;
   right: 0px;
   width: auto;
@@ -14,11 +14,15 @@
     width: 35px;
   }
 
-  // TODO(ts) -  we hide the flags for now
-  // but we will have to reimplement them, when we makes the menu
-  // where the flags will be placed on mobile and tablet portrait.
   @include media($tablet-p) {
-    display: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 60%;
+    height: 80px;
+    padding-top: 23px;
+    padding-left: 31px;
+    margin: 0;
   }
 }
 

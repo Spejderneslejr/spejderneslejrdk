@@ -68,8 +68,8 @@
     @include media($phone) {
 
       img {
-        max-width: 90px;
-        padding-top: 14px;
+        max-width: 130px;
+        padding-top: 8px;
       }
     }
   }
@@ -121,4 +121,10 @@
   font-weight: bold;
   font-size: em(14, $base-font-size);
   margin-bottom: 5px;
+}
+
+.page-header {
+  @include media($tablet-p) {
+    padding-top: 20px;
+  }
 }

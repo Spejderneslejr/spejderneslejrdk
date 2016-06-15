@@ -261,10 +261,15 @@ main:last-child {
 
 .btn, ul.menu-level--0 > li:last-child a {
   padding: 15px 19px 10px;
-  border-radius: 3px;
-  background-color: #2bb6b7;
+  border-radius: 30px;
+  background-color: #e1477d;
   color: #fff;
   text-shadow: 1px 1px 1px #066969;
+}
+
+.btn:hover, ul.menu-level--0 > li:last-child a:hover {
+  color: white;
+  background-color: #000;
 }
 
 .btn-small, .main-nav-scrolled ul.menu-level--0 > li:last-child a {
@@ -308,7 +313,7 @@ main:last-child {
 
 .language-flags {
   list-style-type: none;
-  position: absolute;
+  position: fixed;
   top: -20px;
   right: 0px;
   width: auto;
@@ -325,7 +330,14 @@ main:last-child {
 
 @media screen and (max-width: 768px) {
   .language-flags {
-    display: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 60%;
+    height: 80px;
+    padding-top: 23px;
+    padding-left: 31px;
+    margin: 0;
   }
 }
 
@@ -365,7 +377,7 @@ main:last-child {
 /**
  * Custom icomoon font.
  */
-[class^="icon-"], [class*=" icon-"], ul.menu-level--0 li.menu-item--expanded > a:before {
+[class^="icon-"], [class*=" icon-"], ul.menu-level--0 li.menu-item--expanded > a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -377,6 +389,30 @@ main:last-child {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-microphone:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before {
+  content: "\e901";
+}
+
+.icon-scout:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before {
+  content: "\e902";
+}
+
+.icon-watch:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before {
+  content: "\e903";
+}
+
+.icon-piggy_bank:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before {
+  content: "\e904";
+}
+
+.icon-knife:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before {
+  content: "\e905";
+}
+
+.icon-bird:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before {
+  content: "\e906";
 }
 
 .icon-arrow_down:before, ul.menu-level--0 li.menu-item--expanded > a:before {
@@ -386,7 +422,7 @@ main:last-child {
 /**
  * Custom icomoon font.
  */
-[class^="icon-"], [class*=" icon-"], ul.menu-level--0 li.menu-item--expanded > a:before {
+[class^="icon-"], [class*=" icon-"], ul.menu-level--0 li.menu-item--expanded > a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -400,11 +436,35 @@ main:last-child {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-microphone:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before {
+  content: "\e901";
+}
+
+.icon-scout:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before {
+  content: "\e902";
+}
+
+.icon-watch:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before {
+  content: "\e903";
+}
+
+.icon-piggy_bank:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before {
+  content: "\e904";
+}
+
+.icon-knife:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before {
+  content: "\e905";
+}
+
+.icon-bird:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before {
+  content: "\e906";
+}
+
 .icon-arrow_down:before, ul.menu-level--0 li.menu-item--expanded > a:before {
   content: "\e900";
 }
 
-nav.menu--site-menu-danish {
+[class^="menu--site-menu-"], [class*=" menu--site-menu-"] {
   position: relative;
   left: 50%;
   float: left;
@@ -414,7 +474,7 @@ nav.menu--site-menu-danish {
 }
 
 @media screen and (max-width: 767px) {
-  nav.menu--site-menu-danish {
+  [class^="menu--site-menu-"], [class*=" menu--site-menu-"] {
     position: fixed;
     top: 0px;
     right: 0px;
@@ -425,8 +485,8 @@ nav.menu--site-menu-danish {
     width: 60%;
     height: 100vh;
     margin: 0;
-    padding-top: 60px;
-    padding-left: 31px;
+    padding-top: 70px;
+    padding-left: 15px;
     background-color: #fff;
     box-shadow: 1px 1px 16px 0 rgba(0, 0, 0, 0.36);
     -webkit-transform: translate(100%, 0px);
@@ -435,7 +495,7 @@ nav.menu--site-menu-danish {
     transition: transform 200ms;
     transition: transform 200ms, -webkit-transform 200ms;
   }
-  nav.menu--site-menu-danish.js-mobile-active {
+  [class^="menu--site-menu-"].js-mobile-active, [class*=" menu--site-menu-"].js-mobile-active {
     -webkit-transform: translateX(0px) translateY(0px) translateZ(0px);
     transform: translateX(0px) translateY(0px) translateZ(0px);
     transition: -webkit-transform 200ms;
@@ -465,11 +525,23 @@ ul.menu-level--0 li {
 }
 
 ul.menu-level--0 > .menu-item {
-  margin: 0 30px;
+  margin: 0 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  ul.menu-level--0 > .menu-item {
+    margin: 0 10px;
+  }
 }
 
 ul.menu-level--0 li {
-  font-size: 20px;
+  font-size: 1.25em;
+}
+
+@media screen and (max-width: 1024px) {
+  ul.menu-level--0 li {
+    font-size: 1.125em;
+  }
 }
 
 ul.menu-level--0 > li:last-child a {
@@ -526,10 +598,136 @@ ul.menu-level--0 li.menu-item--expanded > a.open:before {
     font-size: 18px;
     text-shadow: none;
   }
+}
+
+@media screen and (max-width: 768px) and (max-width: 768px) {
+  ul.menu-level--0 li:last-child a {
+    font-size: 17.5px;
+  }
+}
+
+@media screen and (max-width: 768px) {
   ul.menu-level--0 > .menu-item {
     margin: 0;
-    font-size: 1.125em;
+    font-size: 1.0625em;
+    padding: 4px 0;
   }
+}
+
+ul.menu-level--0 > li:nth-child(1) > ul li {
+  float: left;
+  display: block;
+  margin-right: 0%;
+  width: 33.33333%;
+  margin: 0;
+  font-size: 20px;
+  padding-right: 30px;
+}
+
+ul.menu-level--0 > li:nth-child(1) > ul li:last-child {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  ul.menu-level--0 > li:nth-child(1) > ul li {
+    float: left;
+    display: block;
+    margin-right: 0%;
+    width: 100%;
+  }
+  ul.menu-level--0 > li:nth-child(1) > ul li:last-child {
+    margin-right: 0;
+  }
+}
+
+ul.menu-level--0 > li:nth-child(1) > ul li a {
+  margin: 0;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed #2bb6b7;
+  width: 100%;
+  display: inline-block;
+  padding-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  ul.menu-level--0 > li:nth-child(1) > ul li a {
+    border: none;
+    padding: 4px 0;
+    font-size: 18px;
+  }
+}
+
+ul.menu-level--0 > li:nth-child(2) > ul li {
+  float: left;
+  display: block;
+  margin-right: 0%;
+  width: 33.33333%;
+  margin: 0 0 20px;
+  font-size: 20px;
+  text-align: center;
+  padding-right: 0;
+}
+
+ul.menu-level--0 > li:nth-child(2) > ul li:last-child {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  ul.menu-level--0 > li:nth-child(2) > ul li {
+    float: left;
+    display: block;
+    margin-right: 0%;
+    width: 100%;
+    float: none;
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+  }
+  ul.menu-level--0 > li:nth-child(2) > ul li:last-child {
+    margin-right: 0;
+  }
+}
+
+ul.menu-level--0 > li:nth-child(2) > ul li a {
+  margin: 0;
+  padding-bottom: 4px;
+  border-left: 1px dashed #2bb6b7;
+  width: 100%;
+  display: inline-block;
+  padding-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  ul.menu-level--0 > li:nth-child(2) > ul li a {
+    border: none !important;
+    padding: 4px 0;
+    font-size: 18px;
+  }
+  ul.menu-level--0 > li:nth-child(2) > ul li a:before {
+    content: "" !important;
+    margin: 0 !important;
+  }
+}
+
+ul.menu-level--0 > li:nth-child(2) > ul li a:before {
+  display: block;
+  font-size: 70px;
+  margin-bottom: 25px;
+}
+
+ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before {
+  margin-top: 26px;
+  font-size: 44px;
+}
+
+ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a {
+  border-right: 1px dashed #2bb6b7;
+}
+
+ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a {
+  border-right: 1px dashed #2bb6b7;
 }
 
 ul.menu-level--1 {
@@ -548,28 +746,6 @@ ul.menu-level--1 {
   transition: opacity 350ms, transform 250ms, -webkit-transform 250ms;
 }
 
-ul.menu-level--1 li {
-  float: left;
-  display: block;
-  margin-right: 0%;
-  width: 33.33333%;
-  margin: 0;
-  padding-right: 1.875em;
-}
-
-ul.menu-level--1 li:last-child {
-  margin-right: 0;
-}
-
-ul.menu-level--1 li a {
-  margin: 0;
-  padding-bottom: 4px;
-  border-bottom: 1px dashed #2bb6b7;
-  width: 100%;
-  display: inline-block;
-  padding-top: 20px;
-}
-
 @media screen and (max-width: 768px) {
   ul.menu-level--1 {
     opacity: 1;
@@ -578,6 +754,10 @@ ul.menu-level--1 li a {
     height: auto;
     box-shadow: none;
     padding: 0 0 0 15px;
+    margin-top: 5px;
+    -webkit-transform: initial;
+    -ms-transform: initial;
+    transform: initial;
   }
   ul.menu-level--1 li {
     float: none;
@@ -631,7 +811,8 @@ ul.menu-level--1 li a {
  * Fixed top menu.
  */
 .main-nav-scrolled .region--header__sonderborg,
-.main-nav-scrolled .region--header__tasks {
+.main-nav-scrolled .region--header__tasks,
+.main-nav-scrolled .language-flags {
   display: none;
 }
 
@@ -686,9 +867,11 @@ ul.menu-level--1 li a {
 }
 
 .menu-toggle {
+  display: none;
   position: fixed;
-  top: 8px;
+  top: 40px;
   right: 0px;
+  width: 50px;
   z-index: 9999;
   cursor: pointer;
   transition: -webkit-transform 200ms;
@@ -719,6 +902,12 @@ ul.menu-level--1 li a {
   height: 3px;
   background-color: rgba(0, 0, 0, 0.6);
   margin-bottom: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
 }
 
 #main-content {
@@ -810,8 +999,8 @@ ul.menu-level--1 li a {
 
 @media screen and (max-width: 767px) {
   .region--header__sonderborg .region--header__sonderborg__image-wrapper img {
-    max-width: 90px;
-    padding-top: 14px;
+    max-width: 130px;
+    padding-top: 8px;
   }
 }
 
@@ -872,6 +1061,12 @@ ul.menu-level--1 li a {
   font-weight: bold;
   font-size: 0.875em;
   margin-bottom: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .page-header {
+    padding-top: 20px;
+  }
 }
 
 /*# sourceMappingURL=sourcemaps/camp.main.css.map */

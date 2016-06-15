@@ -1,9 +1,14 @@
 .btn {
   padding: 15px 19px 10px;
-  border-radius: 3px;
-  background-color: #2bb6b7;
+  border-radius: 30px;
+  background-color: #e1477d;
   color: #fff;
   text-shadow: 1px 1px 1px #066969;
+
+  &:hover {
+    color: white;
+    background-color: #000;
+  }
 }
 
 .btn-small {
