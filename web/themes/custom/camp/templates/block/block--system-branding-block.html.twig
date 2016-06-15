@@ -29,5 +29,16 @@
     <div class="date date--header">{{ event_info }}</div>
     <div id="clock" class="clock">
     </div>
+    <ul class="language-flags">
+      <li>
+        <a class="language-flag language-flag--dk{% if language_id == 'da' %} active{% endif %}" href="/da"></a>
+      </li>
+      <li>
+        <a class="language-flag language-flag--de{% if language_id == 'de' %} active{% endif %}" href="/de"></a>
+      </li>
+      <li>
+        <a class="language-flag language-flag--uk{% if language_id == 'en' %} active{% endif %}" href="/en"></a>
+      </li>
+    </ul>
   </div>
 {% endblock %}
