@@ -377,7 +377,7 @@ main:last-child {
 /**
  * Custom icomoon font.
  */
-[class^="icon-"], [class*=" icon-"], ul.menu-level--0 li.menu-item--expanded > a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before {
+[class^="icon-"], [class*=" icon-"], ul.menu-level--0 li.menu-item--expanded > a:before, ul.menu-level--0 > li:nth-child(4) > a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -389,6 +389,10 @@ main:last-child {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-search:before, ul.menu-level--0 > li:nth-child(4) > a:before {
+  content: "\e907";
 }
 
 .icon-microphone:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before {
@@ -422,7 +426,7 @@ main:last-child {
 /**
  * Custom icomoon font.
  */
-[class^="icon-"], [class*=" icon-"], ul.menu-level--0 li.menu-item--expanded > a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before {
+[class^="icon-"], [class*=" icon-"], ul.menu-level--0 li.menu-item--expanded > a:before, ul.menu-level--0 > li:nth-child(4) > a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -434,6 +438,10 @@ main:last-child {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-search:before, ul.menu-level--0 > li:nth-child(4) > a:before {
+  content: "\e907";
 }
 
 .icon-microphone:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before {
@@ -510,6 +518,10 @@ ul.menu a.is-active:hover {
   color: #2bb6b7;
 }
 
+.menu-item {
+  padding-top: 0;
+}
+
 @media screen and (max-width: 768px) {
   .menu-item {
     padding: 0;
@@ -531,7 +543,7 @@ ul.menu a.is-active:hover {
 
 @media screen and (min-width: 768px) {
   ul.menu-level--0 {
-    padding: 10px 20px;
+    margin-left: 0;
     position: relative;
     left: -50%;
     text-align: left;
@@ -546,7 +558,7 @@ ul.menu a.is-active:hover {
 
 @media screen and (min-width: 768px) {
   ul.menu-level--0 > .menu-item {
-    margin: 0 20px;
+    margin: 0 40px 0 0;
   }
 }
 
@@ -676,6 +688,23 @@ ul.menu-level--0 li.menu-item--expanded > a.open:before {
 }
 
 @media screen and (min-width: 768px) {
+  ul.menu-level--0 > li:nth-child(4) > a:before {
+    float: right;
+    font-size: 40px;
+    position: relative;
+    left: 6px;
+    margin-right: 6px;
+    top: -7px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  ul.menu-level--0 > li:nth-child(4) > a:before {
+    content: "" !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
   ul.menu-level--0 > li:nth-child(2) > ul li {
     float: left;
     display: block;
@@ -801,6 +830,9 @@ ul.menu-level--0 li.menu-item--expanded > a.open:before {
     -webkit-transform: translate(0px, -20px) scale(1, 0.95);
     -ms-transform: translate(0px, -20px) scale(1, 0.95);
     transform: translate(0px, -20px) scale(1, 0.95);
+    overflow: hidden;
+    text-indent: 101%;
+    white-space: nowrap;
   }
 }
 
@@ -810,6 +842,7 @@ ul.menu-level--0 li.menu-item--expanded > a.open:before {
     -webkit-transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1);
     transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1);
     display: block;
+    z-index: 1;
   }
 }
 
@@ -870,7 +903,7 @@ ul.menu-level--0 li.menu-item--expanded > a.open:before {
 }
 
 .main-nav-scrolled ul.menu-level--0 li {
-  font-size: 1.125em;
+  font-size: 1em;
 }
 
 .main-nav-scrolled ul.menu-level--0 > li:last-child {
@@ -887,6 +920,14 @@ ul.menu-level--0 li.menu-item--expanded > a.open:before {
 
 .main-nav-scrolled .logo {
   display: none;
+}
+
+.main-nav-scrolled ul.menu-level--0 > li:nth-child(4) > a:before {
+  font-size: 22px;
+  position: relative;
+  left: 17px;
+  margin-right: 6px;
+  top: -4px;
 }
 
 .menu-toggle {
@@ -939,6 +980,7 @@ ul.menu-level--0 li.menu-item--expanded > a.open:before {
 
 .region--header__logo {
   text-align: center;
+  height: 100%;
   float: left;
   display: block;
   margin-right: 0%;
@@ -948,6 +990,10 @@ ul.menu-level--0 li.menu-item--expanded > a.open:before {
 
 .region--header__logo:last-child {
   margin-right: 0;
+}
+
+.region--header__logo img {
+  height: 100%;
 }
 
 @media screen and (max-width: 1024px) {
@@ -975,11 +1021,13 @@ ul.menu-level--0 li.menu-item--expanded > a.open:before {
   width: 41.66667%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0px;
   position: relative;
   max-height: 350px;
   overflow: hidden;
-  padding: 50px 15px;
+  padding: 5px 0px;
   text-align: center;
+  height: 100%;
 }
 
 .region--header__sonderborg:last-child {
@@ -999,7 +1047,10 @@ ul.menu-level--0 li.menu-item--expanded > a.open:before {
   width: 50%;
   height: 100%;
   float: right;
-  text-align: center;
+  background-image: url("../images/sonderborg_logo.png");
+  background-position: 50% 50%;
+  background-size: 150px;
+  background-repeat: no-repeat;
 }
 
 .region--header__sonderborg .region--header__sonderborg__image-wrapper img {
@@ -1058,6 +1109,7 @@ ul.menu-level--0 li.menu-item--expanded > a.open:before {
   display: inline-block;
   position: relative;
   z-index: 1;
+  height: 100%;
 }
 
 #block-camp-branding {
@@ -1067,6 +1119,7 @@ ul.menu-level--0 li.menu-item--expanded > a.open:before {
   z-index: 1100;
   height: 15vh;
   min-height: 150px;
+  margin-top: 15px;
 }
 
 @media screen and (max-width: 768px) {
