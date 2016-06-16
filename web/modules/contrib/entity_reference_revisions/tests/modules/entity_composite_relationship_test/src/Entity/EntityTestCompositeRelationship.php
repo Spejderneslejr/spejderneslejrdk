@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\entity_composite_relationship_test\Entity\EntityTestCompositeRelationship.
- */
-
 namespace Drupal\entity_composite_relationship_test\Entity;
 
 use Drupal\Core\Entity\EntityTypeInterface;
