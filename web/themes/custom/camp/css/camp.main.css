@@ -514,6 +514,10 @@ main:last-child {
   }
 }
 
+.menu--site-menu a {
+  color: #000;
+}
+
 .menu--site-menu a.is-active:hover {
   color: #2bb6b7;
 }
@@ -620,7 +624,6 @@ main:last-child {
   }
   .menu--site-menu.menu-level--0 li:last-child a {
     background: none;
-    color: black;
     padding: 0;
     text-shadow: none;
   }
