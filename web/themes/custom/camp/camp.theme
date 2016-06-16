@@ -30,3 +30,19 @@ function camp_preprocess_block(&$variables) {
       break;
   }
 }
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Use custom template for language site menus.
+ */
+function camp_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
+  switch ($variables['menu_name']) {
+    case 'site-menu-danish':
+    case 'site-menu-german':
+    case 'site-menu-english':
+      $f = '';
+      $suggestions[] = 'menu__site_menu';
+      break;
+  }
+}
