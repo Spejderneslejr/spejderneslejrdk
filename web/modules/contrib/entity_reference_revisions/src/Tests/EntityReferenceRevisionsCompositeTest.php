@@ -1,9 +1,4 @@
 <?php
-/**
- * @file
- * Contains \Drupal\entity_reference_revisions\EntityReferenceRevisionsCompositeTest.
- *
- */
 
 namespace Drupal\entity_reference_revisions\Tests;
 
