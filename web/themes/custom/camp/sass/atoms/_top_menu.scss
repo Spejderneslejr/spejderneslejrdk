@@ -1,6 +1,7 @@
 @import "icons";
 
 // Target all menus that starts with "menu--site-menu-".
+// This is the styling that wraps the top menu.
 [class^="menu--site-menu-"], [class*=" menu--site-menu-"] {
 
   @include media($desktop) {
@@ -12,7 +13,7 @@
     text-align: left;
   }
 
-  // On mobile we go right.
+  // On mobile we place the menu on the right side.
   @include media($phone) {
     position: fixed;
     top: 0px;
@@ -26,17 +27,16 @@
     margin: 0;
     padding-top: 70px;
     padding-left: 31px;
-    background-color: #fff;
+    background-color: white;
     box-shadow: 1px 1px 16px 0 rgba(0, 0, 0, .36);
 
     // Transition.
-    -webkit-transform: translate(100%, 0px);
-    -ms-transform: translate(100%, 0px);
-    transition: transform 200ms;
+    @include transform(translate(100%, 0px));
+    @include transition(transform 200ms);
 
     &.js-mobile-active {
-      transform: translateX(0px) translateY(0px) translateZ(0px);
-      transition: transform 200ms;
+      @include transform(translateX(0px) translateY(0px) translateZ(0px));
+      @include transition(transform 200ms);
     }
   }
 }
@@ -44,13 +44,13 @@
 .menu--site-menu {
 
   a {
-    color: #000;
+    color: $black;
   }
 
   a.is-active {
 
     &:hover {
-      color: #2bb6b7;
+      color: $green;
     }
   }
 
@@ -120,7 +120,7 @@
       font-weight: bold;
 
       &:hover {
-        color: #2bb6b7;
+        color: $green;
       }
     }
 
@@ -131,14 +131,13 @@
 
           @include media($desktop) {
             @include icon('.icon-arrow_down');
+            @include transform(rotate(0deg));
+            @include transition(all 300ms ease-out);
             float: right;
             position: relative;
             margin-left: 13px;
             font-size: em(12, $base-font-size);
             line-height: em(22, $base-font-size);
-            -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-            transition: all 300ms ease-out;
           }
 
           @include media($tablet-p) {
@@ -147,8 +146,7 @@
         }
 
         &.open:before {
-          -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+          @include transform(rotate(180deg));
         }
       }
     }
@@ -178,7 +176,201 @@
       }
     }
   }
-}
+
+  // First level of the menu.
+  &.menu-level--0 {
+
+    > li:nth-child(1) {
+
+      > ul li {
+
+        @include media($desktop) {
+          @include span-columns(4);
+          margin: 0;
+          font-size: 20px;
+          padding-right: 30px;
+        }
+
+        // Go full width on mobile.
+        @include media($tablet-p) {
+          @include span-columns(12);
+          padding: 4px 0;
+        }
+
+        a {
+          @include media($desktop) {
+            margin: 0;
+            padding-bottom: 4px;
+            border-bottom: 1px dashed $green;
+            width: 100%;
+            display: inline-block;
+            padding-top: 20px;
+          }
+
+          @include media($tablet-p) {
+            border: none;
+          }
+        }
+      }
+    }
+
+    // Add search icon to link number 4
+    // in the main menu. This is off course an
+    // assumption.
+    @include media($desktop) {
+      > li:nth-child(4) {
+        > a {
+          &:before {
+            @include icon('.icon-search');
+            float: right;
+            font-size: 40px;
+            position: relative;
+            left: 6px;
+            margin-right: 6px;
+            top: -7px;
+          }
+        }
+      }
+    }
+
+    // Reset the search icon on phone.
+    @include media($tablet-p) {
+      > li:nth-child(4) {
+        > a {
+          &:before {
+            content: "" !important;
+          }
+        }
+      }
+    }
+  }
+
+  // The second sublevel menu. This is
+  // is right now being triggered by Javascript by injecting classes:
+  // js-active and js-inactive.
+  &.menu-level--0 {
+
+    // Target the 2nth li item in the menu.
+    > li:nth-child(2) {
+
+      > ul li {
+        @include media($desktop) {
+          @include span-columns(4);
+          margin: 0 0 20px;
+          font-size: 20px;
+          text-align: center;
+          padding-right: 0;
+        }
+
+        // Go full width on mobile.
+        @include media($tablet-p) {
+          @include span-columns(12);
+          float: none;
+          display: inline-block;
+          width: 100%;
+          text-align: left;
+          padding: 4px 0;
+          margin: 0;
+        }
+
+        a {
+          @include media($desktop) {
+            margin: 0;
+            padding-bottom: 4px;
+            border-left: 1px dashed $green;
+            width: 100%;
+            display: inline-block;
+            padding-top: 20px;
+
+            &:before {
+              display: block;
+              font-size: 70px;
+              margin-bottom: 25px;
+            }
+          }
+
+          @include media($tablet-p) {
+
+            &:before {
+              // Make sure no icons are shown.
+              content: "" !important;
+              margin: 0 !important;
+            }
+          }
+        }
+
+        // This is the six icons for the second submenu.
+        // We inject the icons with css, no matter what the
+        // menu item is.
+        &:nth-child(1) {
+          a {
+            &:before {
+              @include icon('.icon-scout');
+
+              @include media($desktop) {
+                margin-top: 26px;
+                font-size: 44px;
+              }
+            }
+          }
+        }
+
+        &:nth-child(2) {
+          a {
+            &:before {
+              @include icon('.icon-watch');
+            }
+          }
+        }
+
+        &:nth-child(3) {
+          a {
+
+            @include media($desktop) {
+              border-right: 1px dashed $green;
+            }
+
+            &:before {
+              @include icon('.icon-knife');
+            }
+          }
+        }
+
+        &:nth-child(4) {
+
+          a {
+
+            &:before {
+              @include icon('.icon-bird');
+            }
+          }
+        }
+
+        &:nth-child(5) {
+          a {
+
+            &:before {
+              @include icon('.icon-piggy_bank');
+            }
+          }
+        }
+
+        &:nth-child(6) {
+          a {
+
+            @include media($desktop) {
+              border-right: 1px dashed $green;
+            }
+
+            &:before {
+              @include icon('.icon-microphone');
+            }
+          }
+        }
+      }
+    }
+  }
+} // End .menu--site-menu.
 
 // Variant of .menu-item--expanded.
 .menu-item--expanded--menu--site-menu {
@@ -186,195 +378,10 @@
   list-style-type: none;
 }
 
-// Reset.
+// Reset margin-left.
 ul.menu {
   @include media($tablet-p) {
     margin-left: 0;
-  }
-}
-
-// 1st submenu.
-ul.menu-level--0 {
-
-  > li:nth-child(1) {
-
-    > ul li {
-
-      @include media($desktop) {
-        @include span-columns(4);
-        margin: 0;
-        font-size: 20px;
-        padding-right: 30px;
-      }
-
-      // Go full width on mobile.
-      @include media($tablet-p) {
-        @include span-columns(12);
-        padding: 4px 0;
-      }
-
-      a {
-
-        @include media($desktop) {
-          margin: 0;
-          padding-bottom: 4px;
-          border-bottom: 1px dashed #2bb6b7;
-          width: 100%;
-          display: inline-block;
-          padding-top: 20px;
-        }
-
-        @include media($tablet-p) {
-          border: none;
-        }
-      }
-    }
-  }
-
-  @include media($desktop) {
-    > li:nth-child(4) {
-      > a {
-        &:before {
-          @include icon('.icon-search');
-          float: right;
-          font-size: 40px;
-          position: relative;
-          left: 6px;
-          margin-right: 6px;
-          top: -7px;
-        }
-      }
-    }
-  }
-
-  @include media($tablet-p) {
-    > li:nth-child(4) {
-      > a {
-        &:before {
-          content: "" !important;
-        }
-      }
-    }
-  }
-}
-
-// 2nd submenu.
-ul.menu-level--0 {
-
-  > li:nth-child(2) {
-
-    > ul li {
-
-      @include media($desktop) {
-        @include span-columns(4);
-        margin: 0 0 20px;
-        font-size: 20px;
-        text-align: center;
-        padding-right: 0;
-      }
-
-      // Go full width on mobile.
-      @include media($tablet-p) {
-        @include span-columns(12);
-        float: none;
-        display: inline-block;
-        width: 100%;
-        text-align: left;
-        padding: 4px 0;
-        margin: 0;
-      }
-
-      a {
-
-        @include media($desktop) {
-          margin: 0;
-          padding-bottom: 4px;
-          border-left: 1px dashed #2bb6b7;
-          width: 100%;
-          display: inline-block;
-          padding-top: 20px;
-
-          &:before {
-            display: block;
-            font-size: 70px;
-            margin-bottom: 25px;
-          }
-        }
-
-        @include media($tablet-p) {
-
-          &:before {
-            // Make sure no icons are shown.
-            content: "" !important;
-            margin: 0 !important;
-          }
-        }
-      }
-
-      &:nth-child(1) {
-        a {
-          &:before {
-            @include icon('.icon-scout');
-
-            @include media($desktop) {
-              margin-top: 26px;
-              font-size: 44px;
-            }
-          }
-        }
-      }
-
-      &:nth-child(2) {
-        a {
-          &:before {
-            @include icon('.icon-watch');
-          }
-        }
-      }
-
-      &:nth-child(3) {
-        a {
-
-          @include media($desktop) {
-            border-right: 1px dashed #2bb6b7;
-          }
-
-          &:before {
-            @include icon('.icon-knife');
-          }
-        }
-      }
-
-      &:nth-child(4) {
-        a {
-          &:before {
-            @include icon('.icon-bird');
-          }
-        }
-      }
-
-      &:nth-child(5) {
-        a {
-
-          &:before {
-            @include icon('.icon-piggy_bank');
-          }
-        }
-      }
-
-      &:nth-child(6) {
-        a {
-
-          @include media($desktop) {
-            border-right: 1px dashed #2bb6b7;
-          }
-
-          &:before {
-            @include icon('.icon-microphone');
-          }
-        }
-      }
-    }
   }
 }
 
@@ -382,7 +389,6 @@ ul.menu-level--0 {
 ul.menu-level--1 {
 
   @include media($desktop) {
-
     // Layout.
     position: fixed;
     left: 0px;
@@ -395,7 +401,7 @@ ul.menu-level--1 {
     margin-top: 20px;
 
     // Transition.
-    transition: opacity 350ms, transform 250ms;
+    @include transition(opacity 350ms, transform 250ms);
   }
 
   @include media($tablet-p) {
@@ -410,55 +416,65 @@ ul.menu-level--1 {
     }
 
     li {
-
       float: none;
 
       a {
         padding-left: 16px;
         float: none;
-        color: #a79d96;
+        color: $gray-light;
         font-size: 16px;
         margin: 0;
         padding: 3px 0;
         border: none;
 
         &.is-active {
-          color: #a79d96;
+          color: $gray-light;
         }
       }
     }
   }
 }
 
+// Hides submenus, and get them ready for the dropdown effect by placing them
+// them differently.
 .js-inactive {
   @include media($desktop) {
     opacity: 0;
-    -webkit-transform: translate(0px, -20px) scale(1, 0.95);
-    -ms-transform: translate(0px, -20px) scale(1, 0.95);
-    transform: translate(0px, -20px) scale(1, 0.95);
+    @include transform(translate(0px, -20px) scale(1, 0.95));
+    // We use the hide-text method, because we are not using display:none, but
+    // just uses opacity: 0, and therefor the element is still and is clikable,
+    // so we get rid off it with this method.
     @include hide-text;
     z-index: -9999;
   }
 }
 
+// Class that activates the submenus by setting the opacity to 1.
 .js-active {
   @include media($desktop) {
     opacity: 1;
-    transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1);
+    @include transform(translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1));
     display: block;
     z-index: 9999;
   }
 }
 
+// Alternative logo for the sticky menu.
 .logo_alt {
   display: none;
 }
 
 /**
  * Fixed top menu.
+ *
+ * The .main-nav-scrolled class is injected by Javascript, and inside this
+ * we modify the default desktop styling to be fixed on top of the viewport
+ * area.
  */
 .main-nav-scrolled {
 
+  // Some important styles are being used, but a needed to override the default
+  // desktop styling.
   & {
     position: fixed !important;
     left: 0px !important;
@@ -468,7 +484,7 @@ ul.menu-level--1 {
     z-index: 3001;
     height: 60px;
     padding-left: 23px;
-    border-bottom: 2px dashed #a79d96;
+    border-bottom: 2px dashed $gray-light;
     background-color: hsla(0, 0%, 100%, .95);
   }
 
@@ -493,6 +509,7 @@ ul.menu-level--1 {
     min-height: 1px;
   }
 
+  // We do a little magix to keep the menu centered - part1.
   nav {
     clear: none;
     float: right;
@@ -501,6 +518,7 @@ ul.menu-level--1 {
     text-align: left;
   }
 
+  // We do a little magix to keep the menu centered - part2.
   ul.menu-level--0 {
     list-style: none;
     position: relative;
@@ -515,7 +533,6 @@ ul.menu-level--1 {
     > li {
 
       &:last-child {
-
         position: fixed;
         right: 20px;
         padding: 0;
@@ -537,9 +554,9 @@ ul.menu-level--1 {
     display: none;
   }
 
-  // 1st submenu.
-ul.menu-level--0 {
-  > li:nth-child(4) {
+  // The first level menu fourth item.
+  ul.menu-level--0 {
+    > li:nth-child(4) {
       > a {
         &:before {
           font-size: 22px;
@@ -555,10 +572,8 @@ ul.menu-level--0 {
 
 // Burger mneu toggle.
 .menu-toggle {
-
   // Hide on bigger screens.
   display: none;
-
   // Layout.
   position: fixed;
   top: 40px;
@@ -568,18 +583,18 @@ ul.menu-level--0 {
   cursor: pointer;
 
   // Transition.
-  transition: transform 200ms;
-  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(-0.014px) translateZ(0px);
+  @include transition(transform 200ms);
+  @include transform(rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(-0.014px) translateZ(0px));
 
   &.active {
     .menu-toggle__item-1 {
-      transition: transform 200ms;
-      transform: rotateX(0deg) rotateY(0deg) rotateZ(45deg) translateX(2px) translateY(5px) translateZ(0px);
+      @include transition(transform 200ms);
+      @include transform(rotateX(0deg) rotateY(0deg) rotateZ(45deg) translateX(2px) translateY(5px) translateZ(0px));
     }
 
     .menu-toggle__item-2 {
-      transition: transform 200ms;
-      transform: rotateX(0deg) rotateY(0deg) rotateZ(-45deg) translateX(0px) translateY(-4px) translateZ(0px);
+      @include transition(transform 200ms);
+      @include transform(rotateX(0deg) rotateY(0deg) rotateZ(-45deg) translateX(0px) translateY(-4px) translateZ(0px));
     }
   }
 
