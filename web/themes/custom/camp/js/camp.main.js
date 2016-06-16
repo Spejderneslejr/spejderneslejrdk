@@ -1,4 +1,5 @@
 (function ($, Drupal) {
+
   /**
    * Implementation of the countdown.
    */
@@ -38,11 +39,11 @@
           $('.menu--site-menu-danish').toggleClass('js-mobile-active');
         });
       }
-// if($(target).parents('.wrapper').length > 0) {
-//    //do something...
-// }
+
       /**
        * CLick outside.
+       *
+       * @param element
        */
       function clickOutside(element) {
         $(element).each(function() {
@@ -100,10 +101,7 @@
 
         $(window).scroll(function() {
           if( $(this).scrollTop() > hdr && $(window).width() > 768) {
-
-            mn
-              .addClass(mns);
-
+            mn.addClass(mns);
           } else {
             mn.removeClass(mns);
           }
