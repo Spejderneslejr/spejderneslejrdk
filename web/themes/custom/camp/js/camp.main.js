@@ -57,7 +57,8 @@
 
         /**
          * Toggle the main menu.
-         * @param {event} event Event object.
+         * @param {object} event Event object.
+         * @param {object} element Dom object.
          */
         function handleToggle(event, element) {
           $('.menu-level--0 .not-clickable > a')
