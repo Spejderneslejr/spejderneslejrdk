@@ -43,7 +43,7 @@
       /**
        * Click outside.
        * @param {object} element Dom element.
-       * @returns {object} the modified element.
+       * @return {object} the modified element.
        */
       function clickOutside(element) {
         $(element).each(function() {
@@ -58,7 +58,6 @@
         /**
          * Toggle the main menu.
          * @param {event} event Event object.
-         * @param {element} event Dom object.
          */
         function handleToggle(event, element) {
           $('.menu-level--0 .not-clickable > a')
@@ -73,6 +72,7 @@
       /**
        * Toggle the main menu.
        * @param {object} event Event object.
+       * @param {object} element Dom object.
        */
       function toggleSubMenu(event, element) {
         event.preventDefault();
