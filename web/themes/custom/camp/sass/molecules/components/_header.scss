@@ -1,11 +1,14 @@
 .region--header__logo {
   text-align: center;
-
+  height: 100%;
   @include span-columns(2);
   padding: 5px 0;
 
-  @include media($tablet-l) {
+  img {
+    height: 100%;
+  }
 
+  @include media($tablet-l) {
     padding: 0;
 
     img {
@@ -14,7 +17,6 @@
   }
 
   @include media($tablet-p) {
-
     padding: 0;
 
     img {
@@ -24,16 +26,16 @@
 }
 
 .region--header__sonderborg {
-
   @include span-columns(5);
-
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0px;
   position: relative;
   max-height: 350px;
   overflow: hidden;
-  padding: 50px 15px;
+  padding: 5px 0px;
   text-align: center;
+  height: 100%;
 
   @include media($tablet-p) {
     height: 70px;
@@ -46,7 +48,10 @@
     width: 50%;
     height: 100%;
     float: right;
-    text-align: center;
+    background-image: url("../images/sonderborg_logo.png");
+    background-position: 50% 50%;
+    background-size: 150px;
+    background-repeat: no-repeat;
 
     img {
       max-width: 150px;
@@ -68,8 +73,8 @@
     @include media($phone) {
 
       img {
-        max-width: 90px;
-        padding-top: 14px;
+        max-width: 130px;
+        padding-top: 8px;
       }
     }
   }
@@ -96,16 +101,17 @@
   display: inline-block;
   position: relative;
   z-index: 1;
+  height: 100%;
 }
 
-.page-header {
+#block-camp-branding {
   display: block;
   width: 100%;
   float: left;
-
   z-index: 1100;
   height: 15vh;
   min-height: 150px;
+  margin-top: 15px;
 
   @include media($tablet-p) {
     height: 70px;
@@ -121,4 +127,10 @@
   font-weight: bold;
   font-size: em(14, $base-font-size);
   margin-bottom: 5px;
+}
+
+.page-header {
+  @include media($tablet-p) {
+    padding-top: 20px;
+  }
 }
