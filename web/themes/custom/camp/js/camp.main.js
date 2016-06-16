@@ -44,17 +44,17 @@
        * CLick outside.
        *
        * @param element
+       * @return element
        */
       function clickOutside(element) {
         $(element).each(function() {
           $(document).mouseup(function(event) {
-            var subject = this;
             if (!$(element).is(event.target)) {
               $('.menu-level--0 .not-clickable > a')
                 .each(function() {
                   if ($(this).hasClass('open')) {
                     toggleSubMenu(event, $(this));
-                    }
+                  }
                 });
             }
           });
@@ -95,7 +95,7 @@
        * @param target
        */
       function stickyHeader(wrapper, target) {
-        var  mn = $(".page-header");
+        var mn = $(".page-header");
         var mns = "main-nav-scrolled";
         var hdr = $('.page-header').height();
 
