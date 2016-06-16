@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\entity_reference_revisions\Plugin\Field\FieldType\EntityReferenceRevisionsItem.
- */
-
 namespace Drupal\entity_reference_revisions\Plugin\Field\FieldType;
 
 use Drupal\Core\Entity\EntityInterface;
@@ -48,7 +43,7 @@ class EntityReferenceRevisionsItem extends EntityReferenceItem implements Option
    */
   public function storageSettingsForm(array &$form, FormStateInterface $form_state, $has_data) {
 
-    $entity_types = \Drupal::entityManager()->getDefinitions();
+    $entity_types = \Drupal::entityTypeManager()->getDefinitions();
     $options = array();
     foreach ($entity_types as $entity_type) {
       if ($entity_type->isRevisionable()) {
@@ -77,7 +72,7 @@ class EntityReferenceRevisionsItem extends EntityReferenceItem implements Option
 
     // Add all the commonly referenced entity types as distinct pre-configured
     // options.
-    $entity_types = \Drupal::entityManager()->getDefinitions();
+    $entity_types = \Drupal::entityTypeManager()->getDefinitions();
     $common_references = array_filter($entity_types, function (EntityTypeInterface $entity_type) {
       return $entity_type->get('common_reference_revisions_target') && $entity_type->isRevisionable();
     });
@@ -107,12 +102,12 @@ class EntityReferenceRevisionsItem extends EntityReferenceItem implements Option
    */
   public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
     $settings = $field_definition->getSettings();
-    $target_type_info = \Drupal::entityManager()->getDefinition($settings['target_type']);
+    $target_type_info = \Drupal::entityTypeManager()->getDefinition($settings['target_type']);
     $properties = parent::propertyDefinitions($field_definition);
 
     if ($target_type_info->getKey('revision')) {
       $target_revision_id_definition = DataReferenceTargetDefinition::create('integer')
-        ->setLabel(t('@label revision ID', array($target_type_info->getLabel())))
+        ->setLabel(t('@label revision ID', array('@label' => $target_type_info->getLabel())))
         ->setSetting('unsigned', TRUE);
 
       $target_revision_id_definition->setRequired(TRUE);
@@ -135,7 +130,7 @@ class EntityReferenceRevisionsItem extends EntityReferenceItem implements Option
    */
   public static function schema(FieldStorageDefinitionInterface $field_definition) {
     $target_type = $field_definition->getSetting('target_type');
-    $target_type_info = \Drupal::entityManager()->getDefinition($target_type);
+    $target_type_info = \Drupal::entityTypeManager()->getDefinition($target_type);
 
     $schema = parent::schema($field_definition);
 
@@ -239,10 +234,7 @@ class EntityReferenceRevisionsItem extends EntityReferenceItem implements Option
    */
   public function isEmpty() {
     // Avoid loading the entity by first checking the 'target_id'.
-    if ($this->target_id !== NULL) {
-      return FALSE;
-    }
-    if ($this->target_revision_id !== NULL) {
+    if ($this->target_id !== NULL && $this->target_revision_id !== NULL) {
       return FALSE;
     }
     if ($this->entity && $this->entity instanceof EntityInterface) {
@@ -259,28 +251,9 @@ class EntityReferenceRevisionsItem extends EntityReferenceItem implements Option
     if ($this->entity instanceof EntityNeedsSaveInterface && $this->entity->needsSave()) {
       $this->entity->save();
     }
-    $this->target_revision_id = $this->entity->getRevisionId();
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function calculateDependencies(FieldDefinitionInterface $field_definition) {
-    $dependencies = [];
-    if (is_array($field_definition->getDefaultValueLiteral()) && count($field_definition->getDefaultValueLiteral())) {
-      $target_entity_type = \Drupal::entityManager()->getDefinition($field_definition->getFieldStorageDefinition()->getSetting('target_type'));
-      foreach ($field_definition->getDefaultValueLiteral() as $default_value) {
-        if (is_array($default_value) && isset($default_value['target_uuid'])) {
-          $entity = \Drupal::entityManager()->loadEntityByUuid($target_entity_type->id(), $default_value['target_uuid']);
-          // If the entity does not exist do not create the dependency.
-          // @see \Drupal\Core\Field\EntityReferenceFieldItemList::processDefaultValue()
-          if ($entity) {
-            $dependencies[$target_entity_type->getConfigDependencyKey()][] = $entity->getConfigDependencyName();
-          }
-        }
-      }
+    if ($this->entity) {
+      $this->target_revision_id = $this->entity->getRevisionId();
     }
-    return $dependencies;
   }
 
   /**
