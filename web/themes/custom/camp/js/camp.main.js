@@ -63,7 +63,7 @@
         function handleToggle(event, element) {
           $('.menu-level--0 .not-clickable > a')
             .each(function() {
-              if (element).hasClass('open')) {
+              if (element.hasClass('open')) {
                 toggleSubMenu(event, element);
               }
             });
