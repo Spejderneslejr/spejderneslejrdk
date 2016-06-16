@@ -41,32 +41,38 @@
       }
 
       /**
-       * CLick outside.
-       *
-       * @param element
-       * @return element
+       * Click outside.
+       * @param {object} element Dom element.
+       * @returns {object} the modified element.
        */
       function clickOutside(element) {
         $(element).each(function() {
           $(document).mouseup(function(event) {
             if (!$(element).is(event.target)) {
-              $('.menu-level--0 .not-clickable > a')
-                .each(function() {
-                  if ($(this).hasClass('open')) {
-                    toggleSubMenu(event, $(this));
-                  }
-                });
+              handleToggle(event, $(this));
             }
           });
         });
         return element;
+
+        /**
+         * Toggle the main menu.
+         * @param {event} event Event object.
+         * @param {element} event Dom object.
+         */
+        function handleToggle(event, element) {
+          $('.menu-level--0 .not-clickable > a')
+            .each(function() {
+              if (element).hasClass('open')) {
+                toggleSubMenu(event, element);
+              }
+            });
+        }
       }
 
       /**
        * Toggle the main menu.
-       *
-       * @param event
-       * @param element
+       * @param {object} event Event object.
        */
       function toggleSubMenu(event, element) {
         event.preventDefault();
@@ -90,9 +96,8 @@
 
       /**
        * Make an element sticky to when it reaches the top of the browser.
-       *
-       * @param wrapper
-       * @param target
+       * @param {object} wrapper Dom element.
+       * @param {object} target Dom element.
        */
       function stickyHeader(wrapper, target) {
         var mn = $(".page-header");
