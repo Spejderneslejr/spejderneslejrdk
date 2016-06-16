@@ -29,6 +29,10 @@
     @extend %icon;
 }
 
+
+.icon-search:before {
+    content: "\e907";
+}
 .icon-microphone:before {
     content: "\e901";
 }

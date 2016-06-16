@@ -9,31 +9,55 @@
       init();
 
       function init() {
-        // Make menu toggleable.
-        $('.menu-level--0 .not-clickable > a')
-          .click(function(event) {
 
-            // Only if not a phone.
-            if ($(window).width() > 768) {
-              toggleSubMenu(event, $(this));
-            }
-          });
+        var menuElements = $('.menu-level--0 .not-clickable > a');
+
+        // Make menu toggleable.
+        $(menuElements).click(function(event) {
+          // Only if not a phone.
+          if ($(window).width() > 768) {
+            toggleSubMenu(event, $(this));
+          }
+        });
+
+        // Trigger click outside.
+        clickOutside(menuElements);
 
         // Make header sticky.
         stickyHeader($("#block-sitemenudanish"), $('.page-header'));
 
+        // ****************** //
         // Menu toggle (mobile).
+        // ****************** //
         $('.menu-toggle').click(function() {
 
           // Make sure the burger does its animation.
           $(this).toggleClass('active');
 
           // Open main menu.
-          // js-mobile-active
           $('.menu--site-menu-danish').toggleClass('js-mobile-active');
         });
       }
 
+      /**
+       * CLick outside.
+       */
+      function clickOutside(element) {
+        $(element).each(function() {
+          $(document).mouseup(function(event) {
+            var subject = this;
+            if (!$(element).is(event.target)) {
+              $('.menu-level--0 .not-clickable > a')
+                .each(function() {
+                  if ($(this).hasClass('open')) {
+                    toggleSubMenu(event, $(this));
+                    }
+                });
+            }
+          });
+        });
+        return element;
+      }
 
       /**
        * Toggle the main menu.
@@ -43,10 +67,22 @@
        */
       function toggleSubMenu(event, element) {
         event.preventDefault();
-        $(element)
-          .toggleClass('open')
-          .next('.menu-level--1')
-          .toggleClass("js-inactive js-active");
+        toggleMenu(element);
+
+          $('.menu-level--0 .not-clickable > a')
+            .each(function() {
+                if (!$(element).is($(this))) {
+                  if ($(this).hasClass('open')) {
+                    toggleMenu($(this));
+                  }
+                }
+            });
+        function toggleMenu(element) {
+          $(element)
+            .toggleClass('open')
+            .next('.menu-level--1')
+            .toggleClass("js-inactive js-active");
+        }
       }
 
       /**
