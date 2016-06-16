@@ -38,7 +38,9 @@
           $('.menu--site-menu-danish').toggleClass('js-mobile-active');
         });
       }
-
+// if($(target).parents('.wrapper').length > 0) {
+//    //do something...
+// }
       /**
        * CLick outside.
        */

@@ -30,7 +30,7 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('menu', 'menu-level--' ~ menu_level) }}>
+      <ul{{ attributes.addClass('menu', 'menu--site-menu menu-level--' ~ menu_level) }}>
     {% else %}
       <ul class="menu js-inactive {{ 'menu-level--' ~ menu_level }}">
     {% endif %}
@@ -38,8 +38,10 @@
       {%
         set classes = [
           'menu-item',
+          'menu--site-menu__menu-item',
           menu_level == 0 ? 'not-clickable',
           item.is_expanded ? 'menu-item--expanded',
+          item.is_expanded ? 'menu-item--expanded--menu--site-menu',
           item.is_collapsed ? 'menu-item--collapsed',
           item.in_active_trail ? 'menu-item--active-trail',
         ]
