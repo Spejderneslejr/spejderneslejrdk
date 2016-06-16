@@ -894,16 +894,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "8.1.2",
+            "version": "8.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal-composer/drupal-core.git",
-                "reference": "a5d3f14db87ef953d227fb411489bada1afbb0a8"
+                "reference": "ac94c29c14d85c8e77f5cb1d0ab38036f5f25c9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal-composer/drupal-core/zipball/a5d3f14db87ef953d227fb411489bada1afbb0a8",
-                "reference": "a5d3f14db87ef953d227fb411489bada1afbb0a8",
+                "url": "https://api.github.com/repos/drupal-composer/drupal-core/zipball/ac94c29c14d85c8e77f5cb1d0ab38036f5f25c9c",
+                "reference": "ac94c29c14d85c8e77f5cb1d0ab38036f5f25c9c",
                 "shasum": ""
             },
             "require": {
@@ -1058,20 +1058,20 @@
                 "GPL-2.0+"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2016-06-01 23:31:24"
+            "time": "2016-06-15 20:08:27"
         },
         {
             "name": "drupal/entity_reference_revisions",
-            "version": "8.1.0-rc6",
+            "version": "8.1.0-rc7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/entity_reference_revisions.git",
-                "reference": "c9056323e728586436688d6aa1310a0b60c241d1"
+                "reference": "09b19416018f59e1b1f4acef6cfd34496ba991ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_reference_revisions-8.x-1.0-rc6.zip",
-                "reference": "c9056323e728586436688d6aa1310a0b60c241d1",
+                "url": "https://ftp.drupal.org/files/projects/entity_reference_revisions-8.x-1.0-rc7.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -1089,7 +1089,7 @@
             ],
             "description": "Adds a Entity Reference field type with revision support.",
             "homepage": "https://www.drupal.org/project/entity_reference_revisions",
-            "time": "2016-04-12 23:57:54"
+            "time": "2016-05-26 00:06:06"
         },
         {
             "name": "drupal/file_entity",
@@ -1102,7 +1102,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/file_entity-8.x-2.0-beta1.zip",
-                "reference": null,
+                "reference": "9f7799d73471a3fa9f764c3b1c6a275d99750fb9",
                 "shasum": null
             },
             "require": {
@@ -1128,16 +1128,16 @@
         },
         {
             "name": "drupal/paragraphs",
-            "version": "8.1.0-rc4",
+            "version": "8.1.0-rc5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/paragraphs",
-                "reference": "740874bacb56a6a90683e7818c06ba77a638125c"
+                "reference": "bed1bddffdf03626ba057ab697635b049d8d98de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/paragraphs-8.x-1.0-rc4.zip",
-                "reference": "740874bacb56a6a90683e7818c06ba77a638125c",
+                "url": "https://ftp.drupal.org/files/projects/paragraphs-8.x-1.0-rc5.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -1156,7 +1156,10 @@
                 "drupal/field_ui": "Required by drupal/paragraphs_demo",
                 "drupal/image": "Required by drupal/paragraphs_demo",
                 "drupal/language": "Required by drupal/paragraphs_demo",
-                "drupal/node": "Required by drupal/paragraphs_demo"
+                "drupal/node": "Required by drupal/paragraphs_demo",
+                "drupal/search_api": "Required by drupal/paragraphs_demo",
+                "drupal/search_api_db": "Required by drupal/paragraphs_demo",
+                "drupal/views": "Required by drupal/paragraphs_demo"
             },
             "type": "drupal-module",
             "extra": {
@@ -1168,9 +1171,9 @@
             "license": [
                 "GPL-2.0+"
             ],
-            "description": "Implements the Paragraphs entity types, Entity Reference selection type and Entity Reference field widget.",
+            "description": "Enables the creation of paragraphs entities. To safely uninstall, go first to Structure > Paragraphs types > Settings.",
             "homepage": "https://www.drupal.org/project/paragraphs",
-            "time": "2015-11-17 13:21:21"
+            "time": "2016-05-31 19:59:20"
         },
         {
             "name": "drupal/purge",
