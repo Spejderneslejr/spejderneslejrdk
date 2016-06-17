@@ -40,15 +40,10 @@ $visual-grid-index: front;
   clear: left;
 }
 
-/**
- * Global layouts.
- */
-.layout-container,
-body:not(.is-node) main,
-body.is-node article .node--content {
-  @include grid-container;
+header {
+  @include span-columns(12);
 }
 
-body.is-node article .node--content {
-  position: relative;
+main {
+  @include span-columns(12);
 }
