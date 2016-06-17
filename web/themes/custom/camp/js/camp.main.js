@@ -25,7 +25,7 @@
         clickOutside(menuElements);
 
         // Make header sticky.
-        stickyHeader($("#block-sitemenudanish"), $('.page-header'));
+        stickyHeader($(".block-menu"), $('.page-header'));
 
         // ****************** //
         // Menu toggle (mobile).
@@ -109,6 +109,12 @@
           if( $(this).scrollTop() > hdr && $(window).width() > 768) {
             mn.addClass(mns);
           } else {
+            mn.removeClass(mns);
+          }
+        });
+
+        $(window).resize(function() {
+          if ($(window).width() < 768) {
             mn.removeClass(mns);
           }
         });
