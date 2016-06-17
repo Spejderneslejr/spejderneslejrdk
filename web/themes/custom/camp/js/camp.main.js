@@ -3,7 +3,7 @@
   /**
    * Implementation of the countdown.
    */
-  Drupal.behaviors.to_menu = {
+  Drupal.behaviors.top_menu = {
     attach: function (context, settings) {
 
       // Initialize the behavior.
@@ -16,7 +16,7 @@
         // Make menu toggleable.
         $(menuElements).click(function(event) {
           // Only if not a phone.
-          if ($(window).width() > 768) {
+          if ($(window).width() > 768 && $(this).parent().index() <= 1) {
             toggleSubMenu(event, $(this));
           }
         });
