@@ -259,6 +259,11 @@ main:last-child {
   text-align: center;
 }
 
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
 .btn, .menu--site-menu.menu-level--0 > li:last-child a {
   padding: 15px 19px 10px;
   border-radius: 30px;
@@ -1156,6 +1161,19 @@ main:last-child {
   .page-header {
     padding-top: 20px;
   }
+}
+
+.figure {
+  margin-bottom: 10px;
+}
+
+.figcaption {
+  margin-top: 12px;
+  margin-bottom: 20px;
+  padding-right: 10%;
+  padding-left: 10%;
+  color: #837870;
+  text-align: center;
 }
 
 /*# sourceMappingURL=sourcemaps/camp.main.css.map */
