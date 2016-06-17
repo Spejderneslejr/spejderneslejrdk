@@ -74,7 +74,7 @@
 
       var deadline = new Date("July 22, 2017 08:00:00");
 
-      $('#clock').countdown(deadline);
+      $('#clock', context).countdown(deadline);
     }
   };
 })(jQuery, Drupal);
