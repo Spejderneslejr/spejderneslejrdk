@@ -1,17 +1,22 @@
-$black-medium: rgb(51, 51, 51);
 $black: rgb(0, 0, 0);
+$black-medium: rgb(51, 51, 51);
+$black-light: rgb(90, 90, 90);
 
-$gray-light: rgb(167, 157, 150);
 $gray: rgb(194, 194, 194);
 $gray-medium: rgb(174, 174, 174);
+$gray-light: rgb(167, 157, 150);
+$gray-list: rgb(116, 104, 96);
 
 $green: rgb(43, 182, 183);
+
+$red: rgb(225, 71, 125);
 
 // Icon font.
 @include font-face("icomoon", "../fonts/icomoon", $file-formats: ttf woff svg eot);
 
 // Base font vars.
-$base-font-size: 16px;
+$base-font-size: 14px;
+$base-font-color: $black-light;
 
 /**
  * Breakpoints.
@@ -25,3 +30,41 @@ $bigscreen: new-breakpoint(min-width 1200px);
 
 // z-index's
 $z-index-menu: 2;
+
+// TODO(ts)  - this is temporary import. We need to buy the fonts.
+@font-face {
+  font-family: 'Hermes';
+  src: url('https://daks2k3a4ib2z.cloudfront.net/573ebff866718aad169d5a8e/573f7b75c30dc8a716baba2c_312A2B_0_0.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Calibri';
+  src: url('https://daks2k3a4ib2z.cloudfront.net/573ebff866718aad169d5a8e/573f7ce2c30dc8a716babd6a_Calibri%20Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Calibri';
+  src: url('https://daks2k3a4ib2z.cloudfront.net/573ebff866718aad169d5a8e/573f7ce266718aad169ebda3_Calibri%20Bold%20Italic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Calibri';
+  src: url('https://daks2k3a4ib2z.cloudfront.net/573ebff866718aad169d5a8e/573f7ce2e61d7dc216c854c8_Calibri%20Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Calibri';
+  src: url('https://daks2k3a4ib2z.cloudfront.net/573ebff866718aad169d5a8e/573f7ce266718aad169ebda4_Calibri.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FB Hermes';
+  src: url('https://daks2k3a4ib2z.cloudfront.net/573ebff866718aad169d5a8e/57475dff83e88eca65065883_Font%20Bureau%20-%20HermesFB%20Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}

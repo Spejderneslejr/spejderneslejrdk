@@ -1,0 +1,40 @@
+.text-center {
+  text-align: center;
+}
+
+p {
+  color: $base-font-color;
+  line-height: 155%;
+  font-size: em(18.2, $base-font-size);
+
+  @include media($tablet-p) {
+    font-size: em(16.8, $base-font-size);
+  }
+}
+
+.text-formatted {
+  color: $base-font-color;
+
+  ul {
+    font-size: em(21, $base-font-size);
+    color: $gray-list;
+    list-style: none;
+
+    li {
+      margin-bottom: 11px;
+      padding-left: 23px;
+      background-image: url("http://uploads.webflow.com/573ebff866718aad169d5a8e/574ee5a6c3c4633629a72da9_arrow_right.svg");
+      background-position: 0px 50%;
+      background-size: 11px;
+      background-repeat: no-repeat;
+      line-height: 140%;
+    }
+  }
+}
+
+a,
+a:visited,
+a:active {
+  color: $green;
+  text-decoration: underline;
+}
