@@ -4,7 +4,7 @@
 @import "vars";
 
 body {
-  font-family: Calibri, sans-serif;
+  font-family: $base-font;
   color: $base-font-color;
   font-size: $base-font-size;
   line-height: em(20, $base-font-size);

@@ -375,7 +375,7 @@ p {
 .text-formatted ul li {
   margin-bottom: 11px;
   padding-left: 23px;
-  background-image: url("http://uploads.webflow.com/573ebff866718aad169d5a8e/574ee5a6c3c4633629a72da9_arrow_right.svg");
+  background-image: url("../svg/arrow_right.svg");
   background-position: 0px 50%;
   background-size: 11px;
   background-repeat: no-repeat;
