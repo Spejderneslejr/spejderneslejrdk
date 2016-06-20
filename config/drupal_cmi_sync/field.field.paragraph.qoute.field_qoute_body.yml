@@ -1,0 +1,19 @@
+uuid: 8e1bf57d-0839-44b8-b379-2ae3513c02b7
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_qoute_body
+    - paragraphs.paragraphs_type.qoute
+id: paragraph.qoute.field_qoute_body
+field_name: field_qoute_body
+entity_type: paragraph
+bundle: qoute
+label: qoute_body
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -41,7 +41,6 @@ function camp_theme_suggestions_menu_alter(array &$suggestions, array $variables
     case 'site-menu-danish':
     case 'site-menu-german':
     case 'site-menu-english':
-      $f = '';
       $suggestions[] = 'menu__site_menu';
       break;
   }

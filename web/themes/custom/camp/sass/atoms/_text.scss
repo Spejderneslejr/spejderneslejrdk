@@ -38,3 +38,16 @@ a:active {
   color: $green;
   text-decoration: underline;
 }
+
+blockquote {
+  margin-right: 10%;
+  margin-bottom: 18px;
+  margin-left: 10%;
+  padding: 10px 20px 20px;
+  border-bottom: 3px dashed $border-color;
+  border-left: 5px none $border-color;
+  color: $gray-light;
+  font-size: em(21, $base-font-size);
+  line-height: 145%;
+  text-align: center;
+}

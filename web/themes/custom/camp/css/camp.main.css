@@ -389,6 +389,29 @@ a:active {
   text-decoration: underline;
 }
 
+blockquote {
+  margin-right: 10%;
+  margin-bottom: 18px;
+  margin-left: 10%;
+  padding: 10px 20px 20px;
+  border-bottom: 3px dashed #e2e2e2;
+  border-left: 5px none #e2e2e2;
+  color: #a79d96;
+  font-size: 1.5em;
+  line-height: 145%;
+  text-align: center;
+}
+
+.quote-name {
+  margin-bottom: 41px;
+  padding-right: 10%;
+  padding-left: 10%;
+  color: #645c56;
+  font-size: 1.3em;
+  font-style: italic;
+  text-align: center;
+}
+
 .btn, .menu--site-menu.menu-level--0 > li:last-child a {
   padding: 15px 19px 10px;
   border-radius: 30px;
