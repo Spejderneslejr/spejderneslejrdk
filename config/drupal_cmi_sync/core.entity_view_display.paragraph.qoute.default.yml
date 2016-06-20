@@ -1,0 +1,43 @@
+uuid: 00ded760-ad21-4d38-92e1-b78da27d92df
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.qoute.field_qoute_body
+    - field.field.paragraph.qoute.field_qoute_byline
+    - field.field.paragraph.qoute.field_qoute_link
+    - paragraphs.paragraphs_type.qoute
+  module:
+    - link
+id: paragraph.qoute.default
+targetEntityType: paragraph
+bundle: qoute
+mode: default
+content:
+  field_qoute_body:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_qoute_byline:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_qoute_link:
+    weight: 2
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+hidden:
+  created: true
+  uid: true
