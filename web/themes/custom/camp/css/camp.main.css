@@ -345,6 +345,7 @@ p {
   color: #5a5a5a;
   line-height: 155%;
   font-size: 1.3em;
+  margin-bottom: 32px;
 }
 
 @media screen and (max-width: 768px) {
@@ -498,6 +499,15 @@ h5 {
 
 h6 {
   font-size: 1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 120%;
 }
 
 .clock {
@@ -1530,6 +1540,7 @@ h6 {
   padding-left: 10%;
   color: #837870;
   text-align: center;
+  font-size: 1.2em;
 }
 
 .node__content {
