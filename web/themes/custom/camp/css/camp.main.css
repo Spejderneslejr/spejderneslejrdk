@@ -259,6 +259,11 @@ main:last-child {
   text-align: center;
 }
 
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
 .btn, .menu--site-menu.menu-level--0 > li:last-child a {
   padding: 15px 19px 10px;
   border-radius: 30px;
@@ -377,7 +382,7 @@ main:last-child {
 /**
  * Custom icomoon font.
  */
-[class^="icon-"], [class*=" icon-"], .menu--site-menu.menu-level--0 li.menu-item--expanded > a:before, ul.menu-level--0 > li:nth-child(4) > a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before {
+[class^="icon-"], [class*=" icon-"], .menu--site-menu.menu-level--0 li.menu-item--expanded > a:before, .menu--site-menu.menu-level--0 > li:nth-child(4) > a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -391,31 +396,31 @@ main:last-child {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-search:before, ul.menu-level--0 > li:nth-child(4) > a:before {
+.icon-search:before, .menu--site-menu.menu-level--0 > li:nth-child(4) > a:before {
   content: "\e907";
 }
 
-.icon-microphone:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before {
+.icon-microphone:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before {
   content: "\e901";
 }
 
-.icon-scout:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before {
+.icon-scout:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before {
   content: "\e902";
 }
 
-.icon-watch:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before {
+.icon-watch:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before {
   content: "\e903";
 }
 
-.icon-piggy_bank:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before {
+.icon-piggy_bank:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before {
   content: "\e904";
 }
 
-.icon-knife:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before {
+.icon-knife:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before {
   content: "\e905";
 }
 
-.icon-bird:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before {
+.icon-bird:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before {
   content: "\e906";
 }
 
@@ -426,7 +431,7 @@ main:last-child {
 /**
  * Custom icomoon font.
  */
-[class^="icon-"], [class*=" icon-"], .menu--site-menu.menu-level--0 li.menu-item--expanded > a:before, ul.menu-level--0 > li:nth-child(4) > a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before {
+[class^="icon-"], [class*=" icon-"], .menu--site-menu.menu-level--0 li.menu-item--expanded > a:before, .menu--site-menu.menu-level--0 > li:nth-child(4) > a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -440,31 +445,31 @@ main:last-child {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-search:before, ul.menu-level--0 > li:nth-child(4) > a:before {
+.icon-search:before, .menu--site-menu.menu-level--0 > li:nth-child(4) > a:before {
   content: "\e907";
 }
 
-.icon-microphone:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before {
+.icon-microphone:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before {
   content: "\e901";
 }
 
-.icon-scout:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before {
+.icon-scout:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before {
   content: "\e902";
 }
 
-.icon-watch:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before {
+.icon-watch:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before {
   content: "\e903";
 }
 
-.icon-piggy_bank:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before {
+.icon-piggy_bank:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before {
   content: "\e904";
 }
 
-.icon-knife:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before {
+.icon-knife:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before {
   content: "\e905";
 }
 
-.icon-bird:before, ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before {
+.icon-bird:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before {
   content: "\e906";
 }
 
@@ -497,16 +502,18 @@ main:last-child {
     margin: 0;
     padding-top: 70px;
     padding-left: 31px;
-    background-color: #fff;
+    background-color: white;
     box-shadow: 1px 1px 16px 0 rgba(0, 0, 0, 0.36);
     -webkit-transform: translate(100%, 0px);
     -ms-transform: translate(100%, 0px);
+    transform: translate(100%, 0px);
     transition: -webkit-transform 200ms;
     transition: transform 200ms;
     transition: transform 200ms, -webkit-transform 200ms;
   }
   [class^="menu--site-menu-"].js-mobile-active, [class*=" menu--site-menu-"].js-mobile-active {
     -webkit-transform: translateX(0px) translateY(0px) translateZ(0px);
+    -ms-transform: translateX(0px) translateY(0px) translateZ(0px);
     transform: translateX(0px) translateY(0px) translateZ(0px);
     transition: -webkit-transform 200ms;
     transition: transform 200ms;
@@ -515,7 +522,7 @@ main:last-child {
 }
 
 .menu--site-menu a {
-  color: #000;
+  color: black;
 }
 
 .menu--site-menu a.is-active:hover {
@@ -589,15 +596,15 @@ main:last-child {
 
 @media screen and (min-width: 768px) {
   .menu--site-menu.menu-level--0 li.menu-item--expanded > a:before {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transition: all 300ms ease-out;
     float: right;
     position: relative;
     margin-left: 13px;
     font-size: 0.75em;
     line-height: 1.375em;
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg);
-    transition: all 300ms ease-out;
   }
 }
 
@@ -634,19 +641,8 @@ main:last-child {
   }
 }
 
-.menu-item--expanded--menu--site-menu {
-  list-style-image: none;
-  list-style-type: none;
-}
-
-@media screen and (max-width: 768px) {
-  ul.menu {
-    margin-left: 0;
-  }
-}
-
 @media screen and (min-width: 768px) {
-  ul.menu-level--0 > li:nth-child(1) > ul li {
+  .menu--site-menu.menu-level--0 > li:nth-child(1) > ul li {
     float: left;
     display: block;
     margin-right: 0%;
@@ -655,26 +651,26 @@ main:last-child {
     font-size: 20px;
     padding-right: 30px;
   }
-  ul.menu-level--0 > li:nth-child(1) > ul li:last-child {
+  .menu--site-menu.menu-level--0 > li:nth-child(1) > ul li:last-child {
     margin-right: 0;
   }
 }
 
 @media screen and (max-width: 768px) {
-  ul.menu-level--0 > li:nth-child(1) > ul li {
+  .menu--site-menu.menu-level--0 > li:nth-child(1) > ul li {
     float: left;
     display: block;
     margin-right: 0%;
     width: 100%;
     padding: 4px 0;
   }
-  ul.menu-level--0 > li:nth-child(1) > ul li:last-child {
+  .menu--site-menu.menu-level--0 > li:nth-child(1) > ul li:last-child {
     margin-right: 0;
   }
 }
 
 @media screen and (min-width: 768px) {
-  ul.menu-level--0 > li:nth-child(1) > ul li a {
+  .menu--site-menu.menu-level--0 > li:nth-child(1) > ul li a {
     margin: 0;
     padding-bottom: 4px;
     border-bottom: 1px dashed #2bb6b7;
@@ -685,13 +681,13 @@ main:last-child {
 }
 
 @media screen and (max-width: 768px) {
-  ul.menu-level--0 > li:nth-child(1) > ul li a {
+  .menu--site-menu.menu-level--0 > li:nth-child(1) > ul li a {
     border: none;
   }
 }
 
 @media screen and (min-width: 768px) {
-  ul.menu-level--0 > li:nth-child(4) > a:before {
+  .menu--site-menu.menu-level--0 > li:nth-child(4) > a:before {
     float: right;
     font-size: 40px;
     position: relative;
@@ -702,13 +698,13 @@ main:last-child {
 }
 
 @media screen and (max-width: 768px) {
-  ul.menu-level--0 > li:nth-child(4) > a:before {
+  .menu--site-menu.menu-level--0 > li:nth-child(4) > a:before {
     content: "" !important;
   }
 }
 
 @media screen and (min-width: 768px) {
-  ul.menu-level--0 > li:nth-child(2) > ul li {
+  .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li {
     float: left;
     display: block;
     margin-right: 0%;
@@ -718,13 +714,13 @@ main:last-child {
     text-align: center;
     padding-right: 0;
   }
-  ul.menu-level--0 > li:nth-child(2) > ul li:last-child {
+  .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:last-child {
     margin-right: 0;
   }
 }
 
 @media screen and (max-width: 768px) {
-  ul.menu-level--0 > li:nth-child(2) > ul li {
+  .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li {
     float: left;
     display: block;
     margin-right: 0%;
@@ -736,13 +732,13 @@ main:last-child {
     padding: 4px 0;
     margin: 0;
   }
-  ul.menu-level--0 > li:nth-child(2) > ul li:last-child {
+  .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:last-child {
     margin-right: 0;
   }
 }
 
 @media screen and (min-width: 768px) {
-  ul.menu-level--0 > li:nth-child(2) > ul li a {
+  .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li a {
     margin: 0;
     padding-bottom: 4px;
     border-left: 1px dashed #2bb6b7;
@@ -750,7 +746,7 @@ main:last-child {
     display: inline-block;
     padding-top: 20px;
   }
-  ul.menu-level--0 > li:nth-child(2) > ul li a:before {
+  .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li a:before {
     display: block;
     font-size: 70px;
     margin-bottom: 25px;
@@ -758,28 +754,39 @@ main:last-child {
 }
 
 @media screen and (max-width: 768px) {
-  ul.menu-level--0 > li:nth-child(2) > ul li a:before {
+  .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li a:before {
     content: "" !important;
     margin: 0 !important;
   }
 }
 
 @media screen and (min-width: 768px) {
-  ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before {
+  .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before {
     margin-top: 26px;
     font-size: 44px;
   }
 }
 
 @media screen and (min-width: 768px) {
-  ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a {
+  .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a {
     border-right: 1px dashed #2bb6b7;
   }
 }
 
 @media screen and (min-width: 768px) {
-  ul.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a {
+  .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a {
     border-right: 1px dashed #2bb6b7;
+  }
+}
+
+.menu-item--expanded--menu--site-menu {
+  list-style-image: none;
+  list-style-type: none;
+}
+
+@media screen and (max-width: 768px) {
+  ul.menu {
+    margin-left: 0;
   }
 }
 
@@ -843,6 +850,7 @@ main:last-child {
   .js-active {
     opacity: 1;
     -webkit-transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1);
+    -ms-transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1);
     transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1);
     display: block;
     z-index: 9999;
@@ -855,6 +863,10 @@ main:last-child {
 
 /**
  * Fixed top menu.
+ *
+ * The .main-nav-scrolled class is injected by Javascript, and inside this
+ * we modify the default desktop styling to be fixed on top of the viewport
+ * area.
  */
 .main-nav-scrolled {
   position: fixed !important;
@@ -945,6 +957,7 @@ main:last-child {
   transition: transform 200ms;
   transition: transform 200ms, -webkit-transform 200ms;
   -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(-0.014px) translateZ(0px);
+  -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(-0.014px) translateZ(0px);
   transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(-0.014px) translateZ(0px);
 }
 
@@ -953,6 +966,7 @@ main:last-child {
   transition: transform 200ms;
   transition: transform 200ms, -webkit-transform 200ms;
   -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(45deg) translateX(2px) translateY(5px) translateZ(0px);
+  -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(45deg) translateX(2px) translateY(5px) translateZ(0px);
   transform: rotateX(0deg) rotateY(0deg) rotateZ(45deg) translateX(2px) translateY(5px) translateZ(0px);
 }
 
@@ -961,6 +975,7 @@ main:last-child {
   transition: transform 200ms;
   transition: transform 200ms, -webkit-transform 200ms;
   -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(-45deg) translateX(0px) translateY(-4px) translateZ(0px);
+  -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(-45deg) translateX(0px) translateY(-4px) translateZ(0px);
   transform: rotateX(0deg) rotateY(0deg) rotateZ(-45deg) translateX(0px) translateY(-4px) translateZ(0px);
 }
 
@@ -975,10 +990,6 @@ main:last-child {
   .menu-toggle {
     display: block;
   }
-}
-
-#main-content {
-  height: 22200px;
 }
 
 .region--header__logo {
@@ -1146,6 +1157,19 @@ main:last-child {
   .page-header {
     padding-top: 20px;
   }
+}
+
+.figure {
+  margin-bottom: 10px;
+}
+
+.figcaption {
+  margin-top: 12px;
+  margin-bottom: 20px;
+  padding-right: 10%;
+  padding-left: 10%;
+  color: #837870;
+  text-align: center;
 }
 
 /*# sourceMappingURL=sourcemaps/camp.main.css.map */
