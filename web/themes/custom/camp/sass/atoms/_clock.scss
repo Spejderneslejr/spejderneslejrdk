@@ -2,9 +2,10 @@
   text-transform: capitalize;
   font-size: 0;
   font-weight: bold;
+  font-family: 'FB Hermes', sans-serif;
 
   span {
-    font-size: 28px;
+    font-size: 26.6px;
 
     @include media($tablet-l) {
       font-size: 20px;

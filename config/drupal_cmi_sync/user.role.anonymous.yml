@@ -16,4 +16,5 @@ permissions:
   - 'search content'
   - 'view files'
   - 'view paragraph content text'
+  - 'view paragraph content qoute'
   - 'view paragraph content image'

@@ -1,8 +1,8 @@
 .language-flags {
   list-style-type: none;
   position: fixed;
-  top: -20px;
-  right: 0px;
+  top: 6px;
+  right: -8px;
   width: auto;
   height: 60px;
   min-width: 100px;
@@ -11,7 +11,7 @@
 
   li {
     float: left;
-    width: 35px;
+    width: 32px;
   }
 
   @include media($tablet-p) {

@@ -612,3 +612,14 @@ ul.menu-level--1 {
     display: block;
   }
 }
+
+// When the admin toolbar is active we need to adjust the header a little.
+#toolbar-administration {
+  z-index: 999999;
+}
+
+.toolbar-fixed {
+  .language-flags {
+    top: 70px;
+  }
+}
