@@ -19,10 +19,10 @@ $config['system.performance']['css']['preprocess'] = FALSE;
 $config['system.performance']['js']['preprocess'] = FALSE;
 
 // Disable the render cache (this includes the page cache).
-# $settings['cache']['bins']['render'] = 'cache.backend.null';
+$settings['cache']['bins']['render'] = 'cache.backend.null';
 
 // Disable Dynamic Page Cache.
-# $settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
+$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
 
 // Allow test modules and themes to be installed.
 $settings['extension_discovery_scan_tests'] = TRUE;

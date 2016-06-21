@@ -11,7 +11,7 @@ _core:
 id: camp_powered
 theme: camp
 region: '-1'
-weight: -1
+weight: -2
 provider: null
 plugin: system_powered_by_block
 settings:

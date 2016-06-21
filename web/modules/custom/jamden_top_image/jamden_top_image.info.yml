@@ -1,0 +1,5 @@
+name: Top Image
+type: module
+description: Theme-hook for a top image
+core: 8.x
+package: Jamboree Denmark

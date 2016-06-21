@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Theming of a image with headlines.
+ */
+
+use Drupal\image\Entity\ImageStyle;
+
+/**
+ * Implements hook_theme().
+ */
+function jamden_top_image_theme() {
+  $hooks = array();
+
+  $hooks['jamden_top_image'] = [
+    'variables' => array(
+      'headline' => NULL,
+      'sub_headline' => NULL,
+      'image' => NULL,
+    ),
+  ];
+
+  return $hooks;
+}
+
+/**
+ * Implements template_preprocess_HOOK().
+ *
+ * Sets default values for image uri and credits, and attempts to extract them.
+ */
+function template_preprocess_jamden_top_image(&$variables) {
+  $variables['image_uri'] = NULL;
+  /** @var \Drupal\file_entity\Entity\FileEntity $image */
+  $image = $variables['image'];
+  if (!empty($image)) {
+    $uri = $image->getFileUri();
+    $variables['image_uri'] = ImageStyle::load('top_image')->buildUrl($uri);
+  }
+  $variables['image_credits'] = empty($image->field_image_credits->value) ? NULL : (camp_get_translated_credits_from_image($image));
+}

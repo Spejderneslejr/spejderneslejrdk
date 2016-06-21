@@ -6119,7 +6119,7 @@
         "dist": {
             "type": "zip",
             "url": "https://ftp.drupal.org/files/projects/entity_reference_revisions-8.x-1.0-rc7.zip",
-            "reference": null,
+            "reference": "09b19416018f59e1b1f4acef6cfd34496ba991ba",
             "shasum": null
         },
         "require": {
@@ -6152,7 +6152,7 @@
         "dist": {
             "type": "zip",
             "url": "https://ftp.drupal.org/files/projects/paragraphs-8.x-1.0-rc5.zip",
-            "reference": null,
+            "reference": "bed1bddffdf03626ba057ab697635b049d8d98de",
             "shasum": null
         },
         "require": {
@@ -6190,5 +6190,51 @@
         ],
         "description": "Enables the creation of paragraphs entities. To safely uninstall, go first to Structure > Paragraphs types > Settings.",
         "homepage": "https://www.drupal.org/project/paragraphs"
+    },
+    {
+        "name": "drupal/admin_toolbar",
+        "version": "8.1.15",
+        "version_normalized": "8.1.15.0",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/admin_toolbar.git",
+            "reference": "f8380381183bc76babaec9dfe392511011d54904"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.15.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "drupal/core": "8.*",
+            "drupal/toolbar": "8.*"
+        },
+        "replace": {
+            "drupal/admin_toolbar_tools": "self.version"
+        },
+        "suggest": {
+            "drupal/core": "Required by drupal/admin_toolbar_tools"
+        },
+        "time": "2016-05-23 11:35:45",
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-8.x-1.x": "8.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.drupal-composer.org/downloads/",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "Mohamed Anis Taktak",
+                "homepage": "https://www.drupal.org/u/matio89"
+            }
+        ],
+        "description": "Provides a drop-down menu interface to the core Drupal Toolbar.",
+        "homepage": "http://drupal.org/project/admin_toolbar"
     }
 ]
