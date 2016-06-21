@@ -20,3 +20,4 @@ permissions:
   - 'view files'
   - 'view paragraph content text'
   - 'view paragraph content qoute'
+  - 'view paragraph content image'

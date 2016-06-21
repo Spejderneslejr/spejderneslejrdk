@@ -17,45 +17,37 @@ html {
  * Breakpoints.
  */
 @font-face {
-  font-family: 'Hermes';
-  src: url("https://daks2k3a4ib2z.cloudfront.net/573ebff866718aad169d5a8e/573f7b75c30dc8a716baba2c_312A2B_0_0.ttf") format("truetype");
-  font-weight: 400;
+  font-family: "Calibri";
   font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Calibri.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Calibri';
-  src: url("https://daks2k3a4ib2z.cloudfront.net/573ebff866718aad169d5a8e/573f7ce2c30dc8a716babd6a_Calibri%20Bold.ttf") format("truetype");
-  font-weight: 700;
+  font-family: "Calibri Italic";
   font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Calibri Italic.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Calibri';
-  src: url("https://daks2k3a4ib2z.cloudfront.net/573ebff866718aad169d5a8e/573f7ce266718aad169ebda3_Calibri%20Bold%20Italic.ttf") format("truetype");
-  font-weight: 700;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Calibri';
-  src: url("https://daks2k3a4ib2z.cloudfront.net/573ebff866718aad169d5a8e/573f7ce2e61d7dc216c854c8_Calibri%20Italic.ttf") format("truetype");
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Calibri';
-  src: url("https://daks2k3a4ib2z.cloudfront.net/573ebff866718aad169d5a8e/573f7ce266718aad169ebda4_Calibri.ttf") format("truetype");
-  font-weight: 400;
+  font-family: "Calibri Bold";
   font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Calibri Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'FB Hermes';
-  src: url("https://daks2k3a4ib2z.cloudfront.net/573ebff866718aad169d5a8e/57475dff83e88eca65065883_Font%20Bureau%20-%20HermesFB%20Bold.otf") format("opentype");
-  font-weight: 700;
+  font-family: "Calibri Bold Italic";
   font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Calibri Bold Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "FB Hermes";
+  font-style: normal;
+  font-weight: normal;
 }
 
 html {
@@ -298,45 +290,37 @@ main:last-child {
  * Breakpoints.
  */
 @font-face {
-  font-family: 'Hermes';
-  src: url("https://daks2k3a4ib2z.cloudfront.net/573ebff866718aad169d5a8e/573f7b75c30dc8a716baba2c_312A2B_0_0.ttf") format("truetype");
-  font-weight: 400;
+  font-family: "Calibri";
   font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Calibri.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Calibri';
-  src: url("https://daks2k3a4ib2z.cloudfront.net/573ebff866718aad169d5a8e/573f7ce2c30dc8a716babd6a_Calibri%20Bold.ttf") format("truetype");
-  font-weight: 700;
+  font-family: "Calibri Italic";
   font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Calibri Italic.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Calibri';
-  src: url("https://daks2k3a4ib2z.cloudfront.net/573ebff866718aad169d5a8e/573f7ce266718aad169ebda3_Calibri%20Bold%20Italic.ttf") format("truetype");
-  font-weight: 700;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Calibri';
-  src: url("https://daks2k3a4ib2z.cloudfront.net/573ebff866718aad169d5a8e/573f7ce2e61d7dc216c854c8_Calibri%20Italic.ttf") format("truetype");
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Calibri';
-  src: url("https://daks2k3a4ib2z.cloudfront.net/573ebff866718aad169d5a8e/573f7ce266718aad169ebda4_Calibri.ttf") format("truetype");
-  font-weight: 400;
+  font-family: "Calibri Bold";
   font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Calibri Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'FB Hermes';
-  src: url("https://daks2k3a4ib2z.cloudfront.net/573ebff866718aad169d5a8e/57475dff83e88eca65065883_Font%20Bureau%20-%20HermesFB%20Bold.otf") format("opentype");
-  font-weight: 700;
+  font-family: "Calibri Bold Italic";
   font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Calibri Bold Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "FB Hermes";
+  font-style: normal;
+  font-weight: normal;
 }
 
 body {
@@ -344,6 +328,11 @@ body {
   color: #5a5a5a;
   font-size: 14px;
   line-height: 1.42857em;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
 }
 
 .text-center {
@@ -412,7 +401,7 @@ blockquote {
   margin-bottom: 41px;
   padding-right: 10%;
   padding-left: 10%;
-  color: #645c56;
+  color: #837870;
   font-size: 1.3em;
   font-style: italic;
   text-align: center;
@@ -1202,10 +1191,6 @@ h6 {
   }
 }
 
-#main-content {
-  height: 22200px;
-}
-
 #toolbar-administration {
   z-index: 999999;
 }
@@ -1379,6 +1364,19 @@ h6 {
   .page-header {
     padding-top: 20px;
   }
+}
+
+.figure {
+  margin-bottom: 10px;
+}
+
+.figcaption {
+  margin-top: 12px;
+  margin-bottom: 20px;
+  padding-right: 10%;
+  padding-left: 10%;
+  color: #837870;
+  text-align: center;
 }
 
 /*# sourceMappingURL=sourcemaps/camp.main.css.map */
