@@ -32,42 +32,10 @@ $bigscreen: new-breakpoint(min-width 1200px);
 // z-index's
 $z-index-menu: 2;
 
-// TODO(ts)  - this is temporary import. We need to buy the fonts.
-@font-face {
-  font-family: 'Hermes';
-  src: url('https://daks2k3a4ib2z.cloudfront.net/573ebff866718aad169d5a8e/573f7b75c30dc8a716baba2c_312A2B_0_0.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Calibri';
-  src: url('https://daks2k3a4ib2z.cloudfront.net/573ebff866718aad169d5a8e/573f7ce2c30dc8a716babd6a_Calibri%20Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Calibri';
-  src: url('https://daks2k3a4ib2z.cloudfront.net/573ebff866718aad169d5a8e/573f7ce266718aad169ebda3_Calibri%20Bold%20Italic.ttf') format('truetype');
-  font-weight: 700;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Calibri';
-  src: url('https://daks2k3a4ib2z.cloudfront.net/573ebff866718aad169d5a8e/573f7ce2e61d7dc216c854c8_Calibri%20Italic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Calibri';
-  src: url('https://daks2k3a4ib2z.cloudfront.net/573ebff866718aad169d5a8e/573f7ce266718aad169ebda4_Calibri.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'FB Hermes';
-  src: url('https://daks2k3a4ib2z.cloudfront.net/573ebff866718aad169d5a8e/57475dff83e88eca65065883_Font%20Bureau%20-%20HermesFB%20Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-}
+@include font-face("Calibri", "../fonts/Calibri", $file-formats: ttf);
+@include font-face("Calibri Italic", "../fonts/Calibri Italic", $file-formats: ttf);
+@include font-face("Calibri Bold", "../fonts/Calibri Bold", $file-formats: ttf);
+@include font-face("Calibri Bold Italic", "../fonts/Calibri Bold Italic", $file-formats: ttf);
+@include font-face('FB Hermes', "../fonts/Font Bureau - HermesFB Bold", $file-formats: otf);
 
 $base-font: Calibri, sans-serif;
