@@ -46,6 +46,9 @@ function camp_theme_suggestions_menu_alter(array &$suggestions, array $variables
   }
 }
 
+/**
+ * Implements template_preprocess_paragraph().
+ */
 function camp_preprocess_paragraph(&$variables) {
   // Get paragraph entity and bundle.
   $paragraph = $variables['paragraph'];
