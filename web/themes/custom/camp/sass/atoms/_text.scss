@@ -12,6 +12,16 @@ p {
   }
 }
 
+.node__content .summary {
+  margin-bottom: 25px;
+  font-size: em(23, $base-font-size);
+  line-height: 145%;
+  font-family: "Calibri Bold", sans-serif;
+  text-align: center;
+  color: black;
+
+}
+
 .text-formatted {
   color: $base-font-color;
 
