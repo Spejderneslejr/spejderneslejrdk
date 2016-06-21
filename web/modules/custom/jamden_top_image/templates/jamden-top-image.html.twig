@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Displays a top image with a number of headlines.
+ *
+ * Available variables:
+ * - headline: Main headline.
+ * - sub_headline: Smaller sub-headline.
+ * - image_credits: Text for the credit label.
+ * - image_uri: URI for the image.
+ *
+ * @see template_preprocess_jamden_top_image()
+ *
+ */
+#}
+<div class="top-cover-outer"{% if  image_uri is not empty %} style="background-image: url('{{ image_uri }}') {% endif %}">
+  <div class="top-cover">
+    {% if headline is not empty %}
+      <h3 class="top-cover-headline slant-left">
+      <span class="bg-white text-uppercase">{{ headline }}</span></h3>
+    {% endif %}
+    {% if sub_headline is not empty %}
+      <div class="top-cover-sub-headline slant-right">
+      <span class="bg-black text-uppercase">{{ sub_headline }}</span>
+    </div>
+    {% endif %}
+    {% if image_credits is not empty %}
+    <div class="top-cover-credit bg-white-transparent">{{ image_credits }}</div>
+    {% endif %}
+  </div>
+</div>
