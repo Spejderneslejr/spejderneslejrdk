@@ -9,7 +9,7 @@ _core:
 id: camp_local_tasks
 theme: camp
 region: content
-weight: -7
+weight: -5
 provider: null
 plugin: local_tasks_block
 settings:
