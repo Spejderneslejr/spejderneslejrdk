@@ -20,6 +20,12 @@ p {
   text-align: center;
   color: black;
 
+  @include media($tablet-p) {
+    // Lessen the font-size when getting squeezed.
+    margin-bottom: 15px;
+    font-size: em(19, $base-font-size);
+    line-height: 130%;
+  }
 }
 
 .text-formatted {
