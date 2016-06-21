@@ -54,13 +54,23 @@ function camp_preprocess_paragraph(&$variables) {
   $paragraph = $variables['paragraph'];
   $bundle = $paragraph->bundle();
 
-  // We perform a little magic behind the scenes here.
-  // If the qoute paragraph has a link we use that as a byline, with the byline
-  // as a title.
-  if ($bundle === 'qoute') {
-    if (!empty($variables['content']['field_qoute_link'][0])) {
-      $variables['content']['field_qoute_link'][0]['#title'] = $variables['content']['field_qoute_byline'][0]['#context']['value'];
-      $variables['content']['field_qoute_byline'] = $variables['content']['field_qoute_link'];
-    }
+  // Do things based on bundle.
+  switch ($bundle) {
+    case 'image':
+      // Get Caption
+      $image = $paragraph->field_paragraph_image->entity;
+      $variables['caption'] = $image->field_image_caption->getValue()[0]['value'];
+      $variables['credits'] = t('Foto') . ': ' . $image->field_image_credits->getValue()[0]['value'];
+      break;
+
+    case 'qoute':
+      // We perform a little magic behind the scenes here.
+      // If the qoute paragraph has a link we use that as a byline, with the byline
+      // as a title.
+      if (!empty($variables['content']['field_qoute_link'][0])) {
+        $variables['content']['field_qoute_link'][0]['#title'] = $variables['content']['field_qoute_byline'][0]['#context']['value'];
+        $variables['content']['field_qoute_byline'] = $variables['content']['field_qoute_link'];
+      }
+      break;
   }
 }
