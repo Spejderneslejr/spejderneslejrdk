@@ -45,3 +45,22 @@ function camp_theme_suggestions_menu_alter(array &$suggestions, array $variables
       break;
   }
 }
+
+/**
+ * Implements template_preprocess_paragraph().
+ */
+function camp_preprocess_paragraph(&$variables) {
+  // Get paragraph entity and bundle.
+  $paragraph = $variables['paragraph'];
+  $bundle = $paragraph->bundle();
+
+  // We perform a little magic behind the scenes here.
+  // If the qoute paragraph has a link we use that as a byline, with the byline
+  // as a title.
+  if ($bundle === 'qoute') {
+    if (!empty($variables['content']['field_qoute_link'][0])) {
+      $variables['content']['field_qoute_link'][0]['#title'] = $variables['content']['field_qoute_byline'][0]['#context']['value'];
+      $variables['content']['field_qoute_byline'] = $variables['content']['field_qoute_link'];
+    }
+  }
+}
