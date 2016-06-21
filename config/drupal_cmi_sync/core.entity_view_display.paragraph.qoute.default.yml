@@ -29,7 +29,7 @@ content:
     type: string
   field_qoute_link:
     weight: 2
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false

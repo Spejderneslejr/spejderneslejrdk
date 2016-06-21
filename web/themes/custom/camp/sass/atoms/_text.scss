@@ -50,4 +50,8 @@ blockquote {
   font-size: em(21, $base-font-size);
   line-height: 145%;
   text-align: center;
+
+  @include media($tablet-p) {
+    font-size: em(16.8, $base-font-size);
+  }
 }
