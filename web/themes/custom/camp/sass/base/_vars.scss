@@ -1,17 +1,23 @@
-$black-medium: rgb(51, 51, 51);
 $black: rgb(0, 0, 0);
+$black-medium: rgb(51, 51, 51);
+$black-light: rgb(90, 90, 90);
 
-$gray-light: rgb(167, 157, 150);
 $gray: rgb(194, 194, 194);
 $gray-medium: rgb(174, 174, 174);
+$gray-light: rgb(167, 157, 150);
+$gray-list: rgb(116, 104, 96);
+$gray-dark: rgb(131, 120, 112);
 
 $green: rgb(43, 182, 183);
+
+$red: rgb(225, 71, 125);
 
 // Icon font.
 @include font-face("icomoon", "../fonts/icomoon", $file-formats: ttf woff svg eot);
 
 // Base font vars.
-$base-font-size: 16px;
+$base-font-size: 14px;
+$base-font-color: $black-light;
 
 /**
  * Breakpoints.
@@ -25,3 +31,11 @@ $bigscreen: new-breakpoint(min-width 1200px);
 
 // z-index's
 $z-index-menu: 2;
+
+@include font-face("Calibri", "../fonts/Calibri", $file-formats: ttf);
+@include font-face("Calibri Italic", "../fonts/Calibri Italic", $file-formats: ttf);
+@include font-face("Calibri Bold", "../fonts/Calibri Bold", $file-formats: ttf);
+@include font-face("Calibri Bold Italic", "../fonts/Calibri Bold Italic", $file-formats: ttf);
+@include font-face('FB Hermes', "../fonts/Font Bureau - HermesFB Bold", $file-formats: otf);
+
+$base-font: Calibri, sans-serif;

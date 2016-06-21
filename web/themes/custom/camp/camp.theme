@@ -41,8 +41,27 @@ function camp_theme_suggestions_menu_alter(array &$suggestions, array $variables
     case 'site-menu-danish':
     case 'site-menu-german':
     case 'site-menu-english':
-      $f = '';
       $suggestions[] = 'menu__site_menu';
+      break;
+  }
+}
+
+/**
+ * Implements template_preprocess_paragraph().
+ */
+function camp_preprocess_paragraph(&$variables) {
+  // Get paragraph entity and bundle.
+  $paragraph = $variables['paragraph'];
+  $bundle = $paragraph->bundle();
+
+  // Do things based on bundle.
+  switch ($bundle) {
+    case 'image':
+      // Get Caption
+      $image = $paragraph->field_paragraph_image->entity;
+      $variables['caption'] = $image->field_image_caption->getValue()[0]['value'];
+      $variables['credits'] = t('Foto') . ': ' . $image->field_image_credits->getValue()[0]['value'];
+
       break;
   }
 }

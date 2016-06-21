@@ -3,6 +3,14 @@
 @import "reset";
 @import "vars";
 
-.text-center {
-  text-align: center;
+body {
+  font-family: $base-font;
+  color: $base-font-color;
+  font-size: $base-font-size;
+  line-height: em(20, $base-font-size);
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
 }
