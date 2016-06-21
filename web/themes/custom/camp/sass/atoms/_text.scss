@@ -12,6 +12,22 @@ p {
   }
 }
 
+.node__content .summary {
+  margin-bottom: 25px;
+  font-size: em(23, $base-font-size);
+  line-height: 145%;
+  font-family: "Calibri Bold", sans-serif;
+  text-align: center;
+  color: black;
+
+  @include media($tablet-p) {
+    // Lessen the font-size when getting squeezed.
+    margin-bottom: 15px;
+    font-size: em(19, $base-font-size);
+    line-height: 130%;
+  }
+}
+
 .text-formatted {
   color: $base-font-color;
 

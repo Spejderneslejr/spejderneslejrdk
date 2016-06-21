@@ -11,7 +11,7 @@ url:
     en: ''
     da: ''
     de: ''
-selected_langcode: da
+selected_langcode: en
 _core:
   default_config_hash: uEePITI9tV6WqzmsTb7MfPCi5yPWXSxAN1xeLcYFQbM
 langcode: en

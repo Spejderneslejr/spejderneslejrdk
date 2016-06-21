@@ -38,6 +38,14 @@ $z-index-menu: 2;
 @include font-face("Calibri Italic", "../fonts/Calibri Italic", $file-formats: ttf);
 @include font-face("Calibri Bold", "../fonts/Calibri Bold", $file-formats: ttf);
 @include font-face("Calibri Bold Italic", "../fonts/Calibri Bold Italic", $file-formats: ttf);
-@include font-face('FB Hermes', "../fonts/Font Bureau - HermesFB Bold", $file-formats: otf);
+
+// We do this manually for now to support opentype
+@font-face {
+  font-family: "FB Hermes";
+  src: url("../fonts/FB Hermes Bold.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 $base-font: Calibri, sans-serif;

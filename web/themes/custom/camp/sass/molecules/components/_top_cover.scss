@@ -1,0 +1,135 @@
+// Outer wrapper sets up the background-image and the basic margins.
+// The background-image itself is added via an element-style.
+.top-cover-outer {
+  margin-right: 15px;
+  margin-left: 15px;
+  background-position: 0 0, 50% 50%;
+  background-size: cover;
+}
+
+// Main wrapper for the top-cover. Adds a gradient over the background-image
+// and sets up internal padding and flex-box based positioning of the inner
+// headlines.
+.top-cover {
+  @include background-image(linear-gradient(180deg, rgba(0, 0, 0, .24), rgba(0, 0, 0, .24)));
+  height: 50vh;
+  margin-bottom: 88px;
+  position: relative;
+  display: flex;
+
+  // Align everything center horizontally and vertically.
+  @include box-orient(vertical);
+  @include box-direction(normal);
+  @include box-align(center);
+  @include flex-direction(column);
+  @include box-pack(center);
+  @include justify-content(center);
+  @include align-items(center);
+
+  // Top/bottom 76px, right/left 20%.
+  padding: 76px 15%;
+
+  // Lessen the padding inside the outer-wrapper to allow for more text.
+  @include media($tablet-p) {
+    height: 25vh;
+    // Top/bottom 76px, right/left 10%.
+    padding: 10px 2%;
+
+    // Bring the next element closer.
+    margin-bottom: 60px;
+  }
+}
+
+// Main Headline
+.top-cover-headline {
+  font-family: 'FB Hermes', sans-serif;
+
+  text-align: center;
+  font-size: 2.6rem;
+
+  // Extra line-height to seperate wrapping lines of headline-text and let the
+  // background show through.
+  line-height: 140%;
+
+  // Add some padding at each end of the text-line to give it more of af
+  // "label" feel.
+  span {
+    padding-right: 7px;
+    padding-left: 7px;
+  }
+
+  // Spacing down to next element
+  margin-bottom: 46px;
+
+  @include media($tablet-p) {
+    // Lessen spacing to next element.
+    margin-bottom: 30px;
+
+    font-size: 1.8rem;
+  }
+}
+
+// Smaller headline.
+.top-cover-sub-headline {
+  font-family: 'FB Hermes', sans-serif;
+  font-size: 1.1em;
+
+  text-align: center;
+
+  // Padding around the entire subheadline which will be the color of the
+  // background.
+  span {
+    padding: 10px;
+  }
+
+  // Spacing down to next element
+  margin-bottom: 62px;
+
+  @include media($tablet-p) {
+    // Lessen font-size and spacing to next element.
+    margin-bottom: 30px;
+    font-size: 0.8rem;
+  }
+}
+
+// Single line of text
+.top-cover-credit {
+  padding: 3px;
+
+  font-size: 1em;
+
+  @include media($tablet-p) {
+    padding: 0;
+  }
+
+}
+
+.slant-left {
+  @include transform(rotate(-3deg));
+}
+
+.slant-right {
+  @include transform(rotate(2deg));
+}
+
+// White text on black background.
+.bg-black {
+  background-color: #000;
+  color: #fff;
+}
+
+.bg-white-transparent {
+  background-color: hsla(0, 0%, 100%, .4);
+  color: #000;
+}
+
+
+// Black text on a white background.
+.bg-white {
+  background-color: #fff;
+  color: #000;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
