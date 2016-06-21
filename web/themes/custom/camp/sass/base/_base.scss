@@ -9,3 +9,8 @@ body {
   font-size: $base-font-size;
   line-height: em(20, $base-font-size);
 }
+
+img {
+  width: 100%;
+  max-width: 100%;
+}

@@ -19,3 +19,4 @@ permissions:
   - 'search content'
   - 'view files'
   - 'view paragraph content text'
+  - 'view paragraph content image'

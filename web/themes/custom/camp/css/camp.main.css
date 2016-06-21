@@ -346,6 +346,11 @@ body {
   line-height: 1.42857em;
 }
 
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1156,10 +1161,6 @@ h6 {
   }
 }
 
-#main-content {
-  height: 22200px;
-}
-
 .region--header__logo {
   text-align: center;
   height: 100%;
@@ -1325,6 +1326,19 @@ h6 {
   .page-header {
     padding-top: 20px;
   }
+}
+
+.figure {
+  margin-bottom: 10px;
+}
+
+.figcaption {
+  margin-top: 12px;
+  margin-bottom: 20px;
+  padding-right: 10%;
+  padding-left: 10%;
+  color: #837870;
+  text-align: center;
 }
 
 /*# sourceMappingURL=sourcemaps/camp.main.css.map */
