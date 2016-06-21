@@ -6,6 +6,7 @@ p {
   color: $base-font-color;
   line-height: 155%;
   font-size: em(18.2, $base-font-size);
+  margin-bottom: 32px;
 
   @include media($tablet-p) {
     font-size: em(16.8, $base-font-size);
