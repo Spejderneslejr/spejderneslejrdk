@@ -1229,6 +1229,10 @@ h6 {
   top: 70px;
 }
 
+.field--name-field-video {
+  margin-bottom: 32px;
+}
+
 .top-cover-outer {
   margin-right: 15px;
   margin-left: 15px;
