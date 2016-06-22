@@ -11,7 +11,7 @@ id: paragraph.quote.field_quote_link
 field_name: field_quote_link
 entity_type: paragraph
 bundle: quote
-label: quote_link
+label: Link
 description: ''
 required: false
 translatable: false

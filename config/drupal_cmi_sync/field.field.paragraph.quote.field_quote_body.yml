@@ -9,7 +9,7 @@ id: paragraph.quote.field_quote_body
 field_name: field_quote_body
 entity_type: paragraph
 bundle: quote
-label: quote_body
+label: Text
 description: ''
 required: true
 translatable: false
