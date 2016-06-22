@@ -3,15 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_qoute_link
-    - paragraphs.paragraphs_type.qoute
+    - field.storage.paragraph.field_quote_link
+    - paragraphs.paragraphs_type.quote
   module:
     - link
-id: paragraph.qoute.field_qoute_link
-field_name: field_qoute_link
+id: paragraph.quote.field_quote_link
+field_name: field_quote_link
 entity_type: paragraph
-bundle: qoute
-label: qoute_link
+bundle: quote
+label: quote_link
 description: ''
 required: false
 translatable: false

@@ -3,13 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_qoute_body
-    - paragraphs.paragraphs_type.qoute
-id: paragraph.qoute.field_qoute_body
-field_name: field_qoute_body
+    - field.storage.paragraph.field_quote_body
+    - paragraphs.paragraphs_type.quote
+id: paragraph.quote.field_quote_body
+field_name: field_quote_body
 entity_type: paragraph
-bundle: qoute
-label: qoute_body
+bundle: quote
+label: quote_body
 description: ''
 required: true
 translatable: false
