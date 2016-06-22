@@ -22,7 +22,19 @@ settings:
   handler_settings:
     target_bundles: null
     target_bundles_drag_drop:
+      text:
+        weight: -11
+        enabled: false
+      image:
+        weight: -10
+        enabled: false
+      video:
+        weight: -9
+        enabled: false
+      qoute:
+        weight: -8
+        enabled: false
       frontpage_gallery:
-        weight: 2
+        weight: -7
         enabled: false
 field_type: entity_reference_revisions
