@@ -101,6 +101,11 @@
        * @param {object} target Dom element.
        */
       function stickyHeader(wrapper, target) {
+
+        if ($('.menu--site-menu').length === 0) {
+          return;
+        }
+
         var mn = $(".page-header");
         var mns = "main-nav-scrolled";
         var hdr = $('.page-header').height();
