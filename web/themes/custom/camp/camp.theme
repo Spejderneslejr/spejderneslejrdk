@@ -67,13 +67,13 @@ function camp_preprocess_paragraph(&$variables) {
       $variables['credits'] = camp_get_translated_credits_from_image($image);
       break;
 
-    case 'qoute':
+    case 'quote':
       // We perform a little magic behind the scenes here.
-      // If the qoute paragraph has a link we use that as a byline, with the
+      // If the quote paragraph has a link we use that as a byline, with the
       // byline as a title.
-      if (!empty($variables['content']['field_qoute_link'][0])) {
-        $variables['content']['field_qoute_link'][0]['#title'] = $variables['content']['field_qoute_byline'][0]['#context']['value'];
-        $variables['content']['field_qoute_byline'] = $variables['content']['field_qoute_link'];
+      if (!empty($variables['content']['field_quote_link'][0])) {
+        $variables['content']['field_quote_link'][0]['#title'] = $variables['content']['field_quote_byline'][0]['#context']['value'];
+        $variables['content']['field_quote_byline'] = $variables['content']['field_quote_link'];
       }
       break;
   }

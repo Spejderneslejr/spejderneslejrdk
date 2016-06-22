@@ -31,7 +31,7 @@ settings:
       video:
         weight: -9
         enabled: false
-      qoute:
+      quote:
         weight: -8
         enabled: false
       frontpage_gallery:
