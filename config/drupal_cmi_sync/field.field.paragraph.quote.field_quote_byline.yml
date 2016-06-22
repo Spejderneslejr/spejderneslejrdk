@@ -9,7 +9,7 @@ id: paragraph.quote.field_quote_byline
 field_name: field_quote_byline
 entity_type: paragraph
 bundle: quote
-label: quote_byline
+label: Byline
 description: ''
 required: false
 translatable: false
