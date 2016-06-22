@@ -1,0 +1,10 @@
+// Spacing between paragraphs.
+.paragraph {
+  margin-bottom: 25px;
+}
+
+.field--name-field-paragraph-text {
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
