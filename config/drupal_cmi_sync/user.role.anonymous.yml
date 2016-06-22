@@ -19,3 +19,4 @@ permissions:
   - 'view paragraph content qoute'
   - 'view paragraph content image'
   - 'view paragraph content video'
+  - 'view paragraph content accordion'
