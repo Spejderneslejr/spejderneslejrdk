@@ -4,8 +4,8 @@ status: true
 dependencies:
   module:
     - paragraphs
-id: paragraph.field_qoute_body
-field_name: field_qoute_body
+id: paragraph.field_quote_body
+field_name: field_quote_body
 entity_type: paragraph
 type: string_long
 settings:

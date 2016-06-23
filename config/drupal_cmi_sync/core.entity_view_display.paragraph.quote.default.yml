@@ -3,31 +3,31 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.qoute.field_qoute_body
-    - field.field.paragraph.qoute.field_qoute_byline
-    - field.field.paragraph.qoute.field_qoute_link
-    - paragraphs.paragraphs_type.qoute
+    - field.field.paragraph.quote.field_quote_body
+    - field.field.paragraph.quote.field_quote_byline
+    - field.field.paragraph.quote.field_quote_link
+    - paragraphs.paragraphs_type.quote
   module:
     - link
-id: paragraph.qoute.default
+id: paragraph.quote.default
 targetEntityType: paragraph
-bundle: qoute
+bundle: quote
 mode: default
 content:
-  field_qoute_body:
+  field_quote_body:
     weight: 0
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
-  field_qoute_byline:
+  field_quote_byline:
     weight: 1
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-  field_qoute_link:
+  field_quote_link:
     weight: 2
     label: hidden
     settings:
