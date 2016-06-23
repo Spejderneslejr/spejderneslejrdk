@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.accordion.field_paragraphs
+    - field.field.paragraph.accordion.field_title
     - paragraphs.paragraphs_type.accordion
   module:
     - paragraphs
@@ -14,7 +15,7 @@ mode: default
 content:
   field_paragraphs:
     type: entity_reference_paragraphs
-    weight: 0
+    weight: 1
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -22,6 +23,13 @@ content:
       add_mode: dropdown
       form_display_mode: default
     third_party_settings: {  }
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
 hidden:
   created: true
   status: true
