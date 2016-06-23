@@ -1,0 +1,21 @@
+uuid: 50f125d4-96e1-4e6d-9610-522eb91b70a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_text
+    - paragraphs.paragraphs_type.factbox
+  module:
+    - text
+id: paragraph.factbox.field_paragraph_text
+field_name: field_paragraph_text
+entity_type: paragraph
+bundle: factbox
+label: Text
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
