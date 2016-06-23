@@ -1,18 +1,16 @@
-uuid: 67799e5b-5324-4406-ac8a-1f594f8d05b0
+uuid: eea1c201-81a0-408f-9a26-4843770fe52f
 langcode: en
 status: true
 dependencies:
   module:
+    - link
     - paragraphs
-id: paragraph.field_qoute_byline
-field_name: field_qoute_byline
+id: paragraph.field_quote_link
+field_name: field_quote_link
 entity_type: paragraph
-type: string
-settings:
-  max_length: 255
-  is_ascii: false
-  case_sensitive: false
-module: core
+type: link
+settings: {  }
+module: link
 locked: false
 cardinality: 1
 translatable: true

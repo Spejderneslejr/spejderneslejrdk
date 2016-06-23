@@ -12,7 +12,7 @@ field_name: field_video
 entity_type: paragraph
 bundle: video
 label: Video
-description: ''
+description: 'Paste the full URL of a youtube video.'
 required: false
 translatable: false
 default_value: {  }
