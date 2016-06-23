@@ -1560,22 +1560,22 @@ h6 {
   font-family: 'FB Hermes', sans-serif;
   font-size: 1.4em;
   text-transform: uppercase;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   display: inline-block;
   cursor: pointer;
   padding-right: 40px;
   position: relative;
   vertical-align: top;
   text-decoration: none;
-  color: #222222;
+  color: #333333;
   padding: 20px;
   text-align: left;
   margin-left: auto;
   margin-right: auto;
   white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .accordion__header:hover {
@@ -1587,7 +1587,7 @@ h6 {
   position: relative;
   overflow: hidden;
   padding: 22px;
-  background-color: #fff;
+  background-color: white;
 }
 
 .accordion__arrow {
