@@ -49,6 +49,13 @@ p {
   }
 }
 
+// The spacing from a formatted-text field to the next element is handled
+// on the wrapping element, so the last paragraph should not have a bottom-
+// margin.
+.text-formatted p:last-child{
+  margin-bottom: 0;
+}
+
 a,
 a:visited,
 a:active {
