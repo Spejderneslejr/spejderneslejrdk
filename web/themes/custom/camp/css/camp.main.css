@@ -1451,6 +1451,69 @@ h6 {
   font-size: 1.2em;
 }
 
+.accordion {
+  width: 100%;
+  padding-right: 2%;
+  padding-left: 2%;
+}
+
+.accordion__header {
+  z-index: 10;
+  width: 100%;
+  border-bottom: 1px dashed #a79d96;
+  font-family: 'FB Hermes', sans-serif;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  display: inline-block;
+  cursor: pointer;
+  padding-right: 40px;
+  position: relative;
+  vertical-align: top;
+  text-decoration: none;
+  color: #333333;
+  padding: 20px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.accordion__header:hover {
+  background-color: #f8f8f8;
+}
+
+.accordion__content {
+  display: none;
+  position: relative;
+  overflow: hidden;
+  padding: 22px;
+  background-color: white;
+}
+
+.accordion__arrow {
+  position: absolute;
+  top: 35%;
+  right: 22px;
+  font-size: 14px;
+}
+
+.accordion__arrow {
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  transition: all 300ms ease-out;
+}
+
+.active .accordion__arrow {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
 .paragraph {
   margin-bottom: 25px;
 }

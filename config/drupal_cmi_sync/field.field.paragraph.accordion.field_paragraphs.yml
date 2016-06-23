@@ -1,0 +1,51 @@
+uuid: 9e86d4e7-5230-435a-85c4-6e59d268de1c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraphs
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.qoute
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.video
+  module:
+    - entity_reference_revisions
+id: paragraph.accordion.field_paragraphs
+field_name: field_paragraphs
+entity_type: paragraph
+bundle: accordion
+label: Paragraphs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      image: image
+      qoute: qoute
+      text: text
+      video: video
+    target_bundles_drag_drop:
+      accordion:
+        weight: 7
+        enabled: false
+      frontpage_gallery:
+        weight: 8
+        enabled: false
+      image:
+        enabled: true
+        weight: 9
+      qoute:
+        enabled: true
+        weight: 10
+      text:
+        enabled: true
+        weight: 11
+      video:
+        enabled: true
+        weight: 12
+field_type: entity_reference_revisions
