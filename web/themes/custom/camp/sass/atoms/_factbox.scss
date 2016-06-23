@@ -1,0 +1,50 @@
+// A fact box of a mininmum size with internal padding.
+// The box has a red background with a gradient.
+.paragraph--type--factbox {
+  position: relative;
+  min-height: 100px;
+  min-width: 200px;
+  margin-bottom: 15px;
+  padding: 30px 27px 20px;
+
+  border-radius: 2px;
+  background-color: $red;
+  color: white;
+  @include background-image(linear-gradient(180deg, $red, $red-dark));
+}
+
+// The headline of the factbox is a slightly larger version of h2 with a
+// dashed underlining.
+.paragraph--type--factbox {
+  h2 {
+    margin-bottom: 18px;
+    font-family: 'FB Hermes', sans-serif;
+    line-height: 130%;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    margin-top: 0;
+    padding-bottom: 17px;
+    border-bottom: 2px dashed hsla(0, 0%, 100%, .57);
+    color: white;
+  }
+}
+
+// Slightly larger and bold text used for the body of the factbox.
+.paragraph--type--factbox {
+  p {
+    font-size: em(16, $base-font-size);
+    font-family: Calibri Bold, sans-serif;
+  }
+}
+
+// We need to flip the color of everything inside the factbox to make it
+// readable.
+.text-formatted {
+  &.invert-color * {
+    // We're not actually inverting - but going all the way to white as the
+    // current invert of $base-font-color does not give us enough contrast
+    color: white;
+  }
+}
+
