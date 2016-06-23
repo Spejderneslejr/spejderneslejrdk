@@ -6,6 +6,7 @@ main:
   js:
     js/camp.main.js: {}
     js/countdown.js: {}
+    js/accordion.js: {}
   dependencies:
     - core/jquery
     - core/drupal
