@@ -19,7 +19,7 @@ permissions:
   - 'search content'
   - 'view files'
   - 'view paragraph content text'
-  - 'view paragraph content qoute'
+  - 'view paragraph content quote'
   - 'view paragraph content image'
   - 'view paragraph content video'
   - 'view paragraph content accordion'

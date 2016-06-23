@@ -2,5 +2,5 @@ uuid: 80431646-bf9b-4f34-84ed-bee1441fc252
 langcode: en
 status: true
 dependencies: {  }
-id: qoute
-label: Qoute
+id: quote
+label: Quote
