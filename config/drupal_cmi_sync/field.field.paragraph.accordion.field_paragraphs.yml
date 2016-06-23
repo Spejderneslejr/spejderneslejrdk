@@ -6,7 +6,7 @@ dependencies:
     - field.storage.paragraph.field_paragraphs
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.image
-    - paragraphs.paragraphs_type.qoute
+    - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.video
   module:
@@ -26,7 +26,7 @@ settings:
   handler_settings:
     target_bundles:
       image: image
-      qoute: qoute
+      quote: quote
       text: text
       video: video
     target_bundles_drag_drop:
@@ -39,7 +39,7 @@ settings:
       image:
         enabled: true
         weight: 9
-      qoute:
+      quote:
         enabled: true
         weight: 10
       text:
