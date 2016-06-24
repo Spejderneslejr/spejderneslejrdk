@@ -46,6 +46,7 @@ module:
   responsive_image: 0
   search: 0
   shortcut: 0
+  stage_file_proxy: 0
   system: 0
   taxonomy: 0
   text: 0
