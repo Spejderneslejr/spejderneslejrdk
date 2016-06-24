@@ -27,7 +27,8 @@
         "drupal/purge_purger_http": "^8.1@beta",
         "drupal/file_entity": "^8",
         "drupal/admin_toolbar": "^8",
-        "drupal/video_embed_field": "^8.1"
+        "drupal/video_embed_field": "^8.1",
+        "drupal/stage_file_proxy": "^8"
     },
     "require-dev": {
         "behat/mink": "~1.6",
