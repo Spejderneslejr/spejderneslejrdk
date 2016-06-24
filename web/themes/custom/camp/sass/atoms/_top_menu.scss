@@ -43,6 +43,8 @@
 
 .menu--site-menu {
 
+  font-family: 'FB Hermes', sans-serif;
+
   a {
     color: $black;
   }
@@ -136,7 +138,7 @@
             float: right;
             position: relative;
             margin-left: 13px;
-            font-size: em(12, $base-font-size);
+            font-size: 12px;
             line-height: em(22, $base-font-size);
           }
 
@@ -616,10 +618,4 @@ ul.menu-level--1 {
 // When the admin toolbar is active we need to adjust the header a little.
 #toolbar-administration {
   z-index: 999999;
-}
-
-.toolbar-fixed {
-  .language-flags {
-    top: 70px;
-  }
 }
