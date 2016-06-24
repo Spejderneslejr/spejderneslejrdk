@@ -787,6 +787,10 @@ h6 {
   }
 }
 
+.menu--site-menu {
+  font-family: 'FB Hermes', sans-serif;
+}
+
 .menu--site-menu a {
   color: black;
 }
@@ -869,7 +873,7 @@ h6 {
     float: right;
     position: relative;
     margin-left: 13px;
-    font-size: 0.85714em;
+    font-size: 12px;
     line-height: 1.57143em;
   }
 }
@@ -1262,10 +1266,6 @@ h6 {
   z-index: 999999;
 }
 
-.toolbar-fixed .language-flags {
-  top: 70px;
-}
-
 .field--name-field-video {
   margin-bottom: 32px;
 }
@@ -1431,12 +1431,6 @@ h6 {
   margin-bottom: 11px;
 }
 
-@media screen and (max-width: 768px) {
-  .page-header {
-    padding-top: 20px;
-  }
-}
-
 .figure {
   margin-bottom: 10px;
 }
@@ -1512,6 +1506,10 @@ h6 {
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
+}
+
+.paragraph.accordion {
+  margin-bottom: 0;
 }
 
 .paragraph {
