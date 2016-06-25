@@ -20,3 +20,4 @@ permissions:
   - 'view paragraph content image'
   - 'view paragraph content video'
   - 'view paragraph content accordion'
+  - 'view paragraph content factbox'
