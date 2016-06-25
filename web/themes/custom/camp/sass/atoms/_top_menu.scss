@@ -308,11 +308,6 @@
           a {
             &:before {
               @include icon('.icon-scout');
-
-              @include media($desktop) {
-                margin-top: 26px;
-                font-size: 44px;
-              }
             }
           }
         }
@@ -447,6 +442,7 @@ ul.menu-level--1 {
     // just uses opacity: 0, and therefor the element is still and is clikable,
     // so we get rid off it with this method.
     @include hide-text;
+    left: -99999px !important;
     z-index: -9999;
   }
 }
