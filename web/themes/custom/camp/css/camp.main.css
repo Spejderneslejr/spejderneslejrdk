@@ -1031,13 +1031,6 @@ h6 {
 }
 
 @media screen and (min-width: 768px) {
-  .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before {
-    margin-top: 26px;
-    font-size: 44px;
-  }
-}
-
-@media screen and (min-width: 768px) {
   .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a {
     border-right: 1px dashed #2bb6b7;
   }
@@ -1112,6 +1105,7 @@ h6 {
     overflow: hidden;
     text-indent: 101%;
     white-space: nowrap;
+    left: -99999px !important;
     z-index: -9999;
   }
 }
