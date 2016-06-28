@@ -48,7 +48,11 @@ class FiletypeFormatter extends FileDownloadLinkFormatter {
 
       $mapped = $this->mapMimeType($mime_type);
       if (!empty($mapped)) {
+        // There are only 9 possible values here, so passing in a variable to
+        // to t should be ok.
+        // @codingStandardsIgnoreStart
         $mapped = $this->t($mapped);
+        // @codingStandardsIgnoreEnd
       }
       $element['#mimetype_mapped'] = $mapped;
 
