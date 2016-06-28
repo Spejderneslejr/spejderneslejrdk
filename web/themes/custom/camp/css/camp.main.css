@@ -402,6 +402,14 @@ a:active {
   text-decoration: underline;
 }
 
+.dark a, a.dark, .dark
+a:visited,
+a:visited.dark, .dark
+a:active,
+a:active.dark {
+  color: black;
+}
+
 blockquote {
   margin-right: 10%;
   margin-bottom: 18px;
@@ -419,6 +427,24 @@ blockquote {
   blockquote {
     font-size: 1.2em;
   }
+}
+
+.download-item a {
+  padding-left: 30px;
+  background-image: url("../svg/download_black.svg");
+  background-position: 0 50%;
+  background-size: 22px;
+  background-repeat: no-repeat;
+}
+
+ul.download-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.download-list li {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .quote-name {
@@ -465,19 +491,22 @@ blockquote {
   font-size: 1em;
 }
 
-.paragraph--type--factbox {
+.factbox {
   position: relative;
   min-height: 100px;
   min-width: 200px;
   margin-bottom: 15px;
   padding: 30px 27px 20px;
   border-radius: 2px;
-  background-color: #e1477d;
   color: white;
+}
+
+.factbox.red {
+  background-color: #e1477d;
   background-image: linear-gradient(180deg, #e1477d, #b11149);
 }
 
-.paragraph--type--factbox h2 {
+.factbox h2 {
   margin-bottom: 18px;
   font-family: 'FB Hermes', sans-serif;
   line-height: 130%;
@@ -485,17 +514,34 @@ blockquote {
   text-transform: uppercase;
   margin-top: 0;
   padding-bottom: 17px;
-  border-bottom: 2px dashed rgba(255, 255, 255, 0.57);
-  color: white;
+  border-bottom: 2px dashed;
 }
 
-.paragraph--type--factbox p {
+.factbox p {
+  margin-bottom: inherit;
+}
+
+.factbox.red h2 {
+  color: white;
+  border-bottom-color: rgba(255, 255, 255, 0.57);
+}
+
+.factbox.dark h2 {
+  color: #a79d96;
+  border-bottom-color: #a79d96;
+}
+
+.factbox, .factbox p {
   font-size: 1.14286em;
   font-family: Calibri Bold, sans-serif;
 }
 
 .text-formatted.invert-color * {
   color: white;
+}
+
+.factbox.dark {
+  color: #837870;
 }
 
 h1 {
@@ -1264,6 +1310,104 @@ h6 {
   margin-bottom: 32px;
 }
 
+.accordion {
+  width: 100%;
+  padding-right: 2%;
+  padding-left: 2%;
+}
+
+.accordion__header {
+  z-index: 10;
+  width: 100%;
+  border-bottom: 1px dashed #a79d96;
+  font-family: 'FB Hermes', sans-serif;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  display: inline-block;
+  cursor: pointer;
+  padding-right: 40px;
+  position: relative;
+  vertical-align: top;
+  text-decoration: none;
+  color: #333333;
+  padding: 20px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.accordion__header:hover {
+  background-color: #f8f8f8;
+}
+
+.accordion__content {
+  display: none;
+  position: relative;
+  overflow: hidden;
+  padding: 22px;
+  background-color: white;
+}
+
+.accordion__arrow {
+  position: absolute;
+  top: 35%;
+  right: 22px;
+  font-size: 14px;
+}
+
+.accordion__arrow {
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  transition: all 300ms ease-out;
+}
+
+.active .accordion__arrow {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.paragraph.accordion {
+  margin-bottom: 0;
+}
+
+.factbox.paragraph--type--download {
+  padding-right: 20%;
+  background-image: url("../svg/download_back.svg"), linear-gradient(180deg, #f3f3f3, #d9d9d6);
+  background-position: 100% 50%, 0 0;
+  background-size: 215px, auto;
+  background-repeat: no-repeat, repeat;
+}
+
+@media screen and (max-width: 1024px) {
+  .factbox.paragraph--type--download {
+    background-position: 100% 50%, 0 0;
+    background-size: 120px, auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .factbox.paragraph--type--download {
+    background-color: #f3f3f3;
+    background-image: linear-gradient(180deg,#f3f3f3, #d9d9d6);
+    background-size: auto;
+    padding-right: 27px;
+  }
+}
+
+.factbox.paragraph--type--download.span-4, .factbox.paragraph--type--download.span-6, .factbox.paragraph--type--download.span-8 {
+  background-color: #f3f3f3;
+  background-image: linear-gradient(180deg,#f3f3f3, #d9d9d6);
+  background-size: auto;
+  padding-right: 27px;
+}
+
 .region--header__logo {
   text-align: center;
   height: 100%;
@@ -1437,73 +1581,6 @@ h6 {
   color: #837870;
   text-align: center;
   font-size: 1.2em;
-}
-
-.accordion {
-  width: 100%;
-  padding-right: 2%;
-  padding-left: 2%;
-}
-
-.accordion__header {
-  z-index: 10;
-  width: 100%;
-  border-bottom: 1px dashed #a79d96;
-  font-family: 'FB Hermes', sans-serif;
-  font-size: 1.4em;
-  text-transform: uppercase;
-  display: inline-block;
-  cursor: pointer;
-  padding-right: 40px;
-  position: relative;
-  vertical-align: top;
-  text-decoration: none;
-  color: #333333;
-  padding: 20px;
-  text-align: left;
-  margin-left: auto;
-  margin-right: auto;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.accordion__header:hover {
-  background-color: #f8f8f8;
-}
-
-.accordion__content {
-  display: none;
-  position: relative;
-  overflow: hidden;
-  padding: 22px;
-  background-color: white;
-}
-
-.accordion__arrow {
-  position: absolute;
-  top: 35%;
-  right: 22px;
-  font-size: 14px;
-}
-
-.accordion__arrow {
-  -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
-  transition: all 300ms ease-out;
-}
-
-.active .accordion__arrow {
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-
-.paragraph.accordion {
-  margin-bottom: 0;
 }
 
 .paragraph {
