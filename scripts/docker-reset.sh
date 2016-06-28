@@ -11,6 +11,8 @@ echoc () {
 sudo echo ""
 echoc "*** Removing existing containers" 
 docker-compose kill && docker-compose rm --all -v -f
+echoc "Composer install'ing"
+composer install
 # Start up containers in the background and continue imidiately
 echoc "*** Starting new containers" 
 docker-compose up --remove-orphans -d 
