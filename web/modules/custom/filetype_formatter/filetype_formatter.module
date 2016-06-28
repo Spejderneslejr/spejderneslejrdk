@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * Theme-hook for a field formatter.
+ */
 
 /**
  * Implements hook_theme().

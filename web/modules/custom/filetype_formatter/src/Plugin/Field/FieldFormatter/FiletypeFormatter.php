@@ -2,7 +2,6 @@
 namespace Drupal\filetype_formatter\Plugin\Field\FieldFormatter;
 
 use Drupal\Core\Field\FieldItemListInterface;
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\file_entity\Plugin\Field\FieldFormatter\FileDownloadLinkFormatter;
 
@@ -25,6 +24,7 @@ class FiletypeFormatter extends FileDownloadLinkFormatter {
   public function viewElements(FieldItemListInterface $items, $langcode) {
     // Get descriptions from the reference-field.
     $delta = 0;
+    $descriptions = [];
     foreach ($items as $item) {
       if (!empty($item->target_id)) {
         $descriptions[$item->target_id] = empty($item->description) ? NULL : $item->description;
@@ -33,9 +33,11 @@ class FiletypeFormatter extends FileDownloadLinkFormatter {
     }
     $elements = parent::viewElements($items, $langcode);
 
-
     $delta = 0;
     foreach ($elements as &$element) {
+      if (empty($file)) {
+        continue;
+      }
       $file = $element['#file'];
       $mime_type = $file->getMimeType();
       $link_text = empty($descriptions[$file->id()]) ? $file->getFilename() : $descriptions[$file->id()];
@@ -50,7 +52,6 @@ class FiletypeFormatter extends FileDownloadLinkFormatter {
       }
       $element['#mimetype_mapped'] = $mapped;
 
-      //$element['#theme'] = 'image_title_caption_formatter';
       $delta++;
     }
 
@@ -60,7 +61,11 @@ class FiletypeFormatter extends FileDownloadLinkFormatter {
   /**
    * Attemps to map a mimetype to a human-readable string.
    *
-   * @param $mime_type
+   * @param string $mime_type
+   *   The mimetype.
+   *
+   * @return null|string
+   *   NULL or the mapped name.
    */
   protected function mapMimeType($mime_type) {
     // First use file.modules mapping of general mimetypes.
@@ -85,7 +90,7 @@ class FiletypeFormatter extends FileDownloadLinkFormatter {
         case 'package-x-generic':
           return 'Archive';
 
-        // Acrobat types
+        // Acrobat types.
         case 'application-pdf':
           return 'PDF';
       }
@@ -95,7 +100,7 @@ class FiletypeFormatter extends FileDownloadLinkFormatter {
       return NULL;
     }
 
-    // No generic match, attempt to match media-types
+    // No generic match, attempt to match media-types.
     foreach (array('audio', 'image', 'text', 'video') as $category) {
       if (strpos($mime_type, $category) === 0) {
         return ucfirst($category);
@@ -105,5 +110,5 @@ class FiletypeFormatter extends FileDownloadLinkFormatter {
     // No general match and no media-match, bail out.
     return NULL;
   }
-}
 
+}
