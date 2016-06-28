@@ -1,0 +1,38 @@
+// Overall styling of download-boxes.
+.factbox.paragraph--type--download {
+  // Clear space for the download arrow.
+  padding-right: 20%;
+
+  // Large background download arrow to the right.
+  @include background-image(url('../svg/download_back.svg'), linear-gradient(180deg, $gray-light-gradient-light, $gray-light-gradient-dark ));
+  background-position: 100% 50%, 0 0;
+  background-size: 215px, auto;
+  background-repeat: no-repeat, repeat;
+
+  // Reduce the size of the background arrow in landscape.
+  @include media($tablet-l) {
+    background-position: 100% 50%, 0 0;
+    background-size: 120px, auto;
+  }
+
+  // Remove the backgroun all-together in portrait.
+  @include media($tablet-p) {
+    @include linear-gradient(180deg, $gray-light-gradient-light, $gray-light-gradient-dark );
+    background-size: auto;
+    // Reset padding back to factbox padding.
+    padding-right: 27px;
+  }
+
+  // We only display the download arrow when the box is in full width.
+  &.span-4,
+  &.span-6,
+  &.span-8 {
+    @include linear-gradient(180deg, $gray-light-gradient-light, $gray-light-gradient-dark );
+    background-size: auto;
+    // Reset padding back to factbox.
+    padding-right: 27px;
+  }
+}
+
+
+

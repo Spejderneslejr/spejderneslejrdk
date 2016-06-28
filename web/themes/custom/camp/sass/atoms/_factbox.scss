@@ -1,6 +1,5 @@
 // A fact box of a mininmum size with internal padding.
-// The box has a red background with a gradient.
-.paragraph--type--factbox {
+.factbox {
   position: relative;
   min-height: 100px;
   min-width: 200px;
@@ -8,14 +7,21 @@
   padding: 30px 27px 20px;
 
   border-radius: 2px;
-  background-color: $red;
   color: white;
-  @include background-image(linear-gradient(180deg, $red, $red-dark));
+
+  // Default factbox has a red background with a gradient.
+  // Note, the dark variant includes a background-image and is handled in
+  // _download-box.scss.
+  &.red {
+    background-color: $red;
+    @include background-image(linear-gradient(180deg, $red, $red-dark));
+  }
+
 }
 
 // The headline of the factbox is a slightly larger version of h2 with a
 // dashed underlining.
-.paragraph--type--factbox {
+.factbox {
   h2 {
     margin-bottom: 18px;
     font-family: 'FB Hermes', sans-serif;
@@ -25,17 +31,37 @@
 
     margin-top: 0;
     padding-bottom: 17px;
-    border-bottom: 2px dashed hsla(0, 0%, 100%, .57);
-    color: white;
+    border-bottom: 2px dashed;
   }
 }
 
-// Slightly larger and bold text used for the body of the factbox.
-.paragraph--type--factbox {
+// Reset bottom margin to avoid to inherit styling from article-styling.
+.factbox {
   p {
-    font-size: em(16, $base-font-size);
-    font-family: Calibri Bold, sans-serif;
+    margin-bottom: inherit;
   }
+}
+
+// Headlines in factboxes.
+.factbox {
+  &.red h2 {
+    color: white;
+    border-bottom-color: hsla(0, 0%, 100%, .57);
+  }
+
+  &.dark h2 {
+    color: $gray-light;
+    border-bottom-color: $gray-light;
+  }
+
+}
+
+// Slightly larger and bold text used for the body of the factbox.
+// We need a slightly more detailed selector for p-tags to beat the article
+// styling.
+.factbox, .factbox p {
+  font-size: em(16, $base-font-size);
+  font-family: Calibri Bold, sans-serif;
 }
 
 // We need to flip the color of everything inside the factbox to make it
@@ -46,5 +72,10 @@
     // current invert of $base-font-color does not give us enough contrast
     color: white;
   }
+}
+
+// Default the dark factboxes text-color.
+.factbox.dark {
+  color: $gray-dark;
 }
 
