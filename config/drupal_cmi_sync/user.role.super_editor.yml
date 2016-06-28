@@ -90,3 +90,6 @@ permissions:
   - 'access toolbar'
   - 'access tour'
   - 'never autoplay videos'
+  - 'create paragraph content download'
+  - 'delete paragraph content download'
+  - 'update paragraph content download'

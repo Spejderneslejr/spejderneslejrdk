@@ -1,0 +1,40 @@
+uuid: 95ded8af-dfd8-4d87-8ae5-2597dd593a03
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.download.field_download_body
+    - field.field.paragraph.download.field_download_file
+    - field.field.paragraph.download.field_download_title
+    - paragraphs.paragraphs_type.download
+  module:
+    - file
+id: paragraph.download.default
+targetEntityType: paragraph
+bundle: download
+mode: default
+content:
+  field_download_body:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+  field_download_file:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+  field_download_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  uid: true
