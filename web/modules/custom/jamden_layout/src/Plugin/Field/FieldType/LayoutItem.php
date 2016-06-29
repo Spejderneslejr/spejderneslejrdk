@@ -51,6 +51,9 @@ class LayoutItem extends FieldItemBase {
    * {@inheritdoc}
    */
   public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
+
+    $properties = [];
+
     $properties['width'] = DataDefinition::create('string')
                            ->setLabel(t('Width'));
 

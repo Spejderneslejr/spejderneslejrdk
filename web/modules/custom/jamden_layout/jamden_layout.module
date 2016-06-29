@@ -6,13 +6,12 @@
  */
 
 use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\jamden_layout\Plugin\Field\FieldType\LayoutItem;
 
 /**
  * Implements hook_entity_view_alter().
  */
-function jamden_layout_entity_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+function jamden_layout_entity_view_alter(array &$build, EntityInterface $entity) {
 
   static $spans = 0;
 
