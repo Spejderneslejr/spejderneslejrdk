@@ -1,13 +1,6 @@
 @import "bourbon";
-@import "neat";
 @import "vars";
 @import "mixins";
-// Grid settings. Needs to be set before we bring in neat.
-$grid-columns: 12;
-$gutter: 0%;
-$max-width: 1200px;
-$column: 1em;
-$gutter: 0em;
 
 // Debug.
 $visual-grid: false;
