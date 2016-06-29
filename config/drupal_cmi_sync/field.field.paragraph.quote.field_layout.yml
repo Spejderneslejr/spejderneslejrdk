@@ -1,0 +1,25 @@
+uuid: 669feea6-730d-42a1-a7ab-cb385400dbfa
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_layout
+    - paragraphs.paragraphs_type.quote
+  module:
+    - jamden_layout
+id: paragraph.quote.field_layout
+field_name: field_layout
+entity_type: paragraph
+bundle: quote
+label: Layout
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    width: '0'
+    clear: 0
+    float: 0
+default_value_callback: ''
+settings: {  }
+field_type: layout

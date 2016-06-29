@@ -3,15 +3,22 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.text.field_layout
     - field.field.paragraph.text.field_paragraph_text
     - paragraphs.paragraphs_type.text
   module:
+    - jamden_layout
     - text
 id: paragraph.text.default
 targetEntityType: paragraph
 bundle: text
 mode: default
 content:
+  field_layout:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: layout
   field_paragraph_text:
     weight: 0
     settings:
