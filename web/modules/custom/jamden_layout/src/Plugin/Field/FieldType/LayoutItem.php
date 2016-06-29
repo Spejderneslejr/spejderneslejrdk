@@ -1,13 +1,7 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\jamden_layout\Plugin\Field\FieldType\LayoutItem.
- */
-
 namespace Drupal\jamden_layout\Plugin\Field\FieldType;
 
-use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemBase;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\TypedData\DataDefinition;
@@ -38,7 +32,7 @@ class LayoutItem extends FieldItemBase {
           'size' => 'tiny',
         ],
         'clear' => [
-          'description' => 'Show card on a new line',
+          'description' => 'Show layout on a new line',
           'type' => 'int',
           'unsigned' => TRUE,
           'size' => 'tiny',
@@ -75,5 +69,5 @@ class LayoutItem extends FieldItemBase {
   public static function mainPropertyName() {
     return 'columns';
   }
-}
 
+}

@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Layout manager - Set width and appearance related settings
+ * Layout manager - Set width and appearance related settings.
  */
 
 use Drupal\Core\Entity\EntityInterface;
@@ -19,8 +19,6 @@ function jamden_layout_entity_view_alter(array &$build, EntityInterface $entity,
   foreach ($entity->getFields() as $field) {
     $item = $field->first();
 
-
-
     if ($item instanceof LayoutItem) {
       // Add column width class.
       if ($item->width) {
@@ -29,17 +27,18 @@ function jamden_layout_entity_view_alter(array &$build, EntityInterface $entity,
         $span_class = 'span-default';
 
         // First element in new "row".
-        if($spans == 0) {
+        if ($spans == 0) {
           $build['#attributes']['class'][] = 'clear';
         }
 
         // Total spans in "row".
         $spans = ((int) $item->width) + $spans;
 
-        if($spans > 8) {
-          if($spans > 12) {
+        if ($spans > 8) {
+          if ($spans > 12) {
             $build['#attributes']['class'][] = 'clear';
-          } else {
+          }
+          else {
             // We know if total spans is bigger than 8 the next
             // span will not fit.
             $build['#attributes']['class'][] = 'span-break';
@@ -52,7 +51,8 @@ function jamden_layout_entity_view_alter(array &$build, EntityInterface $entity,
         if ($item->width !== '0') {
           $span_class = 'span-' . $item->width;
         }
-      } else {
+      }
+      else {
         // Fallback.
         $spans = 0;
         $span_class = 'span-default';
@@ -76,4 +76,3 @@ function jamden_layout_entity_view_alter(array &$build, EntityInterface $entity,
     }
   }
 }
-

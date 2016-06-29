@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\jamden_layout\Plugin\field\formatter\LayoutFormatter.
- */
-
 namespace Drupal\jamden_layout\Plugin\Field\FieldFormatter;
 
 use Drupal\Core\Field\FieldItemListInterface;
@@ -22,10 +17,12 @@ use Drupal\Core\Field\FormatterBase;
  * )
  */
 class LayoutFormatter extends FormatterBase {
+
   /**
    * {@inheritdoc}
    */
   public function viewElements(FieldItemListInterface $items, $langcode) {
     return [];
   }
+
 }

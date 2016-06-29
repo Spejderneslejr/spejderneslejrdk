@@ -1,15 +1,9 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\jamden_layout\Plugin\Field\FieldWidget\LayoutWidget.
- */
-
 namespace Drupal\jamden_layout\Plugin\Field\FieldWidget;
 
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\WidgetBase;
-use Drupal\Core\Field\WidgetInterface;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
@@ -24,6 +18,7 @@ use Drupal\Core\Form\FormStateInterface;
  * )
  */
 class LayoutWidget extends WidgetBase {
+
   /**
    * {@inheritdoc}
    */
@@ -36,12 +31,6 @@ class LayoutWidget extends WidgetBase {
       '6'  => t('1/2 width'),
       '8' => t('2/3 width'),
     ];
-
-    // $element['fieldset'] = [
-    //   '#type' => 'details',
-    //   '#title' => t('Layout'),
-    //   '#description' => t('Layout settings for this element'),
-    // ];
 
     $element['width'] = [
       '#type' => 'select',
@@ -68,4 +57,5 @@ class LayoutWidget extends WidgetBase {
 
     return $element;
   }
+
 }
