@@ -29,7 +29,7 @@ services:
       VCL_CONFIG: /vcl/sl2017.vcl
       VARNISHD_PARAMS: "-p vcl_dir=/vcl"
     volumes:
-      - './documentation/environment-setup/test/varnish/sl2017.vcl:/vcl/sl2017.vcl'
+      - './documentation/environment-setup/varnish/sl2017.vcl:/vcl/sl2017.vcl'
       - './docker/proxy/backends.vcl:/vcl/backends.vcl'
       - './docker/proxy/acl.vcl:/vcl/acl.vcl'
 
