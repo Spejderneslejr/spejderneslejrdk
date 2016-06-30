@@ -5,15 +5,21 @@
  * Layout manager - Set width and appearance related settings.
  */
 
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\jamden_layout\Plugin\Field\FieldType\LayoutItem;
 
 /**
  * Implements hook_entity_view_alter().
  */
-function jamden_layout_entity_view_alter(array &$build, EntityInterface $entity) {
-
+function jamden_layout_entity_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
   static $spans = 0;
+
+  // We're looking for an entity with fields.
+  if (!$entity instanceof FieldableEntityInterface) {
+    return;
+  }
 
   foreach ($entity->getFields() as $field) {
     $item = $field->first();
