@@ -64,7 +64,7 @@ function camp_preprocess_paragraph(&$variables) {
       $image = $paragraph->field_paragraph_image->entity;
       $variables['caption'] = !empty($image->field_image_caption->value) ?
         $image->field_image_caption->value : '';
-      $variables['credits'] = camp_get_translated_credits_from_image($image);
+      $variables['credits'] = empty($image) ? '' : camp_get_translated_credits_from_image($image);
       break;
 
     case 'quote':

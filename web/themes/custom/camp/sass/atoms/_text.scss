@@ -61,6 +61,10 @@ a:visited,
 a:active {
   color: $green;
   text-decoration: underline;
+
+  .dark &, &.dark {
+    color: black;
+  }
 }
 
 blockquote {
@@ -78,4 +82,31 @@ blockquote {
   @include media($tablet-p) {
     font-size: em(16.8, $base-font-size);
   }
+}
+
+// A download-link with a download-icon in front.
+.download-item a {
+  // Make space for the arrow.
+  padding-left: 30px;
+  background-image: url("../svg/download_black.svg");
+
+  // Place left, vertically centered.
+  background-position: 0 50%;
+
+  // Set the size of the arrow.
+  background-size: 22px;
+  background-repeat: no-repeat;
+}
+
+// Download-links are styled with their own arrow "bullet", and padding so
+// remove the list-bullets and reset the padding
+ul.download-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+// Add spacing between lines.
+.download-list li {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }

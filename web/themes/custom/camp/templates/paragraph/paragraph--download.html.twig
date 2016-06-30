@@ -28,7 +28,7 @@
  * - view_mode: View mode; for example, "preview" or "full".
  * - logged_in: Flag for authenticated user status. Will be true when the
  *   current user is a logged-in member.
- * - is_admin: Flag for admin user status. Will be true when the current user
+ * - is_admin: Flag for admin user status. Will be true  when the current user
  *   is an administrator.
  *
  * @see template_preprocess_paragraph()
@@ -42,14 +42,13 @@ set classes = [
 'paragraph--type--' ~ paragraph.bundle|clean_class,
 view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   'factbox',
-  'red'
+  'dark',
 ]
 %}
 <div{{ attributes.addClass(classes) }}>
-  <h2>
-    {{ content.field_factbox_title }}
+  <h2 class="dark">
+    {{ content.field_download_title }}
   </h2>
-  {# Notice - we're adding a invert-color in #}
-  {{ content.field_paragraph_text }}
+    {{ content.field_download_body }}
+    {{ content.field_download_file }}
 </div>
-

@@ -24,3 +24,4 @@ permissions:
   - 'view paragraph content video'
   - 'view paragraph content accordion'
   - 'view paragraph content factbox'
+  - 'view paragraph content download'
