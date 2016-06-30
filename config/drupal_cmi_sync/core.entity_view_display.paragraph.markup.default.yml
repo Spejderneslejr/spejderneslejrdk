@@ -1,0 +1,23 @@
+uuid: b2de04c9-e084-4134-85c5-10aa3674c63b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.markup.field_markup
+    - paragraphs.paragraphs_type.markup
+  module:
+    - raw_string_formatter
+id: paragraph.markup.default
+targetEntityType: paragraph
+bundle: markup
+mode: default
+content:
+  field_markup:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: raw_string
+hidden:
+  created: true
+  uid: true

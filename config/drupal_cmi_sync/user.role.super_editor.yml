@@ -93,3 +93,7 @@ permissions:
   - 'delete paragraph content download'
   - 'update paragraph content download'
   - 'view the administration theme'
+  - 'create paragraph content markup'
+  - 'delete paragraph content markup'
+  - 'update paragraph content markup'
+  - 'view paragraph content markup'
