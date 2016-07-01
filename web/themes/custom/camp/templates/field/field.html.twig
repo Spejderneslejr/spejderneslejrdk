@@ -35,6 +35,10 @@
  *
  *
  * @see template_preprocess_field()
+ *
+ * We override the template here because we need to strip down the outer divs
+ * injected by the base theme: classy. We do this because if span classes are
+ * injected there nedd to be in the outer divs.
  */
 #}
 {% for item in items %}
