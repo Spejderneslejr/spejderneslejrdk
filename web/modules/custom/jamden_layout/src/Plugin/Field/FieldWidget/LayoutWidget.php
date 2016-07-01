@@ -26,11 +26,16 @@ class LayoutWidget extends WidgetBase {
 
     // Prepare the options for the layout.
     $options = [
-      '0' => t('Default'),
+      '0' => t('Full width'),
       '4' => t('1/3 width'),
       '6'  => t('1/2 width'),
       '8' => t('2/3 width'),
     ];
+
+    $element += array(
+      '#type' => 'details',
+      '#title' => t('Layout manager'),
+    );
 
     $element['width'] = [
       '#type' => 'select',
@@ -44,18 +49,20 @@ class LayoutWidget extends WidgetBase {
       '#type' => 'checkbox',
       '#title' => t('Clear'),
       '#default_value' => $items[$delta]->clear,
-      '#description' => t('Start a new row.'),
+      '#description' => t('Place the element on a new row.'),
     ];
 
     $element['float'] = [
-      '#type' => 'checkbox',
-      '#title' => t('Align to right'),
+      '#type' => 'select',
+      '#title' => t('Position'),
+      '#options' => [
+        'left' => 'left',
+        'right' => 'right',
+      ],
       '#default_value' => $items[$delta]->float,
-      '#description' => t('Alignment of item. Check if item should align to the
-        right. Default behavior is align to the left.'),
+      '#description' => t('Alignment of item.'),
     ];
 
     return $element;
   }
-
 }

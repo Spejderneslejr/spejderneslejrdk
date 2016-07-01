@@ -38,9 +38,9 @@ class LayoutItem extends FieldItemBase {
           'size' => 'tiny',
         ],
         'float' => [
-          'description' => 'Align element to the right',
-          'type' => 'int',
-          'unsigned' => TRUE,
+          'description' => 'Alignment of element',
+          'type' => 'text',
+          'not null' => FALSE,
           'size' => 'tiny',
         ],
       ],
@@ -60,7 +60,7 @@ class LayoutItem extends FieldItemBase {
     $properties['clear'] = DataDefinition::create('boolean')
                         ->setLabel(t('Clear'));
 
-    $properties['float'] = DataDefinition::create('boolean')
+    $properties['float'] = DataDefinition::create('string')
                         ->setLabel(t('Float'));
 
     return $properties;
