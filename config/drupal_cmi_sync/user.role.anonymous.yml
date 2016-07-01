@@ -5,7 +5,7 @@ dependencies: {  }
 _core:
   default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
 id: anonymous
-label: 'Anonymous user'
+label: 'Anonym bruger'
 weight: 0
 is_admin: false
 permissions:
@@ -21,3 +21,4 @@ permissions:
   - 'view paragraph content video'
   - 'view paragraph content accordion'
   - 'view paragraph content factbox'
+  - 'view paragraph content gallery_reference'

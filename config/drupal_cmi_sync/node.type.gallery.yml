@@ -1,0 +1,17 @@
+uuid: be87c478-1ce1-467b-a8b8-a543ed475bca
+langcode: da
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Gallery
+type: gallery
+description: 'Use <em>gallery</em> to create an image carousel.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

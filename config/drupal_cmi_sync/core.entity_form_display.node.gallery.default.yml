@@ -1,0 +1,38 @@
+uuid: 8848b37a-39aa-4176-997d-af7edbb51170
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.node.gallery.field_image
+    - node.type.gallery
+  module:
+    - file_entity
+id: node.gallery.default
+targetEntityType: node
+bundle: gallery
+mode: default
+content:
+  field_image:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_editable
+  langcode:
+    type: language_select
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true
