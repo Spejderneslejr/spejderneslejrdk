@@ -2,9 +2,12 @@ $black: rgb(0, 0, 0);
 $black-medium: rgb(51, 51, 51);
 $black-light: rgb(90, 90, 90);
 
-// The two endpoints of a grey gradient, used in dark factboxes.
+// Gradient start and stop colors.
 $gray-light-gradient-dark: rgb(217, 217, 214);
 $gray-light-gradient-light: rgb(243, 243, 243);
+
+$turquoise-dark-gradient-dark: rgb(130, 169, 169);
+$turquoise-dark-gradient-light: rgb(187, 215, 215);
 
 $gray: rgb(194, 194, 194);
 $gray-medium: rgb(174, 174, 174);

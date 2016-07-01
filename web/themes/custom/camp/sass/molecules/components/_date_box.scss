@@ -1,0 +1,53 @@
+// A read and white box that displays a year and date.
+// Used in the info-deck.
+// Content of the boxes are relatively positioned.
+.date-box {
+  display: block;
+  width: 60%;
+  height: 50%;
+  margin-top: em(30, 16);
+  margin-right: auto;
+  margin-left: auto;
+  font-family: 'FB Hermes', sans-serif;
+
+  .day-box {
+    display: block;
+    width: 100%;
+    height: 60%;
+    max-width: em(190, 16);
+    margin-right: auto;
+    margin-left: auto;
+    background-color: white;
+
+    .day {
+      color: black;
+      padding-top: 0.85em;
+      font-size: 2.8em;
+
+      position: relative;
+      margin-top: 1em;
+      margin-bottom: em(40, 16);
+    }
+  }
+
+  .month-box {
+    display: block;
+    width: 100%;
+    height: 40%;
+    max-width: em(190, 16);
+    margin-right: auto;
+    margin-left: auto;
+    background-color: $red-dark;
+
+    .month {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: 0.65em;
+
+      color: white;
+      font-size: 2em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+}
