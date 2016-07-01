@@ -47,7 +47,7 @@ class LayoutWidget extends WidgetBase {
 
     $element['clear'] = [
       '#type' => 'checkbox',
-      '#title' => t('Clear'),
+      '#title' => t('Start a new row'),
       '#default_value' => $items[$delta]->clear,
       '#description' => t('Place the element on a new row.'),
     ];
