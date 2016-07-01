@@ -1,33 +1,5 @@
-// .juicebox-parent {
-//   height: 675px;
-
-//   @include media($tablet-l) {
-//     height: 450px;
-//   }
-
-//   @include media($tablet-p) {
-//     height: 400px;
-//   }
-// }
-
-@media (min-width: 1200px) {
-  .juicebox-parent {
-    height: 500px;
-  }
-}
-
-@media (min-device-width: 980px) and (min-width: 980px), (max-device-width: 1024px) and (min-width: 1024px) and (orientation: landscape) {
-  .juicebox-parent {
-    height: 450px;
-  }
-}
-
-@media (min-device-width: 740px) and (min-width: 740px), (max-device-width: 800px) and (min-width: 740px) and (orientation: landscape) {
-  .juicebox-parent {
-    height: 400px;
-  }
-}
-
+// we leave all of this juicebox related stuff in here, because
+// we really don't know what to do about it yet. TODO(ts) - refactor later.
 .juicebox-parent {
   float: none;
   height: 675px;

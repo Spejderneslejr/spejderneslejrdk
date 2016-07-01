@@ -1744,24 +1744,6 @@ h6 {
   display: table;
 }
 
-@media (min-width: 1200px) {
-  .juicebox-parent {
-    height: 500px;
-  }
-}
-
-@media (min-device-width: 980px) and (min-width: 980px), (max-device-width: 1024px) and (min-width: 1024px) and (orientation: landscape) {
-  .juicebox-parent {
-    height: 450px;
-  }
-}
-
-@media (min-device-width: 740px) and (min-width: 740px), (max-device-width: 800px) and (min-width: 740px) and (orientation: landscape) {
-  .juicebox-parent {
-    height: 400px;
-  }
-}
-
 .juicebox-parent {
   float: none;
   height: 675px;
