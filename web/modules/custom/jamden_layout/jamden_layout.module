@@ -72,7 +72,7 @@ function jamden_layout_entity_view_alter(array &$build, EntityInterface $entity,
       }
 
       // Align to right if present.
-      if ($item->float) {
+      if ($item->float && $item->float === 'right') {
         $build['#attributes']['class'][] = 'span-align-right';
       }
 
