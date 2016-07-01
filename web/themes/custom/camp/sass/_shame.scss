@@ -1,0 +1,68 @@
+// .juicebox-parent {
+//   height: 675px;
+
+//   @include media($tablet-l) {
+//     height: 450px;
+//   }
+
+//   @include media($tablet-p) {
+//     height: 400px;
+//   }
+// }
+
+@media (min-width: 1200px) {
+  .juicebox-parent {
+    height: 500px;
+  }
+}
+
+@media (min-device-width: 980px) and (min-width: 980px), (max-device-width: 1024px) and (min-width: 1024px) and (orientation: landscape) {
+  .juicebox-parent {
+    height: 450px;
+  }
+}
+
+@media (min-device-width: 740px) and (min-width: 740px), (max-device-width: 800px) and (min-width: 740px) and (orientation: landscape) {
+  .juicebox-parent {
+    height: 400px;
+  }
+}
+
+.juicebox-parent {
+  float: none;
+  height: 675px;
+  margin: 15px auto;
+  width: 100%;
+}
+
+.jb-thm-thumb-selected {
+  .jb-thm-thumb-image {
+    color: $green !important;
+  }
+}
+
+.jb-thm-thumb-image {
+  color: $gray !important;
+
+  &:hover {
+
+  }
+}
+
+/* CAPTION AREA */
+.jb-area-caption {
+  z-index: 200 !important;
+  opacity: 1;
+}
+
+/* GALLERY TITLE */
+.jb-area-large-mode-title {
+  z-index: 200 !important;
+  opacity: 1;
+}
+
+/* BUTTON BAR */
+.jb-classifier-link-wrapper.jb-classifier-detail-area.jb-classifier-layer {
+  z-index: 200 !important;
+  opacity: 1;
+}

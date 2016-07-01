@@ -102,6 +102,8 @@
        */
       function stickyHeader(wrapper, target) {
 
+        return;
+
         var mn = $(".page-header");
         var mns = "main-nav-scrolled";
         var hdr = $('.page-header').height();

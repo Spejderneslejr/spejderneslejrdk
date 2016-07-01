@@ -28,7 +28,11 @@
         "drupal/file_entity": "^8",
         "drupal/admin_toolbar": "^8",
         "drupal/video_embed_field": "^8.1",
-        "drupal/stage_file_proxy": "^8"
+        "drupal/stage_file_proxy": "^8",
+        "drupal/juicebox": "^8",
+        "drupal/inline_entity_form": "^8",
+        "drupal/node_view_permissions": "^8.1",
+        "drupal/entity_browser": "^8.1@alpha"
     },
     "require-dev": {
         "behat/mink": "~1.6",
