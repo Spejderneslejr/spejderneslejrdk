@@ -35,7 +35,7 @@ class FiletypeFormatter extends FileDownloadLinkFormatter {
 
     $delta = 0;
     foreach ($elements as &$element) {
-      if (empty($file)) {
+      if (empty($element['#file'])) {
         continue;
       }
       $file = $element['#file'];

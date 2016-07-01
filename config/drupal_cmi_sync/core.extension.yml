@@ -44,6 +44,7 @@ module:
   purge_queuer_coretags: 0
   purge_tokens: 0
   purge_ui: 0
+  raw_string_formatter: 0
   rdf: 0
   responsive_image: 0
   search: 0

@@ -8,6 +8,7 @@ apt-get -y install \
       php7.0-gd \
       php7.0-xml \
       php7.0-mysql \
+      php7.0-mbstring \
       mysql-client \
       git \
       unzip
@@ -33,11 +34,15 @@ php -r "unlink('composer-setup.php');"
 
 ## PHP-FPM
 ```
+adduser --system --home /var/www/test_sl2017 --no-create-home --disabled-password test_sl2017
 adduser --system --home /var/www/test_sl2017 --no-create-home --disabled-password test_sl2017_fpm
 addgroup --system test_sl2017_fpm
 adduser test_sl2017_fpm test_sl2017_fpm
 
 mv /etc/php/7.0/fpm/pool.d/www.conf /etc/php/7.0/fpm/pool.d/www.conf.dist
+
+cp fpm/reload-php.ini /etc/php/7.0/mods-available
+phpenmod reload-php
 
 cp fpm/test.sl2017.conf /etc/php/7.0/fpm/pool.d/test.sl2017.conf
 
