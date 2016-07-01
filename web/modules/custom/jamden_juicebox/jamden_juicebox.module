@@ -7,6 +7,7 @@
 
 use Drupal\file\Plugin\Field\FieldType\FileFieldItemList;
 use Drupal\juicebox\JuiceboxGallery;
+use Drupal\file_entity\Entity\FileEntity;
 
 /**
  * Implements hook_juicebox_gallery_data_alter().
@@ -41,7 +42,7 @@ function jamden_juicebox_juicebox_gallery_alter(JuiceboxGallery $juicebox, FileF
  * @return string
  *   Translated credits string
  */
-function jamden_juicebox_translated_credits_from_image($image) {
+function jamden_juicebox_translated_credits_from_image(FileEntity $image) {
 
   // Return empty string if there is no credits.
   if (empty($image->field_image_credits->value)) {
