@@ -25,3 +25,5 @@ permissions:
   - 'view paragraph content accordion'
   - 'view paragraph content factbox'
   - 'view paragraph content gallery_reference'
+  - 'view paragraph content download'
+  - 'view paragraph content markup'

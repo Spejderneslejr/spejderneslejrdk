@@ -23,18 +23,30 @@ settings:
     target_bundles: null
     target_bundles_drag_drop:
       text:
-        weight: -11
+        weight: -19
         enabled: false
       image:
-        weight: -10
+        weight: -18
         enabled: false
-      video:
-        weight: -9
+      factbox:
+        weight: -17
         enabled: false
       quote:
-        weight: -8
+        weight: -16
+        enabled: false
+      video:
+        weight: -15
+        enabled: false
+      download:
+        weight: -14
+        enabled: false
+      accordion:
+        weight: -13
+        enabled: false
+      markup:
+        weight: -12
         enabled: false
       frontpage_gallery:
-        weight: -7
+        weight: -11
         enabled: false
 field_type: entity_reference_revisions

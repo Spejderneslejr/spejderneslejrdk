@@ -39,6 +39,7 @@ settings:
         -
           name: Tools
           items:
+            - PasteFromWord
             - ShowBlocks
             - Source
   plugins:

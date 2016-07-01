@@ -5,9 +5,6 @@
  * Jamden Juicebox - alters juicebox settings and views.
  */
 
-use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
-use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\file\Plugin\Field\FieldType\FileFieldItemList;
 use Drupal\juicebox\JuiceboxGallery;
 

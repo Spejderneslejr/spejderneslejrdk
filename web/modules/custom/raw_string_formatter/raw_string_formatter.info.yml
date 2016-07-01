@@ -1,0 +1,4 @@
+name: Raw string formatter
+type: module
+description: Displays a string verbatim
+core: 8.x
