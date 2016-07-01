@@ -4,6 +4,13 @@
       @include span-columns(6);
     }
   }
+
+  // Make sure text paragraphs clear both when using clear.
+  &.paragraph--type--text {
+    &.clear {
+      clear: both;
+    }
+  }
 }
 
 [class*='span-'] {

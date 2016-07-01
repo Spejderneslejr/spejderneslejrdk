@@ -329,6 +329,10 @@ main:last-child {
   }
 }
 
+.layout-item.paragraph--type--text.clear {
+  clear: both;
+}
+
 @media screen and (max-width: 767px) {
   [class*='span-'].layout-item {
     float: left;
@@ -1789,57 +1793,6 @@ h6 {
   clear: both;
   content: "";
   display: table;
-}
-
-@media screen and (max-width: 1024px) {
-  .layout-item.span-4 {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%;
-  }
-  .layout-item.span-4:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  [class*='span-'].layout-item {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 100%;
-    float: left !important;
-  }
-  [class*='span-'].layout-item:last-child {
-    margin-right: 0;
-  }
-  [class*='span-'].span-align-right {
-    margin-left: 0;
-  }
-}
-
-.span-align-right {
-  float: right;
-  margin-right: 0;
-  margin-left: 35px;
-}
-
-.span-default:not(.paragraph--type--text) {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 100%;
-  float: none;
-  display: inline-block;
-}
-
-.span-default:not(.paragraph--type--text):last-child {
-  margin-right: 0;
-}
-
-.span-break {
-  margin-right: 0;
 }
 
 /*# sourceMappingURL=sourcemaps/camp.main.css.map */
