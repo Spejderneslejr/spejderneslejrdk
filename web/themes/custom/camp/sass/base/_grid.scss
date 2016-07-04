@@ -2,6 +2,9 @@
 @import "vars";
 @import "mixins";
 
+$grid-columns: 12;
+$max-width: 1200px;
+
 // Debug.
 $visual-grid: false;
 $visual-grid-index: front;
