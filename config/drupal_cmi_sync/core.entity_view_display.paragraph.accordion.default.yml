@@ -3,16 +3,24 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.accordion.field_layout
     - field.field.paragraph.accordion.field_paragraphs
     - field.field.paragraph.accordion.field_title
     - paragraphs.paragraphs_type.accordion
   module:
     - entity_reference_revisions
+    - jamden_layout
 id: paragraph.accordion.default
 targetEntityType: paragraph
 bundle: accordion
 mode: default
 content:
+  field_layout:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: layout_hidden
   field_paragraphs:
     type: entity_reference_revisions_entity_view
     weight: 1

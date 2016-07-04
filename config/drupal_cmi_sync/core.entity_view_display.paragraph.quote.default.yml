@@ -3,17 +3,25 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.quote.field_layout
     - field.field.paragraph.quote.field_quote_body
     - field.field.paragraph.quote.field_quote_byline
     - field.field.paragraph.quote.field_quote_link
     - paragraphs.paragraphs_type.quote
   module:
+    - jamden_layout
     - link
 id: paragraph.quote.default
 targetEntityType: paragraph
 bundle: quote
 mode: default
 content:
+  field_layout:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: layout_hidden
   field_quote_body:
     weight: 0
     label: hidden

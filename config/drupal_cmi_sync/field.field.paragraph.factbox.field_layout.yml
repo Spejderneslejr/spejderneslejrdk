@@ -1,0 +1,25 @@
+uuid: 836023f6-4a6e-45a2-9c2b-7518ba14421c
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_layout
+    - paragraphs.paragraphs_type.factbox
+  module:
+    - jamden_layout
+id: paragraph.factbox.field_layout
+field_name: field_layout
+entity_type: paragraph
+bundle: factbox
+label: Layout
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    width: '0'
+    clear: 0
+    float: 0
+default_value_callback: ''
+settings: {  }
+field_type: layout

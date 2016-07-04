@@ -24,6 +24,7 @@ module:
   help: 0
   history: 0
   image: 0
+  jamden_layout: 0
   jamden_top_image: 0
   language: 0
   link: 0

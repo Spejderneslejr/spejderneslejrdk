@@ -1,0 +1,7 @@
+name: Layout
+type: module
+description: 'Layout manager - Set width and appearance related settings'
+package: 'Jamboree Denmark'
+core: 8.x
+dependencies:
+  - field

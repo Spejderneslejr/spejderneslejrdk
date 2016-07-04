@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.factbox.field_factbox_title
+    - field.field.paragraph.factbox.field_layout
     - field.field.paragraph.factbox.field_paragraph_text
     - paragraphs.paragraphs_type.factbox
   module:
+    - jamden_layout
     - text
 id: paragraph.factbox.default
 targetEntityType: paragraph
@@ -20,6 +22,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_layout:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: layout
   field_paragraph_text:
     weight: 1
     settings:
