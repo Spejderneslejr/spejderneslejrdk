@@ -26,3 +26,4 @@ permissions:
   - 'view paragraph content factbox'
   - 'view paragraph content download'
   - 'view paragraph content markup'
+  - 'view paragraph content frontpage_gallery'
