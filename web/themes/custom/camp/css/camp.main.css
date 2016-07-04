@@ -569,7 +569,7 @@ blockquote {
   }
 }
 
-.btn {
+.btn, .infomercial-call-ta a {
   padding: 15px 19px 10px;
   border-radius: 30px;
   background-color: #e1477d;
@@ -577,7 +577,7 @@ blockquote {
   text-shadow: 1px 1px 1px #066969;
 }
 
-.btn:hover {
+.btn:hover, .infomercial-call-ta a:hover {
   color: white;
   background-color: #000;
 }
@@ -1824,6 +1824,126 @@ ul.atcb-list li {
   color: #837870;
   text-align: center;
   font-size: 1.2em;
+}
+
+.paragraph--type--infomercial {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 1024px) {
+  .paragraph--type--infomercial {
+    font-size: 0.875em;
+  }
+}
+
+.paragraph--type--infomercial h1, .paragraph--type--infomercial h2 {
+  color: white;
+  text-align: center;
+}
+
+.paragraph--type--infomercial h1 {
+  font-size: 6.07143em;
+  text-shadow: 1px 1px 18px rgba(0, 0, 0, 0.27);
+}
+
+.paragraph--type--infomercial h2 {
+  font-size: 1.85714em;
+  font-family: 'FB Hermes', sans-serif;
+}
+
+@media screen and (max-width: 1024px) {
+  .paragraph--type--infomercial {
+    font-size: 0.875em;
+  }
+  .paragraph--type--infomercial h1 {
+    font-size: 4.28571em;
+    margin-bottom: 0.35714em;
+  }
+  .paragraph--type--infomercial h2 {
+    font-size: 2.14286em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .paragraph--type--infomercial {
+    font-size: 0.625em;
+  }
+}
+
+.paragraph--type--infomercial {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 57.14286em;
+  padding-right: 10%;
+  padding-left: 10%;
+  box-orient: vertical;
+  box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  background-position: 0 0, 50% 50%;
+  background-size: auto, cover;
+}
+
+@media screen and (max-width: 1024px) {
+  .paragraph--type--infomercial {
+    min-height: 42.85714em;
+    padding-right: 3%;
+    padding-left: 3%;
+    background-position: 0px 0px, 50% 50%;
+  }
+}
+
+.infomercial-call-ta {
+  text-align: center;
+  margin-top: 4em;
+  margin-bottom: 4em;
+}
+
+@media screen and (max-width: 768px) {
+  .infomercial-call-ta {
+    margin-top: 1.42857em;
+    margin-bottom: 1.42857em;
+  }
+}
+
+.infomercial-call-ta a {
+  margin: 0.85714em;
+  font-size: 1.2em;
+  font-family: 'FB Hermes', sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 0.78571em 1.35714em 0.71429em;
+}
+
+.infomercial-call-ta a:hover {
+  background-color: #b11149;
+}
+
+@media screen and (max-width: 768px) {
+  .infomercial-call-ta a {
+    width: 80%;
+    font-size: 1.8em;
+    margin: 0.57143em;
+    padding: 0.85714em 1.5em 0.85714em;
+  }
 }
 
 .paragraph {
