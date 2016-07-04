@@ -37,12 +37,13 @@
 // Setup sizing.
 .three-col-deck {
   font-size: 16px;
-  height: 23em;
+  height: 40vh;
+  min-height: 416px;
 
   // Make everything smaller when hitting the landscape breakpoint.
   @include media($tablet-l) {
-    font-size: 10px;
-    height: 23em;
+    font-size: 14px;
+    height: 24vh;
   }
 
   .col-deck {
@@ -116,9 +117,6 @@
 .three-col-deck {
   .centered li {
     margin-top: em(14, 16);
-    @include media($tablet-l) {
-      margin-top: 0;
-    }
 
     a {
       font-family: 'FB Hermes', sans-serif;
@@ -141,14 +139,24 @@
 
 // The ticket graphic is positioned absolute, so we have to do the same for the
 // elements below it.
-.three-col-deck .focus .link-container {
-  position: absolute;
-  bottom: em(45, 20);
+.link-container {
+  position: relative;
+  float: left;
+  width: 100%;
+  margin: 8% 0 0;
+
+  .iconlink a.with-icon {
+    color: white;
+
+    &:hover {
+      color: $black-medium;
+    }
+  }
 }
 
 // Infodesc specific tweaks of the addtocalendar element. The rest is done
 // in _add_to_calendar.scss.
-.three-col-deck .addtocalendar {
+.addtocalendar {
   font-size: 0.8em;
   padding: em(0.2, 16);
 

@@ -1738,25 +1738,35 @@ ul.atcb-list li {
   margin-bottom: 0;
 }
 
+.ticket-wrapper {
+  height: 50%;
+  width: 100%;
+  float: left;
+  display: block;
+}
+
 .ticket {
   display: block;
   text-align: left;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 5em;
-  width: 28.125em;
-  min-width: 28.125em;
-  height: auto;
-  margin-right: auto;
-  margin-left: auto;
-  padding-top: 1.875em;
-  padding-bottom: 2.6875em;
-  padding-left: 11.25em;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
   background-image: url("../svg/ticket.svg");
   background-position: 50% 50%;
   background-size: contain;
   background-repeat: no-repeat;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  resize: both;
+  overflow: hidden;
   -webkit-transform: rotate(-7deg);
   -ms-transform: rotate(-7deg);
   transform: rotate(-7deg);
@@ -1775,18 +1785,43 @@ ul.atcb-list li {
   margin-left: 1.875em;
 }
 
+.ticket__content {
+  position: relative;
+  top: 18%;
+  left: 3%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  line-height: 3.625em;
+}
+
+@media screen and (max-width: 1024px) {
+  .ticket__content {
+    line-height: 2.625em;
+  }
+}
+
 .ticket .ticket-label {
   font-family: 'FB Hermes', sans-serif;
   color: #a79d96;
-  font-size: 0.875em;
-  margin-bottom: 0.75em;
+  font-size: 1.125em;
   text-transform: uppercase;
 }
 
 .ticket .ticket-price {
   font-family: 'FB Hermes', sans-serif;
-  font-size: 2em;
+  font-size: 3.6vw;
   color: black;
+}
+
+@media screen and (max-width: 1024px) {
+  .ticket .ticket-price {
+    font-size: 2.625em;
+  }
+}
+
+.three-col-deck h3.trompet {
+  margin-bottom: 6%;
 }
 
 .top-cover-outer {
@@ -1966,13 +2001,14 @@ ul.atcb-list li {
 
 .three-col-deck {
   font-size: 16px;
-  height: 23em;
+  height: 40vh;
+  min-height: 416px;
 }
 
 @media screen and (max-width: 1024px) {
   .three-col-deck {
-    font-size: 10px;
-    height: 23em;
+    font-size: 14px;
+    height: 24vh;
   }
 }
 
@@ -2028,12 +2064,6 @@ ul.atcb-list li {
   margin-top: 0.875em;
 }
 
-@media screen and (max-width: 1024px) {
-  .three-col-deck .centered li {
-    margin-top: 0;
-  }
-}
-
 .three-col-deck .centered li a {
   font-family: 'FB Hermes', sans-serif;
   color: black;
@@ -2052,17 +2082,27 @@ ul.atcb-list li {
   color: #2bb6b7;
 }
 
-.three-col-deck .focus .link-container {
-  position: absolute;
-  bottom: 2.25em;
+.link-container {
+  position: relative;
+  float: left;
+  width: 100%;
+  margin: 8% 0 0;
 }
 
-.three-col-deck .addtocalendar {
+.link-container .iconlink a.with-icon {
+  color: white;
+}
+
+.link-container .iconlink a.with-icon:hover {
+  color: #333333;
+}
+
+.addtocalendar {
   font-size: 0.8em;
   padding: 0.0125em;
 }
 
-.three-col-deck .addtocalendar ul {
+.addtocalendar ul {
   padding: 0.3125em;
   background-color: rgba(255, 255, 255, 0.7);
 }
