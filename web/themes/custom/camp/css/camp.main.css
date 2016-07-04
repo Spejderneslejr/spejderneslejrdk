@@ -355,7 +355,7 @@ main:last-child {
   margin-left: 35px;
 }
 
-.span-default:not(.paragraph--type--text) {
+.span-default:not(.paragraph--type--text):not('.path-frontpath .span-default') {
   float: left;
   display: block;
   margin-right: 2.35765%;
@@ -364,7 +364,7 @@ main:last-child {
   display: inline-block;
 }
 
-.span-default:not(.paragraph--type--text):last-child {
+.span-default:not(.paragraph--type--text):not('.path-frontpath .span-default'):last-child {
   margin-right: 0;
 }
 
@@ -558,7 +558,15 @@ blockquote {
 }
 
 .path-frontpage .paragraph--type--quote {
-  margin: 70px 0;
+  padding-left: 20%;
+  padding-right: 20%;
+  margin: 70px auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .path-frontpage .paragraph--type--quote {
+    padding: 20px;
+  }
 }
 
 .btn {
