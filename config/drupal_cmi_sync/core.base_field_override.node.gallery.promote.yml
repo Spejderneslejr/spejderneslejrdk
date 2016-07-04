@@ -1,5 +1,5 @@
 uuid: 6ab6b7cc-f599-4bc6-8fce-996bda37dec5
-langcode: da
+langcode: en
 status: true
 dependencies:
   config:
@@ -8,7 +8,7 @@ id: node.gallery.promote
 field_name: promote
 entity_type: node
 bundle: gallery
-label: 'Forfremmet til forsiden'
+label: 'Promoted to front page'
 description: ''
 required: false
 translatable: true
