@@ -547,7 +547,7 @@ blockquote {
   margin: 70px 0;
 }
 
-.btn, .menu--site-menu.menu-level--0 > li:last-child a {
+.btn {
   padding: 15px 19px 10px;
   border-radius: 30px;
   background-color: #e1477d;
@@ -555,7 +555,7 @@ blockquote {
   text-shadow: 1px 1px 1px #066969;
 }
 
-.btn:hover, .menu--site-menu.menu-level--0 > li:last-child a:hover {
+.btn:hover {
   color: white;
   background-color: #000;
 }
@@ -970,8 +970,18 @@ h6 {
   }
 }
 
-.menu--site-menu.menu-level--0 > li:last-child a {
-  color: white;
+@media screen and (min-width: 768px) {
+  .menu--site-menu.menu-level--0 > li:last-child a {
+    padding: 15px 19px 10px;
+    border-radius: 30px;
+    background-color: #e1477d;
+    color: #fff;
+    text-shadow: 1px 1px 1px #066969;
+  }
+  .menu--site-menu.menu-level--0 > li:last-child a:hover {
+    color: white;
+    background-color: #000;
+  }
 }
 
 .menu--site-menu.menu-level--0 a {

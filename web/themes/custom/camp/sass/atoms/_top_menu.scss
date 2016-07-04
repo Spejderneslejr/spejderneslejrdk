@@ -107,11 +107,22 @@
     }
 
     > li {
-      &:last-child {
 
-        a {
-          @extend .btn;
-          color: white;
+      @include media($desktop) {
+        &:last-child {
+
+          a {
+            padding: 15px 19px 10px;
+            border-radius: 30px;
+            background-color: #e1477d;
+            color: #fff;
+            text-shadow: 1px 1px 1px #066969;
+
+            &:hover {
+              color: white;
+              background-color: #000;
+            }
+          }
         }
       }
     }
