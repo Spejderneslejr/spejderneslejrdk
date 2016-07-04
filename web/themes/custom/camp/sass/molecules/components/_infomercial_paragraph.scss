@@ -1,0 +1,108 @@
+// Basic setup of font-sizes during breakpoints.
+.paragraph--type--infomercial {
+  font-size: 14px;
+
+  @include media($tablet-l) {
+    font-size: em(14, 16);
+  }
+
+  h1, h2 {
+    color: white;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: em(85, $base-font-size);
+    text-shadow: 1px 1px 18px rgba(0, 0, 0, .27);
+  }
+
+  h2 {
+    font-size: em(26, $base-font-size);
+    font-family: 'FB Hermes', sans-serif;
+  }
+
+  @include media($tablet-l) {
+    font-size: em(14, 16);
+
+    h1 {
+      font-size: em(60, $base-font-size);
+      margin-bottom: em(5, $base-font-size);
+    }
+
+    h2 {
+      font-size: em(30, $base-font-size);
+    }
+  }
+
+  @include media($tablet-p) {
+    font-size: em(10, 16);
+  }
+}
+
+.paragraph--type--infomercial {
+  display: flex;
+  min-height: em(800, $base-font-size);
+  padding-right: 10%;
+  padding-left: 10%;
+
+  @include media($tablet-l) {
+    min-height: em(600, $base-font-size);
+
+    padding-right: 3%;
+    padding-left: 3%;
+
+    background-position: 0px 0px, 50% 50%;
+  }
+
+  @include flex-direction(column);
+  @include justify-content(center);
+  @include align-items(center);
+
+  background-position: 0 0, 50% 50%;
+  background-size: auto, cover;
+}
+
+// Call-to-action part of the informercial - a number of links themed as
+// buttons.
+.infomercial-call-ta {
+  text-align: center;
+
+  // Spacing between the body-text and the bottom of the infomercial-box.
+  margin-top: em(56, $base-font-size);
+  margin-bottom: em(56, $base-font-size);
+
+
+  // When the viewport gets small - get rid of spacing.
+  @include media($tablet-p) {
+    margin-top: em(20, $base-font-size);
+    margin-bottom: em(20, $base-font-size);
+  }
+
+  // Styling of the actual button/links.
+  a {
+    @extend .btn;
+    // Spacing between buttons.
+    margin: em(12, $base-font-size);
+    font-size: 1.2em;
+    font-family: 'FB Hermes', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+
+    // Spacing between the text and button-border.
+    padding: em(11, $base-font-size) em(19, $base-font-size) em(10, $base-font-size);
+
+    &:hover {
+      background-color: $red-dark;
+    }
+
+    // When the viewport gets smaller, increase the size of the button.
+    @include media($tablet-p) {
+      // This also ensures we get 1 button pr. line.
+      width: 80%;
+      font-size: 1.8em;
+      margin: em(8, $base-font-size);
+      padding: em(12, $base-font-size) em(21, $base-font-size) em(12, $base-font-size);
+    }
+  }
+}
