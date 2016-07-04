@@ -93,3 +93,20 @@ ul.download-list {
   padding-top: 5px;
   padding-bottom: 5px;
 }
+
+.trompet {
+  text-transform: uppercase;
+  font-family: 'FB Hermes', sans-serif;
+}
+
+// A centered list of non-styled items.
+ul, ol {
+  padding-left: 0;
+
+  &.centered li {
+    text-align: center;
+    list-style-type: none;
+  }
+}
+
+

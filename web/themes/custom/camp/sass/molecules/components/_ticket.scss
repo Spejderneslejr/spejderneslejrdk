@@ -1,0 +1,74 @@
+// A ticket-graphic with a price and label super-imposed.
+// Animates on hover.
+.ticket-wrapper {
+  height: 50%;
+  width: 80%;
+  float: left;
+  display: block;
+  margin-left: 10%;
+}
+
+.ticket {
+  display: block;
+  text-align: left;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+
+  // BAckground ticket image.
+  background-image: url("../svg/ticket.svg");
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  // Rotate the ticket and prepare for the hover-animation.
+  @include transform(rotate(-7deg));
+  @include transition(transform 200ms ease);
+}
+
+.ticket:hover {
+  @include transform(rotate(-4deg) scale(1.1));
+}
+
+.ticket .ticket-text-container {
+  margin-left: em(30, 16);
+}
+
+.ticket__content {
+  position: relative;
+  top: 18%;
+  left: 3%;
+  transform: translateY(-50%);
+  line-height: em(58, 16);
+
+  @include media($tablet-l) {
+    line-height: em(42, 16);
+  }
+}
+
+.ticket .ticket-label {
+  font-family: 'FB Hermes', sans-serif;
+  color: $gray-light;
+  font-size: em(18, 16);
+  text-transform: uppercase;
+}
+
+.ticket .ticket-price {
+  font-family: 'FB Hermes', sans-serif;
+  font-size: 3.6vw;
+  color: black;
+
+  @include media($tablet-l) {
+    font-size: em(42, 16);
+  }
+}
+
+.three-col-deck h3.trompet {
+  margin-bottom: 6%;
+}

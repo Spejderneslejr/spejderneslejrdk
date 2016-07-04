@@ -27,3 +27,4 @@ permissions:
   - 'view paragraph content gallery_reference'
   - 'view paragraph content download'
   - 'view paragraph content markup'
+  - 'view paragraph content frontpage_gallery'

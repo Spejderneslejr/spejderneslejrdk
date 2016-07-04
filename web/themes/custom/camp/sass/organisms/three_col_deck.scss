@@ -1,0 +1,210 @@
+// Column and general sizes.
+.three-col-deck {
+  box-sizing: border-box;
+  @include fill-parent();
+
+  .col-deck {
+    // We use percentage istead of span-coumns because we dont want the
+    // properties of the grid here.
+    width: percentage(1/3);
+    float: left;
+
+    .deck-inner {
+      text-align: center;
+      padding: em(29, 16) em(15, 16) em(15, 16);
+    }
+  }
+
+  // Inner container for each of the three "subdecks".
+  .deck-inner {
+    height: 100%;
+  }
+
+  .col-deck-left,
+  .col-deck-right {
+    .deck-inner {
+      height: 90%;
+
+      // Make the inner left and right boxes smaller than the middle box.
+      margin-top: 3%;
+    }
+  }
+
+  // Go full width on phone-width.
+  @include media($tablet-p) {
+    .col-deck {
+      @include span-columns(12);
+    }
+  }
+}
+
+// Setup sizing.
+.three-col-deck {
+  font-size: 16px;
+  height: 40vh;
+  min-height: 416px;
+
+  // Make everything smaller when hitting the landscape breakpoint.
+  @include media($tablet-l) {
+    font-size: 14px;
+    height: 24vh;
+  }
+
+  .col-deck {
+    height: 100%;
+  }
+}
+
+// Setup colors.
+.three-col-deck {
+  color: $gray-light;
+  h3 {
+    color: $gray-light;
+  }
+  .deck-inner {
+    @extend .gray-gradient;
+  }
+
+  .focus {
+    .deck-inner {
+      @extend .turquoise-gradient;
+    }
+
+    a {
+      color: white;
+    }
+  }
+}
+
+// Setup focus border and shadow.
+.three-col-deck {
+  .focus {
+    z-index: 500;
+    box-shadow: 0 0 22px 0 rgba(0, 0, 0, .19), 6px 6px 13px 0 rgba(0, 0, 0, .04);
+
+    // Slight left/right border to emphasize the subdeck.
+    .deck-inner {
+      border-style: none solid solid;
+      border-width: 1px;
+      border-color: rgba(0, 0, 0, .1);
+      border-radius: 4px;
+    }
+
+    // Without this the shadow will fall behind the rightmost sibling.
+    &.col-deck {
+      position: relative;
+    }
+
+    h3 {
+      color: white;
+    }
+  }
+}
+
+// Text modifications
+.three-col-deck h3 {
+  // Modify the default heading.
+  margin: 0;
+
+  // Make the heading slightly smaller than the default.
+  font-size: em(15, 16);
+
+  // Keep the heading readable on small devices by making them bigger.
+  @include media($tablet-l) {
+    font-size: em(20, 16);
+    padding-top: 0;
+  }
+
+}
+
+// Styling of links in the rightmost col-deck.
+.three-col-deck {
+  .centered li {
+    margin-top: em(14, 16);
+
+    a {
+      font-family: 'FB Hermes', sans-serif;
+      color: black;
+      font-size: 1.8em;
+
+      @include media($tablet-l) {
+        font-size: 1.3em;
+      }
+
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+}
+
+// The ticket graphic is positioned absolute, so we have to do the same for the
+// elements below it.
+.link-container {
+  position: relative;
+  float: left;
+  width: 100%;
+  margin: 7% 0 0;
+
+  .iconlink a.with-icon {
+    color: white;
+
+    &:hover {
+      color: $black-medium;
+    }
+  }
+
+  @include media($tablet-p) {
+    margin: 4% 0 0;
+  }
+}
+
+// Infodesc specific tweaks of the addtocalendar element. The rest is done
+// in _add_to_calendar.scss.
+.addtocalendar {
+  font-size: 0.8em;
+  padding: em(0.2, 16);
+
+  ul {
+    padding: em(5, 16);
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+// Styling of a link with an icon.
+.iconlink {
+  display: inline-block;
+  width: 100%;
+  font-family: Calibri Bold, sans-serif;
+  text-transform: none;
+  font-size: 1.2em;
+
+  // Line-height.
+  padding-top: em(16, 16);
+
+  // Specific styling of the anchor.
+  a.with-icon {
+    text-decoration: none;
+    padding-left: em(35, 16);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    color: $black-light;
+  }
+
+  // Icons for the individual icons.
+  &.calendar-link a.with-icon {
+    background-image: url("../images/calendar.png");
+    font-size: em(20, 16);
+    height: 26px;
+    line-height: 26px;
+  }
+  &.help-link a.with-icon {
+    background-image: url("../svg/help.svg");
+  }
+  &.cost-link a.with-icon {
+    background-image: url("../svg/wallet.svg");
+  }
+}
