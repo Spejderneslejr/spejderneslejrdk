@@ -1,17 +1,16 @@
-uuid: 4f6af612-5086-4633-a24b-ce2b76a0634e
+uuid: 743d4842-336d-4787-a095-ba65892cb44f
 langcode: en
 status: true
 dependencies:
   module:
+    - node
     - paragraphs
-id: paragraph.field_download_title
-field_name: field_download_title
+id: paragraph.field_gallery_reference
+field_name: field_gallery_reference
 entity_type: paragraph
-type: string
+type: entity_reference
 settings:
-  max_length: 255
-  is_ascii: false
-  case_sensitive: false
+  target_type: node
 module: core
 locked: false
 cardinality: 1

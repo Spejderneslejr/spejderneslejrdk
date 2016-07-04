@@ -1,0 +1,40 @@
+// we leave all of this juicebox related stuff in here, because
+// we really don't know what to do about it yet. TODO(ts) - refactor later.
+.juicebox-parent {
+  float: none;
+  height: 675px;
+  margin: 15px auto;
+  width: 100%;
+}
+
+.jb-thm-thumb-selected {
+  .jb-thm-thumb-image {
+    color: $green !important;
+  }
+}
+
+.jb-thm-thumb-image {
+  color: $gray !important;
+
+  &:hover {
+
+  }
+}
+
+/* CAPTION AREA */
+.jb-area-caption {
+  z-index: 200 !important;
+  opacity: 1;
+}
+
+/* GALLERY TITLE */
+.jb-area-large-mode-title {
+  z-index: 200 !important;
+  opacity: 1;
+}
+
+/* BUTTON BAR */
+.jb-classifier-link-wrapper.jb-classifier-detail-area.jb-classifier-layer {
+  z-index: 200 !important;
+  opacity: 1;
+}

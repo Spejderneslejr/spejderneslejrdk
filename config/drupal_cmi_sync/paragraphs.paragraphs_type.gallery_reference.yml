@@ -1,0 +1,6 @@
+uuid: 7ceb7553-585b-4e90-934e-023984fa2117
+langcode: en
+status: true
+dependencies: {  }
+id: gallery_reference
+label: 'Gallery Reference'

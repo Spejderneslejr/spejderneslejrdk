@@ -1,0 +1,28 @@
+uuid: 2720888f-61c5-41d5-b25c-64037e023b61
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_gallery_reference
+    - node.type.gallery
+    - paragraphs.paragraphs_type.gallery_reference
+id: paragraph.gallery_reference.field_gallery_reference
+field_name: field_gallery_reference
+entity_type: paragraph
+bundle: gallery_reference
+label: 'Gallery Reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      gallery: gallery
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
