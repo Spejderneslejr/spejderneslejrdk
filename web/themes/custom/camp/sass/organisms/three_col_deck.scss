@@ -1,9 +1,13 @@
 // Column and general sizes.
 .three-col-deck {
   box-sizing: border-box;
+  @include fill-parent();
 
   .col-deck {
-    @include span-columns(4);
+    // We use percentage istead of span-coumns because we dont want the
+    // properties of the grid here.
+    width: percentage(1/3);
+    float: left;
 
     .deck-inner {
       text-align: center;
@@ -143,7 +147,7 @@
   position: relative;
   float: left;
   width: 100%;
-  margin: 8% 0 0;
+  margin: 7% 0 0;
 
   .iconlink a.with-icon {
     color: white;
@@ -151,6 +155,10 @@
     &:hover {
       color: $black-medium;
     }
+  }
+
+  @include media($tablet-p) {
+    margin: 4% 0 0;
   }
 }
 
@@ -175,7 +183,7 @@
   font-size: 1.2em;
 
   // Line-height.
-  padding-top: em(18, 16);
+  padding-top: em(16, 16);
 
   // Specific styling of the anchor.
   a.with-icon {
@@ -183,12 +191,15 @@
     padding-left: em(35, 16);
     background-size: auto 100%;
     background-repeat: no-repeat;
-    color: $gray-dark;
+    color: $black-light;
   }
 
   // Icons for the individual icons.
   &.calendar-link a.with-icon {
     background-image: url("../images/calendar.png");
+    font-size: em(20, 16);
+    height: 26px;
+    line-height: 26px;
   }
   &.help-link a.with-icon {
     background-image: url("../svg/help.svg");

@@ -2,9 +2,10 @@
 // Animates on hover.
 .ticket-wrapper {
   height: 50%;
-  width: 100%;
+  width: 80%;
   float: left;
   display: block;
+  margin-left: 10%;
 }
 
 .ticket {
@@ -24,7 +25,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  resize: both;
   overflow: hidden;
 
   // Rotate the ticket and prepare for the hover-animation.
