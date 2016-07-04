@@ -11,7 +11,7 @@ id: node.gallery.field_image
 field_name: field_image
 entity_type: node
 bundle: gallery
-label: Image
+label: Images
 description: ''
 required: false
 translatable: false
