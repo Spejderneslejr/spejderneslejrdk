@@ -27,6 +27,7 @@ module:
   image: 0
   inline_entity_form: 0
   jamden_juicebox: 0
+  jamden_layout: 0
   jamden_top_image: 0
   juicebox: 0
   language: 0

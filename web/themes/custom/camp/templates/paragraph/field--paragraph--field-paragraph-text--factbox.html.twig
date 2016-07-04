@@ -1,4 +1,3 @@
-{% extends "field.html.twig" %}
 {#
 /**
  * @file
@@ -25,4 +24,14 @@
  * @ingroup themeable
  */
 #}
-{% set attributes = attributes.addClass('clearfix', 'text-formatted', 'invert-color') %}
+{#{% set attributes = attributes.addClass('clearfix', 'text-formatted', 'invert-color') %}#}
+{%
+set classes = [
+  'clearfix',
+  'text-formatted',
+  'invert-color',
+]
+%}
+{% for item in items %}
+  <div{{ attributes.addClass(classes) }}>{{ item.content }}</div>
+{% endfor %}
