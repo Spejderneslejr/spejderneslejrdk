@@ -1,0 +1,19 @@
+uuid: d14e74a8-9516-4b91-a726-f58a1ea6b9eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_infomercial_title
+    - paragraphs.paragraphs_type.infomercial
+id: paragraph.infomercial.field_infomercial_title
+field_name: field_infomercial_title
+entity_type: paragraph
+bundle: infomercial
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

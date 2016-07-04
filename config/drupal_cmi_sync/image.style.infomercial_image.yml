@@ -1,0 +1,7 @@
+uuid: d27e17cb-3640-4a23-9a82-c5697b5de7e1
+langcode: en
+status: true
+dependencies: {  }
+name: infomercial_image
+label: 'Infomercial Image'
+effects: {  }

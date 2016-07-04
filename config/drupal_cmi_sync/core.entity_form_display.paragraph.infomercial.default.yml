@@ -1,0 +1,51 @@
+uuid: b535f306-c20a-4e16-ac99-85201d9af981
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.infomercial.field_infomercial_bg_image
+    - field.field.paragraph.infomercial.field_infomercial_body
+    - field.field.paragraph.infomercial.field_infomercial_call_to_action
+    - field.field.paragraph.infomercial.field_infomercial_title
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.infomercial
+  module:
+    - image
+    - link
+id: paragraph.infomercial.default
+targetEntityType: paragraph
+bundle: infomercial
+mode: default
+content:
+  field_infomercial_bg_image:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_infomercial_body:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+  field_infomercial_call_to_action:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_infomercial_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  uid: true
