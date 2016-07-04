@@ -457,6 +457,24 @@ a:active.dark {
   color: black;
 }
 
+.download-item a {
+  padding-left: 30px;
+  background-image: url("../svg/download_black.svg");
+  background-position: 0 50%;
+  background-size: 22px;
+  background-repeat: no-repeat;
+}
+
+ul.download-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.download-list li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 blockquote {
   margin-right: 10%;
   margin-bottom: 18px;
@@ -474,24 +492,6 @@ blockquote {
   blockquote {
     font-size: 1.2em;
   }
-}
-
-.download-item a {
-  padding-left: 30px;
-  background-image: url("../svg/download_black.svg");
-  background-position: 0 50%;
-  background-size: 22px;
-  background-repeat: no-repeat;
-}
-
-ul.download-list {
-  padding-left: 0;
-  list-style: none;
-}
-
-.download-list li {
-  padding-top: 5px;
-  padding-bottom: 5px;
 }
 
 .quote-name {
@@ -518,6 +518,33 @@ ul.download-list {
   .quote-name {
     font-size: 1.2em;
   }
+}
+
+/**
+ * Frontpage quote
+ *
+ * The qoute has a different styling on the frontpage, because it is
+ * being used for introbox on the frontpage.
+ */
+.path-frontpage blockquote {
+  font-family: 'FB Hermes', sans-serif;
+  color: #2bb6b7;
+  font-size: 2em;
+  line-height: 140%;
+  text-align: center;
+  border: none;
+  margin: 0 0 20px;
+}
+
+.path-frontpage .quote-name {
+  font-family: 'FB Hermes', sans-serif;
+  color: #a79d96;
+  font-size: 1.3em;
+  font-style: normal;
+}
+
+.path-frontpage .paragraph--type--quote {
+  margin: 70px 0;
 }
 
 .btn, .menu--site-menu.menu-level--0 > li:last-child a {
