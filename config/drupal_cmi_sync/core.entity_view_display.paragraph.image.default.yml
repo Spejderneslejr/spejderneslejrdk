@@ -3,15 +3,23 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.image.field_layout
     - field.field.paragraph.image.field_paragraph_image
     - paragraphs.paragraphs_type.image
   module:
+    - jamden_layout
     - responsive_image
 id: paragraph.image.default
 targetEntityType: paragraph
 bundle: image
 mode: default
 content:
+  field_layout:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: layout_hidden
   field_paragraph_image:
     weight: 0
     label: hidden

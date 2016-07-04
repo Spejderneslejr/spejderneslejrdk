@@ -59,3 +59,9 @@
 .paragraph.accordion {
   margin-bottom: 0;
 }
+
+// Make sure there is a margin between the accordion and the next paragraph that
+// is not an accoridon.
+.paragraph.accordion + .paragraph:not(.paragraph--type--accordion) {
+  margin-top: 50px;
+}
