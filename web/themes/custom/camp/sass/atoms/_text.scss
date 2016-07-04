@@ -67,23 +67,6 @@ a:active {
   }
 }
 
-blockquote {
-  margin-right: 10%;
-  margin-bottom: 18px;
-  margin-left: 10%;
-  padding: 10px 20px 20px;
-  border-bottom: 3px dashed $border-color;
-  border-left: 5px none $border-color;
-  color: $gray-light;
-  font-size: em(21, $base-font-size);
-  line-height: 145%;
-  text-align: center;
-
-  @include media($tablet-p) {
-    font-size: em(16.8, $base-font-size);
-  }
-}
-
 // A download-link with a download-icon in front.
 .download-item a {
   // Make space for the arrow.
