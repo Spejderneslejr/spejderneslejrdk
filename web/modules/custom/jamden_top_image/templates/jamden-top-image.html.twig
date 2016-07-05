@@ -13,8 +13,10 @@
  *
  */
 #}
-<div class="top-cover-outer"{% if  image_uri is not empty %} style="background-image: url('{{ image_uri }}') {% endif %}">
+{% if  image_uri is not empty %}
+<div class="top-cover-outer" style="background-image: url('{{ image_uri }}') ">
   <div class="top-cover">
+{% endif %}
     {% if headline is not empty %}
       <div class="top-cover-headline slant-left">
       <span class="bg-white text-uppercase">{{ headline }}</span></div>
@@ -27,5 +29,7 @@
     {% if image_credits is not empty %}
     <div class="top-cover-credit bg-white-transparent">{{ image_credits }}</div>
     {% endif %}
+{% if  image_uri is not empty %}
   </div>
 </div>
+{% endif %}
