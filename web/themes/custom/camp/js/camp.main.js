@@ -101,6 +101,8 @@
        * @param {object} target Dom element.
        */
       function stickyHeader(wrapper, target) {
+        // TODO(ts) - remove before merge.
+        return;
         var stickyHeader = $(".page-header");
         var stickyMenuClass = "main-nav-scrolled";
         var mainMenu = $('.menu--site-menu').offset().top;
@@ -119,6 +121,19 @@
           }
         });
       }
+    }
+  };
+
+  Drupal.behaviors.cardGallery = {
+    attach: function (context, settings) {
+      $('.photo-holder').each(function(key, item) {
+        $(this).hover(function() {
+          $('.card-gallery-captions.__' + key).fadeIn();
+          $(this).mouseout(function() {
+            $('.card-gallery-captions.__' + key).fadeOut();
+          });
+        });
+      });
     }
   };
 })(jQuery, Drupal);
