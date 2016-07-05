@@ -2,7 +2,6 @@
 
 namespace Drupal\card_gallery\Plugin\Field\FieldFormatter;
 
-use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\image\Plugin\Field\FieldFormatter\ImageFormatter;
 use Drupal\Core\Form\FormStateInterface;
@@ -75,4 +74,3 @@ class CardGalleryFormatter extends ImageFormatter {
   }
 
 }
-

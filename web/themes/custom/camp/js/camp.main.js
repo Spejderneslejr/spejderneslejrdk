@@ -101,8 +101,6 @@
        * @param {object} target Dom element.
        */
       function stickyHeader(wrapper, target) {
-        // TODO(ts) - remove before merge.
-        return;
         var stickyHeader = $(".page-header");
         var stickyMenuClass = "main-nav-scrolled";
         var mainMenu = $('.menu--site-menu').offset().top;
