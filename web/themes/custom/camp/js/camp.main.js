@@ -101,22 +101,21 @@
        * @param {object} target Dom element.
        */
       function stickyHeader(wrapper, target) {
-
-        var mn = $(".page-header");
-        var mns = "main-nav-scrolled";
-        var hdr = $('.page-header').height();
+        var stickyHeader = $(".page-header");
+        var stickyMenuClass = "main-nav-scrolled";
+        var mainMenu = $('.menu--site-menu').offset().top;
 
         $(window).scroll(function() {
-          if( $(this).scrollTop() > hdr && $(window).width() > 768) {
-            mn.addClass(mns);
+          if( $(this).scrollTop() > mainMenu && $(window).width() > 768) {
+            stickyHeader.addClass(stickyMenuClass);
           } else {
-            mn.removeClass(mns);
+            stickyHeader.removeClass(stickyMenuClass);
           }
         });
 
         $(window).resize(function() {
           if ($(window).width() < 768) {
-            mn.removeClass(mns);
+            stickyHeader.removeClass(stickyMenuClass);
           }
         });
       }
