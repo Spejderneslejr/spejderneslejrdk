@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Default theme implementation to view card gallery field formatter.
+ *
+ * Available variables:
+ * - items: A collection of image data.
+ * - meta_data: optional data (credits|caption)
+ *
+ * @see template_preprocess_card_gallery_formatter()
+ *
+ * @ingroup themeable
+ */
+#}
+
+<div class="w-section image-intro">
+  <div class="photo-holder photo-holder--small photo-holder--1">{{ items[0] }}</div>
+  <div class="photo-holder photo-holder--medium photo-holder--2">{{ items[1] }}</div>
+  <div class="photo-holder photo-holder--large photo-holder--3">{{ items[2] }}</div>
+  <div class="photo-holder photo-holder--medium photo-holder--4">{{ items[3] }}</div>
+  <div class="photo-holder photo-holder--small photo-holder--5">{{ items[4] }}</div>
+
+  {% for key, data in meta_data %}
+    {% if data.caption or data.credits %}
+      <div class="card-gallery-captions __{{key}}">
+        <p class="card-gallery__caption">{{ data.caption }}</p>
+        <p class="card-gallery__credits">{{ data.credits }}</p>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
