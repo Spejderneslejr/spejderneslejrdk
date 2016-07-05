@@ -32,7 +32,8 @@
         "drupal/juicebox": "^8",
         "drupal/inline_entity_form": "^8",
         "drupal/node_view_permissions": "^8.1",
-        "drupal/entity_browser": "^8.1@alpha"
+        "drupal/entity_browser": "^8.1@alpha",
+        "drupal/google_analytics": "^8"
     },
     "require-dev": {
         "behat/mink": "~1.6",
@@ -79,6 +80,11 @@
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/contrib/{$name}": ["type:drupal-drush"]
+        },
+        "patches": {
+            "drupal/core": {
+                "2408549: Notify about overridden configuration": "https://www.drupal.org/files/issues/config-override-warning-2408549-29.patch"
+            }
         }
     }
 }
