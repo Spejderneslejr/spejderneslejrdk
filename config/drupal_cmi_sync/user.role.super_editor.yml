@@ -98,3 +98,7 @@ permissions:
   - 'delete paragraph content markup'
   - 'update paragraph content markup'
   - 'view paragraph content markup'
+  - 'create paragraph content infomercial'
+  - 'delete paragraph content infomercial'
+  - 'update paragraph content infomercial'
+  - 'view paragraph content infomercial'

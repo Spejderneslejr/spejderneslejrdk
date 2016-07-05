@@ -25,3 +25,4 @@ permissions:
   - 'view paragraph content download'
   - 'view paragraph content frontpage_gallery'
   - 'view paragraph content markup'
+  - 'view paragraph content infomercial'

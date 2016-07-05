@@ -3,6 +3,7 @@
 use Drupal\Component\Plugin\Exception\PluginException;
 use Drupal\Core\Menu\MenuLinkManagerInterface;
 use Drupal\file_entity\Entity\FileEntity;
+use Drupal\image\Entity\ImageStyle;
 use Drupal\node\Entity\Node;
 
 /**
@@ -75,6 +76,23 @@ function camp_preprocess_paragraph(&$variables) {
         $variables['content']['field_quote_link'][0]['#title'] = $variables['content']['field_quote_byline'][0]['#context']['value'];
         $variables['content']['field_quote_byline'] = $variables['content']['field_quote_link'];
       }
+      break;
+
+    case 'infomercial':
+      /** @var ImageStyle $style */
+      $style = ImageStyle::load('infomercial_background_image');
+      if (empty($style) || empty($paragraph->field_infomercial_bg_image->entity)) {
+        // Bail out if we don't have what we're here for.
+        return;
+      }
+
+      // Get the background-image, generate a image-style uri and add it as a
+      // variable.
+      $image_uri = $paragraph->field_infomercial_bg_image->entity->getFileUri();
+      if (!empty($image_uri)) {
+        $variables['field_infomercial_background_image_uri'] = $style->buildUrl($image_uri);
+      }
+
       break;
   }
 }

@@ -1,0 +1,19 @@
+uuid: a35ca7dd-90b7-456c-9040-2ce5d590db64
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_infomercial_body
+    - paragraphs.paragraphs_type.infomercial
+id: paragraph.infomercial.field_infomercial_body
+field_name: field_infomercial_body
+entity_type: paragraph
+bundle: infomercial
+label: Body
+description: 'Short text that should be displayed underneath the title'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

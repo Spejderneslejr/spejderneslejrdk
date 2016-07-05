@@ -1,0 +1,19 @@
+uuid: 767a07a1-a001-4ca7-b9f6-c3a2129dce5b
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.field_infomercial_call_to_action
+field_name: field_infomercial_call_to_action
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

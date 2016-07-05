@@ -1,0 +1,19 @@
+uuid: d78f0044-dc1c-40bf-bc1b-36ed86a5179f
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_infomercial_body
+field_name: field_infomercial_body
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
