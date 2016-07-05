@@ -66,10 +66,11 @@ blockquote {
   .paragraph--type--quote {
     padding-left: 20%;
     padding-right: 20%;
-    margin: 70px auto;
+    margin: 25px auto;
 
     @include media($tablet-l) {
       padding: 20px;
+      margin: 0;
     }
   }
 }
