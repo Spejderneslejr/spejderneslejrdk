@@ -6,9 +6,11 @@ dependencies:
     - field.field.paragraph.download.field_download_body
     - field.field.paragraph.download.field_download_file
     - field.field.paragraph.download.field_download_title
+    - field.field.paragraph.download.field_layout
     - paragraphs.paragraphs_type.download
   module:
     - filetype_formatter
+    - jamden_layout
 id: paragraph.download.default
 targetEntityType: paragraph
 bundle: download
@@ -35,6 +37,12 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  field_layout:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: layout_hidden
 hidden:
   created: true
   uid: true
