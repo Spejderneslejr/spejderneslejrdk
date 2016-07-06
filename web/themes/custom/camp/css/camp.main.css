@@ -1713,7 +1713,6 @@ h6 {
   display: block;
   padding: 1px 4px;
   float: none;
-  background-color: #fff;
   font-family: 'FB Hermes', sans-serif;
   color: #000;
   font-size: 1.7em;
@@ -1732,7 +1731,6 @@ h6 {
   line-height: 100%;
   font-weight: 700;
   text-transform: uppercase;
-  background-color: white;
   padding: 5px;
   margin: 0;
 }
@@ -1742,12 +1740,43 @@ h6 {
   position: absolute;
   left: 25%;
   right: 0px;
-  top: 570px;
+  top: 400px;
   z-index: 9999;
   width: 50%;
   min-height: 50px;
   font-size: 16px;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px dashed #a79d96;
+}
+
+@media screen and (min-width: 888px) {
+  .card-gallery-captions.__0 {
+    left: 9%;
+    top: 63%;
+  }
+  .card-gallery-captions.__1 {
+    left: 13%;
+    top: 63%;
+    -webkit-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+  }
+  .card-gallery-captions.__2 {
+    left: 25%;
+    top: 76%;
+    -webkit-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+  .card-gallery-captions.__3 {
+    left: 40%;
+    top: 66%;
+  }
+  .card-gallery-captions.__4 {
+    left: 49%;
+    top: 46%;
+  }
 }
 
 @media screen and (max-width: 1455px) {

@@ -252,7 +252,7 @@ $cg-xsmall: new-breakpoint(max-width 610px);
   display: block;
   padding: 1px 4px;
   float: none;
-  background-color: #fff;
+
   font-family: 'FB Hermes', sans-serif;
   color: #000;
   font-size: 1.7em;
@@ -271,7 +271,8 @@ $cg-xsmall: new-breakpoint(max-width 610px);
   line-height: 100%;
   font-weight: 700;
   text-transform: uppercase;
-  background-color: white;
+  // background-color: rgba(255, 255, 255, 0.5);
+  // border: 1px dashed $gray-light;
   padding: 5px;
   margin: 0;
 }
@@ -281,12 +282,43 @@ $cg-xsmall: new-breakpoint(max-width 610px);
   position: absolute;
   left: 25%;
   right: 0px;
-  top: 570px;
+  top: 400px;
   z-index: 9999;
   width: 50%;
   min-height: 50px;
   font-size: 16px;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px dashed $gray-light;
+
+  @include media(new-breakpoint(min-width 888px)) {
+    &.__0 {
+      left: 9%;
+      top: 63%;
+    }
+
+    &.__1 {
+      left: 13%;
+      top: 63%;
+      transform: rotate(-3deg);
+    }
+
+    &.__2 {
+      left: 25%;
+      top: 76%;
+      transform: rotate(3deg);
+    }
+
+    &.__3 {
+      left: 40%;
+      top: 66%;
+    }
+
+    &.__4 {
+      left: 49%;
+      top: 46%;
+    }
+  }
 
   @include media($cg-large) {
     top: 530px;

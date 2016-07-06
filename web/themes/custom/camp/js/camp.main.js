@@ -126,10 +126,10 @@
     attach: function (context, settings) {
       $('.photo-holder').each(function(key, item) {
         $(this).hover(function() {
-          $('.card-gallery-captions.__' + key).fadeIn();
-          $(this).mouseout(function() {
-            $('.card-gallery-captions.__' + key).fadeOut();
-          });
+          $('.card-gallery-captions.__' + key).fadeToggle();
+          // $(this).mouseout(function() {
+          //   $('.card-gallery-captions.__' + key).fadeOut();
+          // });
         });
       });
     }
