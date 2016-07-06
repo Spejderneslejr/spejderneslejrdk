@@ -51,7 +51,7 @@ class LayoutWidget extends WidgetBase {
     ];
     $summaries[] = $options[$width_default];
 
-    $float_default = isset($items[$delta]->float) ? $items[$delta]->float : 'left';
+    $float_default = in_array((string)$items[$delta]->float, ['left', 'right']) ? $items[$delta]->float : 'left';
     $element['float'] = [
       '#type' => 'select',
       '#title' => $this->t('Position'),
