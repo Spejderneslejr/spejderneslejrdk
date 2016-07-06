@@ -4,6 +4,7 @@ module:
   block: 0
   block_content: 0
   breakpoint: 0
+  card_gallery: 0
   ckeditor: 0
   color: 0
   comment: 0
@@ -27,6 +28,7 @@ module:
   history: 0
   image: 0
   inline_entity_form: 0
+  jamden_base: 0
   jamden_juicebox: 0
   jamden_layout: 0
   jamden_top_image: 0

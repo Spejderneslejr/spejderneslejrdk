@@ -122,5 +122,15 @@
       }
     }
   };
+
+  Drupal.behaviors.cardGallery = {
+    attach: function (context, settings) {
+      $('.photo-holder').each(function(key, item) {
+        $(this).hover(function() {
+          $('.card-gallery-captions.__' + key).fadeToggle();
+        });
+      });
+    }
+  };
 })(jQuery, Drupal);
 

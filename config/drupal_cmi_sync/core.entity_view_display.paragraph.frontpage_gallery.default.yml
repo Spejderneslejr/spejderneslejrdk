@@ -7,7 +7,7 @@ dependencies:
     - image.style.large
     - paragraphs.paragraphs_type.frontpage_gallery
   module:
-    - image
+    - card_gallery
 id: paragraph.frontpage_gallery.default
 targetEntityType: paragraph
 bundle: frontpage_gallery
@@ -20,7 +20,7 @@ content:
       image_style: large
       image_link: ''
     third_party_settings: {  }
-    type: image
+    type: card_gallery
 hidden:
   created: true
   uid: true
