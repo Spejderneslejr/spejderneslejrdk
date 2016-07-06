@@ -5,8 +5,6 @@
  * Theme-hook for Card Gallery.
  */
 
-use Drupal\file_entity\Entity\FileEntity;
-
 /**
  * Implements hook_theme().
  */

@@ -7,7 +7,6 @@
 
 use Drupal\file\Plugin\Field\FieldType\FileFieldItemList;
 use Drupal\juicebox\JuiceboxGallery;
-use Drupal\file_entity\Entity\FileEntity;
 
 /**
  * Implements hook_juicebox_gallery_data_alter().
