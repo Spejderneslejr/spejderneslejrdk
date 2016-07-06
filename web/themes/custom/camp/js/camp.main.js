@@ -25,7 +25,8 @@
         clickOutside(menuElements);
 
         // Make header sticky.
-        stickyHeader($(".block-menu"), $('.page-header'));
+        // Disabled until SL17-81 lands
+        // stickyHeader($(".block-menu"), $('.page-header'));
 
         // ****************** //
         // Menu toggle (mobile).
