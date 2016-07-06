@@ -127,9 +127,6 @@
       $('.photo-holder').each(function(key, item) {
         $(this).hover(function() {
           $('.card-gallery-captions.__' + key).fadeToggle();
-          // $(this).mouseout(function() {
-          //   $('.card-gallery-captions.__' + key).fadeOut();
-          // });
         });
       });
     }

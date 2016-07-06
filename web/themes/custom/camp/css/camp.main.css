@@ -333,7 +333,7 @@ main:last-child {
   clear: both;
 }
 
-@media screen and (max-width: 1767px) {
+@media screen and (max-width: 767px) {
   [class*='span-'].layout-item {
     float: left;
     display: block;
@@ -904,7 +904,7 @@ h6 {
   }
 }
 
-@media screen and (max-width: 1767px) {
+@media screen and (max-width: 767px) {
   [class^="menu--site-menu-"], [class*=" menu--site-menu-"] {
     position: fixed;
     top: 0px;
@@ -2124,7 +2124,7 @@ ul.atcb-list li {
   }
 }
 
-@media screen and (max-width: 1767px) {
+@media screen and (max-width: 767px) {
   .region--header__sonderborg .region--header__sonderborg__image-wrapper img {
     max-width: 130px;
     padding-top: 8px;
@@ -2152,7 +2152,7 @@ ul.atcb-list li {
   }
 }
 
-@media screen and (max-width: 1767px) {
+@media screen and (max-width: 767px) {
   .region--header__tasks {
     display: none;
   }
