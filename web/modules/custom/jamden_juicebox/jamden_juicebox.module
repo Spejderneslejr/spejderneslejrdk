@@ -34,31 +34,9 @@ function jamden_juicebox_juicebox_gallery_alter(JuiceboxGallery $juicebox, FileF
 
     // Add title. We will use the credits from the file entity.
     if ($image_entity->field_image_credits) {
-      $image['title'] = jamden_juicebox_translated_credits_from_image($image_entity);
+      $image['title'] = jamden_base_translated_credits_from_image($image_entity);
     }
 
     $juicebox->updateImage($key, $image['src_data'], $image['title'], $image['caption']);
   }
-}
-
-/**
- * Generate the proper credits string from an image file-entity.
- *
- * @param FileEntity $image
- *   Instansiated image.
- *
- * @return string
- *   Translated credits string
- */
-function jamden_juicebox_translated_credits_from_image(FileEntity $image) {
-
-  // Return empty string if there is no credits.
-  if (empty($image->field_image_credits->value)) {
-    return '';
-  }
-
-  return (string) t(
-    'Photo: @credits',
-    ['@credits' => $image->field_image_credits->value]
-  );
 }
