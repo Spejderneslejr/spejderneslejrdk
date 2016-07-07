@@ -15,7 +15,6 @@
           element.find('.accordion__content').slideToggle();
         });
       });
-
     }
   };
 })(jQuery, Drupal);

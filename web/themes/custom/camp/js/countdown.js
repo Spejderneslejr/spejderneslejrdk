@@ -65,16 +65,4 @@
 
     }
   });
-
-  /**
-   * Implementation of the countdown.
-   */
-  Drupal.behaviors.countdown = {
-    attach: function (context, settings) {
-
-      var deadline = new Date("July 22, 2017 08:00:00");
-
-      $('#clock', context).countdown(deadline);
-    }
-  };
 })(jQuery, Drupal);
