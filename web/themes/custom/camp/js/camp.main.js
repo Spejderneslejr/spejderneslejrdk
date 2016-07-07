@@ -144,7 +144,7 @@
         // React when user scrolls and apply classes.
         $(window).scroll(function() {
           if( $(this).scrollTop() > menuTop && $(window).width() > 768) {
-            clonedHeader.addClass('js-active')
+            clonedHeader.addClass('js-active');
           } else {
             clonedHeader.removeClass('js-active');
           }
