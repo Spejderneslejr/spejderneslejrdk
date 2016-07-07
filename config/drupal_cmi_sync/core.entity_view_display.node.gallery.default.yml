@@ -17,7 +17,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: juicebox_medium
+      image_style: juicebox_large
       thumb_style: juicebox_square_thumb
       caption_source: alt
       title_source: title
