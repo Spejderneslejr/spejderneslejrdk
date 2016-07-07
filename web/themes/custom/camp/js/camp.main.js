@@ -30,6 +30,12 @@
           }
         });
 
+        // Trigger click outside.
+        clickOutside(menuElements);
+
+        // Make header sticky.
+        stickyHeader();
+
         // ****************** //
         // Menu toggle (mobile).
         // ****************** //
@@ -144,6 +150,16 @@
           }
         });
       }
+    }
+  };
+
+  Drupal.behaviors.cardGallery = {
+    attach: function (context, settings) {
+      $('.photo-holder').each(function(key, item) {
+        $(this).hover(function() {
+          $('.card-gallery-captions.__' + key).fadeToggle();
+        });
+      });
     }
   };
 })(jQuery, Drupal);

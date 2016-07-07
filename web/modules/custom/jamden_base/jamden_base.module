@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * @file
+ * Jamden utility functions.
+ */
+
+use Drupal\file_entity\Entity\FileEntity;
+
+/**
+ * Generate the proper credits string from an image file-entity.
+ *
+ * @param FileEntity $image
+ *   Instantiated image.
+ *
+ * @return string
+ *   Translated credits string
+ */
+function jamden_base_translated_credits_from_image(FileEntity $image) {
+
+  // Return empty string if there is no credits.
+  if (empty($image->field_image_credits->value)) {
+    return '';
+  }
+
+  return (string) t(
+    'Photo: @credits',
+    ['@credits' => $image->field_image_credits->value]
+  );
+}

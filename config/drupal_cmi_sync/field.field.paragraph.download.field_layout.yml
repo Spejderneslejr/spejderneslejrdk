@@ -1,0 +1,25 @@
+uuid: dfbe83c2-746d-4fd6-a280-db67b46f152b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_layout
+    - paragraphs.paragraphs_type.download
+  module:
+    - jamden_layout
+id: paragraph.download.field_layout
+field_name: field_layout
+entity_type: paragraph
+bundle: download
+label: Layout
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    width: '0'
+    clear: 0
+    float: left
+default_value_callback: ''
+settings: {  }
+field_type: layout
