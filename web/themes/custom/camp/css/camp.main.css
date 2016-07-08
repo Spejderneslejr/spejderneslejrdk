@@ -2765,6 +2765,13 @@ ul.atcb-list li {
   padding-left: 5%;
 }
 
+.page-node-type-article .node__content .node__content {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+
 #main-content {
   display: block;
 }
@@ -2777,35 +2784,13 @@ ul.atcb-list li {
 
 .juicebox-parent {
   float: none;
-  height: 675px;
-  margin: 15px auto;
+  height: 705px;
   width: 100%;
+  margin: 3px auto;
 }
 
-.jb-thm-thumb-selected .jb-thm-thumb-image {
-  color: #2bb6b7 !important;
-}
-
-.jb-thm-thumb-image {
-  color: #c2c2c2 !important;
-}
-
-/* CAPTION AREA */
-.jb-area-caption {
-  z-index: 200 !important;
-  opacity: 1;
-}
-
-/* GALLERY TITLE */
-.jb-area-large-mode-title {
-  z-index: 200 !important;
-  opacity: 1;
-}
-
-/* BUTTON BAR */
-.jb-classifier-link-wrapper.jb-classifier-detail-area.jb-classifier-layer {
-  z-index: 200 !important;
-  opacity: 1;
+.juicebox-parent img {
+  max-width: 100%;
 }
 
 /*# sourceMappingURL=sourcemaps/camp.main.css.map */
