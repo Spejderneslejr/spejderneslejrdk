@@ -150,7 +150,6 @@
           if( $(this).scrollTop() > menuTop && $(window).width() > 768) {
             clonedHeader.addClass('js-active');
           } else {
-            console.log('shoudl be here');
             clonedHeader.removeClass('js-active');
           }
         });
