@@ -33,9 +33,6 @@
         // Trigger click outside.
         clickOutside(menuElements);
 
-        // Make header sticky.
-        stickyHeader();
-
         // ****************** //
         // Menu toggle (mobile).
         // ****************** //
@@ -58,7 +55,6 @@
         $(element).each(function() {
           $(document).mouseup(function(event) {
             if (!$(element).is(event.target)) {
-              console.log('hellow');
               handleToggle(event, $(this));
             }
           });
@@ -110,8 +106,10 @@
        */
       function stickyHeader() {
 
+        var applied = false;
+
         // Inititalize sticky header dom element
-        var stickyHeader = $('<div class="sticky-header" />');
+        var stickyHeader = $('<div class="sticky-header" />', context);
 
         // First find header and clone it.
         var originalHeader = $('.page-header');
@@ -127,11 +125,17 @@
         // Apply the clountdown. We do it here to be sure it is not done
         // to the sticky menu, now that we have it multiple times in the DOM.
         var deadline = new Date("July 22, 2017 08:00:00");
-        originalHeader.find('#clock').first().countdown(deadline);
+        originalHeader
+          .find('#clock')
+          .first()
+          .countdown(deadline);
 
-        // Append the sticky header.
-        stickyHeader
-          .append(clonedHeader);
+        // Append the sticky header. Make sure we only do it once.
+        if (!applied) {
+          stickyHeader
+            .append(clonedHeader);
+          applied = true;
+        }
 
         // Append sticky header to DOM.
         $('.page')
@@ -146,6 +150,7 @@
           if( $(this).scrollTop() > menuTop && $(window).width() > 768) {
             clonedHeader.addClass('js-active');
           } else {
+            console.log('shoudl be here');
             clonedHeader.removeClass('js-active');
           }
         });
