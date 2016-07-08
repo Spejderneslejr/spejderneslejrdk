@@ -29,22 +29,37 @@ p {
   }
 }
 
-.text-formatted {
+.paragraph--type--text {
   color: $base-font-color;
 
-  ul {
+  ul,
+  ol {
     font-size: em(21, $base-font-size);
     color: $gray-list;
-    list-style: none;
 
     li {
       margin-bottom: 11px;
+      line-height: 140%;
+    }
+  }
+
+  ul {
+    list-style: none;
+
+    li {
       padding-left: 23px;
       background-image: url("../svg/arrow_right.svg");
       background-position: 0px 50%;
       background-size: 11px;
       background-repeat: no-repeat;
-      line-height: 140%;
+    }
+  }
+
+  ol {
+
+    li {
+      margin-left: 23px;
+      padding-left: 0;
     }
   }
 }

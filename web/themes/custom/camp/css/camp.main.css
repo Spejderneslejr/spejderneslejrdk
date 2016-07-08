@@ -417,24 +417,37 @@ p {
   }
 }
 
-.text-formatted {
+.paragraph--type--text {
   color: #5a5a5a;
 }
 
-.text-formatted ul {
+.paragraph--type--text ul,
+.paragraph--type--text ol {
   font-size: 1.5em;
   color: #746860;
+}
+
+.paragraph--type--text ul li,
+.paragraph--type--text ol li {
+  margin-bottom: 11px;
+  line-height: 140%;
+}
+
+.paragraph--type--text ul {
   list-style: none;
 }
 
-.text-formatted ul li {
-  margin-bottom: 11px;
+.paragraph--type--text ul li {
   padding-left: 23px;
   background-image: url("../svg/arrow_right.svg");
   background-position: 0px 50%;
   background-size: 11px;
   background-repeat: no-repeat;
-  line-height: 140%;
+}
+
+.paragraph--type--text ol li {
+  margin-left: 23px;
+  padding-left: 0;
 }
 
 .text-formatted p:last-child {
