@@ -2,39 +2,45 @@
 // we really don't know what to do about it yet. TODO(ts) - refactor later.
 .juicebox-parent {
   float: none;
-  height: 675px;
-  margin: 15px auto;
+  height: 705px;
   width: 100%;
-}
+  margin: 3px auto;
 
-.jb-thm-thumb-selected {
-  .jb-thm-thumb-image {
-    color: $green !important;
+  img {
+    max-width: 100%;
   }
 }
 
-.jb-thm-thumb-image {
-  color: $gray !important;
+// TODO(ts) - wil be removed later when juicebox has been configured. leave
+//for now.
+// .jb-thm-thumb-selected {
+//   .jb-thm-thumb-image {
+//     color: $green !important;
+//   }
+// }
 
-  &:hover {
+// .jb-thm-thumb-image {
+//   color: $gray !important;
 
-  }
-}
+//   &:hover {
 
-/* CAPTION AREA */
-.jb-area-caption {
-  z-index: 200 !important;
-  opacity: 1;
-}
+//   }
+// }
 
-/* GALLERY TITLE */
-.jb-area-large-mode-title {
-  z-index: 200 !important;
-  opacity: 1;
-}
+// /* CAPTION AREA */
+// .jb-area-caption {
+//   z-index: 200 !important;
+//   opacity: 1;
+// }
 
-/* BUTTON BAR */
-.jb-classifier-link-wrapper.jb-classifier-detail-area.jb-classifier-layer {
-  z-index: 200 !important;
-  opacity: 1;
-}
+// /* GALLERY TITLE */
+// .jb-area-large-mode-title {
+//   z-index: 200 !important;
+//   opacity: 1;
+// }
+
+// /* BUTTON BAR */
+// .jb-classifier-link-wrapper.jb-classifier-detail-area.jb-classifier-layer {
+//   z-index: 200 !important;
+//   opacity: 1;
+// }
