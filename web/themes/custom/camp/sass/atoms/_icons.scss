@@ -2,7 +2,6 @@
  * Custom icomoon font.
  */
 
-
  // Icon placeholder.
 %icon {
     /* use !important to prevent issues with browser extensions that change fonts */
@@ -29,15 +28,26 @@
     @extend %icon;
 }
 
-
+.icon-mail2:before {
+    content: "\ea84";
+}
+.icon-logo_alt:before {
+    content: "\e908";
+}
+.icon-scout:before {
+    content: "\e902";
+}
+.icon-phone:before {
+    content: "\e909";
+}
+.icon-mail:before {
+    content: "\e90a";
+}
 .icon-search:before {
     content: "\e907";
 }
 .icon-microphone:before {
     content: "\e901";
-}
-.icon-scout:before {
-    content: "\e902";
 }
 .icon-watch:before {
     content: "\e903";

@@ -1,0 +1,150 @@
+.footer {
+  position: relative;
+  height: auto;
+  min-height: 250px;
+  padding: 46px 5% 45px;
+  background-color: $green;
+  background-image: -webkit-linear-gradient(270deg, rgba(43, 182, 183, .92), rgba(43, 182, 183, .92)), url("../images/footer_bg.jpg");
+  background-image: linear-gradient(180deg, rgba(43, 182, 183, .92), rgba(43, 182, 183, .92)), url("../images/footer_bg.jpg");
+  background-position: 0px 0px, 50% 50%;
+  background-size: auto, cover;
+  background-repeat: repeat, no-repeat;
+  float: left;
+  width: 100%;
+  color: white;
+  font-size: 14px;
+
+  @include media($tablet-l) {
+    font-size: 12px;
+  }
+
+  @include media($tablet-p) {
+    [class^="span-"], [class*=" span-"] {
+      @include span-columns(12);
+    }
+  }
+
+  .mc-field-group:first-child {
+    margin-top: 30px;
+  }
+
+  .footer-col-1 {
+    p {
+      color: hsla(0, 0%, 100%, .75);
+      font-size: 1em;
+      line-height: 130%;
+      font-style: italic;
+    }
+  }
+
+  h2, h2, h3, h4, h5, h6, p {
+    color: white;
+  }
+
+  p, a {
+    color: #fff;
+    line-height: 140%;
+    margin: 0;
+  }
+
+  p {
+    font-size: 1.3em;
+  }
+
+  a {
+    font-size: 1em;
+  }
+
+  h5 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-family: 'FB Hermes', sans-serif;
+    color: white;
+    font-size: 2em;
+    line-height: 120%;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  h6 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-family: 'FB Hermes', sans-serif;
+    color: $black-medium;
+    font-size: 1.3em;
+    text-align: left;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  .footer-col-3 {
+    h5:not(:first-child),
+    h6:not(:first-child) {
+      margin-top: 40px;
+    }
+  }
+}
+
+.socail-holder.social-footer {
+  width: 100%;
+}
+
+.follow-cell {
+  padding-right: 52px;
+  padding-bottom: 50px;
+}
+
+// Mail chimp.
+.mc-input {
+  max-width: 300px;
+}
+
+.mc-field-group {
+  width: 100%;
+  margin: 0 0 10px;
+  display: inline-block;
+}
+
+.mc-submit {
+  margin: 0 !important;
+  margin-bottom: 40px !important;
+}
+
+a[href^=tel] {
+
+  margin-bottom: 10px;
+
+  &:before {
+    @include icon('.icon-phone');
+    display: inline-block;
+    margin-right: 10px;
+  }
+}
+
+a[href^=mailto] {
+
+  margin-bottom: 10px;
+
+  &:before {
+    @include icon('.icon-mail2');
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 16px;
+    left: 1px;
+    position: relative;
+  }
+}
+
+.icon-logo_alt--footer {
+  text-align: left;
+  color: white;
+  font-size: 70px;
+  margin-left: 20px;
+  margin-bottom: 40px;
+  float: left;
+  width: 100%;
+
+  @include media($tablet-l) {
+    font-size: 38px;
+  }
+}
