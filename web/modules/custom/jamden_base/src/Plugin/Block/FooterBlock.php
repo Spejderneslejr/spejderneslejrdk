@@ -3,9 +3,7 @@
 namespace Drupal\jamden_base\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Access\AccessResult;
 
 /**
  * Provides a simple block.
@@ -30,7 +28,7 @@ class FooterBlock extends BlockBase {
     'footer_column_4',
   ];
 
-   /**
+  /**
    * {@inheritdoc}
    */
   public function build() {
@@ -59,8 +57,7 @@ class FooterBlock extends BlockBase {
         '#type' => 'text_format',
         '#format' => 'full_html',
         '#base_type' => 'textarea',
-        '#title' => $this->t('Block ' . $count),
-        '#default_value' => isset($config[$column]) ? $config[$column]['value'] : '',
+        '#title' => $this->t('Block @count', ['@count' => $count]),
       ];
 
       $count++;
@@ -77,4 +74,5 @@ class FooterBlock extends BlockBase {
       $this->setConfigurationValue($column, $form_state->getValue($column));
     }
   }
+
 }
