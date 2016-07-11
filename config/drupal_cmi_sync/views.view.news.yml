@@ -7,7 +7,6 @@ dependencies:
     - entityqueue.entity_queue.news_da
     - node.type.article
   module:
-    - null
     - entityqueue
     - node
     - user
@@ -70,12 +69,14 @@ display:
             previous: ‹‹
             next: ››
       style:
-        type: default
+        type: html_list
         options:
-          grouping: {  }
           row_class: ''
           default_row_class: true
           uses_fields: false
+          type: ul
+          wrapper_class: item-list
+          class: news--teaser-list
       row:
         type: 'entity:node'
         options:
@@ -168,6 +169,7 @@ display:
           plugin_id: entity_queue
       arguments: {  }
       display_extenders: {  }
+      title: Nyheder
     cache_metadata:
       max-age: -1
       contexts:
