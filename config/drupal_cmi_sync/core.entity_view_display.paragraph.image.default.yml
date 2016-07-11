@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.image.field_layout
     - field.field.paragraph.image.field_paragraph_image
     - paragraphs.paragraphs_type.image
+    - responsive_image.styles.wide
   module:
     - jamden_layout
     - responsive_image
