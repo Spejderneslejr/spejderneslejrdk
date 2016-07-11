@@ -10,6 +10,7 @@ dependencies:
     - image.style.max_1300x1300
     - paragraphs.paragraphs_type.infomercial
   module:
+    - image
     - link
 id: paragraph.infomercial.default
 targetEntityType: paragraph
