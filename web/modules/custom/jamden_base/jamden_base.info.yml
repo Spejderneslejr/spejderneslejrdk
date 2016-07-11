@@ -3,3 +3,5 @@ type: module
 description: 'Utillity functionallity for the Jamden project'
 package: 'Jamboree Denmark'
 core: 8.x
+dependencies:
+- block
