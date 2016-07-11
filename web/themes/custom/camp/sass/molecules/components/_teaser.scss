@@ -7,12 +7,25 @@
 }
 
 ul.news--teaser-list {
+  list-style-type: none;
+
+  // Move the headline and date-field close together.
+  h2 {
+    margin-bottom: 0;
+  }
+  .date-field {
+    margin-top: 0;
+  }
+
   // The <li> is wrapped in an a-tag, we don't want everything underlined.
   a {
     text-decoration: none;
   }
 
-  list-style-type: none;
+  p {
+    // Make the elements (date and summary) a bit more compact.
+    margin-bottom: 26px;
+  }
 
   li {
     padding: 10px;

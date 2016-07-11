@@ -83,17 +83,16 @@
 %}
 {{ attach_library('classy/node') }}
 <a href="{{ url }}" rel="bookmark">
-<article{{ attributes.addClass(classes) }}>
-  {{ content.field_top_image }}
-  {% if not page %}
+  <article{{ attributes.addClass(classes) }}>
+    {{ content.field_top_image }}
     <h2{{ title_attributes }}>
       {{ label }}
     </h2>
-  {% endif %}
-  <p>
-    {{ content.field_summary }}
-  </p>
-
-
-</article>
+    <p class="date-field">
+    {{ date }}
+    </p>
+    <p>
+      {{ content.field_summary }}
+    </p>
+  </article>
 </a>
