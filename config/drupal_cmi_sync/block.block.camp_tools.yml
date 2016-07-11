@@ -1,6 +1,6 @@
 uuid: 3973478d-8219-4754-b0c5-24bed599ac7c
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.tools
@@ -12,7 +12,7 @@ _core:
   default_config_hash: NeHSoqm4XFqA7_0bDmR429ZZQt3LRbZMNRJTMsFyOfI
 id: camp_tools
 theme: camp
-region: sidebar_first
+region: '-1'
 weight: 0
 provider: null
 plugin: 'system_menu_block:tools'
