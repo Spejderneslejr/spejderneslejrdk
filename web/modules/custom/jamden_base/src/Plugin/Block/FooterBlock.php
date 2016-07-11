@@ -32,6 +32,9 @@ class FooterBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
+
+    $build = [];
+
     // Get the custom block config.
     $config = $this->getConfiguration();
 
@@ -58,6 +61,7 @@ class FooterBlock extends BlockBase {
         '#format' => 'full_html',
         '#base_type' => 'textarea',
         '#title' => $this->t('Block @count', ['@count' => $count]),
+        '#default_value' => isset($config[$column]) ? $config[$column]['value'] : '',
       ];
 
       $count++;
