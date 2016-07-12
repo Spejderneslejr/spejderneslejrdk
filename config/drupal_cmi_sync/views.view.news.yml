@@ -9,7 +9,6 @@ dependencies:
     - entityqueue.entity_queue.news_en
     - node.type.article
   module:
-    - null
     - entityqueue
     - node
     - user
