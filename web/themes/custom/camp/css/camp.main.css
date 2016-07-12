@@ -3032,13 +3032,13 @@ a[href^=mailto]:before {
   max-width: 100%;
 }
 
-.path-user {
+.path-user .region-content {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.path-user::after {
+.path-user .region-content::after {
   clear: both;
   content: "";
   display: table;
@@ -3048,7 +3048,7 @@ a[href^=mailto]:before {
   max-width: 480px;
   margin: 0 auto;
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 250px;
 }
 
 .path-user .user-login-form .form-submit {
