@@ -8,8 +8,11 @@ dependencies:
     - field.field.node.article.field_summary
     - field.field.node.article.field_tagline
     - field.field.node.article.field_top_image
+    - image.style.teaser
     - node.type.article
   module:
+    - advanced_text_formatter
+    - image
     - user
 _core:
   default_config_hash: U8ghxJXn8JE2p6Q2wLpPWAxpz4r_8crL1LxtapSrHAE
@@ -18,11 +21,45 @@ targetEntityType: node
 bundle: article
 mode: teaser
 content:
-  links:
-    weight: 100
+  field_summary:
+    type: advanced_text
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: '300'
+      ellipsis: '1'
+      word_boundary: '1'
+      filter: none
+      format: plain_text
+      allowed_html:
+        - a
+        - b
+        - br
+        - dd
+        - dl
+        - dt
+        - em
+        - i
+        - li
+        - ol
+        - p
+        - strong
+        - u
+        - ul
+      use_summary: 0
+      token_replace: 0
+      autop: 0
+    third_party_settings: {  }
+  field_top_image:
+    type: image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: teaser
+      image_link: ''
+    third_party_settings: {  }
 hidden:
   field_paragraphs: true
-  field_summary: true
   field_tagline: true
-  field_top_image: true
   langcode: true
+  links: true

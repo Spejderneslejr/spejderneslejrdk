@@ -1,10 +1,17 @@
 <?php
 
+/**
+ * @file
+ * Theme-related functions.
+ */
+
 use Drupal\Component\Plugin\Exception\PluginException;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Menu\MenuLinkManagerInterface;
 use Drupal\file_entity\Entity\FileEntity;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\node\Entity\Node;
+use Drupal\views\ViewExecutable;
 
 /**
  * @file
@@ -15,6 +22,13 @@ use Drupal\node\Entity\Node;
  * Implements hook_preprocess_block().
  */
 function camp_preprocess_block(&$variables) {
+
+  // This variable should always be available for all blocks.
+  // Get language id. We use this to get correct homepage based on language.
+      $variables['language_id'] = \Drupal::languageManager()
+        ->getCurrentLanguage()
+        ->getId();
+
   switch ($variables['base_plugin_id']) {
     case 'system_branding_block':
       // Sønderborg logo.
@@ -26,11 +40,6 @@ function camp_preprocess_block(&$variables) {
 
       // TODO(ts) - Event info. Hardcoded for now, should be a config variable.
       $variables['event_info'] = 'Sønderborg 22.-30. juli 2017';
-
-      // Get language id. We use this to get correct homepage based on language.
-      $variables['language_id'] = \Drupal::languageManager()
-        ->getCurrentLanguage()
-        ->getId();
       break;
   }
 }
@@ -114,34 +123,90 @@ function camp_preprocess_node(&$variables) {
  * Prepare variables for article-nodes.
  */
 function _camp_preprocess_node_article($node, &$variables) {
-  // Get the parent menu-items title, default to empty string.
-  $parent_title = NULL;
+  if ($variables['view_mode'] == 'full') {
+    // Get the parent menu-items title, default to empty string.
+    $parent_title = NULL;
 
-  /** @var MenuLinkManagerInterface $menu_link_manager */
-  $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
+    /** @var MenuLinkManagerInterface $menu_link_manager */
+    $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
 
-  /** @var \Drupal\Core\Menu\MenuActiveTrailInterface $trial */
-  $trial = \Drupal::service('menu.active_trail');
-  $active_link = $trial->getActiveLink();
-  if (!empty($active_link) && !empty($active_link->getParent())) {
-    try {
-      $parent = $menu_link_manager->createInstance($active_link->getParent());
-      $parent_title = $parent->getTitle();
+    /** @var \Drupal\Core\Menu\MenuActiveTrailInterface $trial */
+    $trial = \Drupal::service('menu.active_trail');
+    $active_link = $trial->getActiveLink();
+    if (!empty($active_link) && !empty($active_link->getParent())) {
+      try {
+        $parent = $menu_link_manager->createInstance($active_link->getParent());
+        $parent_title = $parent->getTitle();
+      }
+      // Thrown if the instance could not be loaded above.
+      catch (PluginException $e) {
+        // Do nothing, default value has already been set.
+      }
     }
-    // Thrown if the instance could not be loaded above.
-    catch (PluginException $e) {
-      // Do nothing, default value has already been set.
+
+    // Setup the top_image theme hook invocation.
+    $top_image = [
+      '#theme' => 'jamden_top_image',
+      '#headline' => $node->field_tagline->value,
+      '#sub_headline' => $parent_title,
+      '#image' => $node->field_top_image->entity,
+    ];
+
+    $variables['top_image'] = $top_image;
+  }
+  elseif ($variables['view_mode'] == 'teaser') {
+
+    // Inject a default image if the top-image is missing.
+    if (empty($variables['content']['field_top_image'][0])) {
+      $default_image = theme_get_setting('default_teaser_image_path', 'camp');
+
+      if (!empty($default_image)) {
+
+        // Get image-style for the view-mode.
+        // Fallback image-style in case we can't find it below.
+        $image_style = 'medium';
+
+        // Find the image-style that would have been applied to the image in the
+        // teaser-view-mode had it been there, and use it for our default image.
+        /** @var EntityViewDisplayInterface $article_teaser_display */
+        $article_teaser_display = \Drupal::entityTypeManager()
+          ->getStorage('entity_view_display')
+          ->load('node.article.teaser');
+        if (!empty($article_teaser_display)) {
+          // Then look for the configuration of the top-image.
+          $top_image_component = $article_teaser_display->getComponent(
+            'field_top_image'
+          );
+          if (!empty($top_image_component['settings']['image_style'])) {
+            $image_style = $top_image_component['settings']['image_style'];
+          }
+        }
+
+        $variables['content']['field_top_image'][] = $render_array = array(
+          '#theme' => 'image_style',
+          '#uri' => $default_image,
+          '#style_name' => $image_style,
+        );
+
+      }
     }
   }
 
-  // Setup the top_image theme hook invocation.
-  $top_image = [
-    '#theme' => 'jamden_top_image',
-    '#headline' => $node->field_tagline->value,
-    '#sub_headline' => $parent_title,
-    '#image' => $node->field_top_image->entity,
-  ];
-
-  $variables['top_image'] = $top_image;
   return $variables;
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Re-introduce title on select views-pages.
+ */
+function camp_preprocess_views_view(&$variables) {
+  /** @var ViewExecutable $view */
+  $view = $variables['view'];
+
+  // This is necessary as we're not outputting the title via a block-layout as
+  // core expects.
+  if (in_array($view->id(), ['news'])) {
+    $variables['title']['#markup'] = '<h1>' . $view->getTitle() . '</h1>';
+  }
 }
