@@ -44,3 +44,72 @@
 //   z-index: 200 !important;
 //   opacity: 1;
 // }
+
+$cg-xlarge: new-breakpoint(max-width 1808px);
+$cg-large: new-breakpoint(max-width 1455px);
+$cg-medium: new-breakpoint(max-width 1260px);
+$cg-small: new-breakpoint(max-width 888px);
+$cg-xsmall: new-breakpoint(max-width 610px);
+
+.newsletter-deck__bg-image {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background-image: url("http://uploads.webflow.com/573ebff866718aad169d5a8e/5746a16885323df64d12804a_spejder-fritlagt.png");
+  background-position: 158% 7%;
+  background-size: 80%;
+  background-repeat: no-repeat;
+
+  @include media($cg-xlarge) {
+    background-position: 196% 100%;
+    background-size: 79%;
+  }
+
+  @include media($cg-large) {
+
+  }
+}
+
+.newsletter-deck__bg-color {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 80%;
+  background-image: linear-gradient(180deg, #f3f3f3 4%, #edebea 91%);
+
+  @include media($cg-medium) {
+    height: 70%;
+  }
+}
+
+.newsletter-deck {
+  min-height: 900px;
+  position: relative;
+  margin-top: 75px;
+  overflow: visible;
+  z-index: 1;
+
+  @include media($cg-large) {
+    min-height: 750px;
+  }
+
+  @include media($cg-medium) {
+    min-height: 650px;
+  }
+}
+
+.newsletter-deck__signup {
+  z-index: 2000;
+  display: block;
+  width: 480px;
+  top: 50%;
+  position: absolute;
+  left: calc(25% - 240px);
+}

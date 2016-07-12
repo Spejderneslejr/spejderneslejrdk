@@ -2806,4 +2806,71 @@ ul.atcb-list li {
   max-width: 100%;
 }
 
+.newsletter-deck__bg-image {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background-image: url("http://uploads.webflow.com/573ebff866718aad169d5a8e/5746a16885323df64d12804a_spejder-fritlagt.png");
+  background-position: 158% 7%;
+  background-size: 80%;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1808px) {
+  .newsletter-deck__bg-image {
+    background-position: 196% 100%;
+    background-size: 79%;
+  }
+}
+
+.newsletter-deck__bg-color {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 80%;
+  background-image: linear-gradient(180deg, #f3f3f3 4%, #edebea 91%);
+}
+
+@media screen and (max-width: 1260px) {
+  .newsletter-deck__bg-color {
+    height: 70%;
+  }
+}
+
+.newsletter-deck {
+  min-height: 900px;
+  position: relative;
+  margin-top: 75px;
+  overflow: visible;
+  z-index: 1;
+}
+
+@media screen and (max-width: 1455px) {
+  .newsletter-deck {
+    min-height: 750px;
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  .newsletter-deck {
+    min-height: 650px;
+  }
+}
+
+.newsletter-deck__signup {
+  z-index: 2000;
+  display: block;
+  width: 480px;
+  top: 50%;
+  position: absolute;
+  left: calc(25% - 240px);
+}
+
 /*# sourceMappingURL=sourcemaps/camp.main.css.map */
