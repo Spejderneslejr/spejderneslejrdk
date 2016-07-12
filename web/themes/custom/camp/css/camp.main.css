@@ -2231,6 +2231,65 @@ ul.atcb-list li {
   padding-right: 27px;
 }
 
+.site-search {
+  text-align: center;
+}
+
+.search-input[type='text'] {
+  width: 70%;
+  display: inline-block;
+  height: auto;
+  margin-top: 6px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 57px;
+  float: none;
+  border: 2px dashed #a79d96;
+  border-radius: 2px;
+  background-image: url("../svg/magnifier.svg");
+  background-position: 7px 50%;
+  background-size: 40px;
+  background-repeat: no-repeat;
+  color: #837870;
+  font-size: 1.3em;
+  line-height: 120%;
+}
+
+.search-input[type='text']:focus {
+  outline: none;
+  border-color: #3898ec;
+}
+
+.page .gsc-results table {
+  border-collapse: separate;
+}
+
+.page .gsc-results .gsc-control-cse,
+.page .gsc-results .gsc-control-cse .gsc-table-result {
+  font-family: Calibri, sans-serif;
+  font-size: 16px;
+}
+
+.page .gsc-results .gsc-cursor-box {
+  text-align: center;
+}
+
+.page .gsc-results .gsc-cursor-box .gsc-cursor-page {
+  cursor: pointer;
+}
+
+.page .gsc-results .gsc-cursor-box .gsc-cursor-page:hover {
+  background-color: #e1477d;
+  color: white;
+  text-decoration: none;
+}
+
+.page .gsc-results .gsc-cursor-box .gsc-cursor-page.gsc-cursor-current-page {
+  background-color: #837870;
+  text-decoration: none;
+  color: white;
+}
+
 .region--header__logo {
   text-align: center;
   height: 100%;
@@ -2526,7 +2585,7 @@ ul.atcb-list li {
   }
 }
 
-.pager__item {
+.pager__item, .page .gsc-results .gsc-cursor-box .gsc-cursor-page {
   width: auto;
   height: auto;
   margin-right: 9px;
@@ -3387,6 +3446,16 @@ a[href^=mailto]:before {
 .path-user .user-login-form .form-submit {
   min-width: 250px;
   float: right;
+}
+
+.contained {
+  display: block;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-bottom: 50px;
+  margin-left: auto;
+  padding-right: 5%;
+  padding-left: 5%;
 }
 
 /*# sourceMappingURL=sourcemaps/camp.main.css.map */

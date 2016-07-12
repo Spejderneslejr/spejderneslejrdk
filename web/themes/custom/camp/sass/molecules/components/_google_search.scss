@@ -1,0 +1,71 @@
+// The search-field and submit-button on a search-page.
+.site-search {
+  text-align: center;
+}
+
+// The search-input field.
+.search-input[type='text'] {
+  &:focus {
+    outline: none;
+    border-color: $blue;
+  }
+
+  width: 70%;
+  display: inline-block;
+  height: auto;
+  margin-top: 6px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 57px;
+  float: none;
+  border: 2px dashed $gray-light;
+  border-radius: 2px;
+  background-image: url("../svg/magnifier.svg");
+  background-position: 7px 50%;
+  background-size: 40px;
+  background-repeat: no-repeat;
+  color: $gray-dark;
+  font-size: 1.3em;
+  line-height: 120%;
+}
+
+
+// Google custom search styling override, we start off pretty specific to win
+.page .gsc-results {
+
+  // Our normalize.css messes this up, so we have to fix it.
+  table {
+    border-collapse: separate;
+  }
+
+  // Take-over the font.
+  .gsc-control-cse,
+  .gsc-control-cse .gsc-table-result {
+    font-family: $base-font;
+    font-size: 16px;
+  }
+
+  // Styling of the result-pager.
+  .gsc-cursor-box {
+    text-align: center;
+
+    .gsc-cursor-page {
+      // Base it off our own pager.
+      @extend .pager__item;
+
+      &:hover {
+        background-color: $red;
+        color: white;
+        text-decoration: none;
+      }
+
+      cursor: pointer;
+
+      &.gsc-cursor-current-page {
+        background-color: $gray-dark;
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+}

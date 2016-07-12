@@ -10,7 +10,7 @@ dependencies:
 id: globalfooter
 theme: camp
 region: footer
-weight: null
+weight: -10
 provider: null
 plugin: footer_block
 settings:

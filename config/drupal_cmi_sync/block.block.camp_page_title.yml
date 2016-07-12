@@ -1,14 +1,17 @@
 uuid: 014bd1d2-447b-4124-9cb1-15c7531ac9a4
 langcode: en
-status: false
+status: true
 dependencies:
+  module:
+    - node
+    - system
   theme:
     - camp
 _core:
   default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
 id: camp_page_title
 theme: camp
-region: '-1'
+region: content
 weight: -6
 provider: null
 plugin: page_title_block
@@ -17,4 +20,16 @@ settings:
   label: 'Page title'
   provider: core
   label_display: '0'
-visibility: {  }
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }
