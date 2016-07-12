@@ -1,0 +1,115 @@
+$newsletter-xlarge: new-breakpoint(max-width 1808px);
+$newsletter-large: new-breakpoint(max-width 1455px);
+$newsletter-medium: new-breakpoint(max-width 1260px);
+$newsletter-small: new-breakpoint(max-width 888px);
+$newsletter-xsmall: new-breakpoint(max-width 610px);
+
+.newsletter-deck__bg-image {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/fritlagt.png");
+  background-position: 158% 7%;
+  background-size: 80%;
+  background-repeat: no-repeat;
+
+  @include media($newsletter-xlarge) {
+    background-position: 196% 100%;
+    background-size: 79%;
+  }
+
+  @include media($tablet-l) {
+    background-position: 410px bottom;
+    background-size: 96%;
+  }
+
+  @include media($small) {
+    background-position: 208px bottom;
+  }
+}
+
+.newsletter-deck__bg-color {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 80%;
+  background-image: linear-gradient(180deg, #f3f3f3 4%, #edebea 91%);
+
+  @include media($newsletter-medium) {
+    height: 70%;
+  }
+
+  @include media($tablet-p) {
+    height: 100%;
+  }
+}
+
+.newsletter-deck {
+  min-height: 900px;
+  position: relative;
+  margin-top: 75px;
+  overflow: visible;
+  z-index: 1;
+  float: left;
+  width: 100%;
+  margin-bottom: 200px;
+
+  @include media($newsletter-large) {
+    min-height: 750px;
+  }
+
+  @include media($newsletter-medium) {
+    min-height: 650px;
+  }
+
+  @include media($tablet-l) {
+    min-height: 600px;
+    margin: 0 0 120px;
+  }
+}
+
+.newsletter-deck__signup {
+  z-index: 2000;
+  display: block;
+  width: 480px;
+  top: 40%;
+  position: absolute;
+  left: 23%;
+
+  @include media($tablet-l) {
+    left: 14%;
+  }
+
+  @include media($tablet-p) {
+    position: relative;
+    margin: 40px auto 0;
+
+    .mc-input {
+      width: 100%;
+    }
+  }
+}
+
+.newsletter-deck__title {
+  margin-top: 0px;
+  margin-bottom: 6px;
+  font-family: 'FB Hermes', sans-serif;
+  color: #e1477d;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
+.newsletter-deck__trompet {
+  font-family: 'FB Hermes', sans-serif;
+  color: #a79d96;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}

@@ -22,13 +22,13 @@ settings:
     value: "<p>© 2016-2017 Spejdernes Lejr&nbsp;</p>\r\n\r\n<p>CVR. Nr. 33690053</p>\r\n"
     format: full_html
   footer_column_2:
-    value: "<h5>Følg med i SL2017</h5>\r\n<h6>Nyhedsbrev</h6>\r\n<p>Få en email når noget nyt er sket, eller der er noget vigtigt du skal vide. Godt til både spejdere, forældre, ledere og andre interesserede.</p>"
+    value: "<h5>Følg med i SL2017</h5>\r\n\r\n<h6>Nyhedsbrev</h6>\r\n\r\n<p>Få en email når noget nyt er sket, eller der er noget vigtigt du skal vide. Godt til både spejdere, forældre, ledere og andre interesserede.</p>\r\n"
     format: full_html
   footer_column_3:
-    value: "<h6>SOCIAL MEDIER</h6>\r\n<p>KONTAKT OS PÅ DE SOCIAL MEDIER</p>"
-    format: full_html
+    value: "<h6>SOCIAL MEDIER</h6>\r\n<p>Følg os, snak med os, like os, del os. Vi er på alle de her kanaler! Vores officielle hashtag er #sl2017.</p>\r\n<a href=\"node/1\">\r\n  <div class=\"social-holder\">\r\n    <span class=\"link-social facebook white\"></span>\r\n    <span class=\"link-social snap white\"></span>\r\n    <span class=\"link-social insta white\"></span>\r\n    <span class=\"link-social twitter white\"></span>\r\n    <span class=\"link-social youtube white\"></span>\r\n    <span class=\"link-social linked white\"></span>\r\n  </div>\r\n</a>"
+    format: restricted_html
   footer_column_4:
-    value: "<h5>Kontakt</h5>\r\n<h6>\bLejrens callcenter</h6>\r\n<p><a href=\"mailto:info@sl2017.dk\">info@sl2017.dk</a></p>\r\n<h6>SEKRETARIATET</h6>\r\n<p><a href=\"mailto:spejder@example.com\">mail@sl2017.dk</a></p>\r\n<p><a href=\"tel:32640090\">32640090</a></p>\r\n<h6>PRESSEKONTAKT</h6>\r\n<p>Kommunikationskonsulent</p>\r\n<p>Rasmus Kjølby</p>\r\n<p><a href=\"mailto:rk@sl2017.dk\">rk@sl2017.dk</a></p>\r\n<p><a href=\"tel:20716121\">20716121</a></p>"
+    value: "<h5>Kontakt</h5>\r\n\r\n<h6>\bLejrens callcenter</h6>\r\n\r\n<p><a href=\"mailto:info@sl2017.dk\">info@sl2017.dk</a></p>\r\n\r\n<h6>SEKRETARIATET</h6>\r\n\r\n<p><a href=\"mailto:spejder@example.com\">mail@sl2017.dk</a></p>\r\n\r\n<p><a href=\"tel:32640090\">32640090</a></p>\r\n\r\n<h6>PRESSEKONTAKT</h6>\r\n\r\n<p>Kommunikationskonsulent</p>\r\n\r\n<p>Rasmus Kjølby</p>\r\n\r\n<p><a href=\"mailto:rk@sl2017.dk\">rk@sl2017.dk</a></p>\r\n\r\n<p><a href=\"tel:20716121\">20716121</a></p>\r\n"
     format: full_html
 visibility:
   language:

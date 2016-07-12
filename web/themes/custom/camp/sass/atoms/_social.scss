@@ -1,0 +1,92 @@
+.link-social {
+  display: block;
+  width: 30px;
+  height: 80%;
+  margin-right: 10px;
+  margin-left: auto;
+  float: left;
+}
+
+.link-social:hover {
+  opacity: 0.6;
+}
+
+.link-social.facebook {
+  width: 30px;
+  float: left;
+  background-image: url("../svg/fb-black.svg");
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.link-social.facebook.white {
+  background-image: url("../svg/fb-white.svg");
+  background-size: contain;
+}
+
+.link-social.snap {
+  background-image: url("../svg/snapchat-black.svg");
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.link-social.snap.white {
+  background-image: url("../svg/snapchat-white.svg");
+  background-size: contain;
+}
+
+.link-social.insta {
+  background-image: url("../svg/instagram-black.svg");
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.link-social.insta.white {
+  background-image: url("../svg/instagram-white.svg");
+}
+
+.link-social.twitter {
+  padding: 5px;
+  background-image: url("../svg/twitter-black.svg");
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.link-social.twitter.white {
+  background-image: url("../svg/twitter-white.svg");
+}
+
+.link-social.youtube {
+  background-image: url("../svg/youtube-black.svg");
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.link-social.youtube.white {
+  background-image: url("../svg/youtube-white.svg");
+}
+
+.link-social.linked {
+  background-image: url("../svg/linkedin-black.svg");
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.link-social.linked.white {
+  background-image: url("../svg/linkedin-white.svg");
+}
+
+.social-holder {
+  width: 50%;
+  height: 40px;
+}
+
+.social-holder.social-footer {
+  width: 100%;
+}
