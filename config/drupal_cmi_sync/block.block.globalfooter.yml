@@ -1,0 +1,40 @@
+uuid: 46d64fc5-409a-49f0-bb8c-b503d97ff381
+langcode: en
+status: true
+dependencies:
+  module:
+    - jamden_base
+    - language
+  theme:
+    - camp
+id: globalfooter
+theme: camp
+region: footer
+weight: null
+provider: null
+plugin: footer_block
+settings:
+  id: footer_block
+  label: 'Global Footer danish'
+  provider: jamden_base
+  label_display: '0'
+  footer_column_1:
+    value: "<p>© 2016-2017 Spejdernes Lejr&nbsp;</p>\r\n\r\n<p>CVR. Nr. 33690053</p>\r\n"
+    format: full_html
+  footer_column_2:
+    value: "<h5>Følg med i SL2017</h5>\r\n<h6>Nyhedsbrev</h6>\r\n<p>Få en email når noget nyt er sket, eller der er noget vigtigt du skal vide. Godt til både spejdere, forældre, ledere og andre interesserede.</p>"
+    format: full_html
+  footer_column_3:
+    value: "<h6>SOCIAL MEDIER</h6>\r\n<p>KONTAKT OS PÅ DE SOCIAL MEDIER</p>"
+    format: full_html
+  footer_column_4:
+    value: "<h5>Kontakt</h5>\r\n<h6>\bLejrens callcenter</h6>\r\n<p><a href=\"mailto:info@sl2017.dk\">info@sl2017.dk</a></p>\r\n<h6>SEKRETARIATET</h6>\r\n<p><a href=\"mailto:spejder@example.com\">mail@sl2017.dk</a></p>\r\n<p><a href=\"tel:32640090\">32640090</a></p>\r\n<h6>PRESSEKONTAKT</h6>\r\n<p>Kommunikationskonsulent</p>\r\n<p>Rasmus Kjølby</p>\r\n<p><a href=\"mailto:rk@sl2017.dk\">rk@sl2017.dk</a></p>\r\n<p><a href=\"tel:20716121\">20716121</a></p>"
+    format: full_html
+visibility:
+  language:
+    id: language
+    langcodes:
+      da: da
+    negate: false
+    context_mapping:
+      language: '@language.current_language_context:language_interface'

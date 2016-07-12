@@ -44,3 +44,22 @@
 //   z-index: 200 !important;
 //   opacity: 1;
 // }
+
+.path-user {
+
+  .region-content {
+    @include outer-container;
+  }
+
+  .user-login-form {
+    max-width: 480px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 250px;
+
+    .form-submit {
+      min-width: 250px;
+      float: right;
+    }
+  }
+}

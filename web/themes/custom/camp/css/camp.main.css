@@ -653,6 +653,49 @@ blockquote {
   color: #837870;
 }
 
+input[type='text'],
+input[type='email'],
+input[type='password'],
+select {
+  display: block;
+  width: 100%;
+  height: 38px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333333;
+  vertical-align: middle;
+  background-color: white;
+  border: 1px solid #c2c2c2;
+  min-width: 300px;
+  height: 50px;
+  padding-left: 16px;
+  float: left;
+  font-size: 1.3em;
+}
+
+input[type='submit'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: none;
+  text-shadow: none;
+  border-radius: 30px;
+  background-color: #e1477d;
+  color: #fff;
+  text-shadow: 1px 1px 1px #333333;
+  margin: 0.85714em;
+  font-size: 1.2em;
+  font-family: 'FB Hermes', sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 12px 20px;
+}
+
 .gray-gradient, .three-col-deck .deck-inner {
   background-image: linear-gradient(180deg, #f3f3f3, #d9d9d6);
 }
@@ -811,7 +854,7 @@ h6 {
 /**
  * Custom icomoon font.
  */
-[class^="icon-"], [class*=" icon-"], .menu--site-menu.menu-level--0 li.menu-item--expanded > a:before, .menu--site-menu.menu-level--0 > li:nth-child(4) > a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before {
+[class^="icon-"], [class*=" icon-"], .menu--site-menu.menu-level--0 li.menu-item--expanded > a:before, .menu--site-menu.menu-level--0 > li:nth-child(4) > a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before, a[href^=tel]:before, a[href^=mailto]:before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -825,16 +868,32 @@ h6 {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-mail2:before, a[href^=mailto]:before {
+  content: "\ea84";
+}
+
+.icon-logo_alt:before {
+  content: "\e908";
+}
+
+.icon-scout:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before {
+  content: "\e902";
+}
+
+.icon-phone:before, a[href^=tel]:before {
+  content: "\e909";
+}
+
+.icon-mail:before {
+  content: "\e90a";
+}
+
 .icon-search:before, .menu--site-menu.menu-level--0 > li:nth-child(4) > a:before {
   content: "\e907";
 }
 
 .icon-microphone:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before {
   content: "\e901";
-}
-
-.icon-scout:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before {
-  content: "\e902";
 }
 
 .icon-watch:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before {
@@ -860,7 +919,7 @@ h6 {
 /**
  * Custom icomoon font.
  */
-[class^="icon-"], [class*=" icon-"], .menu--site-menu.menu-level--0 li.menu-item--expanded > a:before, .menu--site-menu.menu-level--0 > li:nth-child(4) > a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before {
+[class^="icon-"], [class*=" icon-"], .menu--site-menu.menu-level--0 li.menu-item--expanded > a:before, .menu--site-menu.menu-level--0 > li:nth-child(4) > a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before, a[href^=tel]:before, a[href^=mailto]:before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -874,16 +933,32 @@ h6 {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-mail2:before, a[href^=mailto]:before {
+  content: "\ea84";
+}
+
+.icon-logo_alt:before {
+  content: "\e908";
+}
+
+.icon-scout:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before {
+  content: "\e902";
+}
+
+.icon-phone:before, a[href^=tel]:before {
+  content: "\e909";
+}
+
+.icon-mail:before {
+  content: "\e90a";
+}
+
 .icon-search:before, .menu--site-menu.menu-level--0 > li:nth-child(4) > a:before {
   content: "\e907";
 }
 
 .icon-microphone:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before {
   content: "\e901";
-}
-
-.icon-scout:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before {
-  content: "\e902";
 }
 
 .icon-watch:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before {
@@ -2681,6 +2756,157 @@ ul.news--teaser-list li:hover {
   text-transform: uppercase;
 }
 
+.footer {
+  position: relative;
+  height: auto;
+  min-height: 250px;
+  padding: 46px 5% 45px;
+  background-color: #2bb6b7;
+  background-image: linear-gradient(180deg, rgba(43, 182, 183, 0.92), rgba(43, 182, 183, 0.92)), url("../images/footer_bg.jpg");
+  background-position: 0px 0px, 50% 50%;
+  background-size: auto, cover;
+  background-repeat: repeat, no-repeat;
+  float: left;
+  width: 100%;
+  color: white;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 772px) {
+  .footer [class^="span-"], .footer [class*=" span-"] {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+  }
+  .footer [class^="span-"]:last-child, .footer [class*=" span-"]:last-child {
+    margin-right: 0;
+  }
+}
+
+.footer .mc-field-group:first-child {
+  margin-top: 30px;
+}
+
+.footer .footer-col-1 p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1em;
+  line-height: 130%;
+  font-style: italic;
+}
+
+.footer h2, .footer h2, .footer h3, .footer h4, .footer h5, .footer h6, .footer p {
+  color: white;
+}
+
+.footer p, .footer a {
+  color: #fff;
+  line-height: 140%;
+  margin: 0;
+}
+
+.footer p {
+  font-size: 1.3em;
+}
+
+.footer a {
+  font-size: 1em;
+}
+
+.footer h5 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-family: 'FB Hermes', sans-serif;
+  color: white;
+  font-size: 2em;
+  line-height: 120%;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.footer h6 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-family: 'FB Hermes', sans-serif;
+  color: #333333;
+  font-size: 1.3em;
+  text-align: left;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.footer .footer-col-3 h5:not(:first-child),
+.footer .footer-col-3 h6:not(:first-child) {
+  margin-top: 40px;
+}
+
+.socail-holder.social-footer {
+  width: 100%;
+}
+
+.follow-cell {
+  padding-right: 52px;
+  padding-bottom: 50px;
+}
+
+.mc-input {
+  max-width: 300px;
+}
+
+.mc-field-group {
+  width: 100%;
+  margin: 0 0 10px;
+  display: inline-block;
+}
+
+.mc-submit {
+  margin: 0 !important;
+  margin-bottom: 40px !important;
+}
+
+a[href^=tel] {
+  margin-bottom: 10px;
+}
+
+a[href^=tel]:before {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+a[href^=mailto] {
+  margin-bottom: 10px;
+}
+
+a[href^=mailto]:before {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 16px;
+  left: 1px;
+  position: relative;
+}
+
+.icon-logo_alt--footer {
+  text-align: left;
+  color: white;
+  font-size: 70px;
+  margin-left: 20px;
+  margin-bottom: 40px;
+  float: left;
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .icon-logo_alt--footer {
+    font-size: 38px;
+  }
+}
+
 .three-col-deck {
   box-sizing: border-box;
   width: 100%;
@@ -2910,6 +3136,30 @@ ul.news--teaser-list li:hover {
 
 .juicebox-parent img {
   max-width: 100%;
+}
+
+.path-user .region-content {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.path-user .region-content::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.path-user .user-login-form {
+  max-width: 480px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 250px;
+}
+
+.path-user .user-login-form .form-submit {
+  min-width: 250px;
+  float: right;
 }
 
 /*# sourceMappingURL=sourcemaps/camp.main.css.map */
