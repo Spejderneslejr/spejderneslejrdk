@@ -854,7 +854,7 @@ h6 {
 /**
  * Custom icomoon font.
  */
-[class^="icon-"], [class*=" icon-"], .menu--site-menu.menu-level--0 li.menu-item--expanded > a:before, .menu--site-menu.menu-level--0 > li:nth-child(4) > a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before, a[href^=tel]:before, a[href^=mailto]:before {
+[class^="icon-"], [class*=" icon-"], .menu--site-menu li.menu-item--expanded > a:before, .menu--site-menu.menu-level--0 > li:nth-child(4) > a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before, a[href^=tel]:before, a[href^=mailto]:before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -912,84 +912,28 @@ h6 {
   content: "\e906";
 }
 
-.icon-arrow_down:before, .menu--site-menu.menu-level--0 li.menu-item--expanded > a:before {
+.icon-arrow_down:before, .menu--site-menu li.menu-item--expanded > a:before {
   content: "\e900";
 }
 
-/**
- * Custom icomoon font.
- */
-[class^="icon-"], [class*=" icon-"], .menu--site-menu.menu-level--0 li.menu-item--expanded > a:before, .menu--site-menu.menu-level--0 > li:nth-child(4) > a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before, a[href^=tel]:before, a[href^=mailto]:before {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+[class^="menu--site-menu-"], [class*=" menu--site-menu-"] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
-.icon-mail2:before, a[href^=mailto]:before {
-  content: "\ea84";
+[class^="menu--site-menu-"] li, [class*=" menu--site-menu-"] li {
+  display: inline;
 }
 
-.icon-logo_alt:before {
-  content: "\e908";
+[class^="menu--site-menu-"] a, [class*=" menu--site-menu-"] a {
+  display: inline-block;
+  padding: 10px;
 }
 
-.icon-scout:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before {
-  content: "\e902";
-}
-
-.icon-phone:before, a[href^=tel]:before {
-  content: "\e909";
-}
-
-.icon-mail:before {
-  content: "\e90a";
-}
-
-.icon-search:before, .menu--site-menu.menu-level--0 > li:nth-child(4) > a:before {
-  content: "\e907";
-}
-
-.icon-microphone:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before {
-  content: "\e901";
-}
-
-.icon-watch:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before {
-  content: "\e903";
-}
-
-.icon-piggy_bank:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before {
-  content: "\e904";
-}
-
-.icon-knife:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before {
-  content: "\e905";
-}
-
-.icon-bird:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before {
-  content: "\e906";
-}
-
-.icon-arrow_down:before, .menu--site-menu.menu-level--0 li.menu-item--expanded > a:before {
-  content: "\e900";
-}
-
-@media screen and (min-width: 773px) {
-  [class^="menu--site-menu-"], [class*=" menu--site-menu-"] {
-    position: relative;
-    left: 50%;
-    float: left;
-    clear: both;
-    margin: 10px 0;
-    text-align: left;
-  }
+[class^="menu--site-menu-"] ul.menu, [class*=" menu--site-menu-"] ul.menu {
+  text-align: center;
 }
 
 @media screen and (max-width: 767px) {
@@ -1050,21 +994,6 @@ h6 {
 }
 
 @media screen and (min-width: 773px) {
-  .menu--site-menu.menu-level--0 {
-    margin-left: 0;
-    position: relative;
-    left: -50%;
-    text-align: left;
-  }
-}
-
-@media screen and (min-width: 773px) {
-  .menu--site-menu.menu-level--0 li {
-    float: left;
-  }
-}
-
-@media screen and (min-width: 773px) {
   .menu--site-menu.menu-level--0 > .menu-item {
     margin: 0 40px 0 0;
   }
@@ -1077,43 +1006,43 @@ h6 {
 }
 
 @media screen and (min-width: 773px) {
-  .menu--site-menu.menu-level--0 li {
+  .menu--site-menu li {
     font-size: 1.42857em;
   }
 }
 
 @media screen and (max-width: 1024px) {
-  .menu--site-menu.menu-level--0 li {
+  .menu--site-menu li {
     font-size: 1.28571em;
   }
 }
 
 @media screen and (min-width: 773px) {
-  .menu--site-menu.menu-level--0 > li:last-child a {
+  .menu--site-menu > li:last-child a {
     padding: 15px 19px 10px;
     border-radius: 30px;
     background-color: #e1477d;
     color: #fff;
     text-shadow: 1px 1px 1px #066969;
   }
-  .menu--site-menu.menu-level--0 > li:last-child a:hover {
+  .menu--site-menu > li:last-child a:hover {
     color: white;
     background-color: #000;
   }
 }
 
-.menu--site-menu.menu-level--0 a {
+.menu--site-menu a {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
 }
 
-.menu--site-menu.menu-level--0 a:hover {
+.menu--site-menu a:hover {
   color: #2bb6b7;
 }
 
 @media screen and (min-width: 773px) {
-  .menu--site-menu.menu-level--0 li.menu-item--expanded > a:before {
+  .menu--site-menu li.menu-item--expanded > a:before {
     -webkit-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -1127,32 +1056,32 @@ h6 {
 }
 
 @media screen and (max-width: 772px) {
-  .menu--site-menu.menu-level--0 li.menu-item--expanded > a:before {
+  .menu--site-menu li.menu-item--expanded > a:before {
     content: "";
   }
 }
 
-.menu--site-menu.menu-level--0 li.menu-item--expanded > a.open:before {
+.menu--site-menu li.menu-item--expanded > a.open:before {
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
 @media screen and (max-width: 772px) {
-  .menu--site-menu.menu-level--0 {
+  .menu--site-menu {
     padding: 0;
     position: relative;
     left: auto;
   }
-  .menu--site-menu.menu-level--0 li {
+  .menu--site-menu li {
     float: none;
   }
-  .menu--site-menu.menu-level--0 li:last-child a {
+  .menu--site-menu li:last-child a {
     background: none;
     padding: 0;
     text-shadow: none;
   }
-  .menu--site-menu.menu-level--0 > .menu-item {
+  .menu--site-menu > .menu-item {
     margin: 0;
     font-size: 1.21429em;
     padding: 4px 0;
@@ -1303,7 +1232,7 @@ h6 {
 
 @media screen and (min-width: 773px) {
   ul.menu-level--1 {
-    position: fixed;
+    position: absolute;
     left: 0px;
     right: 0px;
     width: 100%;
@@ -1311,10 +1240,12 @@ h6 {
     padding: 50px 10% 20vh;
     margin: 0;
     box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.3);
-    margin-top: 20px;
     transition: opacity 350ms, -webkit-transform 250ms;
     transition: opacity 350ms, transform 250ms;
     transition: opacity 350ms, transform 250ms, -webkit-transform 250ms;
+  }
+  ul.menu-level--1 li {
+    text-align: left;
   }
 }
 
@@ -1371,6 +1302,7 @@ h6 {
 
 .logo_alt {
   display: none;
+  opacity: 0.5;
 }
 
 /**
@@ -1432,18 +1364,7 @@ h6 {
   min-height: 1px;
 }
 
-.main-nav-scrolled nav {
-  clear: none;
-  float: right;
-  position: relative;
-  left: -50%;
-  text-align: left;
-}
-
 .main-nav-scrolled ul.menu-level--0 {
-  list-style: none;
-  position: relative;
-  left: 50%;
   margin: 0;
   padding: 12px;
 }
@@ -1525,6 +1446,12 @@ h6 {
 
 #toolbar-administration {
   z-index: 999999;
+}
+
+.original-menu {
+  width: 100%;
+  float: left;
+  margin-top: 20px;
 }
 
 .field--name-field-video {
@@ -3456,6 +3383,46 @@ a[href^=mailto]:before {
   margin-left: auto;
   padding-right: 5%;
   padding-left: 5%;
+}
+
+.nav-search {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  background-color: white;
+  padding: 0vh 10% 10vh;
+  margin: 0;
+  transition: opacity 350ms, -webkit-transform 250ms;
+  transition: opacity 350ms, transform 250ms;
+  transition: opacity 350ms, transform 250ms, -webkit-transform 250ms;
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.input-search {
+  display: inline-block;
+  width: 70%;
+  height: auto;
+  margin-top: 6px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 57px;
+  float: none;
+  border: 2px dashed #a79d96;
+  border-radius: 2px;
+  background-image: url("http://uploads.webflow.com/573ebff866718aad169d5a8e/57611d082dfd0800251aa047_search.svg");
+  background-position: 7px 50%;
+  background-size: 40px;
+  background-repeat: no-repeat;
+  color: #645c56;
+  font-size: 1.3em;
+  line-height: 120%;
+}
+
+.form-searchholder {
+  margin-top: 34px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=sourcemaps/camp.main.css.map */

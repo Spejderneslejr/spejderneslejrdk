@@ -1,16 +1,22 @@
-@import "icons";
-
-// Target all menus that starts with "menu--site-menu-".
-// This is the styling that wraps the top menu.
 [class^="menu--site-menu-"], [class*=" menu--site-menu-"] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 
-  @include media($desktop) {
-    position: relative;
-    left: 50%;
-    float: left;
-    clear: both;
-    margin: 10px 0;
-    text-align: left;
+  li {
+     display:inline;
+  }
+
+  a {
+    display:inline-block;
+    padding:10px;
+  }
+
+  ul {
+    &.menu {
+      text-align: center;
+    }
   }
 
   // On mobile we place the menu on the right side.
@@ -67,24 +73,8 @@
     }
   }
 
+  // Margins for first level items.
   &.menu-level--0 {
-
-    @include media($desktop) {
-
-      & {
-        margin-left: 0;
-        position: relative;
-        left: -50%;
-        text-align: left;
-      }
-    }
-
-    li {
-      @include media($desktop) {
-        float: left;
-      }
-    }
-
     > .menu-item {
 
       @include media($desktop) {
@@ -95,98 +85,101 @@
         margin: 0 10px;
       }
     }
+  }
+
+  // Font size for first level items.
+  li {
+    @include media($desktop) {
+      font-size: em(20, $base-font-size);
+    }
+
+    @include media($tablet-l) {
+      font-size: em(18, $base-font-size);
+    }
+  }
+
+  > li {
+
+    @include media($desktop) {
+      &:last-child {
+
+        a {
+          padding: 15px 19px 10px;
+          border-radius: 30px;
+          background-color: #e1477d;
+          color: #fff;
+          text-shadow: 1px 1px 1px #066969;
+
+          &:hover {
+            color: white;
+            background-color: #000;
+          }
+        }
+      }
+    }
+  }
+
+  // Font style for links.
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  li.menu-item--expanded {
+
+    > a {
+      &:before {
+
+        @include media($desktop) {
+          @include icon('.icon-arrow_down');
+          @include transform(rotate(0deg));
+          @include transition(all 300ms ease-out);
+          float: right;
+          position: relative;
+          margin-left: 13px;
+          font-size: 12px;
+          line-height: em(22, $base-font-size);
+        }
+
+        @include media($tablet-p) {
+          content: "";
+        }
+      }
+
+      &.open:before {
+        @include transform(rotate(180deg));
+      }
+    }
+  }
+
+  // Responsive behavior of top level links.
+  @include media($tablet-p) {
+    padding: 0;
+    position: relative;
+    left: auto;
 
     li {
-      @include media($desktop) {
-        font-size: em(20, $base-font-size);
-      }
+      float: none;
 
-      @include media($tablet-l) {
-        font-size: em(18, $base-font-size);
-      }
-    }
+      &:last-child {
 
-    > li {
-
-      @include media($desktop) {
-        &:last-child {
-
-          a {
-            padding: 15px 19px 10px;
-            border-radius: 30px;
-            background-color: #e1477d;
-            color: #fff;
-            text-shadow: 1px 1px 1px #066969;
-
-            &:hover {
-              color: white;
-              background-color: #000;
-            }
-          }
+        a {
+          background: none;
+          padding: 0;
+          text-shadow: none;
         }
       }
     }
 
-    a {
-      text-decoration: none;
-      text-transform: uppercase;
-      font-weight: bold;
-
-      &:hover {
-        color: $green;
-      }
-    }
-
-    li.menu-item--expanded {
-
-      > a {
-        &:before {
-
-          @include media($desktop) {
-            @include icon('.icon-arrow_down');
-            @include transform(rotate(0deg));
-            @include transition(all 300ms ease-out);
-            float: right;
-            position: relative;
-            margin-left: 13px;
-            font-size: 12px;
-            line-height: em(22, $base-font-size);
-          }
-
-          @include media($tablet-p) {
-            content: "";
-          }
-        }
-
-        &.open:before {
-          @include transform(rotate(180deg));
-        }
-      }
-    }
-
-    @include media($tablet-p) {
-      padding: 0;
-      position: relative;
-      left: auto;
-
-      li {
-        float: none;
-
-        &:last-child {
-
-          a {
-            background: none;
-            padding: 0;
-            text-shadow: none;
-          }
-        }
-      }
-
-      > .menu-item {
-        margin: 0;
-        font-size: em(17, $base-font-size);
-        padding: 4px 0;
-      }
+    > .menu-item {
+      margin: 0;
+      font-size: em(17, $base-font-size);
+      padding: 4px 0;
     }
   }
 
@@ -378,7 +371,12 @@
       }
     }
   }
-} // End .menu--site-menu.
+
+  // First level of the menu.
+  .menu-level--1 {
+    // display: none;
+  }
+}
 
 // Variant of .menu-item--expanded.
 .menu-item--expanded--menu--site-menu {
@@ -398,7 +396,7 @@ ul.menu-level--1 {
 
   @include media($desktop) {
     // Layout.
-    position: fixed;
+    position: absolute;
     left: 0px;
     right: 0px;
     width: 100%;
@@ -406,10 +404,13 @@ ul.menu-level--1 {
     padding: 50px 10% 20vh;
     margin: 0;
     box-shadow: 0 8px 24px -6px rgba(0, 0, 0, .3);
-    margin-top: 20px;
 
     // Transition.
     @include transition(opacity 350ms, transform 250ms);
+
+    li {
+      text-align: left;
+    }
   }
 
   @include media($tablet-p) {
@@ -471,6 +472,7 @@ ul.menu-level--1 {
 // Alternative logo for the sticky menu.
 .logo_alt {
   display: none;
+  opacity: 0.5;
 }
 
 /**
@@ -533,18 +535,18 @@ ul.menu-level--1 {
 
   // We do a little magix to keep the menu centered - part1.
   nav {
-    clear: none;
-    float: right;
-    position: relative;
-    left: -50%;
-    text-align: left;
+    // clear: none;
+    // float: right;
+    // position: relative;
+    // left: -50%;
+    // text-align: left;
   }
 
   // We do a little magix to keep the menu centered - part2.
   ul.menu-level--0 {
-    list-style: none;
-    position: relative;
-    left: 50%;
+    // list-style: none;
+    // position: relative;
+    // left: 50%;
     margin: 0;
     padding: 12px;
 
@@ -638,4 +640,10 @@ ul.menu-level--1 {
 // When the admin toolbar is active we need to adjust the header a little.
 #toolbar-administration {
   z-index: 999999;
+}
+
+.original-menu {
+  width: 100%;
+  float: left;
+  margin-top: 20px;
 }

@@ -157,6 +157,9 @@
     }
   };
 
+  /**
+   * Show captions on hover on Card Gallery.
+   */
   Drupal.behaviors.cardGallery = {
     attach: function (context, settings) {
       $('.photo-holder').each(function(key, item) {
@@ -164,6 +167,22 @@
           $('.card-gallery-captions.__' + key).fadeToggle();
         });
       });
+    }
+  };
+
+  /**
+   * Make the search menu item as a dropwdown.
+   */
+  Drupal.behaviors.searchDropDown = {
+    attach: function (context, settings) {
+      var searchMenuItem = $('.menu--site-menu.original-menu', context)
+        .find('> li:nth-child(4)')
+        .first();
+
+      var searchHtml = $('<div class="nav-search"><div class="form"><form class="form-searchholder"><input class="input-search" data-name="Search" id="Search" maxlength="256" name="Search" placeholder="Søg på nøgleord, steder, personer, begivenheder mm" type="text"><input class="btn search-btn" type="submit" value="Søg"></form></div></div>');
+
+      searchMenuItem.append(searchHtml);
+
     }
   };
 })(jQuery, Drupal);
