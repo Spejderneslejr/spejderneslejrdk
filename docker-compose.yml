@@ -53,6 +53,7 @@ services:
   drush:
     image: reload/drupal-php7-fpm
     entrypoint: /usr/local/bin/drush
+    command: version
     volumes_from:
       - webroot
     working_dir: /var/www/web
