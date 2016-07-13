@@ -175,7 +175,9 @@
    */
   Drupal.behaviors.searchDropDown = {
     attach: function (context, settings) {
-
+      var placeholderTxt = Drupal.t('Search on keywords, places, people, events, etc.', {}, {context: "search form"});
+      var submitTxt = Drupal.t('Search', {}, {context: "search form"});
+      var searchUrl = '/search';
       // Find the search menu item for later use.
       var searchMenuItem = $('.menu--site-menu.original-menu', context)
         .find('> li:nth-child(4)')
@@ -184,11 +186,21 @@
       // Detect language.
       var language = settings.path.currentLanguage;
 
+      console.log(language);
+
       // Get the right search based on the user language.
       var searchHtml = getSearchHtml(language);
 
       // Append the form into the DOM.
       searchMenuItem.append(searchHtml);
+
+      // Sanitize search form. We want to make sure that all search forms
+      // across the site uses the same translations.
+      $('.site-search').each(function() {
+        $(this).find('.search-input').attr("placeholder", placeholderTxt);
+        $(this).find('.search-submit').attr("value", submitTxt);
+        $(this).attr('action', searchUrl);
+      });
 
       // Click event handler.
       // $(searchMenuItem).find('a').first().css('border', '1px solid red');
@@ -203,16 +215,20 @@
        * Generate a Google search form depending on language.
        */
       function getSearchHtml(language) {
-        var languageHtml = $('<div class="nav-search"><div class="form-search"><form method="get" class="site-search"><input class="search-input" name="q" placeholder="Søg på nøgleord, steder, personer, begivenheder mm" type="text"><input class="search-submit" type="submit" value="Søg"></form></div></div>');
+
         switch(language) {
           case 'de':
-            languageHtml = $('<div class="nav-search"><div class="form-search"><form method="get" class="site-search"><input class="search-input" name="q" placeholder="Suche nach Schlüsselwörtern, Orte, Menschen, Ereignisse, etc." type="text"><input class="search-submit" type="submit" value="Suche"></form></div></div>');
+            searchUrl = '/suche';
             break;
-          case 'en':
-            languageHtml = $('<div class="nav-search"><div class="form-search"><form method="get" class="site-search"><input class="search-input" name="q" placeholder="Search on keywords, places, people, events, etc." type="text"><input class="search-submit" type="submit" value="Search"></form></div></div>');
+          case 'da':
+            searchUrl = '/soeg';
             break;
         }
-        return languageHtml;
+
+        var languageHtml = '<div class="nav-search"><div class="form-search"><form method="get" action ="';
+        languageHtml += searchUrl + '" class="site-search"><input class="search-input" name="q" placeholder="';
+        languageHtml += placeholderTxt + '" type="text"><input class="search-submit" type="submit" value="' + submitTxt + '"></form></div></div>';
+        return $(languageHtml);
       }
     }
   };
