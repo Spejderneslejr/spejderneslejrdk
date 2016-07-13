@@ -186,8 +186,6 @@
       // Detect language.
       var language = settings.path.currentLanguage;
 
-      console.log(language);
-
       // Get the right search based on the user language.
       var searchHtml = getSearchHtml(language);
 
