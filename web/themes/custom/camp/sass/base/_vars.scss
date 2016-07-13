@@ -39,7 +39,7 @@ $base-font-color: $black-light;
  * Breakpoints.
  */
 $small: new-breakpoint(max-width 500px);
-$phone: new-breakpoint(max-width 767px);
+$phone: new-breakpoint(max-width 768px);
 $tablet-p: new-breakpoint(max-width 772px);
 $desktop: new-breakpoint(min-width 773px);
 $tablet-l: new-breakpoint(max-width 1024px);

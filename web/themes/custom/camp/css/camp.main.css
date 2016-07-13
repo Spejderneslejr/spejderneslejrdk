@@ -333,7 +333,7 @@ main:last-child {
   clear: both;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   [class*='span-'].layout-item {
     float: left;
     display: block;
@@ -921,6 +921,9 @@ h6 {
   margin: 0;
   padding: 0;
   text-align: center;
+  width: 100%;
+  float: left;
+  margin-top: 20px;
 }
 
 [class^="menu--site-menu-"] li, [class*=" menu--site-menu-"] li {
@@ -936,7 +939,7 @@ h6 {
   text-align: center;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   [class^="menu--site-menu-"], [class*=" menu--site-menu-"] {
     position: fixed;
     top: 0px;
@@ -1002,6 +1005,7 @@ h6 {
 @media screen and (max-width: 1024px) {
   .menu--site-menu.menu-level--0 > .menu-item {
     margin: 0 10px;
+    font-size: 0.85714em;
   }
 }
 
@@ -1344,6 +1348,11 @@ h6 {
   background-color: rgba(255, 255, 255, 0.95);
 }
 
+.main-nav-scrolled [class^="menu--site-menu-"], .main-nav-scrolled [class*=" menu--site-menu-"] {
+  margin-top: 0;
+  float: none;
+}
+
 .main-nav-scrolled .region--header__sonderborg,
 .main-nav-scrolled .region--header__tasks,
 .main-nav-scrolled .language-flags {
@@ -1446,12 +1455,6 @@ h6 {
 
 #toolbar-administration {
   z-index: 999999;
-}
-
-.original-menu {
-  width: 100%;
-  float: left;
-  margin-top: 20px;
 }
 
 .field--name-field-video {
@@ -2310,7 +2313,7 @@ ul.atcb-list li {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .region--header__sonderborg .region--header__sonderborg__image-wrapper img {
     max-width: 130px;
     padding-top: 8px;
@@ -2338,7 +2341,7 @@ ul.atcb-list li {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .region--header__tasks {
     display: none;
   }
@@ -2565,7 +2568,7 @@ ul.atcb-list li {
   margin: 0 15px 0 0;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .node--view-mode-teaser img {
     margin-bottom: 10px;
   }
@@ -2579,7 +2582,7 @@ ul.news--teaser-list h2 {
   margin-bottom: 0;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   ul.news--teaser-list h2 {
     clear: both;
   }
@@ -3386,6 +3389,10 @@ a[href^=mailto]:before {
 }
 
 .nav-search {
+  font-family: Calibri, sans-serif;
+  color: #5a5a5a;
+  font-size: 14px;
+  line-height: 1.42857em;
   position: absolute;
   left: 0px;
   right: 0px;
@@ -3397,32 +3404,28 @@ a[href^=mailto]:before {
   transition: opacity 350ms, transform 250ms;
   transition: opacity 350ms, transform 250ms, -webkit-transform 250ms;
   box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  -webkit-transform: translateX(0px) translateY(-20px) translateZ(0px) scaleX(1) scaleY(0.95) scaleZ(1);
+  transform: translateX(0px) translateY(-20px) translateZ(0px) scaleX(1) scaleY(0.95) scaleZ(1);
+  transition: opacity 350ms, -webkit-transform 350ms;
+  transition: opacity 350ms, transform 350ms;
+  transition: opacity 350ms, transform 350ms, -webkit-transform 350ms;
+  z-index: -9999;
+}
+
+.nav-search.js-active {
+  opacity: 1;
+  -webkit-transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1);
+  transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1);
+  display: block;
+  transition: opacity 350ms, -webkit-transform 250ms;
+  transition: opacity 350ms, transform 250ms;
+  transition: opacity 350ms, transform 250ms, -webkit-transform 250ms;
   z-index: 1000;
 }
 
-.input-search {
-  display: inline-block;
-  width: 70%;
-  height: auto;
-  margin-top: 6px;
-  padding-top: 18px;
-  padding-bottom: 18px;
-  padding-left: 57px;
-  float: none;
-  border: 2px dashed #a79d96;
-  border-radius: 2px;
-  background-image: url("http://uploads.webflow.com/573ebff866718aad169d5a8e/57611d082dfd0800251aa047_search.svg");
-  background-position: 7px 50%;
-  background-size: 40px;
-  background-repeat: no-repeat;
-  color: #645c56;
-  font-size: 1.3em;
-  line-height: 120%;
-}
-
-.form-searchholder {
-  margin-top: 34px;
-  text-align: center;
+.form-search {
+  margin-top: 8vh;
 }
 
 /*# sourceMappingURL=sourcemaps/camp.main.css.map */

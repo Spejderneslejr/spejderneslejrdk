@@ -77,17 +77,12 @@
 
 // Search temp.
 .nav-search {
-  // position: absolute;
-  // left: 0px;
-  // top: 0px;
-  // right: 0px;
-  // z-index: 1000;
-  // display: none;
-  // width: 100%;
-  // height: auto;
-  // padding: 27vh 10% 10vh;
-  // background-color: #fff;
-  // box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+
+  font-family: Calibri, sans-serif;
+  color: #5a5a5a;
+  font-size: 14px;
+  line-height: 1.42857em;
+
   position: absolute;
   left: 0px;
   right: 0px;
@@ -99,36 +94,24 @@
   transition: opacity 350ms, transform 250ms;
   transition: opacity 350ms, transform 250ms, -webkit-transform 250ms;
   box-shadow: 0 4px 2px -2px rgba(0, 0, 0, .2);
-  z-index: 1000;
 
   // Closed.
-  // opacity: 0;
-  // transform: translateX(0px) translateY(-20px) translateZ(0px) scaleX(1) scaleY(0.95) scaleZ(1);
-  // display: none;
-  // transition: opacity 350ms, transform 350ms;
+  opacity: 0;
+  transform: translateX(0px) translateY(-20px) translateZ(0px) scaleX(1) scaleY(0.95) scaleZ(1);
+  transition: opacity 350ms, transform 350ms;
+
+  // @include hide-text;
+  z-index: -9999;
+
+  &.js-active {
+    opacity: 1;
+    transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1);
+    display: block;
+    transition: opacity 350ms, transform 250ms;
+    z-index: 1000;
+  }
 }
 
-.input-search {
-  display: inline-block;
-  width: 70%;
-  height: auto;
-  margin-top: 6px;
-  padding-top: 18px;
-  padding-bottom: 18px;
-  padding-left: 57px;
-  float: none;
-  border: 2px dashed #a79d96;
-  border-radius: 2px;
-  background-image: url("http://uploads.webflow.com/573ebff866718aad169d5a8e/57611d082dfd0800251aa047_search.svg");
-  background-position: 7px 50%;
-  background-size: 40px;
-  background-repeat: no-repeat;
-  color: #645c56;
-  font-size: 1.3em;
-  line-height: 120%;
-}
-
-.form-searchholder {
-  margin-top: 34px;
-  text-align: center;
+.form-search {
+  margin-top: 8vh;
 }

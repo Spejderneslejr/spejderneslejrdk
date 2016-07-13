@@ -3,6 +3,9 @@
   margin: 0;
   padding: 0;
   text-align: center;
+  width: 100%;
+  float: left;
+  margin-top: 20px;
 
   li {
      display:inline;
@@ -83,6 +86,7 @@
 
       @include media($tablet-l) {
         margin: 0 10px;
+        font-size: em(12, $base-font-size);
       }
     }
   }
@@ -512,6 +516,12 @@ ul.menu-level--1 {
     background-color: hsla(0, 0%, 100%, .95);
   }
 
+  // Reset.
+  [class^="menu--site-menu-"], [class*=" menu--site-menu-"] {
+    margin-top: 0;
+    float: none;
+  }
+
   // Hide stuff.
   .region--header__sonderborg,
   .region--header__tasks,
@@ -533,20 +543,8 @@ ul.menu-level--1 {
     min-height: 1px;
   }
 
-  // We do a little magix to keep the menu centered - part1.
-  nav {
-    // clear: none;
-    // float: right;
-    // position: relative;
-    // left: -50%;
-    // text-align: left;
-  }
-
   // We do a little magix to keep the menu centered - part2.
   ul.menu-level--0 {
-    // list-style: none;
-    // position: relative;
-    // left: 50%;
     margin: 0;
     padding: 12px;
 
@@ -642,8 +640,8 @@ ul.menu-level--1 {
   z-index: 999999;
 }
 
-.original-menu {
-  width: 100%;
-  float: left;
-  margin-top: 20px;
-}
+// .original-menu {
+//   width: 100%;
+//   float: left;
+//   margin-top: 20px;
+// }

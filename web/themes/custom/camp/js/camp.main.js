@@ -175,14 +175,45 @@
    */
   Drupal.behaviors.searchDropDown = {
     attach: function (context, settings) {
+
+      // Find the search menu item for later use.
       var searchMenuItem = $('.menu--site-menu.original-menu', context)
         .find('> li:nth-child(4)')
         .first();
 
-      var searchHtml = $('<div class="nav-search"><div class="form"><form class="form-searchholder"><input class="input-search" data-name="Search" id="Search" maxlength="256" name="Search" placeholder="Søg på nøgleord, steder, personer, begivenheder mm" type="text"><input class="btn search-btn" type="submit" value="Søg"></form></div></div>');
+      // Detect language.
+      var language = settings.path.currentLanguage;
 
+      // Get the right search based on the user language.
+      var searchHtml = getSearchHtml(language);
+
+      // Append the form into the DOM.
       searchMenuItem.append(searchHtml);
 
+      // Click event handler.
+      // $(searchMenuItem).find('a').first().css('border', '1px solid red');
+      $(searchMenuItem).find('a').first().click(function() {
+        event.preventDefault();
+        searchHtml
+          // .find('.nav-search')
+          .toggleClass('js-active');
+      });
+
+      /**
+       * Generate a Google search form depending on language.
+       */
+      function getSearchHtml(language) {
+        var languageHtml = $('<div class="nav-search"><div class="form-search"><form method="get" class="site-search"><input class="search-input" name="q" placeholder="Søg på nøgleord, steder, personer, begivenheder mm" type="text"><input class="search-submit" type="submit" value="Søg"></form></div></div>');
+        switch(language) {
+          case 'de':
+            languageHtml = $('<div class="nav-search"><div class="form-search"><form method="get" class="site-search"><input class="search-input" name="q" placeholder="Suche nach Schlüsselwörtern, Orte, Menschen, Ereignisse, etc." type="text"><input class="search-submit" type="submit" value="Suche"></form></div></div>');
+            break;
+          case 'en':
+            languageHtml = $('<div class="nav-search"><div class="form-search"><form method="get" class="site-search"><input class="search-input" name="q" placeholder="Search on keywords, places, people, events, etc." type="text"><input class="search-submit" type="submit" value="Search"></form></div></div>');
+            break;
+        }
+        return languageHtml;
+      }
     }
   };
 })(jQuery, Drupal);
