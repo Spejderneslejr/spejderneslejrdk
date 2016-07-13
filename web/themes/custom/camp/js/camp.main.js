@@ -211,6 +211,9 @@
 
       /**
        * Generate a Google search form depending on language.
+       *
+       * @param {string} language Language name.
+       * @return {object} Jqeury DOM element.
        */
       function getSearchHtml(language) {
 
