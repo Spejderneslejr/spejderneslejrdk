@@ -25,9 +25,9 @@ function camp_preprocess_block(&$variables) {
 
   // This variable should always be available for all blocks.
   // Get language id. We use this to get correct homepage based on language.
-      $variables['language_id'] = \Drupal::languageManager()
-        ->getCurrentLanguage()
-        ->getId();
+  $variables['language_id'] = \Drupal::languageManager()
+    ->getCurrentLanguage()
+    ->getId();
 
   switch ($variables['base_plugin_id']) {
     case 'system_branding_block':
