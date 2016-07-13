@@ -19,11 +19,19 @@
   ul {
     &.menu {
       text-align: center;
+
+      @include media($tablet-p) {
+        text-align: left;
+
+        li {
+          float: left;
+        }
+      }
     }
   }
 
   // On mobile we place the menu on the right side.
-  @include media($phone) {
+  @include media($tablet-p) {
     position: fixed;
     top: 0px;
     right: 0px;
@@ -38,6 +46,10 @@
     padding-left: 31px;
     background-color: white;
     box-shadow: 1px 1px 16px 0 rgba(0, 0, 0, .36);
+
+    a {
+      padding: 0;
+    }
 
     // Transition.
     @include transform(translate(100%, 0px));
@@ -94,20 +106,25 @@
   // Font size for first level items.
   li {
     @include media($desktop) {
-      font-size: em(20, $base-font-size);
+      a {
+        font-size: em(20, $base-font-size);
+      }
+
     }
 
     @include media($tablet-l) {
-      font-size: em(18, $base-font-size);
+      a {
+        font-size: em(18, $base-font-size);
+      }
     }
   }
 
   > li {
 
     @include media($desktop) {
-      &:last-child {
+      &:nth-child(5) {
 
-        a {
+         > a {
           padding: 15px 19px 10px;
           border-radius: 30px;
           background-color: #e1477d;
@@ -192,13 +209,17 @@
 
     > li:nth-child(1) {
 
-      > ul li {
+      > ul > li {
 
         @include media($desktop) {
           @include span-columns(4);
           margin: 0;
-          font-size: 20px;
+          // font-size: 20px;
           padding-right: 30px;
+
+          li {
+            float: none;
+          }
         }
 
         // Go full width on mobile.
@@ -219,6 +240,9 @@
 
           @include media($tablet-p) {
             border: none;
+            li {
+              text-align: left;
+            }
           }
         }
       }
@@ -263,11 +287,11 @@
     // Target the 2nth li item in the menu.
     > li:nth-child(2) {
 
-      > ul li {
+      .menu-level--2 li {
         @include media($desktop) {
           @include span-columns(4);
           margin: 0 0 20px;
-          font-size: 20px;
+          // font-size: 20px;
           text-align: center;
           padding-right: 0;
         }
@@ -405,7 +429,7 @@ ul.menu-level--1 {
     right: 0px;
     width: 100%;
     background-color: white;
-    padding: 50px 10% 20vh;
+    padding: 8vh 10% 13vh;
     margin: 0;
     box-shadow: 0 8px 24px -6px rgba(0, 0, 0, .3);
 
@@ -435,7 +459,7 @@ ul.menu-level--1 {
         padding-left: 16px;
         float: none;
         color: $gray-light;
-        font-size: 16px;
+        // font-size: 16px;
         margin: 0;
         padding: 3px 0;
         border: none;
@@ -549,12 +573,14 @@ ul.menu-level--1 {
     padding: 12px;
 
     li {
-      font-size: em(16, $base-font-size);
+      a {
+        font-size: em(16, $base-font-size);
+      }
     }
 
     > li {
 
-      &:last-child {
+      &:nth-child(5) {
         position: fixed;
         right: 20px;
         padding: 0;
@@ -639,9 +665,3 @@ ul.menu-level--1 {
 #toolbar-administration {
   z-index: 999999;
 }
-
-// .original-menu {
-//   width: 100%;
-//   float: left;
-//   margin-top: 20px;
-// }
