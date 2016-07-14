@@ -1,0 +1,28 @@
+{#
+  Assumes the current language is available as language_id and the current
+  node as node.
+#}
+
+{#
+  The facebook share-buttons language is set by the language of the included
+  SDK - so we have to generate a proper locale string to inject into the path
+  we're fetching the SDK from.
+#}
+{% if language_id == 'en' %}
+  {%  set fb_lang = "en_US" %}
+{% elseif language_id == 'de' %}
+  {%  set fb_lang = "de_DE" %}
+{% else %}
+  {%  set fb_lang = "da_DK" %}
+{% endif %}
+<div class="facebook-share">
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/{{fb_lang}}/sdk.js#xfbml=1&version=v2.7&appId=272863726404861";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+  <div class="fb-share-button" data-href="{{ url('entity.node.canonical', {'node': node.id}) | render | url_encode(true) }}" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fmysite%2F&amp;src=sdkpreparse"></a></div>
+</div>
