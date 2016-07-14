@@ -35,7 +35,8 @@
         "drupal/entity_browser": "^8.1@alpha",
         "drupal/google_analytics": "^8",
         "drupal/entityqueue": "^8",
-        "drupal/advanced_text_formatter": "^8"
+        "drupal/advanced_text_formatter": "^8",
+        "drupal/pathauto": "^8"
     },
     "require-dev": {
         "behat/mink": "~1.6",
