@@ -29,7 +29,7 @@ content:
       jlib_showOpenButton: true
       jlib_showExpandButton: true
       jlib_useFullscreenExpand: '1'
-      manual_config: ''
+      manual_config: "captionPosition=\"OVERLAY_IMAGE\"\nshowImageOverlay=\"ALWAYS\""
       incompatible_file_action: ''
       linkurl_source: ''
       linkurl_target: _blank
