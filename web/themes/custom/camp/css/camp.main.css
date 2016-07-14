@@ -944,6 +944,7 @@ h6 {
   }
   [class^="menu--site-menu-"] ul.menu li, [class*=" menu--site-menu-"] ul.menu li {
     float: left;
+    padding: 4px 0;
   }
 }
 
@@ -1126,7 +1127,7 @@ h6 {
     display: block;
     margin-right: 2.35765%;
     width: 100%;
-    padding: 4px 0;
+    padding: 0;
   }
   .menu--site-menu.menu-level--0 > li:nth-child(1) > ul > li:last-child {
     margin-right: 0;
@@ -1146,6 +1147,7 @@ h6 {
 
 @media screen and (max-width: 772px) {
   .menu--site-menu.menu-level--0 > li:nth-child(1) > ul > li a {
+    padding: 0;
     border: none;
   }
   .menu--site-menu.menu-level--0 > li:nth-child(1) > ul > li a li {
@@ -1167,6 +1169,12 @@ h6 {
 @media screen and (max-width: 772px) {
   .menu--site-menu.menu-level--0 > li:nth-child(4) > a:before {
     content: "" !important;
+  }
+}
+
+@media screen and (max-width: 772px) {
+  .menu--site-menu.menu-level--0 .menu-level--2 {
+    padding-top: 4px;
   }
 }
 
@@ -1285,7 +1293,6 @@ h6 {
     float: none;
     color: #a79d96;
     margin: 0;
-    padding: 3px 0;
     border: none;
   }
   ul.menu-level--1 li a.is-active {

@@ -25,6 +25,7 @@
 
         li {
           float: left;
+          padding: 4px 0;
         }
       }
     }
@@ -214,7 +215,6 @@
         @include media($desktop) {
           @include span-columns(4);
           margin: 0;
-          // font-size: 20px;
           padding-right: 30px;
 
           li {
@@ -225,7 +225,7 @@
         // Go full width on mobile.
         @include media($tablet-p) {
           @include span-columns(12);
-          padding: 4px 0;
+          padding: 0;
         }
 
         a {
@@ -239,6 +239,7 @@
           }
 
           @include media($tablet-p) {
+            padding: 0;
             border: none;
             li {
               text-align: left;
@@ -283,6 +284,12 @@
   // is right now being triggered by Javascript by injecting classes:
   // js-active and js-inactive.
   &.menu-level--0 {
+
+    .menu-level--2 {
+      @include media($tablet-p) {
+        padding-top: 4px;
+      }
+    }
 
     // Target the 2nth li item in the menu.
     > li:nth-child(2) {
@@ -459,9 +466,7 @@ ul.menu-level--1 {
         padding-left: 16px;
         float: none;
         color: $gray-light;
-        // font-size: 16px;
         margin: 0;
-        padding: 3px 0;
         border: none;
 
         &.is-active {
