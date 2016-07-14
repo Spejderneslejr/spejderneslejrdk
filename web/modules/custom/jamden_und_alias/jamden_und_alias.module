@@ -19,7 +19,6 @@ function jamden_und_alias_pathauto_pattern_alter(&$pattern, array &$context) {
     // nodes will always be language-independent.
     $context['language'] = LanguageInterface::LANGCODE_NOT_SPECIFIED;
   }
-  $bla = 123;
 }
 
 /**
