@@ -1,0 +1,5 @@
+name: Jamboree Denmark Language Independent Aliases
+type: module
+description: Makes all aliases to nodes language-independent on save
+core: 8.x
+package: Custom
