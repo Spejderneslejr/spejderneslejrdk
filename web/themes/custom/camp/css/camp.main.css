@@ -653,6 +653,11 @@ blockquote {
   color: #837870;
 }
 
+.facebook-share {
+  height: 1em;
+  text-align: center;
+}
+
 input[type='text'],
 input[type='email'],
 input[type='password'],
