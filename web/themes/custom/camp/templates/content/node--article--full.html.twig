@@ -80,6 +80,7 @@
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
   ]
 %}
+
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
   {{ top_image }}
@@ -87,6 +88,7 @@
     <div class="summary">
       {{ content.field_summary }}
     </div>
+    {% include directory ~ '/templates/components/facebook-share.twig' %}
     {{ title_prefix }}
       <h1{{ title_attributes }}>
         {{ label }}

@@ -22,12 +22,8 @@ use Drupal\views\ViewExecutable;
  * Implements hook_preprocess_block().
  */
 function camp_preprocess_block(&$variables) {
-
-  // This variable should always be available for all blocks.
-  // Get language id. We use this to get correct homepage based on language.
-  $variables['language_id'] = \Drupal::languageManager()
-    ->getCurrentLanguage()
-    ->getId();
+  // Add the current language as a variable.
+  camp_inject_language_variable($variables);
 
   switch ($variables['base_plugin_id']) {
     case 'system_branding_block':
@@ -42,6 +38,18 @@ function camp_preprocess_block(&$variables) {
       $variables['event_info'] = 'Sønderborg 22.-30. juli 2017';
       break;
   }
+}
+
+/**
+ * Adds the current language as a language_id variable
+ *
+ * @param $variables
+ */
+function camp_inject_language_variable(&$variables) {
+  // Get language id. We use this to get correct homepage based on language.
+  $variables['language_id'] = \Drupal::languageManager()
+    ->getCurrentLanguage()
+    ->getId();
 }
 
 /**
@@ -110,6 +118,9 @@ function camp_preprocess_paragraph(&$variables) {
  * Implements hook_preprocess_HOOK().
  */
 function camp_preprocess_node(&$variables) {
+  // Add the current language as a variable.
+  camp_inject_language_variable($variables);
+  
   if (isset($variables['node'])) {
     /** @var Node $node */
     $node = $variables['node'];
