@@ -199,7 +199,6 @@
 
         // Populate the search-field from the url if we have a q-parameter.
         if (settings.path && settings.path.currentQuery && settings.path.currentQuery.q) {
-          console.log("setting");
           $(this).find('.search-input').val(settings.path.currentQuery.q);
         }
         $(this).find('.search-submit').attr("value", submitTxt);
@@ -207,11 +206,9 @@
       });
 
       // Click event handler.
-      // $(searchMenuItem).find('a').first().css('border', '1px solid red');
       $(searchMenuItem).find('a').first().click(function() {
         event.preventDefault();
         searchHtml
-          // .find('.nav-search')
           .toggleClass('js-active');
       });
 
