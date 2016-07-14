@@ -196,6 +196,12 @@
       // across the site uses the same translations.
       $('.site-search').each(function() {
         $(this).find('.search-input').attr("placeholder", placeholderTxt);
+
+        // Populate the search-field from the url if we have a q-parameter.
+        if (settings.path && settings.path.currentQuery && settings.path.currentQuery.q) {
+          console.log("setting");
+          $(this).find('.search-input').val(settings.path.currentQuery.q);
+        }
         $(this).find('.search-submit').attr("value", submitTxt);
         $(this).attr('action', searchUrl);
       });
