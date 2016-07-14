@@ -133,14 +133,25 @@ function _camp_preprocess_node_article($node, &$variables) {
     /** @var \Drupal\Core\Menu\MenuActiveTrailInterface $trial */
     $trial = \Drupal::service('menu.active_trail');
     $active_link = $trial->getActiveLink();
-    if (!empty($active_link) && !empty($active_link->getParent())) {
-      try {
-        $parent = $menu_link_manager->createInstance($active_link->getParent());
-        $parent_title = $parent->getTitle();
-      }
-      // Thrown if the instance could not be loaded above.
-      catch (PluginException $e) {
-        // Do nothing, default value has already been set.
+
+    // Get the parents of the link
+    $parent_plugin_ids = $menu_link_manager->getParentIds($active_link->getPluginId());
+    if (count($parent_plugin_ids) >=4) {
+      // Only populate the sub_headline if we're level 4 or below.
+      // Level 1 will be the top menu-item.
+      // Level 2 will be a dummy column menu-item.
+      // Level 3 will be the parent we're interested in showing.
+      // Level 4 will be where the main articles that needs bread-crumbs
+      // will usually be.
+      if (!empty($active_link) && !empty($active_link->getParent())) {
+        try {
+          $parent = $menu_link_manager->createInstance($active_link->getParent());
+          $parent_title = $parent->getTitle();
+        }
+          // Thrown if the instance could not be loaded above.
+        catch (PluginException $e) {
+          // Do nothing, default value has already been set.
+        }
       }
     }
 
