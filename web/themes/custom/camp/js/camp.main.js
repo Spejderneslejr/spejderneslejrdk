@@ -14,9 +14,6 @@
        */
       function init() {
 
-        // Trigger click outside.
-        clickOutside(menuElements);
-
         // Make header sticky.
         stickyHeader();
 
@@ -83,6 +80,10 @@
        */
       function toggleSubMenu(event, element) {
         event.preventDefault();
+
+        // First close search sub menu.
+        $('.nav-search').removeClass('js-active');
+
         toggleMenu(element);
 
           $('.menu-level--0 .not-clickable > a')
@@ -206,8 +207,20 @@
       });
 
       // Click event handler.
-      $(searchMenuItem).find('a').first().click(function() {
+      $(searchMenuItem).find('a').first().click(function(event) {
         event.preventDefault();
+
+        // Hide all other menus.
+        $('.menu-level--0 .not-clickable > a')
+          .each(function() {
+            if ($(this).hasClass('open')) {
+              $(this)
+                .toggleClass('open')
+                .next('.menu-level--1')
+                .toggleClass("js-inactive js-active");
+            }
+          });
+
         searchHtml
           .toggleClass('js-active');
       });
