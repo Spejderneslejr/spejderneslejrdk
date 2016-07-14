@@ -157,6 +157,9 @@
     }
   };
 
+  /**
+   * Show captions on hover on Card Gallery.
+   */
   Drupal.behaviors.cardGallery = {
     attach: function (context, settings) {
       $('.photo-holder').each(function(key, item) {
@@ -164,6 +167,73 @@
           $('.card-gallery-captions.__' + key).fadeToggle();
         });
       });
+    }
+  };
+
+  /**
+   * Make the search menu item as a dropwdown.
+   */
+  Drupal.behaviors.searchDropDown = {
+    attach: function (context, settings) {
+      var placeholderTxt = Drupal.t('Search on keywords, places, people, events, etc.', {}, {context: "search form"});
+      var submitTxt = Drupal.t('Search', {}, {context: "search form"});
+      var searchUrl = '/search';
+      // Find the search menu item for later use.
+      var searchMenuItem = $('.menu--site-menu.original-menu', context)
+        .find('> li:nth-child(4)')
+        .first();
+
+      // Detect language.
+      var language = settings.path.currentLanguage;
+
+      // Get the right search based on the user language.
+      var searchHtml = getSearchHtml(language);
+
+      // Append the form into the DOM.
+      searchMenuItem.append(searchHtml);
+
+      // Sanitize search form. We want to make sure that all search forms
+      // across the site uses the same translations.
+      $('.site-search').each(function() {
+        $(this).find('.search-input').attr("placeholder", placeholderTxt);
+
+        // Populate the search-field from the url if we have a q-parameter.
+        if (settings.path && settings.path.currentQuery && settings.path.currentQuery.q) {
+          $(this).find('.search-input').val(settings.path.currentQuery.q);
+        }
+        $(this).find('.search-submit').attr("value", submitTxt);
+        $(this).attr('action', searchUrl);
+      });
+
+      // Click event handler.
+      $(searchMenuItem).find('a').first().click(function() {
+        event.preventDefault();
+        searchHtml
+          .toggleClass('js-active');
+      });
+
+      /**
+       * Generate a Google search form depending on language.
+       *
+       * @param {string} language Language name.
+       * @return {object} Jqeury DOM element.
+       */
+      function getSearchHtml(language) {
+
+        switch(language) {
+          case 'de':
+            searchUrl = '/suche';
+            break;
+          case 'da':
+            searchUrl = '/soeg';
+            break;
+        }
+
+        var languageHtml = '<div class="nav-search"><div class="form-search"><form method="get" action ="';
+        languageHtml += searchUrl + '" class="site-search"><input class="search-input" name="q" placeholder="';
+        languageHtml += placeholderTxt + '" type="text"><input class="search-submit" type="submit" value="' + submitTxt + '"></form></div></div>';
+        return $(languageHtml);
+      }
     }
   };
 })(jQuery, Drupal);

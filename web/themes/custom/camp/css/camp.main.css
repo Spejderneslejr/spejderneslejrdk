@@ -333,7 +333,7 @@ main:last-child {
   clear: both;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   [class*='span-'].layout-item {
     float: left;
     display: block;
@@ -854,7 +854,7 @@ h6 {
 /**
  * Custom icomoon font.
  */
-[class^="icon-"], [class*=" icon-"], .menu--site-menu.menu-level--0 li.menu-item--expanded > a:before, .menu--site-menu.menu-level--0 > li:nth-child(4) > a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before, a[href^=tel]:before, a[href^=mailto]:before {
+[class^="icon-"], [class*=" icon-"], .menu--site-menu li.menu-item--expanded > a:before, .menu--site-menu.menu-level--0 > li:nth-child(4) > a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before, a[href^=tel]:before, a[href^=mailto]:before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -912,87 +912,34 @@ h6 {
   content: "\e906";
 }
 
-.icon-arrow_down:before, .menu--site-menu.menu-level--0 li.menu-item--expanded > a:before {
+.icon-arrow_down:before, .menu--site-menu li.menu-item--expanded > a:before {
   content: "\e900";
 }
 
-/**
- * Custom icomoon font.
- */
-[class^="icon-"], [class*=" icon-"], .menu--site-menu.menu-level--0 li.menu-item--expanded > a:before, .menu--site-menu.menu-level--0 > li:nth-child(4) > a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before, a[href^=tel]:before, a[href^=mailto]:before {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+[class^="menu--site-menu-"], [class*=" menu--site-menu-"] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  float: left;
+  margin-top: 20px;
 }
 
-.icon-mail2:before, a[href^=mailto]:before {
-  content: "\ea84";
+[class^="menu--site-menu-"] li, [class*=" menu--site-menu-"] li {
+  display: inline;
 }
 
-.icon-logo_alt:before {
-  content: "\e908";
+[class^="menu--site-menu-"] a, [class*=" menu--site-menu-"] a {
+  display: inline-block;
+  padding: 10px;
 }
 
-.icon-scout:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(1) a:before {
-  content: "\e902";
+[class^="menu--site-menu-"] ul.menu, [class*=" menu--site-menu-"] ul.menu {
+  text-align: center;
 }
 
-.icon-phone:before, a[href^=tel]:before {
-  content: "\e909";
-}
-
-.icon-mail:before {
-  content: "\e90a";
-}
-
-.icon-search:before, .menu--site-menu.menu-level--0 > li:nth-child(4) > a:before {
-  content: "\e907";
-}
-
-.icon-microphone:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(6) a:before {
-  content: "\e901";
-}
-
-.icon-watch:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(2) a:before {
-  content: "\e903";
-}
-
-.icon-piggy_bank:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(5) a:before {
-  content: "\e904";
-}
-
-.icon-knife:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(3) a:before {
-  content: "\e905";
-}
-
-.icon-bird:before, .menu--site-menu.menu-level--0 > li:nth-child(2) > ul li:nth-child(4) a:before {
-  content: "\e906";
-}
-
-.icon-arrow_down:before, .menu--site-menu.menu-level--0 li.menu-item--expanded > a:before {
-  content: "\e900";
-}
-
-@media screen and (min-width: 773px) {
-  [class^="menu--site-menu-"], [class*=" menu--site-menu-"] {
-    position: relative;
-    left: 50%;
-    float: left;
-    clear: both;
-    margin: 10px 0;
-    text-align: left;
-  }
-}
-
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   [class^="menu--site-menu-"], [class*=" menu--site-menu-"] {
     position: fixed;
     top: 0px;
@@ -1050,21 +997,6 @@ h6 {
 }
 
 @media screen and (min-width: 773px) {
-  .menu--site-menu.menu-level--0 {
-    margin-left: 0;
-    position: relative;
-    left: -50%;
-    text-align: left;
-  }
-}
-
-@media screen and (min-width: 773px) {
-  .menu--site-menu.menu-level--0 li {
-    float: left;
-  }
-}
-
-@media screen and (min-width: 773px) {
   .menu--site-menu.menu-level--0 > .menu-item {
     margin: 0 40px 0 0;
   }
@@ -1073,47 +1005,48 @@ h6 {
 @media screen and (max-width: 1024px) {
   .menu--site-menu.menu-level--0 > .menu-item {
     margin: 0 10px;
+    font-size: 0.85714em;
   }
 }
 
 @media screen and (min-width: 773px) {
-  .menu--site-menu.menu-level--0 li {
+  .menu--site-menu li {
     font-size: 1.42857em;
   }
 }
 
 @media screen and (max-width: 1024px) {
-  .menu--site-menu.menu-level--0 li {
+  .menu--site-menu li {
     font-size: 1.28571em;
   }
 }
 
 @media screen and (min-width: 773px) {
-  .menu--site-menu.menu-level--0 > li:last-child a {
+  .menu--site-menu > li:last-child a {
     padding: 15px 19px 10px;
     border-radius: 30px;
     background-color: #e1477d;
     color: #fff;
     text-shadow: 1px 1px 1px #066969;
   }
-  .menu--site-menu.menu-level--0 > li:last-child a:hover {
+  .menu--site-menu > li:last-child a:hover {
     color: white;
     background-color: #000;
   }
 }
 
-.menu--site-menu.menu-level--0 a {
+.menu--site-menu a {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
 }
 
-.menu--site-menu.menu-level--0 a:hover {
+.menu--site-menu a:hover {
   color: #2bb6b7;
 }
 
 @media screen and (min-width: 773px) {
-  .menu--site-menu.menu-level--0 li.menu-item--expanded > a:before {
+  .menu--site-menu li.menu-item--expanded > a:before {
     -webkit-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -1127,32 +1060,32 @@ h6 {
 }
 
 @media screen and (max-width: 772px) {
-  .menu--site-menu.menu-level--0 li.menu-item--expanded > a:before {
+  .menu--site-menu li.menu-item--expanded > a:before {
     content: "";
   }
 }
 
-.menu--site-menu.menu-level--0 li.menu-item--expanded > a.open:before {
+.menu--site-menu li.menu-item--expanded > a.open:before {
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
 @media screen and (max-width: 772px) {
-  .menu--site-menu.menu-level--0 {
+  .menu--site-menu {
     padding: 0;
     position: relative;
     left: auto;
   }
-  .menu--site-menu.menu-level--0 li {
+  .menu--site-menu li {
     float: none;
   }
-  .menu--site-menu.menu-level--0 li:last-child a {
+  .menu--site-menu li:last-child a {
     background: none;
     padding: 0;
     text-shadow: none;
   }
-  .menu--site-menu.menu-level--0 > .menu-item {
+  .menu--site-menu > .menu-item {
     margin: 0;
     font-size: 1.21429em;
     padding: 4px 0;
@@ -1303,7 +1236,7 @@ h6 {
 
 @media screen and (min-width: 773px) {
   ul.menu-level--1 {
-    position: fixed;
+    position: absolute;
     left: 0px;
     right: 0px;
     width: 100%;
@@ -1311,10 +1244,12 @@ h6 {
     padding: 50px 10% 20vh;
     margin: 0;
     box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.3);
-    margin-top: 20px;
     transition: opacity 350ms, -webkit-transform 250ms;
     transition: opacity 350ms, transform 250ms;
     transition: opacity 350ms, transform 250ms, -webkit-transform 250ms;
+  }
+  ul.menu-level--1 li {
+    text-align: left;
   }
 }
 
@@ -1371,6 +1306,7 @@ h6 {
 
 .logo_alt {
   display: none;
+  opacity: 0.5;
 }
 
 /**
@@ -1412,6 +1348,11 @@ h6 {
   background-color: rgba(255, 255, 255, 0.95);
 }
 
+.main-nav-scrolled [class^="menu--site-menu-"], .main-nav-scrolled [class*=" menu--site-menu-"] {
+  margin-top: 0;
+  float: none;
+}
+
 .main-nav-scrolled .region--header__sonderborg,
 .main-nav-scrolled .region--header__tasks,
 .main-nav-scrolled .language-flags {
@@ -1432,18 +1373,7 @@ h6 {
   min-height: 1px;
 }
 
-.main-nav-scrolled nav {
-  clear: none;
-  float: right;
-  position: relative;
-  left: -50%;
-  text-align: left;
-}
-
 .main-nav-scrolled ul.menu-level--0 {
-  list-style: none;
-  position: relative;
-  left: 50%;
   margin: 0;
   padding: 12px;
 }
@@ -2383,7 +2313,7 @@ ul.atcb-list li {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .region--header__sonderborg .region--header__sonderborg__image-wrapper img {
     max-width: 130px;
     padding-top: 8px;
@@ -2411,7 +2341,7 @@ ul.atcb-list li {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .region--header__tasks {
     display: none;
   }
@@ -2638,7 +2568,7 @@ ul.atcb-list li {
   margin: 0 15px 0 0;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .node--view-mode-teaser img {
     margin-bottom: 10px;
   }
@@ -2652,7 +2582,7 @@ ul.news--teaser-list h2 {
   margin-bottom: 0;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   ul.news--teaser-list h2 {
     clear: both;
   }
@@ -3456,6 +3386,46 @@ a[href^=mailto]:before {
   margin-left: auto;
   padding-right: 5%;
   padding-left: 5%;
+}
+
+.nav-search {
+  font-family: Calibri, sans-serif;
+  color: #5a5a5a;
+  font-size: 14px;
+  line-height: 1.42857em;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  background-color: white;
+  padding: 0vh 10% 10vh;
+  margin: 0;
+  transition: opacity 350ms, -webkit-transform 250ms;
+  transition: opacity 350ms, transform 250ms;
+  transition: opacity 350ms, transform 250ms, -webkit-transform 250ms;
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  -webkit-transform: translateX(0px) translateY(-20px) translateZ(0px) scaleX(1) scaleY(0.95) scaleZ(1);
+  transform: translateX(0px) translateY(-20px) translateZ(0px) scaleX(1) scaleY(0.95) scaleZ(1);
+  transition: opacity 350ms, -webkit-transform 350ms;
+  transition: opacity 350ms, transform 350ms;
+  transition: opacity 350ms, transform 350ms, -webkit-transform 350ms;
+  z-index: -9999;
+}
+
+.nav-search.js-active {
+  opacity: 1;
+  -webkit-transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1);
+  transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1);
+  display: block;
+  transition: opacity 350ms, -webkit-transform 250ms;
+  transition: opacity 350ms, transform 250ms;
+  transition: opacity 350ms, transform 250ms, -webkit-transform 250ms;
+  z-index: 1000;
+}
+
+.form-search {
+  margin-top: 8vh;
 }
 
 /*# sourceMappingURL=sourcemaps/camp.main.css.map */
