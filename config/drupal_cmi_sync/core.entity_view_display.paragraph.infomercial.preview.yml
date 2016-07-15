@@ -1,0 +1,79 @@
+uuid: 054913e9-e93a-4ba1-8bd1-4eee4469a7ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.infomercial.field_infomercial_bg_image
+    - field.field.paragraph.infomercial.field_infomercial_body
+    - field.field.paragraph.infomercial.field_infomercial_call_to_action
+    - field.field.paragraph.infomercial.field_infomercial_title
+    - image.style.medium
+    - paragraphs.paragraphs_type.infomercial
+  module:
+    - advanced_text_formatter
+    - image
+    - link
+id: paragraph.infomercial.preview
+targetEntityType: paragraph
+bundle: infomercial
+mode: preview
+content:
+  field_infomercial_bg_image:
+    weight: 3
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_infomercial_body:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: '600'
+      ellipsis: '1'
+      word_boundary: '1'
+      filter: none
+      format: plain_text
+      allowed_html:
+        - a
+        - b
+        - br
+        - dd
+        - dl
+        - dt
+        - em
+        - i
+        - li
+        - ol
+        - p
+        - strong
+        - u
+        - ul
+      use_summary: 0
+      token_replace: 0
+      autop: 0
+    third_party_settings: {  }
+    type: advanced_text
+  field_infomercial_call_to_action:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link_separate
+  field_infomercial_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  created: true
+  uid: true

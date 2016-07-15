@@ -1,26 +1,50 @@
-uuid: 043338e4-674f-423b-a8f5-a98b57e753b8
+uuid: 3a39ce7f-4953-4658-b99e-3d160ef1b269
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.factbox.field_factbox_title
     - field.field.paragraph.factbox.field_layout
     - field.field.paragraph.factbox.field_paragraph_text
     - paragraphs.paragraphs_type.factbox
   module:
+    - advanced_text_formatter
     - text
-id: paragraph.factbox.default
+id: paragraph.factbox.preview
 targetEntityType: paragraph
 bundle: factbox
-mode: default
+mode: preview
 content:
   field_factbox_title:
     weight: 1
     label: hidden
     settings:
-      link_to_entity: false
+      trim_length: '600'
+      ellipsis: '1'
+      word_boundary: '1'
+      filter: none
+      format: plain_text
+      allowed_html:
+        - a
+        - b
+        - br
+        - dd
+        - dl
+        - dt
+        - em
+        - i
+        - li
+        - ol
+        - p
+        - strong
+        - u
+        - ul
+      use_summary: 0
+      token_replace: 0
+      autop: 0
     third_party_settings: {  }
-    type: string
+    type: advanced_text
   field_paragraph_text:
     weight: 0
     label: hidden
