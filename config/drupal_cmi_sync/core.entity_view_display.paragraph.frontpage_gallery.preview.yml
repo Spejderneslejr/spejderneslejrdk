@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.frontpage_gallery.field_frontpage_gallery_image
-    - image.style.medium
+    - image.style.thumbnail
     - paragraphs.paragraphs_type.frontpage_gallery
   module:
     - image
@@ -18,7 +18,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: medium
+      image_style: thumbnail
       image_link: ''
     third_party_settings: {  }
     type: image
