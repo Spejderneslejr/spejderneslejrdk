@@ -1,28 +1,28 @@
-uuid: 8e74bbd3-4d4b-4d28-b441-e66e13b13bf7
+uuid: 3e3fd39f-83ac-41c1-959c-936e34373494
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.video.field_layout
     - field.field.paragraph.video.field_video
+    - image.style.medium
     - paragraphs.paragraphs_type.video
   module:
     - video_embed_field
-id: paragraph.video.default
+id: paragraph.video.preview
 targetEntityType: paragraph
 bundle: video
-mode: default
+mode: preview
 content:
   field_video:
     weight: 0
     label: hidden
     settings:
-      responsive: true
-      width: 854
-      height: 480
-      autoplay: false
+      image_style: medium
+      link_image_to: ''
     third_party_settings: {  }
-    type: video_embed_field_video
+    type: video_embed_field_thumbnail
 hidden:
   created: true
   field_layout: true

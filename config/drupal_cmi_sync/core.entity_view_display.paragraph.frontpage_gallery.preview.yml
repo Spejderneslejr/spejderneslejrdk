@@ -1,17 +1,18 @@
-uuid: 5e0b5f76-cf9f-4c4b-ad28-9703309a019c
+uuid: fbd4693a-5222-4501-a4cc-a5d3afd804f1
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.frontpage_gallery.field_frontpage_gallery_image
     - image.style.medium
     - paragraphs.paragraphs_type.frontpage_gallery
   module:
-    - card_gallery
-id: paragraph.frontpage_gallery.default
+    - image
+id: paragraph.frontpage_gallery.preview
 targetEntityType: paragraph
 bundle: frontpage_gallery
-mode: default
+mode: preview
 content:
   field_frontpage_gallery_image:
     weight: 0
@@ -20,7 +21,7 @@ content:
       image_style: medium
       image_link: ''
     third_party_settings: {  }
-    type: card_gallery
+    type: image
 hidden:
   created: true
   uid: true

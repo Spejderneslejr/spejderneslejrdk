@@ -1,8 +1,9 @@
-uuid: ac624f75-faa2-4dd2-8c55-cd55b70ffbf6
+uuid: ec0b09c6-08bb-4a2f-ab6b-a1262d42ae77
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.download.field_download_body
     - field.field.paragraph.download.field_download_file
     - field.field.paragraph.download.field_download_title
@@ -10,10 +11,10 @@ dependencies:
     - paragraphs.paragraphs_type.download
   module:
     - filetype_formatter
-id: paragraph.download.default
+id: paragraph.download.preview
 targetEntityType: paragraph
 bundle: download
-mode: default
+mode: preview
 content:
   field_download_body:
     weight: 1

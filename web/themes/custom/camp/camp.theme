@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Theme-related functions.
+ * Functions to support theming in the camp theme.
  */
 
 use Drupal\Component\Plugin\Exception\PluginException;
@@ -14,9 +14,22 @@ use Drupal\node\Entity\Node;
 use Drupal\views\ViewExecutable;
 
 /**
- * @file
- * Functions to support theming in the camp theme.
+ * Field Collection-specific implementation of template_preprocess_entity().
  */
+function camp_preprocess_field_collection_item(&$variables) {
+
+  if ($variables['field_collection_item']['name'] === 'field_linked_image') {
+    $variables['image_uri'] = NULL;
+    /** @var \Drupal\file_entity\Entity\FileEntity $image */
+    $field_collection_item = $variables['item']['#field_collection_item'];
+    $image = $field_collection_item->field_image->first()->entity;
+
+    if (!empty($image)) {
+      $uri = $image->getFileUri();
+      $variables['image_uri'] = ImageStyle::load('top_image')->buildUrl($uri);
+    }
+  }
+}
 
 /**
  * Implements hook_preprocess_block().

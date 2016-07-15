@@ -1,0 +1,23 @@
+uuid: 295561f7-425c-4565-8b6d-89f87203216f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_partners_links
+    - paragraphs.paragraphs_type.partners
+  module:
+    - link
+id: paragraph.partners.field_partners_links
+field_name: field_partners_links
+entity_type: paragraph
+bundle: partners
+label: 'Partners links'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link
