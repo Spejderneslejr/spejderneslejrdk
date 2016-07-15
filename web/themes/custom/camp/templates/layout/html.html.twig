@@ -39,6 +39,7 @@
     <css-placeholder token="{{ placeholder_token|raw }}">
     <script type="text/javascript" async src="https://cse.google.com/cse.js?cx=009398517490841201049:dfs1pn8rmoy"></script>
     <js-placeholder token="{{ placeholder_token|raw }}">
+      {% include directory ~ '/templates/components/cookie-compliance-js.twig' %}
   </head>
   <body{{ attributes.addClass(body_classes) }}>
     {#
