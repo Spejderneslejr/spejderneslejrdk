@@ -1,9 +1,16 @@
 .btn {
-  padding: 15px 19px 10px;
+  border: 0;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   border-radius: 30px;
   background-color: #e1477d;
+  font-family: 'FB Hermes', sans-serif;
   color: #fff;
-  text-shadow: 1px 1px 1px #066969;
+  height: auto;
+  padding: 13px 20px;
 
   &:hover {
     color: white;

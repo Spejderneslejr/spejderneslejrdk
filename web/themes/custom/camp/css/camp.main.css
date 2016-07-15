@@ -583,11 +583,18 @@ blockquote {
 }
 
 .btn, .infomercial-call-ta a, .partners__links a {
-  padding: 15px 19px 10px;
+  border: 0;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   border-radius: 30px;
   background-color: #e1477d;
+  font-family: 'FB Hermes', sans-serif;
   color: #fff;
-  text-shadow: 1px 1px 1px #066969;
+  height: auto;
+  padding: 13px 20px;
 }
 
 .btn:hover, .infomercial-call-ta a:hover, .partners__links a:hover {
@@ -3228,6 +3235,15 @@ ul.news--teaser-list li:hover {
 
 .footer .social-holder {
   margin-top: 30px;
+}
+
+.footer .form-email-forside {
+  width: 100%;
+  float: left;
+  display: block;
+  margin-left: 0px;
+  margin-top: 30px;
+  margin-bottom: 60px;
 }
 
 .socail-holder.social-footer {
