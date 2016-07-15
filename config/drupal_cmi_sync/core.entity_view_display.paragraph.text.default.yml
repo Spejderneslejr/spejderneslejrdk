@@ -7,19 +7,12 @@ dependencies:
     - field.field.paragraph.text.field_paragraph_text
     - paragraphs.paragraphs_type.text
   module:
-    - jamden_layout
     - text
 id: paragraph.text.default
 targetEntityType: paragraph
 bundle: text
 mode: default
 content:
-  field_layout:
-    weight: 1
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: layout_hidden
   field_paragraph_text:
     weight: 0
     label: hidden
@@ -28,4 +21,5 @@ content:
     type: text_default
 hidden:
   created: true
+  field_layout: true
   uid: true

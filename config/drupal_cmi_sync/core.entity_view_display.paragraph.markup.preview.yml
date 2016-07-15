@@ -1,0 +1,47 @@
+uuid: 73337d52-f046-4c2b-a679-b7c4b5bfec5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.markup.field_markup
+    - paragraphs.paragraphs_type.markup
+  module:
+    - advanced_text_formatter
+id: paragraph.markup.preview
+targetEntityType: paragraph
+bundle: markup
+mode: preview
+content:
+  field_markup:
+    weight: 0
+    label: hidden
+    settings:
+      trim_length: '200'
+      ellipsis: '1'
+      word_boundary: '1'
+      filter: none
+      format: plain_text
+      allowed_html:
+        - a
+        - b
+        - br
+        - dd
+        - dl
+        - dt
+        - em
+        - i
+        - li
+        - ol
+        - p
+        - strong
+        - u
+        - ul
+      use_summary: 0
+      token_replace: 0
+      autop: 0
+    third_party_settings: {  }
+    type: advanced_text
+hidden:
+  created: true
+  uid: true
