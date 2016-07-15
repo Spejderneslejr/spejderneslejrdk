@@ -597,6 +597,11 @@ blockquote {
   padding: 13px 20px;
 }
 
+.btn.a, .infomercial-call-ta a.a, .partners__links a.a {
+  color: white;
+  text-decoration: none;
+}
+
 .btn:hover, .infomercial-call-ta a:hover, .partners__links a:hover {
   color: white;
   background-color: #000;
