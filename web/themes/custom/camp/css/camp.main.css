@@ -582,7 +582,7 @@ blockquote {
   }
 }
 
-.btn, .infomercial-call-ta a {
+.btn, .infomercial-call-ta a, .partners__links a {
   padding: 15px 19px 10px;
   border-radius: 30px;
   background-color: #e1477d;
@@ -590,7 +590,7 @@ blockquote {
   text-shadow: 1px 1px 1px #066969;
 }
 
-.btn:hover, .infomercial-call-ta a:hover {
+.btn:hover, .infomercial-call-ta a:hover, .partners__links a:hover {
   color: white;
   background-color: #000;
 }
@@ -2997,6 +2997,143 @@ ul.news--teaser-list li:hover {
   font-size: 1.1em;
   text-transform: uppercase;
   margin-bottom: 10px;
+}
+
+.partners__links a {
+  height: auto;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 13px 20px;
+  float: right;
+  font-size: 1.2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'FB Hermes', sans-serif;
+  letter-spacing: 0.04em;
+  border: 0;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+@media screen and (max-width: 772px) {
+  .partners__links a {
+    float: none;
+    height: auto;
+    margin-bottom: 8px;
+    padding: 11px 12px;
+    font-size: 1.1em;
+  }
+}
+
+@media screen and (max-width: 772px) {
+  .partners__links {
+    text-align: center;
+    padding-top: 13px;
+  }
+}
+
+.partners__title {
+  margin-top: 10px;
+  margin-bottom: 6px;
+  font-family: 'FB Hermes', sans-serif;
+  color: #e1477d;
+  font-size: 2em;
+  text-transform: uppercase;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 772px) {
+  .partners__title {
+    font-size: 1.6em;
+  }
+}
+
+.partners_text {
+  margin-top: 24px;
+  display: inline-block;
+}
+
+.paragraph--type--partners {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 1300px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 5%;
+  position: relative;
+  height: 90vh;
+  min-height: 800px;
+}
+
+.paragraph--type--partners h4 {
+  color: #a79d96;
+  font-size: 1.3em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 772px) {
+  .paragraph--type--partners .span-6 {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+  }
+  .paragraph--type--partners .span-6:last-child {
+    margin-right: 0;
+  }
+}
+
+.partners__images {
+  position: relative;
+  width: 100%;
+  height: 70px;
+  margin-top: 10vh;
+  text-align: center;
+}
+
+.partners__images img {
+  margin: 0 5%;
+}
+
+@media screen and (max-width: 772px) {
+  .partners_header {
+    text-align: center;
+  }
+}
+
+.sponsor-block {
+  display: inline-block;
+  width: 23%;
+  height: 100%;
+  margin-bottom: 50px;
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.sponsor-block a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 772px) {
+  .sponsor-block {
+    float: left;
+    width: 50%;
+  }
 }
 
 .footer {
