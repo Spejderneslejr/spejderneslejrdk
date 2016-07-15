@@ -1,5 +1,11 @@
 
 // Partners.
+.partners {
+  @include media($tablet-l) {
+    padding: 0 20px;
+  }
+}
+
 .partners__links {
   a {
     @extend .btn;
