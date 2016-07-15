@@ -3011,6 +3011,12 @@ ul.news--teaser-list li:hover {
   margin-bottom: 10px;
 }
 
+@media screen and (max-width: 1024px) {
+  .partners {
+    padding: 0 20px;
+  }
+}
+
 .partners__links a {
   height: auto;
   margin-right: 5px;
