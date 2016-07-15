@@ -1,0 +1,35 @@
+uuid: 54e04bd9-1619-4c8e-a697-0c0a3fb81ac6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - system
+  theme:
+    - camp_seven
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: camp_seven_page_title
+theme: camp_seven
+region: header
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

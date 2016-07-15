@@ -1,0 +1,22 @@
+uuid: ee199bd2-e395-4d8c-a91b-8b882566613d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - camp_seven
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: camp_seven_content
+theme: camp_seven
+region: content
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

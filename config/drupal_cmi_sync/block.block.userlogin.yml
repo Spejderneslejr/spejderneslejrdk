@@ -1,0 +1,20 @@
+uuid: efe5c9ce-3a7d-4db3-8a8e-b81c590da607
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - camp_seven
+id: userlogin
+theme: camp_seven
+region: content
+weight: -2
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: visible
+visibility: {  }

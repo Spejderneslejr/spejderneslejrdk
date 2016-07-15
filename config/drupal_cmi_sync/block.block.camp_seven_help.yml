@@ -1,0 +1,22 @@
+uuid: 229d62a4-ef70-410a-b5f2-b54dffd6ae00
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - camp_seven
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: camp_seven_help
+theme: camp_seven
+region: help
+weight: -5
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }
