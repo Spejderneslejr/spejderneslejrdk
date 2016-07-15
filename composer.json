@@ -37,6 +37,7 @@
         "drupal/entityqueue": "^8",
         "drupal/advanced_text_formatter": "^8",
         "drupal/pathauto": "^8",
+        "drupal/redirect": "^8",
         "drupal/field_collection": "^8"
     },
     "require-dev": {

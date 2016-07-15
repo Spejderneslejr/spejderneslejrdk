@@ -59,6 +59,7 @@ module:
   purge_ui: 0
   raw_string_formatter: 0
   rdf: 0
+  redirect: 0
   responsive_image: 0
   search: 0
   shortcut: 0
