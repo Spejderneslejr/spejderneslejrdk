@@ -102,3 +102,7 @@ permissions:
   - 'delete paragraph content infomercial'
   - 'update paragraph content infomercial'
   - 'view paragraph content infomercial'
+  - 'manipulate all entityqueues'
+  - 'manipulate entityqueues'
+  - 'administer blocks'
+  - 'translate interface'
