@@ -1,0 +1,32 @@
+uuid: 257496ec-465f-4002-ac41-255da14473b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.field_collection_item.field_linked_image.field_image
+    - field.field.field_collection_item.field_linked_image.field_link
+    - field_collection.field_collection.field_linked_image
+    - image.style.thumbnail
+  module:
+    - image
+    - link
+id: field_collection_item.field_linked_image.default
+targetEntityType: field_collection_item
+bundle: field_linked_image
+mode: default
+content:
+  field_image:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+hidden: {  }

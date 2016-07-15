@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6d5b85607daf15ebc7fff48465727bc9",
-    "content-hash": "b4320e5bde54fd867dfeeec545776c9a",
+    "hash": "a87ecc47307b5c8f386a729923dad7cf",
+    "content-hash": "3c9a7aee43b3f9b785760b013d1c1a6f",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1307,6 +1307,38 @@
             "time": "2016-02-27 10:27:11"
         },
         {
+            "name": "drupal/field_collection",
+            "version": "8.1.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/field_collection",
+                "reference": "8eac83accfecf28eec4d3bf0afe3c047762649fc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/field_collection-8.x-1.0-alpha1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/core": "8.*",
+                "drupal/field": "8.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-1.x": "8.1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Provides a field collection field, to which any number of fields can be attached.",
+            "homepage": "https://www.drupal.org/project/field_collection",
+            "time": "2016-04-05 13:53:48"
+        },
+        {
             "name": "drupal/file_entity",
             "version": "8.2.0-beta1",
             "source": {
@@ -1673,7 +1705,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/redirect-8.x-1.0-alpha1.zip",
-                "reference": null,
+                "reference": "f88e28a5033d2a9952929faff6fa59764583b80c",
                 "shasum": null
             },
             "require": {

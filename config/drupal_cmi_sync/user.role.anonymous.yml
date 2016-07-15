@@ -34,3 +34,4 @@ permissions:
   - 'download any audio files'
   - 'download any image files'
   - 'download any video files'
+  - 'view paragraph content partners'

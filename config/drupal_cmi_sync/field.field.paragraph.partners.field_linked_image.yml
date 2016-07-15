@@ -1,0 +1,23 @@
+uuid: 54db191e-b70f-432d-83c0-15697e642448
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_linked_image
+    - paragraphs.paragraphs_type.partners
+  module:
+    - field_collection
+id: paragraph.partners.field_linked_image
+field_name: field_linked_image
+entity_type: paragraph
+bundle: partners
+label: 'Linked Image'
+description: ''
+required: false
+translatable: false
+default_value:
+  - {  }
+  - {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_collection
