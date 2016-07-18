@@ -11,40 +11,6 @@
   }
 }
 
-// TODO(ts) - wil be removed later when juicebox has been configured. leave
-//for now.
-// .jb-thm-thumb-selected {
-//   .jb-thm-thumb-image {
-//     color: $green !important;
-//   }
-// }
-
-// .jb-thm-thumb-image {
-//   color: $gray !important;
-
-//   &:hover {
-
-//   }
-// }
-
-// /* CAPTION AREA */
-// .jb-area-caption {
-//   z-index: 200 !important;
-//   opacity: 1;
-// }
-
-// /* GALLERY TITLE */
-// .jb-area-large-mode-title {
-//   z-index: 200 !important;
-//   opacity: 1;
-// }
-
-// /* BUTTON BAR */
-// .jb-classifier-link-wrapper.jb-classifier-detail-area.jb-classifier-layer {
-//   z-index: 200 !important;
-//   opacity: 1;
-// }
-
 .path-user {
 
   .region-content {
@@ -73,6 +39,28 @@
   margin-left: auto;
   padding-right: 5%;
   padding-left: 5%;
+}
+
+.page-title {
+  @extend .contained;
+}
+
+body:not(.path-frontpage) .node__content {
+  display: block;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-bottom: 50px;
+  margin-left: auto;
+  padding-right: 5%;
+  padding-left: 5%;
+
+  // Second level node content should not use outer container style.
+  .node__content {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+  }
 }
 
 // Search temp.
