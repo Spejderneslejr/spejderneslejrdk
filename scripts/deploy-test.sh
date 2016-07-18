@@ -6,7 +6,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 CLONE_DIR="/var/www/test_sl2017/spejderneslejrdk"
 
-read -p "Pull latest release to STAGE? (y/n)" -n 1 -r
+read -p "Pull latest release to TEST? (y/n)" -n 1 -r
 echo ""
 if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
