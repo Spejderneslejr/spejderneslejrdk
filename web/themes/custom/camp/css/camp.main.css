@@ -2563,6 +2563,11 @@ ul.atcb-list li {
   }
 }
 
+.path-frontpage .paragraph--type--infomercial {
+  margin-top: 45px;
+  display: inline-block;
+}
+
 .pager__item, .page .gsc-results .gsc-cursor-box .gsc-cursor-page {
   width: auto;
   height: auto;
