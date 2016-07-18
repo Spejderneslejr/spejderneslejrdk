@@ -1,0 +1,20 @@
+uuid: 690a3e08-3ccf-49b8-840d-49fe92cbfded
+langcode: en
+status: true
+dependencies:
+  theme:
+    - camp_seven
+id: camp_seven_secondary_local_tasks
+theme: camp_seven
+region: pre_content
+weight: -5
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  provider: core
+  label_display: '0'
+  primary: false
+  secondary: true
+visibility: {  }

@@ -1,0 +1,20 @@
+uuid: 79bdc543-5e45-468e-957f-c71710361632
+langcode: en
+status: true
+dependencies:
+  theme:
+    - camp_seven
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: camp_seven_local_actions
+theme: camp_seven
+region: content
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

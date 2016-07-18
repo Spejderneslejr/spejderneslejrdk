@@ -84,6 +84,7 @@ theme:
   bartik: 0
   seven: 0
   camp: 0
+  camp_seven: 0
 _core:
   default_config_hash: m2GVq11UAOVuNgj8x0t5fMOPujpvQQ_zxLoaly1BMEU
 langcode: en
