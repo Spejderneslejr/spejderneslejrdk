@@ -8,7 +8,7 @@ if [ ! -z "$(git status --porcelain)" ];
 then
     echo "*** Dirty repository detected ***"
     git status
-    exit
+    exit 1
 fi
 
 # Fetch latest from current branch.
