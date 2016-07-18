@@ -2258,6 +2258,10 @@ ul.atcb-list li {
   color: white;
 }
 
+.gsc-control-cse {
+  padding: 5% 0 !important;
+}
+
 .region--header__logo {
   text-align: center;
   height: 100%;
@@ -3585,7 +3589,7 @@ a[href^=mailto]:before {
   float: right;
 }
 
-.contained {
+.contained, .page-title {
   display: block;
   max-width: 1200px;
   margin-right: auto;
@@ -3593,6 +3597,23 @@ a[href^=mailto]:before {
   margin-left: auto;
   padding-right: 5%;
   padding-left: 5%;
+}
+
+body:not(.path-frontpage) .node__content {
+  display: block;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-bottom: 50px;
+  margin-left: auto;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+body:not(.path-frontpage) .node__content .node__content {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
 }
 
 .nav-search {
