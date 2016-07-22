@@ -1,4 +1,5 @@
 <?php
+
 namespace Drupal\filetype_formatter\Plugin\Field\FieldFormatter;
 
 use Drupal\Core\Field\FieldItemListInterface;
