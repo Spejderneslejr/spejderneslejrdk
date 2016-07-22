@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Drupal\multilingual_frontpage;
-
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
