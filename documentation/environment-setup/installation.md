@@ -85,6 +85,7 @@ mv /etc/varnish/default.vcl /etc/varnish/default.vcl.dist
 
 cp varnish/sl2017.vcl /etc/varnish/sl2017.vcl
 cp varnish/backends.vcl /etc/varnish/backends.vcl
+cp varnish/acmetool.vcl /etc/varnish/acmetool.vcl
 cp varnish/acl.vcl /etc/varnish/acl.vcl
 cp varnish/serviced-sl2017.varnish.conf /etc/systemd/system/varnish.service.d/sl2017.varnish.conf
 
