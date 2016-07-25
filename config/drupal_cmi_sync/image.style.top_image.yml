@@ -4,4 +4,12 @@ status: true
 dependencies: {  }
 name: top_image
 label: 'Top Image'
-effects: {  }
+effects:
+  c65da7cb-9bf6-481b-9254-f2dc326cf80e:
+    uuid: c65da7cb-9bf6-481b-9254-f2dc326cf80e
+    id: image_scale
+    weight: 1
+    data:
+      width: 1600
+      height: 1600
+      upscale: false
