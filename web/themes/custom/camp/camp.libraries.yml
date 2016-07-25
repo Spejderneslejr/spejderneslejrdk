@@ -10,3 +10,8 @@ main:
   dependencies:
     - core/jquery
     - core/drupal
+
+mailchimp:
+  version: '1.0'
+  js:
+    js/mc-validate.js: {}
