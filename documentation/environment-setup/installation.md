@@ -53,6 +53,8 @@ cp fpm/test.sl2017.conf /etc/php/7.0/fpm/pool.d/test.sl2017.conf
 ```
 apt-get -y install apache2
 a2enmod rewrite
+a2enmod deflate
+a2enmod expires
 a2enmod proxy_fcgi
 a2enmod remoteip
 
