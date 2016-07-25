@@ -26,7 +26,7 @@ function camp_preprocess_field_collection_item(&$variables) {
 
     if (!empty($image)) {
       $uri = $image->getFileUri();
-      $variables['image_uri'] = ImageStyle::load('top_image')->buildUrl($uri);
+      $variables['image_uri'] = ImageStyle::load('max_325x325')->buildUrl($uri);
     }
   }
 }
