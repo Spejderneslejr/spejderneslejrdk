@@ -31,7 +31,7 @@ $settings['extension_discovery_scan_tests'] = TRUE;
 $settings['rebuild_access'] = TRUE;
 
 // Set up stage file proxy.
-$config['stage_file_proxy.settings']['origin'] = 'http://test.web.sl2017.dk';
+$config['stage_file_proxy.settings']['origin'] = 'http://stage.web.sl2017.dk';
 
 /**
  * Site specific development settings.

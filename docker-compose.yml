@@ -46,7 +46,7 @@ services:
       PATH: '/var/www/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
 
   db:
-    image: reload/spejderneslejr:mariadb-10-test
+    image: reload/spejderneslejr:mariadb-10-stage
     ports:
       - '3306:3306'
 
