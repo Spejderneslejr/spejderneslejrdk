@@ -30,8 +30,9 @@ services:
       VARNISHD_PARAMS: "-p vcl_dir=/vcl"
     volumes:
       - './documentation/environment-setup/varnish/sl2017.vcl:/vcl/sl2017.vcl'
-      - './docker/proxy/backends.vcl:/vcl/backends.vcl'
       - './docker/proxy/acl.vcl:/vcl/acl.vcl'
+      - './docker/proxy/backends.vcl:/vcl/backends.vcl'
+      - './docker/proxy/includes.vcl:/vcl/includes.vcl'
 
   php:
     image: reload/drupal-php7-fpm

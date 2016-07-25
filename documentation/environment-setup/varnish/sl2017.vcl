@@ -1,9 +1,6 @@
 vcl 4.0;
 
-include "backends.vcl";
-include "acl.vcl";
-include "acmetool.vcl";
-include "basic-auth.vcl";
+include "includes.vcl";
 
 # Inspirations
 # - https://www.digitalocean.com/community/tutorials/how-to-speed-up-your-drupal-7-website-with-varnish-4-on-ubuntu-14-04-and-debian-7
@@ -145,4 +142,14 @@ sub vcl_deliver {
   unset resp.http.X-Url;
   unset resp.http.X-Host;
   unset resp.http.Purge-Cache-Tags;
+
+  # Remove unnessecary tell-tales
+  unset resp.http.X-Generator;
+  unset resp.http.X-Drupal-Dynamic-Cache;
+  unset resp.http.Server;
+  unset resp.http.X-Drupal-Cache;
+  unset resp.http.X-Drupal-Cache-Contexts;
+  unset resp.http.X-Drupal-Cache-Tags;
+  # We already have cache-control.
+  unset resp.http.Expires;
 }
