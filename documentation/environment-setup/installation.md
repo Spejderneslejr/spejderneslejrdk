@@ -54,6 +54,7 @@ cp fpm/test.sl2017.conf /etc/php/7.0/fpm/pool.d/test.sl2017.conf
 apt-get -y install apache2
 a2enmod rewrite
 a2enmod proxy_fcgi
+a2enmod remoteip
 
 echo "<html><head><title>web01.sl2017.dk</title></head><body>web01.sl2017.dk</body></html>" > /var/www/html/index.html
 
@@ -67,6 +68,8 @@ mv /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/00
 cp apache/000-default.conf /etc/apache2/sites-available/000-default.conf
 cp apache/test_sl2017.conf /etc/apache2/sites-available/test_sl2017.conf
 a2ensite test_sl2017
+cp apache/varnish.conf /etc/apache2/conf-available/varnish.conf
+a2enconf varnish
 apache2ctl configtest && apache2ctl restart
 ```
 
@@ -85,6 +88,8 @@ mv /etc/varnish/default.vcl /etc/varnish/default.vcl.dist
 
 cp varnish/sl2017.vcl /etc/varnish/sl2017.vcl
 cp varnish/backends.vcl /etc/varnish/backends.vcl
+cp varnish/acmetool.vcl /etc/varnish/acmetool.vcl
+cp varnish/basic-auth.vcl /etc/varnish/basic-auth.vcl
 cp varnish/acl.vcl /etc/varnish/acl.vcl
 cp varnish/serviced-sl2017.varnish.conf /etc/systemd/system/varnish.service.d/sl2017.varnish.conf
 
