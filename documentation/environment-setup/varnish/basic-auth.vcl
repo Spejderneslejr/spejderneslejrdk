@@ -5,7 +5,7 @@ vcl 4.0;
 sub vcl_recv {
   # foo:bar - replace with actual user/pass - generate like this:
   # echo -n "foo:bar" | base64
-  if (! req.http.Authorization ~ "Basic Zm9vOmJhcg==") {
+  if (! req.method == "BAN" && ! req.http.Authorization ~ "Basic Zm9vOmJhcg==") {
     return(synth(401, "Restricted"));
   }
 
