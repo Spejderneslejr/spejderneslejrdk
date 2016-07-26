@@ -21,7 +21,7 @@ composer install
 cd web
 
 # Import configuration from latest revision - overwrite the current state.
-drush cim -y
+drush cim --preview=diff -y
 
 # Perform any updates required by updated modules.
 drush updb
