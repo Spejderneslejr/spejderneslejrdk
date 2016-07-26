@@ -15,6 +15,7 @@ display:
         options:
           tags:
             previous: '‹ Forrige'
+            next: 'Næste ›'
             first: '« Første'
             last: 'Sidste »'
           expose:

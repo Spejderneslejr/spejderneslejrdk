@@ -1,0 +1,86 @@
+display:
+  default:
+    display_title: Master
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filter
+          reset_button_label: Zurücksetzen
+          exposed_sorts_label: 'Sortieren nach'
+          sort_asc_label: Aufsteigend
+          sort_desc_label: Absteigend
+      pager:
+        options:
+          tags:
+            previous: '‹ vorherige Seite'
+            next: 'nächste Seite ›'
+          expose:
+            items_per_page_label: 'Elemente pro Seite'
+            items_per_page_options_all_label: '- Alle -'
+            offset_label: Offset
+      fields:
+        filename:
+          label: Name
+        type:
+          label: Typ
+        filemime:
+          label: MIME-Typ
+        filesize:
+          label: Größe
+        status:
+          label: Status
+        changed:
+          label: Geändert
+          separator: ', '
+        created:
+          label: 'Erstellt am'
+          separator: ', '
+        count:
+          label: 'Verwendet in'
+        operations:
+          label: Operationen
+      filters:
+        filename:
+          expose:
+            label: Dateiname
+        filemime:
+          expose:
+            label: MIME-Typ
+        status:
+          expose:
+            label: Status
+        type:
+          expose:
+            label: Typ
+      title: Dateien
+      empty:
+        area_text_custom:
+          content: 'Keine Dateien verfügbar'
+  overview:
+    display_options:
+      menu:
+        title: Dateien
+  usage:
+    display_options:
+      pager:
+        options:
+          tags:
+            previous: '‹ vorherige Seite'
+            next: 'nächste Seite ›'
+          expose:
+            items_per_page_label: 'Elemente pro Seite'
+            items_per_page_options_all_label: '- Alle -'
+            offset_label: Offset
+      fields:
+        entity_label:
+          label: Entität
+        type:
+          label: Entitätstyp
+        count:
+          label: 'Anzahl der Verwendung'
+      arguments:
+        fid:
+          exception:
+            title: Alle
+      menu:
+        title: Verwendung

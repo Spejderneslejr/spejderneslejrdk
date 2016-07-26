@@ -23,6 +23,7 @@ display:
             offset_label: Forskydning
           tags:
             previous: '‹ Forrige'
+            next: 'Næste ›'
             first: '« Første'
             last: 'Sidste »'
     display_title: Master
