@@ -377,6 +377,7 @@ body {
   color: #5a5a5a;
   font-size: 14px;
   line-height: 1.42857em;
+  overflow-x: hidden;
 }
 
 img {
@@ -560,6 +561,12 @@ blockquote {
   text-align: center;
   border: none;
   margin: 0 0 20px;
+}
+
+@media screen and (max-width: 772px) {
+  .path-frontpage blockquote {
+    font-size: 1.3em;
+  }
 }
 
 .path-frontpage .quote-name {
@@ -2952,11 +2959,12 @@ ul.news--teaser-list li:hover {
   min-height: 900px;
   position: relative;
   margin-top: 75px;
-  overflow: visible;
+  overflow: hidden;
   z-index: 1;
   float: left;
   width: 100%;
   margin-bottom: 200px;
+  max-width: 100%;
 }
 
 @media screen and (max-width: 1455px) {
@@ -2996,7 +3004,9 @@ ul.news--teaser-list li:hover {
 @media screen and (max-width: 772px) {
   .newsletter-deck__signup {
     position: relative;
-    margin: 40px auto 0;
+    margin: 0;
+    padding: 15px;
+    left: 0;
   }
   .newsletter-deck__signup .mc-input {
     width: 100%;

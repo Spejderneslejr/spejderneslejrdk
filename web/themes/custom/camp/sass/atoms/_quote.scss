@@ -54,6 +54,10 @@ blockquote {
     text-align: center;
     border: none;
     margin: 0 0 20px;
+
+    @include media($tablet-p) {
+      font-size: 1.3em;
+    }
   }
 
   .quote-name {
