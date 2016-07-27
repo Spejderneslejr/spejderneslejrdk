@@ -38,6 +38,7 @@ adduser --system --home /var/www/test_sl2017 --no-create-home --disabled-passwor
 adduser --system --home /var/www/test_sl2017 --no-create-home --disabled-password test_sl2017_fpm
 addgroup --system test_sl2017_fpm
 adduser test_sl2017_fpm test_sl2017_fpm
+adduser reload test_sl2017_fpm
 
 mv /etc/php/7.0/fpm/pool.d/www.conf /etc/php/7.0/fpm/pool.d/www.conf.dist
 

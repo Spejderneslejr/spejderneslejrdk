@@ -12,14 +12,16 @@
   height: auto;
   padding: 13px 20px;
 
-  &.a {
-    color: white;
-    text-decoration: none;
-  }
-
   &:hover {
     color: white;
     background-color: #000;
+  }
+}
+
+a {
+  &.btn {
+    color: white;
+    text-decoration: none;
   }
 }
 
