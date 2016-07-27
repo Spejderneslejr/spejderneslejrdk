@@ -120,7 +120,7 @@ sub vcl_backend_response {
   # static files to contain cookies, but it is possible for files generated
   # dynamically by Drupal. Those cookies are unnecessary, but could prevent files
   # from being cached.
-  if (bereq.url ~ "(?i)\.(css|js|jpg|jpeg|gif|png|ico)(\?.*)?$") {
+  if (bereq.url ~ "(?i)\.(css|js|jpg|jpeg|gif|png|ico)(\?.*)?$" && ! bereq.url ~ "^/themes/custom/camp/css") {
     unset beresp.http.set-cookie;
   }
 }
