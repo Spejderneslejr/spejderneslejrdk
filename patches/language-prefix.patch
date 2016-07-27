@@ -1,12 +1,30 @@
 diff --git a/.htaccess b/.htaccess
-index 4716fa1..b02923d 100644
+index 4716fa1..1cb200d 100644
 --- a/.htaccess
 +++ b/.htaccess
-@@ -122,6 +122,13 @@ AddEncoding gzip svgz
+@@ -109,8 +109,8 @@ AddEncoding gzip svgz
+   # To redirect all users to access the site WITHOUT the 'www.' prefix,
+   # (http://www.example.com/foo will be redirected to http://example.com/foo)
+   # uncomment the following:
+-  # RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+-  # RewriteRule ^ http%{ENV:protossl}://%1%{REQUEST_URI} [L,R=301]
++  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
++  RewriteRule ^ http%{ENV:protossl}://%1%{REQUEST_URI} [L,R=301]
+ 
+   # Modify the RewriteBase if you are using Drupal in a subdirectory or in a
+   # VirtualDocumentRoot and the rewrite rules are not working properly.
+@@ -122,6 +122,20 @@ AddEncoding gzip svgz
    # uncomment the following line:
    # RewriteBase /
  
 +  # Add language-prefix if missing, default to danish
++  RewriteCond %{REQUEST_URI} ^/$
++  RewriteRule ^(.*)$ /da/$1 [L,QSA,R=301]
++
++  RewriteRule ^in-english$ /en [R,L]
++  RewriteRule ^english$ /en [R,L]
++  RewriteRule ^deutsch /de [R,L]
++
 +  RewriteCond %{REQUEST_URI} !^/(da|en|de)$
 +  RewriteCond %{REQUEST_URI} !^/(da|en|de)/
 +  RewriteCond %{REQUEST_FILENAME} !-f
