@@ -122,6 +122,16 @@ AddEncoding gzip svgz
   # uncomment the following line:
   # RewriteBase /
 
+  # Add language-prefix if missing, default to danish
+  RewriteCond %{REQUEST_URI} ^/$
+  RewriteRule ^(.*)$ /da/$1 [L,QSA,R=301]
+
+  RewriteCond %{REQUEST_URI} !^/(da|en|de)$
+  RewriteCond %{REQUEST_URI} !^/(da|en|de)/
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ /da/$1 [L,QSA,R=301]
+
   # Redirect common PHP files to their new locations.
   RewriteCond %{REQUEST_URI} ^(.*)?/(install.php) [OR]
   RewriteCond %{REQUEST_URI} ^(.*)?/(rebuild.php)
