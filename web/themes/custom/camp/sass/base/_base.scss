@@ -9,6 +9,7 @@ body {
   color: $base-font-color;
   font-size: $base-font-size;
   line-height: em(20, $base-font-size);
+  overflow-x: hidden;
 }
 
 img {
