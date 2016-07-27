@@ -582,36 +582,6 @@ blockquote {
   }
 }
 
-.btn, .infomercial-call-ta a, .partners__links a {
-  border: 0;
-  line-height: inherit;
-  text-decoration: none;
-  cursor: pointer;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  border-radius: 30px;
-  background-color: #e1477d;
-  font-family: 'FB Hermes', sans-serif;
-  color: #fff;
-  height: auto;
-  padding: 13px 20px;
-}
-
-.btn.a, .infomercial-call-ta a.a, .partners__links a.a {
-  color: white;
-  text-decoration: none;
-}
-
-.btn:hover, .infomercial-call-ta a:hover, .partners__links a:hover {
-  color: white;
-  background-color: #000;
-}
-
-.btn-small, .main-nav-scrolled ul.menu-level--0 > li:nth-child(5) a {
-  padding-top: 10px;
-  font-size: 1em;
-}
-
 .factbox {
   position: relative;
   min-height: 100px;
@@ -1970,6 +1940,36 @@ h6 {
 
 .social-holder.social-footer {
   width: 100%;
+}
+
+.btn, .infomercial-call-ta a, .partners__links a {
+  border: 0;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 30px;
+  background-color: #e1477d;
+  font-family: 'FB Hermes', sans-serif;
+  color: #fff;
+  height: auto;
+  padding: 13px 20px;
+}
+
+.btn:hover, .infomercial-call-ta a:hover, .partners__links a:hover {
+  color: white;
+  background-color: #000;
+}
+
+a.btn, .infomercial-call-ta a, .partners__links a {
+  color: white;
+  text-decoration: none;
+}
+
+.btn-small, .main-nav-scrolled ul.menu-level--0 > li:nth-child(5) a {
+  padding-top: 10px;
+  font-size: 1em;
 }
 
 .accordion {
