@@ -3,6 +3,13 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+TMPDIR=$(mktemp -d)
+cleanup() {
+    rm -rf "${TMPDIR}"
+}
+trap cleanup EXIT
+
+
 # Pre-pull check.
 if [ ! -z "$(git status --porcelain)" ];
 then
@@ -10,6 +17,20 @@ then
     git status
     exit 1
 fi
+
+CONFIG_DIR="config/drupal_cmi_sync"
+cd web
+echo "Checking for overridden configuration"
+drush cex --destination="${TMPDIR}"
+set +e
+diff -x .htaccess -r "../${CONFIG_DIR}" "${TMPDIR}"
+if [ ! $? -eq 0 ]; then
+    echo "Overridden configuration detected, please update the codebase"
+    exit 1
+fi
+set -e
+
+cd ..
 
 # Fetch latest from current branch.
 git pull
