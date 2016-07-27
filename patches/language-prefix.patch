@@ -1,5 +1,5 @@
 diff --git a/.htaccess b/.htaccess
-index 4716fa1..1cb200d 100644
+index 4716fa1..a1a5f8d 100644
 --- a/.htaccess
 +++ b/.htaccess
 @@ -109,8 +109,8 @@ AddEncoding gzip svgz
@@ -13,23 +13,29 @@ index 4716fa1..1cb200d 100644
  
    # Modify the RewriteBase if you are using Drupal in a subdirectory or in a
    # VirtualDocumentRoot and the rewrite rules are not working properly.
-@@ -122,6 +122,20 @@ AddEncoding gzip svgz
+@@ -122,6 +122,26 @@ AddEncoding gzip svgz
    # uncomment the following line:
    # RewriteBase /
  
-+  # Add language-prefix if missing, default to danish
-+  RewriteCond %{REQUEST_URI} ^/$
-+  RewriteRule ^(.*)$ /da/$1 [L,QSA,R=301]
-+
++  # Language specific redirects that cant be made via drupal right now.
 +  RewriteRule ^in-english$ /en [R,L]
 +  RewriteRule ^english$ /en [R,L]
 +  RewriteRule ^deutsch /de [R,L]
 +
++  ### Add language-prefix if missing, default to danish
 +  RewriteCond %{REQUEST_URI} !^/(da|en|de)$
 +  RewriteCond %{REQUEST_URI} !^/(da|en|de)/
++  # Special case for files - they should be accessed without a prefix
++  RewriteCond %{REQUEST_URI} !^/sites/default/files
 +  RewriteCond %{REQUEST_FILENAME} !-f
 +  RewriteCond %{REQUEST_FILENAME} !-d
 +  RewriteRule ^(.*)$ /da/$1 [L,QSA,R=301]
++
++  # Handle the frontpage (which is a directory and thus wont be matched by the
++  # general prefix injection.
++  RewriteCond %{REQUEST_URI} ^/$
++  RewriteRule ^(.*)$ /da/$1 [L,QSA,R=301]
++
 +
    # Redirect common PHP files to their new locations.
    RewriteCond %{REQUEST_URI} ^(.*)?/(install.php) [OR]

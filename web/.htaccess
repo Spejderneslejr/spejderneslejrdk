@@ -122,19 +122,25 @@ AddEncoding gzip svgz
   # uncomment the following line:
   # RewriteBase /
 
-  # Add language-prefix if missing, default to danish
-  RewriteCond %{REQUEST_URI} ^/$
-  RewriteRule ^(.*)$ /da/$1 [L,QSA,R=301]
-
+  # Language specific redirects that cant be made via drupal right now.
   RewriteRule ^in-english$ /en [R,L]
   RewriteRule ^english$ /en [R,L]
   RewriteRule ^deutsch /de [R,L]
 
+  ### Add language-prefix if missing, default to danish
   RewriteCond %{REQUEST_URI} !^/(da|en|de)$
   RewriteCond %{REQUEST_URI} !^/(da|en|de)/
+  # Special case for files - they should be accessed without a prefix
+  RewriteCond %{REQUEST_URI} !^/sites/default/files
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^(.*)$ /da/$1 [L,QSA,R=301]
+
+  # Handle the frontpage (which is a directory and thus wont be matched by the
+  # general prefix injection.
+  RewriteCond %{REQUEST_URI} ^/$
+  RewriteRule ^(.*)$ /da/$1 [L,QSA,R=301]
+
 
   # Redirect common PHP files to their new locations.
   RewriteCond %{REQUEST_URI} ^(.*)?/(install.php) [OR]
