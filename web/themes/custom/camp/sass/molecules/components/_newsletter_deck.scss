@@ -55,11 +55,12 @@ $newsletter-xsmall: new-breakpoint(max-width 610px);
   min-height: 900px;
   position: relative;
   margin-top: 75px;
-  overflow: visible;
+  overflow: hidden;
   z-index: 1;
   float: left;
   width: 100%;
   margin-bottom: 200px;
+  max-width: 100%;
 
   @include media($newsletter-large) {
     min-height: 750px;
@@ -89,7 +90,9 @@ $newsletter-xsmall: new-breakpoint(max-width 610px);
 
   @include media($tablet-p) {
     position: relative;
-    margin: 40px auto 0;
+    margin: 0;
+    padding: 15px;
+    left: 0;
 
     .mc-input {
       width: 100%;
