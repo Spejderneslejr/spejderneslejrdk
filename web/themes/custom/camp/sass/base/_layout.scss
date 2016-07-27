@@ -1,0 +1,48 @@
+.layout-item {
+  @include media($tablet-l) {
+    &.span-4 {
+      @include span-columns(6);
+    }
+  }
+
+  // Make sure text paragraphs clear both when using clear.
+  &.paragraph--type--text {
+    &.clear {
+      clear: both;
+    }
+  }
+}
+
+[class*='span-'] {
+  @include media($phone) {
+    &.layout-item {
+      @include span-columns(12);
+      float: left !important;
+    }
+
+    &.span-align-right {
+      margin-left: 0;
+    }
+  }
+}
+
+.span-align-right {
+  float: right;
+  margin-right: 0;
+  margin-left: 35px;
+}
+
+.span-default {
+
+  // Make sure everything without a defined width goes full width unless
+  // it's a .paragraph--type--text.
+  &:not(.paragraph--type--text):not('.path-frontpath .span-default') {
+    @include span-columns(12);
+    float: none;
+    display: inline-block;
+  }
+}
+
+.span-break {
+  @include omega();
+}

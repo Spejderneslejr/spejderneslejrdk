@@ -1,0 +1,4 @@
+label: 'Forfremmet til forsiden'
+settings:
+  on_label: Tilsluttet
+  off_label: Afbrudt

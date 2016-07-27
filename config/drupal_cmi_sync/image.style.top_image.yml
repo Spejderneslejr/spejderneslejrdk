@@ -1,0 +1,15 @@
+uuid: 3278aae8-28d5-4e69-bc13-e8cf1572d1fa
+langcode: en
+status: true
+dependencies: {  }
+name: top_image
+label: 'Top Image'
+effects:
+  c65da7cb-9bf6-481b-9254-f2dc326cf80e:
+    uuid: c65da7cb-9bf6-481b-9254-f2dc326cf80e
+    id: image_scale
+    weight: 1
+    data:
+      width: 1600
+      height: 1600
+      upscale: false

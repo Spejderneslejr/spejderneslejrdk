@@ -1,0 +1,20 @@
+uuid: 4c20ed1f-3441-41e1-805e-dbed70da0119
+langcode: en
+status: true
+dependencies:
+  theme:
+    - camp_seven
+id: camp_seven_primary_local_tasks
+theme: camp_seven
+region: header
+weight: -5
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: false
+visibility: {  }

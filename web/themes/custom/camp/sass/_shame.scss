@@ -1,0 +1,105 @@
+// we leave all of this juicebox related stuff in here, because
+// we really don't know what to do about it yet. TODO(ts) - refactor later.
+.juicebox-parent {
+  float: none;
+  height: 705px;
+  width: 100%;
+  margin: 3px auto;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.path-user {
+
+  .region-content {
+    @include outer-container;
+  }
+
+  .user-login-form {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 250px;
+    max-width: 100%;
+
+    .form-submit {
+      min-width: 250px;
+      float: right;
+    }
+  }
+}
+
+.contained {
+  display: block;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-bottom: 50px;
+  margin-left: auto;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+.page-title {
+  @extend .contained;
+}
+
+body:not(.path-frontpage) .node__content {
+  display: block;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-bottom: 50px;
+  margin-left: auto;
+  padding-right: 5%;
+  padding-left: 5%;
+
+  // Second level node content should not use outer container style.
+  .node__content {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+  }
+}
+
+// Search temp.
+.nav-search {
+
+  font-family: Calibri, sans-serif;
+  color: #5a5a5a;
+  font-size: 14px;
+  line-height: 1.42857em;
+
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  background-color: white;
+  padding: 0vh 10% 10vh;
+  margin: 0;
+  transition: opacity 350ms, -webkit-transform 250ms;
+  transition: opacity 350ms, transform 250ms;
+  transition: opacity 350ms, transform 250ms, -webkit-transform 250ms;
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, .2);
+
+  // Closed.
+  opacity: 0;
+  transform: translateX(0px) translateY(-20px) translateZ(0px) scaleX(1) scaleY(0.95) scaleZ(1);
+  transition: opacity 350ms, transform 350ms;
+
+  // @include hide-text;
+  z-index: -9999;
+
+  &.js-active {
+    opacity: 1;
+    transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1);
+    display: block;
+    transition: opacity 350ms, transform 250ms;
+    z-index: 1000;
+  }
+}
+
+.form-search {
+  margin-top: 8vh;
+}

@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * Theme-hook for a field formatter.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function filetype_formatter_theme() {
+  return [
+    'file_entity_file_type_download_link' => [
+      'variables' => [
+        'file' => NULL,
+        'download_link' => NULL,
+        'icon' => '',
+        'file_size' => NULL,
+        'attributes' => NULL,
+        'mimetype' => NULL,
+        'mimetype_mapped' => NULL,
+      ],
+    ],
+  ];
+}

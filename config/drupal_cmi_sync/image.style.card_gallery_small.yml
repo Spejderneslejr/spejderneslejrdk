@@ -1,0 +1,14 @@
+uuid: 1614b77a-f963-4def-84f4-d9ed510a4744
+langcode: da
+status: true
+dependencies: {  }
+name: card_gallery_small
+label: card_gallery_small
+effects:
+  7bf8f9f5-22e8-4069-9327-38e093ec20d8:
+    uuid: 7bf8f9f5-22e8-4069-9327-38e093ec20d8
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 538
+      height: 387

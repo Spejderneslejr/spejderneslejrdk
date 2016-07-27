@@ -1,0 +1,30 @@
+.clock {
+  text-transform: capitalize;
+  font-size: 0;
+  font-weight: bold;
+  font-family: 'FB Hermes', sans-serif;
+
+  span {
+    font-size: 26.6px;
+
+    @include media($tablet-l) {
+      font-size: 20px;
+    }
+
+    @include media($tablet-p) {
+      font-size: 16px;
+    }
+
+    &.clock__unit {
+      padding-right: 10px;
+    }
+  }
+}
+
+.clock__number {
+  color: $black-medium;
+}
+
+.clock__unit {
+  color: $gray;
+}

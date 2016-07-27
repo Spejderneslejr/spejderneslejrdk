@@ -1,0 +1,6 @@
+uuid: d5eb4606-6c78-4b2c-8b64-db3cdbbf0115
+langcode: en
+status: true
+dependencies: {  }
+id: video
+label: Video

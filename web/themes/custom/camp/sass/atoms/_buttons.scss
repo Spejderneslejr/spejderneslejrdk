@@ -1,0 +1,29 @@
+.btn {
+  border: 0;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 30px;
+  background-color: #e1477d;
+  font-family: 'FB Hermes', sans-serif;
+  color: #fff;
+  height: auto;
+  padding: 13px 20px;
+
+  &.a {
+    color: white;
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: white;
+    background-color: #000;
+  }
+}
+
+.btn-small {
+  padding-top: 10px;
+  font-size: em(14, $base-font-size);
+}

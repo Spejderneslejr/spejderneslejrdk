@@ -1,0 +1,40 @@
+uuid: 812c71d3-6331-4a23-bce7-932cf12a12ac
+langcode: en
+status: true
+dependencies:
+  module:
+    - jamden_base
+    - language
+  theme:
+    - camp
+id: globalfooter_2
+theme: camp
+region: footer
+weight: -10
+provider: null
+plugin: footer_block
+settings:
+  id: footer_block
+  label: 'Global Footer english'
+  provider: jamden_base
+  label_display: '0'
+  footer_column_1:
+    value: "<p>© 2016-2017 Spejdernes Lejr&nbsp;</p>\r\n"
+    format: full_html
+  footer_column_2:
+    value: "<h2><strong>Follow SL2017</strong></h2>\r\n\r\n<h5><strong>Newsletter</strong></h5>\r\n\r\n<p>Get notified when there are news from Jamboree Denmark 2017. The newsletter is where all the important information will be announced – useful for scouts/guides, parents, leaders and other interested parties.</p>\r\n\r\n<p>&nbsp;</p>\r\n"
+    format: full_html
+  footer_column_3:
+    value: "<h5><strong>SOCIAL MEDIA</strong></h5>\r\n\r\n<p>Follow us, talk to us, like us, share us.&nbsp; We are on all these channels! Our official hashtag is #SL2017.</p>\r\n"
+    format: full_html
+  footer_column_4:
+    value: "<h5>Contakt</h5>\r\n\r\n<h6>\bJamboree callcenter</h6>\r\n\r\n<p><a href=\"mailto:info@sl2017.dk\">info@sl2017.dk</a></p>\r\n\r\n<h6>SECRETARIAT</h6>\r\n\r\n<p><a href=\"mailto:mail@sl2017.dk\">mail@sl2017.dk</a></p>\r\n\r\n<p><a href=\"tel:+4532640090\">+45 3264 0090</a></p>\r\n\r\n<h6>PRESSE CONTACT</h6>\r\n\r\n<p>Communications Consultant</p>\r\n\r\n<p>Rasmus Kjølby</p>\r\n\r\n<p><a href=\"mailto:rk@sl2017.dk\">rk@sl2017.dk</a></p>\r\n\r\n<p><a href=\"tel:+4520716121\">+45 2071 6121</a></p>\r\n"
+    format: full_html
+visibility:
+  language:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: '@language.current_language_context:language_interface'

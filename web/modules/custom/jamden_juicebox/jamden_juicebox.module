@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Jamden Juicebox - alters juicebox settings and views.
+ */
+
+use Drupal\file\Plugin\Field\FieldType\FileFieldItemList;
+use Drupal\juicebox\JuiceboxGallery;
+
+/**
+ * Implements hook_juicebox_gallery_data_alter().
+ *
+ * Use credits and caption from file entity, because we can't get this
+ * variables from the formatter out of the box.
+ */
+function jamden_juicebox_juicebox_gallery_alter(JuiceboxGallery $juicebox, FileFieldItemList $data) {
+
+  $juicebox_images = $juicebox->getImages();
+
+  foreach ($data as $key => $field) {
+
+    // Get the file entity.
+    $image_entity = $field->entity;
+
+    // Get the juicebox version of the image.
+    $image = $juicebox_images[$key];
+
+    // Add caption.
+    if ($image_entity->field_image_caption) {
+      $image['caption'] = $image_entity->field_image_caption->value;
+    }
+
+    // Add title. We will use the credits from the file entity.
+    if ($image_entity->field_image_credits) {
+      $image['title'] = jamden_base_translated_credits_from_image($image_entity);
+    }
+
+    $juicebox->updateImage($key, $image['src_data'], $image['title'], $image['caption']);
+  }
+}

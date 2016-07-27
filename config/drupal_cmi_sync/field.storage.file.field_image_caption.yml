@@ -1,0 +1,19 @@
+uuid: 57c958a5-239b-4339-b91e-96df4e087f4d
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+id: file.field_image_caption
+field_name: field_image_caption
+entity_type: file
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

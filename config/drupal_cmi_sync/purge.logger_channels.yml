@@ -1,0 +1,25 @@
+channels:
+  -
+    id: purgers
+    grants:
+      - 0
+      - 2
+      - 3
+  -
+    id: queue
+    grants:
+      - 0
+      - 2
+      - 3
+  -
+    id: diagnostics
+    grants: {  }
+  -
+    id: purger_http_f26d5a05c9
+    grants:
+      - 0
+      - 2
+      - 3
+_core:
+  default_config_hash: ftQAKlGQD1dKnMHBSKQpWn0lhR1_tiehMXA7KQ3p2OQ
+langcode: en

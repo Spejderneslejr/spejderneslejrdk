@@ -1,0 +1,37 @@
+uuid: 550e721c-fe2e-405d-86ff-855290f257a2
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonym bruger'
+weight: 0
+is_admin: false
+permissions:
+  - 'access content'
+  - 'use text format restricted_html'
+  - 'access comments'
+  - 'access site-wide contact form'
+  - 'search content'
+  - 'view files'
+  - 'view paragraph content text'
+  - 'view paragraph content quote'
+  - 'view paragraph content image'
+  - 'view paragraph content video'
+  - 'view paragraph content accordion'
+  - 'view paragraph content factbox'
+  - 'view paragraph content gallery_reference'
+  - 'view paragraph content download'
+  - 'view paragraph content frontpage_gallery'
+  - 'view paragraph content markup'
+  - 'view paragraph content infomercial'
+  - 'download own document files'
+  - 'download own audio files'
+  - 'download own image files'
+  - 'download own video files'
+  - 'download any document files'
+  - 'download any audio files'
+  - 'download any image files'
+  - 'download any video files'
+  - 'view paragraph content partners'

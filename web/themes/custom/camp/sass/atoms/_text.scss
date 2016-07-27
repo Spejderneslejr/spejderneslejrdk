@@ -1,0 +1,127 @@
+.text-center {
+  text-align: center;
+}
+
+p {
+  color: $base-font-color;
+  line-height: 155%;
+  font-size: em(18.2, $base-font-size);
+  margin-bottom: 32px;
+
+  @include media($tablet-p) {
+    font-size: em(16.8, $base-font-size);
+  }
+}
+
+.node__content .summary {
+  margin-bottom: 25px;
+  font-size: em(23, $base-font-size);
+  line-height: 145%;
+  font-family: "Calibri Bold", sans-serif;
+  text-align: center;
+  color: black;
+
+  @include media($tablet-p) {
+    // Lessen the font-size when getting squeezed.
+    margin-bottom: 15px;
+    font-size: em(19, $base-font-size);
+    line-height: 130%;
+  }
+}
+
+.paragraph--type--text {
+  color: $base-font-color;
+
+  ul,
+  ol {
+    font-size: em(21, $base-font-size);
+    color: $gray-list;
+
+    li {
+      margin-bottom: 11px;
+      line-height: 140%;
+    }
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      padding-left: 23px;
+      background-image: url("../svg/arrow_right.svg");
+      background-position: 0px 50%;
+      background-size: 11px;
+      background-repeat: no-repeat;
+    }
+  }
+
+  ol {
+
+    li {
+      margin-left: 23px;
+      padding-left: 0;
+    }
+  }
+}
+
+// The spacing from a formatted-text field to the next element is handled
+// on the wrapping element, so the last paragraph should not have a bottom-
+// margin.
+.text-formatted p:last-child{
+  margin-bottom: 0;
+}
+
+a,
+a:visited,
+a:active {
+  color: $green;
+  text-decoration: underline;
+
+  .dark &, &.dark {
+    color: black;
+  }
+}
+
+// A download-link with a download-icon in front.
+.download-item a {
+  // Make space for the arrow.
+  padding-left: 30px;
+  background-image: url("../svg/download_black.svg");
+
+  // Place left, vertically centered.
+  background-position: 0 50%;
+
+  // Set the size of the arrow.
+  background-size: 22px;
+  background-repeat: no-repeat;
+}
+
+// Download-links are styled with their own arrow "bullet", and padding so
+// remove the list-bullets and reset the padding
+ul.download-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+// Add spacing between lines.
+.download-list li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.trompet {
+  text-transform: uppercase;
+  font-family: 'FB Hermes', sans-serif;
+}
+
+// A centered list of non-styled items.
+ul, ol {
+  padding-left: 0;
+
+  &.centered li {
+    text-align: center;
+    list-style-type: none;
+  }
+}
+
+

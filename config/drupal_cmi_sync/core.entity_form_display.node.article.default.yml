@@ -1,0 +1,84 @@
+uuid: 9a0b746a-8b5a-4c66-8224-c423af22489f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.article.field_paragraphs
+    - field.field.node.article.field_summary
+    - field.field.node.article.field_tagline
+    - field.field.node.article.field_top_image
+    - node.type.article
+  module:
+    - file_entity
+    - paragraphs
+    - path
+_core:
+  default_config_hash: 7CvVDwPYotAZFBa36mcpMKZOfVRRp_iGuPHpHaavI6E
+id: node.article.default
+targetEntityType: node
+bundle: article
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+  field_paragraphs:
+    weight: 5
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: preview
+      add_mode: dropdown
+      form_display_mode: default
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+  field_summary:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+  field_tagline:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_top_image:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_editable
+  langcode:
+    type: language_select
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 6
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  promote: true
+  sticky: true

@@ -1,0 +1,25 @@
+uuid: 30c531ac-5c88-48e9-9741-e88d8f1649a1
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_layout
+    - paragraphs.paragraphs_type.video
+  module:
+    - jamden_layout
+id: paragraph.video.field_layout
+field_name: field_layout
+entity_type: paragraph
+bundle: video
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    width: '0'
+    clear: 0
+    float: 0
+default_value_callback: ''
+settings: {  }
+field_type: layout

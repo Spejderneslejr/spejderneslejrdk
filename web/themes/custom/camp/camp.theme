@@ -1,0 +1,249 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the camp theme.
+ */
+
+use Drupal\Component\Plugin\Exception\PluginException;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Menu\MenuLinkManagerInterface;
+use Drupal\file_entity\Entity\FileEntity;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\node\Entity\Node;
+use Drupal\views\ViewExecutable;
+
+/**
+ * Field Collection-specific implementation of template_preprocess_entity().
+ */
+function camp_preprocess_field_collection_item(&$variables) {
+
+  if ($variables['field_collection_item']['name'] === 'field_linked_image') {
+    $variables['image_uri'] = NULL;
+    /** @var \Drupal\file_entity\Entity\FileEntity $image */
+    $field_collection_item = $variables['item']['#field_collection_item'];
+    $image = $field_collection_item->field_image->first()->entity;
+
+    if (!empty($image)) {
+      $uri = $image->getFileUri();
+      $variables['image_uri'] = ImageStyle::load('max_325x325')->buildUrl($uri);
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function camp_preprocess_block(&$variables) {
+  // Add the current language as a variable.
+  camp_inject_language_variable($variables);
+
+  switch ($variables['base_plugin_id']) {
+    case 'system_branding_block':
+      // Sønderborg logo.
+      $variables['sonderborg_logo'] = '/' . drupal_get_path('theme', 'camp') . '/images/sonderborg_logo.png';
+
+      // Site logo.
+      $variables['logo'] = '/' . drupal_get_path('theme', 'camp') . '/svg/logo.svg';
+      $variables['logo_alt'] = '/' . drupal_get_path('theme', 'camp') . '/svg/logo_alt.svg';
+
+      // TODO(ts) - Event info. Hardcoded for now, should be a config variable.
+      $variables['event_info'] = 'Sønderborg 22.-30. juli 2017';
+      break;
+  }
+}
+
+/**
+ * Adds the current language as a language_id variable
+ *
+ * @param $variables
+ */
+function camp_inject_language_variable(&$variables) {
+  // Get language id. We use this to get correct homepage based on language.
+  $variables['language_id'] = \Drupal::languageManager()
+    ->getCurrentLanguage()
+    ->getId();
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Use custom template for language site menus.
+ */
+function camp_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
+  switch ($variables['menu_name']) {
+    case 'site-menu-danish':
+    case 'site-menu-german':
+    case 'site-menu-english':
+      $suggestions[] = 'menu__site_menu';
+      break;
+  }
+}
+
+/**
+ * Implements template_preprocess_paragraph().
+ */
+function camp_preprocess_paragraph(&$variables) {
+  // Get paragraph entity and bundle.
+  $paragraph = $variables['paragraph'];
+  $bundle = $paragraph->bundle();
+
+  // Do things based on bundle.
+  switch ($bundle) {
+    case 'image':
+      // Get Caption.
+      $image = $paragraph->field_paragraph_image->entity;
+      $variables['caption'] = !empty($image->field_image_caption->value) ?
+        $image->field_image_caption->value : '';
+      $variables['credits'] = empty($image) ? '' : jamden_base_translated_credits_from_image($image);
+      break;
+
+    case 'quote':
+      // We perform a little magic behind the scenes here.
+      // If the quote paragraph has a link we use that as a byline, with the
+      // byline as a title.
+      if (!empty($variables['content']['field_quote_link'][0])) {
+        $variables['content']['field_quote_link'][0]['#title'] = $variables['content']['field_quote_byline'][0]['#context']['value'];
+        $variables['content']['field_quote_byline'] = $variables['content']['field_quote_link'];
+      }
+      break;
+
+    case 'infomercial':
+      /** @var ImageStyle $style */
+      $style = ImageStyle::load('infomercial_background_image');
+      if (empty($style) || empty($paragraph->field_infomercial_bg_image->entity)) {
+        // Bail out if we don't have what we're here for.
+        return;
+      }
+
+      // Get the background-image, generate a image-style uri and add it as a
+      // variable.
+      $image_uri = $paragraph->field_infomercial_bg_image->entity->getFileUri();
+      if (!empty($image_uri)) {
+        $variables['field_infomercial_background_image_uri'] = $style->buildUrl($image_uri);
+      }
+
+      break;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function camp_preprocess_node(&$variables) {
+  // Add the current language as a variable.
+  camp_inject_language_variable($variables);
+
+  if (isset($variables['node'])) {
+    /** @var Node $node */
+    $node = $variables['node'];
+    if ($node->getType() == 'article') {
+      _camp_preprocess_node_article($node, $variables);
+    }
+  }
+}
+
+/**
+ * Prepare variables for article-nodes.
+ */
+function _camp_preprocess_node_article($node, &$variables) {
+  if ($variables['view_mode'] == 'full') {
+    // Get the parent menu-items title, default to empty string.
+    $parent_title = NULL;
+
+    /** @var MenuLinkManagerInterface $menu_link_manager */
+    $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
+
+    /** @var \Drupal\Core\Menu\MenuActiveTrailInterface $trial */
+    $trial = \Drupal::service('menu.active_trail');
+    $active_link = $trial->getActiveLink();
+
+    if (!empty($active_link)) {
+      // Get the parents of the link
+      $parent_plugin_ids = $menu_link_manager->getParentIds($active_link->getPluginId());
+      if (!empty($parent_plugin_ids) && count($parent_plugin_ids) >=4) {
+        // Only populate the sub_headline if we're level 4 or below.
+        // Level 1 will be the top menu-item.
+        // Level 2 will be a dummy column menu-item.
+        // Level 3 will be the parent we're interested in showing.
+        // Level 4 will be where the main articles that needs bread-crumbs
+        // will usually be.
+        if (!empty($active_link) && !empty($active_link->getParent())) {
+          try {
+            $parent = $menu_link_manager->createInstance($active_link->getParent());
+            $parent_title = $parent->getTitle();
+          }
+            // Thrown if the instance could not be loaded above.
+          catch (PluginException $e) {
+            // Do nothing, default value has already been set.
+          }
+        }
+      }
+    }
+
+    // Setup the top_image theme hook invocation.
+    $top_image = [
+      '#theme' => 'jamden_top_image',
+      '#headline' => $node->field_tagline->value,
+      '#sub_headline' => $parent_title,
+      '#image' => $node->field_top_image->entity,
+    ];
+
+    $variables['top_image'] = $top_image;
+  }
+  elseif ($variables['view_mode'] == 'teaser') {
+
+    // Inject a default image if the top-image is missing.
+    if (empty($variables['content']['field_top_image'][0])) {
+      $default_image = theme_get_setting('default_teaser_image_path', 'camp');
+
+      if (!empty($default_image)) {
+
+        // Get image-style for the view-mode.
+        // Fallback image-style in case we can't find it below.
+        $image_style = 'medium';
+
+        // Find the image-style that would have been applied to the image in the
+        // teaser-view-mode had it been there, and use it for our default image.
+        /** @var EntityViewDisplayInterface $article_teaser_display */
+        $article_teaser_display = \Drupal::entityTypeManager()
+          ->getStorage('entity_view_display')
+          ->load('node.article.teaser');
+        if (!empty($article_teaser_display)) {
+          // Then look for the configuration of the top-image.
+          $top_image_component = $article_teaser_display->getComponent(
+            'field_top_image'
+          );
+          if (!empty($top_image_component['settings']['image_style'])) {
+            $image_style = $top_image_component['settings']['image_style'];
+          }
+        }
+
+        $variables['content']['field_top_image'][] = $render_array = array(
+          '#theme' => 'image_style',
+          '#uri' => $default_image,
+          '#style_name' => $image_style,
+        );
+
+      }
+    }
+  }
+
+  return $variables;
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Re-introduce title on select views-pages.
+ */
+function camp_preprocess_views_view(&$variables) {
+  /** @var ViewExecutable $view */
+  $view = $variables['view'];
+
+  // This is necessary as we're not outputting the title via a block-layout as
+  // core expects.
+  if (in_array($view->id(), ['news'])) {
+    $variables['title']['#markup'] = '<h1>' . $view->getTitle() . '</h1>';
+  }
+}

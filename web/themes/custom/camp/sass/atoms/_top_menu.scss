@@ -1,0 +1,672 @@
+[class^="menu--site-menu-"], [class*=" menu--site-menu-"] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  float: left;
+  margin-top: 20px;
+
+  li {
+     display:inline;
+  }
+
+  a {
+    display:inline-block;
+    padding:10px;
+  }
+
+  ul {
+    &.menu {
+      text-align: center;
+
+      @include media($tablet-p) {
+        text-align: left;
+
+        li {
+          float: left;
+          padding: 4px 0;
+        }
+      }
+    }
+  }
+
+  // On mobile we place the menu on the right side.
+  @include media($tablet-p) {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: auto;
+    z-index: 9998;
+    display: block;
+    overflow: auto;
+    width: 60%;
+    height: 100vh;
+    margin: 0;
+    padding-top: 70px;
+    padding-left: 31px;
+    background-color: white;
+    box-shadow: 1px 1px 16px 0 rgba(0, 0, 0, .36);
+
+    a {
+      padding: 0;
+    }
+
+    // Transition.
+    @include transform(translate(100%, 0px));
+    @include transition(transform 200ms);
+
+    &.js-mobile-active {
+      @include transform(translateX(0px) translateY(0px) translateZ(0px));
+      @include transition(transform 200ms);
+    }
+  }
+}
+
+.menu--site-menu {
+
+  font-family: 'FB Hermes', sans-serif;
+
+  a {
+    color: $black;
+  }
+
+  a.is-active {
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  &__menu-item {
+    // Reset.
+    padding-top: 0;
+
+    @include media($tablet-p) {
+      padding: 0;
+      display: inline-block;
+      width: 100%;
+    }
+  }
+
+  // Margins for first level items.
+  &.menu-level--0 {
+    > .menu-item {
+
+      @include media($desktop) {
+        margin: 0 40px 0 0;
+      }
+
+      @include media($tablet-l) {
+        margin: 0 10px;
+        font-size: em(12, $base-font-size);
+      }
+    }
+  }
+
+  // Font size for first level items.
+  li {
+    @include media($desktop) {
+      a {
+        font-size: em(20, $base-font-size);
+      }
+
+    }
+
+    @include media($tablet-l) {
+      a {
+        font-size: em(18, $base-font-size);
+      }
+    }
+  }
+
+  > li {
+
+    @include media($desktop) {
+      &:nth-child(5) {
+
+         > a {
+          padding: 15px 19px 10px;
+          border-radius: 30px;
+          background-color: #e1477d;
+          color: #fff;
+          text-shadow: 1px 1px 1px #066969;
+
+          &:hover {
+            color: white;
+            background-color: #000;
+          }
+        }
+      }
+    }
+  }
+
+  // Font style for links.
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  li.menu-item--expanded {
+
+    > a {
+      &:before {
+
+        @include media($desktop) {
+          @include icon('.icon-arrow_down');
+          @include transform(rotate(0deg));
+          @include transition(all 300ms ease-out);
+          float: right;
+          position: relative;
+          margin-left: 13px;
+          font-size: 12px;
+          line-height: em(22, $base-font-size);
+        }
+
+        @include media($tablet-p) {
+          content: "";
+        }
+      }
+
+      &.open:before {
+        @include transform(rotate(180deg));
+      }
+    }
+  }
+
+  // Responsive behavior of top level links.
+  @include media($tablet-p) {
+    padding: 0;
+    position: relative;
+    left: auto;
+
+    li {
+      float: none;
+
+      &:last-child {
+
+        a {
+          background: none;
+          padding: 0;
+          text-shadow: none;
+        }
+      }
+    }
+
+    > .menu-item {
+      margin: 0;
+      font-size: em(17, $base-font-size);
+      padding: 4px 0;
+    }
+  }
+
+  // First level of the menu.
+  &.menu-level--0 {
+
+    > li:nth-child(1) {
+
+      > ul > li {
+
+        @include media($desktop) {
+          @include span-columns(4);
+          margin: 0;
+          padding-right: 30px;
+
+          li {
+            float: none;
+          }
+        }
+
+        // Go full width on mobile.
+        @include media($tablet-p) {
+          @include span-columns(12);
+          padding: 0;
+        }
+
+        a {
+          @include media($desktop) {
+            margin: 0;
+            padding-bottom: 4px;
+            border-bottom: 1px dashed $green;
+            width: 100%;
+            display: inline-block;
+            padding-top: 20px;
+          }
+
+          @include media($tablet-p) {
+            padding: 0;
+            border: none;
+            li {
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
+
+    // Add search icon to link number 4
+    // in the main menu. This is off course an
+    // assumption.
+    @include media($desktop) {
+      > li:nth-child(4) {
+        > a {
+          &:before {
+            @include icon('.icon-search');
+            float: right;
+            font-size: 40px;
+            position: relative;
+            left: 6px;
+            margin-right: 6px;
+            top: -7px;
+          }
+        }
+      }
+    }
+
+    // Reset the search icon on phone.
+    @include media($tablet-p) {
+      > li:nth-child(4) {
+        > a {
+          &:before {
+            content: "" !important;
+          }
+        }
+      }
+    }
+  }
+
+  // The second sublevel menu. This is
+  // is right now being triggered by Javascript by injecting classes:
+  // js-active and js-inactive.
+  &.menu-level--0 {
+
+    .menu-level--2 {
+      @include media($tablet-p) {
+        padding-top: 4px;
+      }
+    }
+
+    // Target the 2nth li item in the menu.
+    > li:nth-child(2) {
+
+      .menu-level--2 li {
+        @include media($desktop) {
+          @include span-columns(4);
+          margin: 0 0 20px;
+          // font-size: 20px;
+          text-align: center;
+          padding-right: 0;
+        }
+
+        // Go full width on mobile.
+        @include media($tablet-p) {
+          @include span-columns(12);
+          float: none;
+          display: inline-block;
+          width: 100%;
+          text-align: left;
+          padding: 4px 0;
+          margin: 0;
+        }
+
+        a {
+          @include media($desktop) {
+            margin: 0;
+            padding-bottom: 4px;
+            border-left: 1px dashed $green;
+            width: 100%;
+            display: inline-block;
+            padding-top: 20px;
+
+            &:before {
+              display: block;
+              font-size: 70px;
+              margin-bottom: 25px;
+            }
+          }
+
+          @include media($tablet-p) {
+
+            &:before {
+              // Make sure no icons are shown.
+              content: "" !important;
+              margin: 0 !important;
+            }
+          }
+        }
+
+        // This is the six icons for the second submenu.
+        // We inject the icons with css, no matter what the
+        // menu item is.
+        &:nth-child(1) {
+          a {
+            &:before {
+              @include icon('.icon-scout');
+            }
+          }
+        }
+
+        &:nth-child(2) {
+          a {
+            &:before {
+              @include icon('.icon-watch');
+            }
+          }
+        }
+
+        &:nth-child(3) {
+          a {
+
+            @include media($desktop) {
+              border-right: 1px dashed $green;
+            }
+
+            &:before {
+              @include icon('.icon-knife');
+            }
+          }
+        }
+
+        &:nth-child(4) {
+
+          a {
+
+            &:before {
+              @include icon('.icon-bird');
+            }
+          }
+        }
+
+        &:nth-child(5) {
+          a {
+
+            &:before {
+              @include icon('.icon-piggy_bank');
+            }
+          }
+        }
+
+        &:nth-child(6) {
+          a {
+
+            @include media($desktop) {
+              border-right: 1px dashed $green;
+            }
+
+            &:before {
+              @include icon('.icon-microphone');
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // First level of the menu.
+  .menu-level--1 {
+    // display: none;
+  }
+}
+
+// Variant of .menu-item--expanded.
+.menu-item--expanded--menu--site-menu {
+  list-style-image: none;
+  list-style-type: none;
+}
+
+// Reset margin-left.
+ul.menu {
+  @include media($tablet-p) {
+    margin-left: 0;
+  }
+}
+
+// general theming of submenu.
+ul.menu-level--1 {
+
+  @include media($desktop) {
+    // Layout.
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    background-color: white;
+    padding: 8vh 10% 13vh;
+    margin: 0;
+    box-shadow: 0 8px 24px -6px rgba(0, 0, 0, .3);
+
+    // Transition.
+    @include transition(opacity 350ms, transform 250ms);
+
+    li {
+      text-align: left;
+    }
+  }
+
+  @include media($tablet-p) {
+
+    & {
+      opacity: 1;
+      position: relative;
+      width: auto;
+      height: auto;
+      box-shadow: none;
+      padding: 0 0 0 15px;
+    }
+
+    li {
+      float: none;
+
+      a {
+        padding-left: 16px;
+        float: none;
+        color: $gray-light;
+        margin: 0;
+        border: none;
+
+        &.is-active {
+          color: $gray-light;
+        }
+      }
+    }
+  }
+}
+
+// Hides submenus, and get them ready for the dropdown effect by placing them
+// them differently.
+.js-inactive {
+  @include media($desktop) {
+    opacity: 0;
+    @include transform(translate(0px, -20px) scale(1, 0.95));
+    // We use the hide-text method, because we are not using display:none, but
+    // just uses opacity: 0, and therefor the element is still and is clikable,
+    // so we get rid off it with this method.
+    @include hide-text;
+    left: -99999px !important;
+    z-index: -9999;
+  }
+}
+
+// Class that activates the submenus by setting the opacity to 1.
+.js-active {
+  @include media($desktop) {
+    opacity: 1;
+    @include transform(translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1));
+    display: block;
+    z-index: 9999;
+  }
+}
+
+// Alternative logo for the sticky menu.
+.logo_alt {
+  display: none;
+  opacity: 0.5;
+}
+
+/**
+ * Fixed top menu.
+ *
+ * The .main-nav-scrolled class is injected by Javascript, and inside this
+ * we modify the default desktop styling to be fixed on top of the viewport
+ * area.
+ */
+.main-nav-scrolled {
+
+  // Add transition to sticky menu.
+  transform: translateX(0px) translateY(-100%) translateZ(0px);
+  transition: transform 500ms;
+
+  &.js-active {
+    transform: translateX(0px) translateY(0px) translateZ(0px);
+  }
+
+  // On mobile we will hide the menu always.
+  @include media($tablet-p) {
+    display: none !important;
+  }
+
+  // Some important styles are being used, but a needed to override the default
+  // desktop styling.
+  & {
+    position: fixed !important;
+    left: 0px !important;
+    top: 0px !important;
+    right: 0px !important;
+    width: 100%;
+    z-index: 3001;
+    height: 60px;
+    padding-left: 23px;
+    border-bottom: 2px dashed $gray-light;
+    background-color: hsla(0, 0%, 100%, .95);
+  }
+
+  // Reset.
+  [class^="menu--site-menu-"], [class*=" menu--site-menu-"] {
+    margin-top: 0;
+    float: none;
+  }
+
+  // Hide stuff.
+  .region--header__sonderborg,
+  .region--header__tasks,
+  .language-flags {
+    display: none;
+  }
+
+  .region--header__logo {
+    margin: 0;
+    padding: 10px 0;
+    width: auto;
+  }
+
+  #block-camp-branding {
+    height: auto;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    min-height: 1px;
+  }
+
+  // We do a little magix to keep the menu centered - part2.
+  ul.menu-level--0 {
+    margin: 0;
+    padding: 12px;
+
+    li {
+      a {
+        font-size: em(16, $base-font-size);
+      }
+    }
+
+    > li {
+
+      &:nth-child(5) {
+        position: fixed;
+        right: 20px;
+        padding: 0;
+        margin: 0;
+
+        a {
+          @extend .btn-small
+        }
+      }
+    }
+  }
+
+  .logo_alt {
+    display: block;
+    height: 40px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  // The first level menu fourth item.
+  ul.menu-level--0 {
+    > li:nth-child(4) {
+      > a {
+        &:before {
+          font-size: 26px;
+          position: relative;
+          left: 17px;
+          margin-right: 6px;
+          top: -4px;
+        }
+      }
+    }
+  }
+}
+
+// Burger mneu toggle.
+.menu-toggle {
+  // Hide on bigger screens.
+  display: none;
+  // Layout.
+  position: fixed;
+  top: 40px;
+  right: 0px;
+  width: 50px;
+  z-index: 9999;
+  cursor: pointer;
+
+  // Transition.
+  @include transition(transform 200ms);
+  @include transform(rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(-0.014px) translateZ(0px));
+
+  &.active {
+    .menu-toggle__item-1 {
+      @include transition(transform 200ms);
+      @include transform(rotateX(0deg) rotateY(0deg) rotateZ(45deg) translateX(2px) translateY(5px) translateZ(0px));
+    }
+
+    .menu-toggle__item-2 {
+      @include transition(transform 200ms);
+      @include transform(rotateX(0deg) rotateY(0deg) rotateZ(-45deg) translateX(0px) translateY(-4px) translateZ(0px));
+    }
+  }
+
+  // Burger styling.
+  &__item-1,
+  &__item-2 {
+    width: 25px;
+    height: 3px;
+    background-color: rgba(0, 0, 0, .6);
+    margin-bottom: 5px;
+  }
+
+  // Show on mobile(tablet portrait).
+  @include media($tablet-p) {
+    display: block;
+  }
+}
+
+// When the admin toolbar is active we need to adjust the header a little.
+#toolbar-administration {
+  z-index: 999999;
+}

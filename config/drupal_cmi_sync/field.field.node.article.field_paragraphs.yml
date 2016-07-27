@@ -1,0 +1,76 @@
+uuid: 6ae61ab2-521a-4b99-9389-a8c3eab48eab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.article
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.download
+    - paragraphs.paragraphs_type.factbox
+    - paragraphs.paragraphs_type.gallery_reference
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.markup
+    - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.video
+  module:
+    - entity_reference_revisions
+id: node.article.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: article
+label: Paragraphs
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      text: text
+      image: image
+      factbox: factbox
+      quote: quote
+      video: video
+      download: download
+      accordion: accordion
+      markup: markup
+      gallery_reference: gallery_reference
+    target_bundles_drag_drop:
+      text:
+        enabled: true
+        weight: -23
+      image:
+        enabled: true
+        weight: -22
+      factbox:
+        enabled: true
+        weight: -21
+      quote:
+        enabled: true
+        weight: -20
+      video:
+        enabled: true
+        weight: -19
+      download:
+        enabled: true
+        weight: -18
+      accordion:
+        enabled: true
+        weight: -17
+      markup:
+        enabled: true
+        weight: -16
+      gallery_reference:
+        enabled: true
+        weight: -15
+      frontpage_gallery:
+        weight: -14
+        enabled: false
+      infomercial:
+        weight: -13
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,70 @@
+uuid: 6c82725d-8b4e-405b-809b-5249af92f87e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.quote.field_layout
+    - field.field.paragraph.quote.field_quote_body
+    - field.field.paragraph.quote.field_quote_byline
+    - field.field.paragraph.quote.field_quote_link
+    - paragraphs.paragraphs_type.quote
+  module:
+    - advanced_text_formatter
+    - link
+id: paragraph.quote.preview
+targetEntityType: paragraph
+bundle: quote
+mode: preview
+content:
+  field_quote_body:
+    weight: 0
+    label: hidden
+    settings:
+      trim_length: '600'
+      ellipsis: '1'
+      word_boundary: '1'
+      filter: none
+      format: plain_text
+      allowed_html:
+        - a
+        - b
+        - br
+        - dd
+        - dl
+        - dt
+        - em
+        - i
+        - li
+        - ol
+        - p
+        - strong
+        - u
+        - ul
+      use_summary: 0
+      token_replace: 0
+      autop: 0
+    third_party_settings: {  }
+    type: advanced_text
+  field_quote_byline:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_quote_link:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link_separate
+hidden:
+  created: true
+  field_layout: true
+  uid: true

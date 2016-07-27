@@ -1,0 +1,19 @@
+uuid: d407fe3f-f847-442b-b2a6-260aad272689
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_markup
+    - paragraphs.paragraphs_type.markup
+id: paragraph.markup.field_markup
+field_name: field_markup
+entity_type: paragraph
+bundle: markup
+label: Markup
+description: 'Markup that will be output verbatim on the page.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

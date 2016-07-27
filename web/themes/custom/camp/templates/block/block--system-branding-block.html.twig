@@ -1,0 +1,43 @@
+{% extends "block.html.twig" %}
+{#
+/**
+ * @file
+ * Theme override for a branding block.
+ *
+ * Each branding element variable (logo, name, slogan) is only available if
+ * enabled in the block configuration.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ */
+#}
+{% block content %}
+  <div class="region--header__sonderborg">
+    <div class="region--header__sonderborg__image-wrapper">
+    </div>
+  </div>
+  <div class="region--header__logo">
+    <a href="/{{ language_id }}" class="region--header__logo__image-wrapper">
+      <img class="logo_alt" src="{{ logo_alt }}" alt="spejdernes lejr 2017 logo" />
+      <img class="logo" src="{{ logo }}" alt="spejdernes lejr 2017 logo 2" />
+    </a>
+  </div>
+  <div class="region--header__tasks">
+    <div class="date date--header">{{ event_info }}</div>
+    <div id="clock" class="clock">
+    </div>
+    <ul class="language-flags">
+      <li>
+        <a class="language-flag language-flag--dk{% if language_id == 'da' %} active{% endif %}" href="/da"></a>
+      </li>
+      <li>
+        <a class="language-flag language-flag--de{% if language_id == 'de' %} active{% endif %}" href="/de"></a>
+      </li>
+      <li>
+        <a class="language-flag language-flag--uk{% if language_id == 'en' %} active{% endif %}" href="/en"></a>
+      </li>
+    </ul>
+  </div>
+{% endblock %}

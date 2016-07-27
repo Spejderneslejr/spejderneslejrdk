@@ -1,0 +1,11 @@
+uuid: df2489cb-0bb5-4a05-8223-232791446ccb
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.article
+id: node.article
+target_entity_type_id: node
+target_bundle: article
+default_langcode: da
+language_alterable: true

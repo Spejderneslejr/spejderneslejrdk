@@ -1,0 +1,31 @@
+uuid: 032fdae2-1a5a-4f42-8885-d595a4359e13
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Godkendt bruger'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'
+  - 'use text format basic_html'
+  - 'access comments'
+  - 'post comments'
+  - 'skip comment approval'
+  - 'access site-wide contact form'
+  - 'access shortcuts'
+  - 'search content'
+  - 'view files'
+  - 'view paragraph content text'
+  - 'view paragraph content quote'
+  - 'view paragraph content image'
+  - 'view paragraph content video'
+  - 'view paragraph content accordion'
+  - 'view paragraph content factbox'
+  - 'view paragraph content gallery_reference'
+  - 'view paragraph content download'
+  - 'view paragraph content markup'
+  - 'view paragraph content frontpage_gallery'
+  - 'view paragraph content partners'

@@ -1,0 +1,21 @@
+uuid: 7fbedc1f-34d7-4fac-9fe2-ad9fff63c92b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_partners_column_1
+    - paragraphs.paragraphs_type.partners
+  module:
+    - text
+id: paragraph.partners.field_partners_column_1
+field_name: field_partners_column_1
+entity_type: paragraph
+bundle: partners
+label: 'Partners Column 1'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

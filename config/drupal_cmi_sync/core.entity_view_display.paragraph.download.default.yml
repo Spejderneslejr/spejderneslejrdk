@@ -1,0 +1,42 @@
+uuid: ac624f75-faa2-4dd2-8c55-cd55b70ffbf6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.download.field_download_body
+    - field.field.paragraph.download.field_download_file
+    - field.field.paragraph.download.field_download_title
+    - field.field.paragraph.download.field_layout
+    - paragraphs.paragraphs_type.download
+  module:
+    - filetype_formatter
+id: paragraph.download.default
+targetEntityType: paragraph
+bundle: download
+mode: default
+content:
+  field_download_body:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_download_file:
+    weight: 2
+    label: hidden
+    settings:
+      access_message: 'You don''t have access to download this file.'
+      text: '[file:name]'
+    third_party_settings: {  }
+    type: filetype_formatter
+  field_download_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  created: true
+  field_layout: true
+  uid: true

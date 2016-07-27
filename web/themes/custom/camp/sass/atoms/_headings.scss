@@ -1,0 +1,48 @@
+h1 {
+  color: $black-medium;
+}
+
+h2 {
+  color: $red;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  color: $black;
+}
+
+h1 {
+  font-size: em(42, $base-font-size);
+  font-family: 'FB Hermes', sans-serif;
+}
+
+h2 {
+  font-size: em(25.2, $base-font-size);
+}
+
+h3 {
+  font-size: em(21, $base-font-size);
+}
+
+h4 {
+  font-size: em(18, $base-font-size);
+}
+
+h5 {
+  font-size: em(16, $base-font-size);
+}
+
+h6 {
+  font-size: em(14, $base-font-size);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 120%;
+}

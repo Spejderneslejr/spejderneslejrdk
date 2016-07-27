@@ -1,0 +1,33 @@
+uuid: 043338e4-674f-423b-a8f5-a98b57e753b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.factbox.field_factbox_title
+    - field.field.paragraph.factbox.field_layout
+    - field.field.paragraph.factbox.field_paragraph_text
+    - paragraphs.paragraphs_type.factbox
+  module:
+    - text
+id: paragraph.factbox.default
+targetEntityType: paragraph
+bundle: factbox
+mode: default
+content:
+  field_factbox_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_paragraph_text:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+hidden:
+  created: true
+  field_layout: true
+  uid: true

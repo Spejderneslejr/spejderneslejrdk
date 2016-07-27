@@ -1,0 +1,25 @@
+uuid: 7baca7dc-5d8e-4951-8a33-71a4b48a0476
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - camp
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: camp_branding
+theme: camp
+region: header
+weight: -8
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

@@ -1,0 +1,25 @@
+uuid: f9f0e12f-2eb9-45e6-b4df-05cdace8fc78
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_layout
+    - paragraphs.paragraphs_type.accordion
+  module:
+    - jamden_layout
+id: paragraph.accordion.field_layout
+field_name: field_layout
+entity_type: paragraph
+bundle: accordion
+label: Layout
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    width: '0'
+    clear: 0
+    float: 0
+default_value_callback: ''
+settings: {  }
+field_type: layout

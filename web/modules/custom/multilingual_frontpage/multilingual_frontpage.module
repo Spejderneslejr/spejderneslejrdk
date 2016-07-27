@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Multilingual frontpage - necessary "legacy" hooks.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Mark the page as a front-page even if we hit it on a path different from /.
+ */
+function multilingual_frontpage_preprocess_html(&$variables) {
+  $nids = \Drupal::config('multilingual_frontpage.settings')->get('nids');
+  \Drupal::routeMatch()->getParameter('node');
+  $match = \Drupal::routeMatch();
+
+  if (!empty($nids) && $match->getRouteName() == 'entity.node.canonical') {
+    if (!empty($match->getParameter('node')) && in_array($match->getParameter('node')->id(), $nids)) {
+      $variables['attributes']['class'][] = 'path-frontpage';
+    }
+  }
+}

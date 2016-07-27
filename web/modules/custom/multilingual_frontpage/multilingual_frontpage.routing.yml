@@ -1,0 +1,15 @@
+multilingual_frontpage.redirectendpoint:
+  path: '/multifront'
+  defaults:
+    _controller: '\Drupal\multilingual_frontpage\MultilingualFrontpageController::content'
+  requirements:
+    _access: 'TRUE'
+
+multilingual_frontpage.settings_form:
+  path: '/admin/config/system/multilingual_frontpage'
+
+  defaults:
+    _form: 'Drupal\multilingual_frontpage\MultilingualFrontpageConfigForm'
+    _title: 'Multilingual frontpage'
+  requirements:
+    _permission: 'administer site configuration'

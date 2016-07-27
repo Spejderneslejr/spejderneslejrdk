@@ -1,0 +1,57 @@
+uuid: a5f3a74d-4dcc-4d81-b4f7-3817e96ce3f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.partners.field_linked_image
+    - field.field.paragraph.partners.field_partners_column_1
+    - field.field.paragraph.partners.field_partners_column_2
+    - field.field.paragraph.partners.field_partners_links
+    - field.field.paragraph.partners.field_title
+    - paragraphs.paragraphs_type.partners
+  module:
+    - field_collection
+    - link
+    - text
+id: paragraph.partners.default
+targetEntityType: paragraph
+bundle: partners
+mode: default
+content:
+  field_linked_image:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_embed
+  field_partners_column_1:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_partners_column_2:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_partners_links:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  uid: true

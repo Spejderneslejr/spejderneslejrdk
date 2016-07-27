@@ -1,0 +1,28 @@
+uuid: 75ec4327-6612-4508-bf19-d58722314618
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image.field_layout
+    - field.field.paragraph.image.field_paragraph_image
+    - paragraphs.paragraphs_type.image
+    - responsive_image.styles.wide
+  module:
+    - responsive_image
+id: paragraph.image.default
+targetEntityType: paragraph
+bundle: image
+mode: default
+content:
+  field_paragraph_image:
+    weight: 0
+    label: hidden
+    settings:
+      responsive_image_style: wide
+      image_link: ''
+    third_party_settings: {  }
+    type: responsive_image
+hidden:
+  created: true
+  field_layout: true
+  uid: true

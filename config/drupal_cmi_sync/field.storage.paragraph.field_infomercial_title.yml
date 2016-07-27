@@ -1,0 +1,21 @@
+uuid: 7f8add56-0e98-43e6-acfe-e655ae45e49b
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_infomercial_title
+field_name: field_infomercial_title
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

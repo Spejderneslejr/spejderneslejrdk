@@ -1,0 +1,63 @@
+// Styling of a list of teasers.
+.node--view-mode-teaser {
+  img {
+    float:left;
+    margin: 0 15px 0 0;
+    @include media($phone) {
+      & {
+        // Add some spacing to the header-below when we go in 1-col.
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+ul.news--teaser-list {
+  list-style-type: none;
+
+  // Move the headline and date-field close together.
+  h2 {
+    margin-bottom: 0;
+    @include media($phone) {
+      & {
+        clear: both;
+      }
+    }
+
+  }
+  .date-field {
+    margin-top: 0;
+  }
+
+  // The <li> is wrapped in an a-tag, we don't want everything underlined.
+  a {
+    text-decoration: none;
+  }
+
+  p {
+    // Make the elements (date and summary) a bit more compact.
+    margin-bottom: 26px;
+
+  }
+
+  li {
+    padding: 10px;
+    overflow: auto;
+    margin: 0;
+  }
+  li:hover {
+    background: $white-dark;
+  }
+
+  @include media($tablet-p) {
+    p {
+      margin-bottom: 16px;
+    }
+
+    // We need more spacing to seperate the items when shown in 1 column.
+    li {
+      margin-bottom: 20px;
+    }
+  }
+
+}

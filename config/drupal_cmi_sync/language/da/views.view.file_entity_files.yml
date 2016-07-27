@@ -1,0 +1,99 @@
+description: 'Find og håndtér filer.'
+display:
+  default:
+    display_title: Master
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filter
+          reset_button_label: Gendan
+          exposed_sorts_label: 'Sortér efter'
+          sort_asc_label: Stigende
+          sort_desc_label: Faldende
+      pager:
+        options:
+          tags:
+            previous: '‹ forrige'
+            next: 'næste ›'
+          expose:
+            items_per_page_label: 'Antal elementer'
+            items_per_page_options_all_label: '- Alle -'
+            offset_label: Forskydning
+      fields:
+        bulk_form:
+          action_title: Handling
+        fid:
+          label: Fid
+        filename:
+          label: Navn
+        type:
+          label: Type
+        filemime:
+          label: Mime-type
+        filesize:
+          label: Størrelse
+        status:
+          label: Status
+        changed:
+          label: Ændret
+          separator: ', '
+        created:
+          label: Oprettet
+          separator: ', '
+        count:
+          label: 'Brugt i'
+          format_plural_string: "1 sted\x03@count steder"
+        operations:
+          label: Handlinger
+      filters:
+        filename:
+          expose:
+            label: Filnavn
+        filemime:
+          expose:
+            label: Mime-type
+        status:
+          expose:
+            label: Status
+        type:
+          expose:
+            label: Type
+      title: Filer
+      empty:
+        area_text_custom:
+          content: 'Ingen tilgængelige filer.'
+  overview:
+    display_title: Filoversigt
+    display_options:
+      menu:
+        title: Filer
+  usage:
+    display_title: 'File usage'
+    display_options:
+      pager:
+        options:
+          tags:
+            previous: '‹ forrige'
+            next: 'næste ›'
+          expose:
+            items_per_page_label: 'Antal elementer'
+            items_per_page_options_all_label: '- Alle -'
+            offset_label: Forskydning
+      fields:
+        entity_label:
+          label: Entity
+        type:
+          label: Entity-type
+        module:
+          label: 'Registrerer modul'
+        count:
+          label: 'Brug antal'
+          format_plural_string: "1 sted\x03@count steder"
+      title: 'File usage'
+      arguments:
+        fid:
+          exception:
+            title: Alle
+          title: 'Information om brug af filen {{ arguments.fid }}'
+      menu:
+        title: Brug

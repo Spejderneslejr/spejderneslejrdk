@@ -1,0 +1,18 @@
+main:
+  version: '1.0'
+  css:
+    theme:
+      css/camp.main.css: {}
+  js:
+    js/camp.main.js: {}
+    js/countdown.js: {}
+    js/accordion.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+mailchimp:
+  version: '1.0'
+  js:
+    js/mc-validate.js: {}
+    js/mc-da.js: {}

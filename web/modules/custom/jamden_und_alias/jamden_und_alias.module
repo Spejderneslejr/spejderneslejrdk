@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * @file
+ * Jamden_und_alias - alters to make aliases language independent.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Language\LanguageInterface;
+
+/**
+ * Implements hook_pathauto_pattern_alter().
+ *
+ * Set the language to not specified when pathauto generates an alias of a node.
+ */
+function jamden_und_alias_pathauto_pattern_alter(&$pattern, array &$context) {
+  if (isset($context['module']) && $context['module'] == 'node') {
+    // We don't use content-translation for nodes, so all aliases pointing to
+    // nodes will always be language-independent.
+    $context['language'] = LanguageInterface::LANGCODE_NOT_SPECIFIED;
+  }
+}
+
+/**
+ * Implements hook_entity_presave().
+ *
+ * Set the language of the path to not specified when a node is saved.
+ */
+function jamden_und_alias_entity_presave(EntityInterface $entity) {
+  if ($entity->getEntityTypeId() == 'node' && !empty($entity->path)) {
+    // We don't use content-translation for nodes, so all aliases pointing to
+    // nodes will always be language-independent.
+    $entity->path->setLangcode(LanguageInterface::LANGCODE_NOT_SPECIFIED);
+  }
+}
+
+/**
+ * Implements hook_entity_load().
+ *
+ * Make sure the language is stripped from the node-path when it is loaded -
+ * this is necessary to make the path show up in the node-edit form.
+ */
+function jamden_und_alias_entity_load(array $entities, $entity_type_id) {
+  if ($entity_type_id == 'node') {
+    foreach ($entities as $node) {
+      $node->path->setLangcode(LanguageInterface::LANGCODE_NOT_SPECIFIED);
+    }
+  }
+}

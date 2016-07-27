@@ -1,0 +1,29 @@
+uuid: e1615468-13d8-4fa6-8a14-9b2f1b2d7f7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.image.field_layout
+    - field.field.paragraph.image.field_paragraph_image
+    - image.style.medium
+    - paragraphs.paragraphs_type.image
+  module:
+    - image
+id: paragraph.image.preview
+targetEntityType: paragraph
+bundle: image
+mode: preview
+content:
+  field_paragraph_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+hidden:
+  created: true
+  field_layout: true
+  uid: true

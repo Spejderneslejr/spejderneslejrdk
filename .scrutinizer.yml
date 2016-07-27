@@ -1,0 +1,43 @@
+checks:
+  php:
+    code_rating: true
+    excluded_dependencies:
+      - drupal/core
+
+build:
+  environment:
+    php: '7.0.6'
+    node: 'v4.2.2'
+    # Disable default dependencies - we where getting postgresql and redis.
+    postgresql: false
+    redis: false
+  dependencies:
+    after:
+      - 'cd web/themes/custom/camp/ && npm install && cd -'
+  tests:
+    override:
+      -
+        command: 'composer phpunit-custom-clover'
+        coverage:
+          file: 'tests/reports/clover.xml'
+          format: 'php-clover'
+      -
+        command: 'web/themes/custom/camp/node_modules/.bin/eslint --config web/themes/custom/camp/.eslintrc --ignore-path web/themes/custom/camp/.eslintignore --format checkstyle --output-file eslint-data web/modules/custom web/themes/custom/camp/'
+        analysis:
+            file: 'eslint-data'
+            format: 'eslint-checkstyle'     # The supported format by Scrutinizer
+      -
+        command: 'composer phpcs-checkstyle'
+        analysis:
+          file: 'tests/reports/phpcs-checkstyle.xml'
+          format: 'php-cs-checkstyle'
+
+build_failure_conditions:
+  # No new issues allowed.
+  - 'issues.new.exists'
+
+filter:
+    paths:
+      - 'web/modules/custom/*'
+      - 'web/profiles/custom/*'
+      - 'web/themes/custom/*'

@@ -1,0 +1,7 @@
+/* Floats thumbnails in preview mode on the node-edit form. */
+.paragraph--view-mode--preview .field--type-image .field__item {
+  float: left;
+  min-width: 110px;
+  min-height: 110px;
+  text-align: center;
+}

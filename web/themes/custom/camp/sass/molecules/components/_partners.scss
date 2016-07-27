@@ -1,0 +1,137 @@
+
+// Partners.
+.partners {
+
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 1300px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 5%;
+
+  @include media($tablet-l) {
+    padding: 0 20px;
+  }
+}
+
+.partners__links {
+  a {
+    @extend .btn;
+    height: auto;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 13px 20px;
+    float: right;
+    font-size: 1.2em;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'FB Hermes', sans-serif;
+    letter-spacing: 0.04em;
+    border: 0;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+
+    @include media($tablet-p) {
+      float: none;
+      height: auto;
+      margin-bottom: 8px;
+      padding: 11px 12px;
+      font-size: 1.1em;
+    }
+  }
+
+  @include media($tablet-p) {
+    text-align: center;
+    padding-top: 13px;
+  }
+}
+
+.partners__title {
+  margin-top: 10px;
+  margin-bottom: 6px;
+  font-family: 'FB Hermes', sans-serif;
+  color: #e1477d;
+  font-size: 2em;
+  text-transform: uppercase;
+  line-height: 30px;
+  font-weight: 700;
+
+  @include media($tablet-p) {
+    font-size: 1.6em;
+  }
+}
+
+.partners_text {
+  margin-top: 24px;
+  display: inline-block;
+}
+
+.paragraph--type--partners {
+  position: relative;
+    height: 80vh;
+    min-height: 800px;
+    width: 100%;
+    display: block;
+    clear: both;
+
+
+  h4 {
+    color: #a79d96;
+    font-size: 1.3em;
+    text-transform: uppercase;
+  }
+
+  @include media($tablet-p) {
+    .span-6 {
+      @include span-columns(12);
+    }
+  }
+}
+
+.partners__images {
+  position: relative;
+  width: 100%;
+  height: 70px;
+  margin-top: 10vh;
+  text-align: center;
+
+  img {
+    margin: 0 5%;
+  }
+}
+
+.partners_header {
+  @include media($tablet-p) {
+    text-align: center;
+  }
+}
+
+.sponsor-block {
+  display: inline-block;
+  width: 23%;
+  height: 100%;
+  margin-bottom: 50px;
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    @include hide-text;
+  }
+
+  @include media($tablet-p) {
+    float: left;
+    width: 50%;
+  }
+}

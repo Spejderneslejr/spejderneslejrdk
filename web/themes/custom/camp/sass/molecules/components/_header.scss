@@ -1,0 +1,139 @@
+.region--header__logo {
+  text-align: center;
+  height: 100%;
+  @include span-columns(2);
+  padding: 5px 0;
+
+  img {
+    height: 100%;
+  }
+
+  @include media($tablet-l) {
+    padding: 0;
+
+    img {
+      max-height: 140px;
+    }
+  }
+
+  @include media($tablet-p) {
+    padding: 0;
+
+    img {
+      max-height: 60px;
+    }
+  }
+}
+
+.region--header__sonderborg {
+  @include span-columns(5);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  position: relative;
+  max-height: 350px;
+  overflow: hidden;
+  padding: 5px 0px;
+  text-align: center;
+  height: 100%;
+
+  @include media($tablet-p) {
+    height: 70px;
+    min-height: 10px;
+    padding: 0;
+    text-align: center;
+  }
+
+  .region--header__sonderborg__image-wrapper {
+    width: 50%;
+    height: 100%;
+    float: right;
+    background-image: url("../images/sonderborg_logo.png");
+    background-position: 50% 50%;
+    background-size: 150px;
+    background-repeat: no-repeat;
+
+    img {
+      max-width: 150px;
+    }
+
+    @include media($tablet-l) {
+      float: none;
+      height: auto;
+      width: auto;
+    }
+
+    @include media($tablet-p) {
+
+      img {
+        max-width: 115px;
+      }
+    }
+
+    @include media($phone) {
+
+      img {
+        max-width: 130px;
+        padding-top: 8px;
+      }
+    }
+  }
+}
+
+.region--header__tasks {
+  @include span-columns(5);
+
+  position: relative;
+  height: 100%;
+  padding-top: 56px;
+  padding-left: 4%;
+
+  @include media($tablet-p) {
+    padding-top: 10px;
+  }
+
+  @include media($phone) {
+
+    position: absolute;
+    margin: 0;
+    padding: 0;
+
+    .date,
+    .clock {
+      display: none;
+    }
+  }
+}
+
+.region--header__logo__image-wrapper {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+
+#block-camp-branding {
+  display: block;
+  width: 100%;
+  float: left;
+  z-index: 1100;
+  height: 15vh;
+  min-height: 150px;
+  margin-top: 15px;
+
+  @include media($tablet-p) {
+    height: 70px;
+    min-height: 10px;
+  }
+}
+
+.date {
+  color: $gray-medium;
+}
+
+.date--header {
+  font-weight: bold;
+  font-size: em(14, $base-font-size);
+  margin-bottom: 11px;
+}
+

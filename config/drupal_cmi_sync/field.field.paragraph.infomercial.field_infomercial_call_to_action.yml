@@ -1,0 +1,23 @@
+uuid: 41ef7256-355b-4f98-a695-719d506f3860
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_infomercial_call_to_action
+    - paragraphs.paragraphs_type.infomercial
+  module:
+    - link
+id: paragraph.infomercial.field_infomercial_call_to_action
+field_name: field_infomercial_call_to_action
+entity_type: paragraph
+bundle: infomercial
+label: 'Call to action'
+description: 'Zero or more links that should be displayed as buttons underneath the body-text.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

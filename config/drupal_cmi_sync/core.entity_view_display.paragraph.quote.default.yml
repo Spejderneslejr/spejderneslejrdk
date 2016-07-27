@@ -1,0 +1,45 @@
+uuid: 00ded760-ad21-4d38-92e1-b78da27d92df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.quote.field_layout
+    - field.field.paragraph.quote.field_quote_body
+    - field.field.paragraph.quote.field_quote_byline
+    - field.field.paragraph.quote.field_quote_link
+    - paragraphs.paragraphs_type.quote
+  module:
+    - link
+id: paragraph.quote.default
+targetEntityType: paragraph
+bundle: quote
+mode: default
+content:
+  field_quote_body:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_quote_byline:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_quote_link:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+hidden:
+  created: true
+  field_layout: true
+  uid: true

@@ -1,0 +1,27 @@
+uuid: fbd4693a-5222-4501-a4cc-a5d3afd804f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.frontpage_gallery.field_frontpage_gallery_image
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.frontpage_gallery
+  module:
+    - image
+id: paragraph.frontpage_gallery.preview
+targetEntityType: paragraph
+bundle: frontpage_gallery
+mode: preview
+content:
+  field_frontpage_gallery_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: thumbnail
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+hidden:
+  created: true
+  uid: true
