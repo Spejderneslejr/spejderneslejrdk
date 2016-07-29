@@ -1,4 +1,5 @@
 vcl 4.0;
+import std;
 
 include "includes.vcl";
 
@@ -12,6 +13,12 @@ include "includes.vcl";
 # Typically you clean up the request here, removing cookies you dont need,
 # rewriting the request, etc.
 sub vcl_recv {
+    if (std.port(local.ip) == 80) {
+        set req.http.X-Forwarded-Proto = "http";
+    } else {
+        set req.http.X-Forwarded-Proto = "https";
+    }
+
   # Cachetag support
   # Only allow BAN requests from IP addresses in the purge ACL.
   if (req.method == "BAN") {
