@@ -15,7 +15,7 @@ services:
     ports:
       - '443:443'
     environment:
-      HITCH_PARAMS: --backend=[proxy]:80 --frontend=[*]:443
+      HITCH_PARAMS: --write-proxy-v2 --backend=[proxy]:6086 --frontend=[*]:443
     links:
       - proxy
 
@@ -23,13 +23,15 @@ services:
     image: zazukoians/varnish
     ports:
       - '80:80'
+      - '6086'
     links:
       - web
     environment:
       VCL_CONFIG: /vcl/sl2017.vcl
-      VARNISHD_PARAMS: "-p vcl_dir=/vcl"
+      VARNISHD_PARAMS: "-p vcl_dir=/vcl -a :6086,PROXY"
     volumes:
       - './documentation/environment-setup/varnish/sl2017.vcl:/vcl/sl2017.vcl'
+      - './documentation/environment-setup/varnish/redirect.vcl:/vcl/redirect.vcl'
       - './docker/proxy/acl.vcl:/vcl/acl.vcl'
       - './docker/proxy/backends.vcl:/vcl/backends.vcl'
       - './docker/proxy/includes.vcl:/vcl/includes.vcl'
