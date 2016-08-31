@@ -35,7 +35,7 @@ function template_preprocess_jamden_top_image(&$variables) {
   $image = $variables['image'];
   if (!empty($image)) {
     $uri = $image->getFileUri();
-    $variables['image_uri'] = ImageStyle::load('top_image')->buildUrl($uri);
+    $variables['image_uri'] = camp_url_to_protocol_relative(ImageStyle::load('top_image')->buildUrl($uri));
   }
   $variables['image_credits'] = empty($image->field_image_credits->value) ? NULL : (jamden_base_translated_credits_from_image($image));
 }
