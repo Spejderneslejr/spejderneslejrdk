@@ -39,7 +39,7 @@
           $(this).toggleClass('active');
 
           // Open main menu.
-          $('.menu--site-menu-danish').toggleClass('js-mobile-active');
+          $('.menu--site-menu-danish, .menu--site-menu-german, .menu--site-menu-english').toggleClass('js-mobile-active');
         });
       }
 
