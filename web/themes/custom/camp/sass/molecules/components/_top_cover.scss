@@ -94,6 +94,12 @@
 
 // Single line of text
 .top-cover-credit {
+  position: absolute;
+
+  // Place the accreditation in the bottom right corner of the top-banner.
+  right: 10px;
+  bottom: 10px;
+
   padding: 3px;
 
   font-size: 1em;
