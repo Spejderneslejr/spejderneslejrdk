@@ -2857,6 +2857,9 @@ ul.news--teaser-list li:hover {
 }
 
 .top-cover-credit {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
   padding: 3px;
   font-size: 1em;
 }
