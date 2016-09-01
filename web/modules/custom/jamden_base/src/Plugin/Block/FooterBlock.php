@@ -58,8 +58,9 @@ class FooterBlock extends BlockBase {
     foreach ($this->columns as $delta => $column) {
       $form[$column] = [
         '#type' => 'text_format',
-        '#format' => 'full_html',
+        '#format' => 'plain_text',
         '#base_type' => 'textarea',
+        '#rows' => 10,
         '#title' => $this->t('Block @count', ['@count' => $count]),
         '#default_value' => isset($config[$column]) ? $config[$column]['value'] : '',
       ];
