@@ -4,6 +4,10 @@ base theme: classy
 description: 'Camp - Theme for Spejdernes lejr 2017'
 libraries:
   - camp/main
+libraries-override:
+  classy/dialog:
+    camp/camp.drupal.dialog
+
 core: 8.x
 regions:
   header: Header
