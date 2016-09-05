@@ -29,7 +29,7 @@ content:
       jlib_showOpenButton: true
       jlib_showExpandButton: true
       jlib_useFullscreenExpand: '1'
-      manual_config: "captionPosition=\"OVERLAY_IMAGE\"\nshowImageOverlay=\"ALWAYS\""
+      manual_config: "captionPosition=\"OVERLAY_IMAGE\"\ncaptionBackColor=\"rgba(0,0,0,.2)\"\ncaptionBackTopColor=\"rgba(0,0,0,.2)\"\nshowImageOverlay=\"ALWAYS\""
       incompatible_file_action: ''
       linkurl_source: ''
       linkurl_target: _blank
