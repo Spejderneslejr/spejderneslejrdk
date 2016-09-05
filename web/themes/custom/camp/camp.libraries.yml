@@ -16,3 +16,9 @@ mailchimp:
   js:
     js/mc-validate.js: {}
     js/mc-da.js: {}
+
+camp.drupal.dialog:
+  version: VERSION
+  css:
+    theme:
+      css/dialog.css: {}
