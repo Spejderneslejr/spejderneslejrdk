@@ -178,7 +178,7 @@
     attach: function (context, settings) {
       var placeholderTxt = Drupal.t('Search on keywords, places, people, events, etc.', {}, {context: "search form"});
       var submitTxt = Drupal.t('Search', {}, {context: "search form"});
-      var searchUrl = '/search';
+      var searchUrl = '/en/search';
       // Find the search menu item for later use.
       var searchMenuItem = $('.menu--site-menu.original-menu', context)
         .find('> li:nth-child(4)')
@@ -235,10 +235,10 @@
 
         switch(language) {
           case 'de':
-            searchUrl = '/suche';
+            searchUrl = '/de/suche';
             break;
           case 'da':
-            searchUrl = '/soeg';
+            searchUrl = '/da/soeg';
             break;
         }
 
