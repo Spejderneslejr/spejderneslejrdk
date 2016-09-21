@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a87ecc47307b5c8f386a729923dad7cf",
-    "content-hash": "3c9a7aee43b3f9b785760b013d1c1a6f",
+    "hash": "ab03ba571c8a93025e887470b5737944",
+    "content-hash": "1c2a477a5ffe628c24cd7d61777e2fe0",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1218,7 +1218,8 @@
             "type": "drupal-core",
             "extra": {
                 "patches_applied": {
-                    "2408549: Notify about overridden configuration": "https://www.drupal.org/files/issues/config-override-warning-2408549-29.patch"
+                    "2408549: Notify about overridden configuration": "https://www.drupal.org/files/issues/config-override-warning-2408549-29.patch",
+                    "2772891: Fix language negotiation while using admin languages": "https://www.drupal.org/files/issues/keyed-language-negotiation-flags-2772891.patch"
                 }
             },
             "autoload": {
@@ -1285,6 +1286,38 @@
             "time": "2016-05-06 18:51:13"
         },
         {
+            "name": "drupal/editor_advanced_link",
+            "version": "8.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/editor_advanced_link.git",
+                "reference": "699bd6a9292fd69c3d5daafb560140ba0e8e9f78"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/editor_advanced_link-8.x-1.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/core": "8.*",
+                "drupal/editor": "8.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-1.x": "8.1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Add title, target etc. attributes to Text Editor's link dialog if the text format allows them.",
+            "homepage": "https://www.drupal.org/project/editor_advanced_link",
+            "time": "2016-05-17 14:06:15"
+        },
+        {
             "name": "drupal/entity_browser",
             "version": "8.1.0-alpha6",
             "source": {
@@ -1295,7 +1328,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/entity_browser-8.x-1.0-alpha6.zip",
-                "reference": null,
+                "reference": "56342042745d7b73e052f0a7cdc7693ae02c295e",
                 "shasum": null
             },
             "require": {

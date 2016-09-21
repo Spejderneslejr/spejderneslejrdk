@@ -1,4 +1,5 @@
 vcl 4.0;
+import std;
 
 include "includes.vcl";
 
@@ -12,6 +13,15 @@ include "includes.vcl";
 # Typically you clean up the request here, removing cookies you dont need,
 # rewriting the request, etc.
 sub vcl_recv {
+    # If the request is arriving via port 80 it coming directly from a client over http
+    if (std.port(local.ip) == 80) {
+        set req.http.X-Forwarded-Proto = "http";
+    # If the request is arriving via another port, we assume its a PROXY-connection from Hitch over
+    # port 6081 which means it's a https connection.
+    } else {
+        set req.http.X-Forwarded-Proto = "https";
+    }
+
   # Cachetag support
   # Only allow BAN requests from IP addresses in the purge ACL.
   if (req.method == "BAN") {
@@ -153,3 +163,4 @@ sub vcl_deliver {
   # We already have cache-control.
   unset resp.http.Expires;
 }
+

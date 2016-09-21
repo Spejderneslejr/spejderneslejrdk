@@ -4,7 +4,7 @@ mail: info@example.com
 slogan: ''
 page:
   403: ''
-  404: ''
+  404: /node/90
   front: /multifront
 admin_compact_mode: false
 weight_select_max: 100

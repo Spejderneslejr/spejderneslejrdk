@@ -26,7 +26,7 @@ function camp_preprocess_field_collection_item(&$variables) {
 
     if (!empty($image)) {
       $uri = $image->getFileUri();
-      $variables['image_uri'] = ImageStyle::load('max_325x325')->buildUrl($uri);
+      $variables['image_uri'] = camp_url_to_protocol_relative(ImageStyle::load('max_325x325')->buildUrl($uri));
     }
   }
 }
@@ -120,11 +120,25 @@ function camp_preprocess_paragraph(&$variables) {
       // variable.
       $image_uri = $paragraph->field_infomercial_bg_image->entity->getFileUri();
       if (!empty($image_uri)) {
-        $variables['field_infomercial_background_image_uri'] = $style->buildUrl($image_uri);
+        $image_url = $style->buildUrl($image_uri);
+        $variables['field_infomercial_background_image_uri'] = camp_url_to_protocol_relative($image_url);
       }
 
       break;
   }
+}
+
+/**
+ * Strips http/https from an url.
+ *
+ * @param string $url
+ *   The url to strip protocol from.
+ *
+ * @return string
+ *   Protocol-relative url.
+ */
+function camp_url_to_protocol_relative($url) {
+  return (is_string($url) && !empty($url)) ? preg_replace('#^http(s)?:#', '', $url) : NULL;
 }
 
 /**
