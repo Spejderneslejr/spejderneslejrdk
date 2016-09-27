@@ -72,9 +72,9 @@ AddEncoding gzip svgz
   # Set "protossl" to "s" if we were accessed via https://.  This is used later
   # if you enable "www." stripping or enforcement, in order to ensure that
   # you don't bounce between http and https.
-  # RewriteRule ^ - [E=protossl]
-  # RewriteCond %{HTTPS} on
-  # RewriteRule ^ - [E=protossl:s]
+  RewriteRule ^ - [E=protossl]
+  RewriteCond %{HTTPS} on
+  RewriteRule ^ - [E=protossl:s]
 
   # Make sure Authorization HTTP header is available to PHP
   # even when running as CGI or FastCGI.
@@ -109,8 +109,8 @@ AddEncoding gzip svgz
   # To redirect all users to access the site WITHOUT the 'www.' prefix,
   # (http://www.example.com/foo will be redirected to http://example.com/foo)
   # uncomment the following:
-  # RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-  # RewriteRule ^ http%{ENV:protossl}://%1%{REQUEST_URI} [L,R=301]
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ http%{ENV:protossl}://%1%{REQUEST_URI} [L,R=301]
 
   # Modify the RewriteBase if you are using Drupal in a subdirectory or in a
   # VirtualDocumentRoot and the rewrite rules are not working properly.
@@ -121,13 +121,6 @@ AddEncoding gzip svgz
   # If your site is running in a VirtualDocumentRoot at http://example.com/,
   # uncomment the following line:
   # RewriteBase /
-
-  ## START language prefix redirects
-  RewriteCond %{HTTP:X-Forwarded-Proto} https
-  RewriteRule ^(.*)$ - [env=proto:https]
-
-  RewriteCond %{HTTP:X-Forwarded-Proto} !https
-  RewriteRule ^(.*)$ - [env=proto:http]
 
   # Language specific redirects that cant be made via drupal right now.
   RewriteRule ^in-english$ /en [R,L]
@@ -141,13 +134,13 @@ AddEncoding gzip svgz
   RewriteCond %{REQUEST_URI} !^/sites/default/files
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^ %{ENV:proto}://%{HTTP_HOST}/da/$1 [L,QSA,R=301]
+  RewriteRule ^(.*)$ /da/$1 [L,QSA,R=301]
 
   # Handle the frontpage (which is a directory and thus wont be matched by the
   # general prefix injection.
   RewriteCond %{REQUEST_URI} ^/$
-  RewriteRule ^ %{ENV:proto}://%{HTTP_HOST}/da/$1 [L,QSA,R=301]
-  ## END language prefix redirects
+  RewriteRule ^(.*)$ /da/$1 [L,QSA,R=301]
+
 
   # Redirect common PHP files to their new locations.
   RewriteCond %{REQUEST_URI} ^(.*)?/(install.php) [OR]
