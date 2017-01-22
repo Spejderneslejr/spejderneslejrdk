@@ -20,6 +20,9 @@ settings:
             - Bold
             - Italic
             - Underline
+            - Superscript
+            - Subscript
+            - SpecialChar
             - '-'
             - RemoveFormat
         -
@@ -39,6 +42,8 @@ settings:
         -
           name: Tools
           items:
+            - Undo
+            - Redo
             - PasteFromWord
             - ShowBlocks
             - Source
