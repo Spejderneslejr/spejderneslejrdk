@@ -11,6 +11,7 @@ dependencies:
     - paragraphs.paragraphs_type.gallery_reference
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.markup
+    - paragraphs.paragraphs_type.partners
     - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.video
@@ -39,6 +40,7 @@ settings:
       accordion: accordion
       markup: markup
       gallery_reference: gallery_reference
+      partners: partners
     target_bundles_drag_drop:
       text:
         enabled: true
@@ -73,4 +75,7 @@ settings:
       infomercial:
         weight: -13
         enabled: false
+      partners:
+        enabled: true
+        weight: 21
 field_type: entity_reference_revisions
