@@ -958,23 +958,17 @@ h6 {
     padding-left: 31px;
     background-color: white;
     box-shadow: 1px 1px 16px 0 rgba(0, 0, 0, 0.36);
-    -webkit-transform: translate(100%, 0px);
     -ms-transform: translate(100%, 0px);
     transform: translate(100%, 0px);
-    transition: -webkit-transform 200ms;
     transition: transform 200ms;
-    transition: transform 200ms, -webkit-transform 200ms;
   }
   [class^="menu--site-menu-"] a, [class*=" menu--site-menu-"] a {
     padding: 0;
   }
   [class^="menu--site-menu-"].js-mobile-active, [class*=" menu--site-menu-"].js-mobile-active {
-    -webkit-transform: translateX(0px) translateY(0px) translateZ(0px);
     -ms-transform: translateX(0px) translateY(0px) translateZ(0px);
     transform: translateX(0px) translateY(0px) translateZ(0px);
-    transition: -webkit-transform 200ms;
     transition: transform 200ms;
-    transition: transform 200ms, -webkit-transform 200ms;
   }
 }
 
@@ -1053,7 +1047,6 @@ h6 {
 
 @media screen and (min-width: 773px) {
   .menu--site-menu li.menu-item--expanded > a:before {
-    -webkit-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     transform: rotate(0deg);
     transition: all 300ms ease-out;
@@ -1072,7 +1065,6 @@ h6 {
 }
 
 .menu--site-menu li.menu-item--expanded > a.open:before {
-  -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
@@ -1261,9 +1253,7 @@ h6 {
     padding: 8vh 10% 13vh;
     margin: 0;
     box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.3);
-    transition: opacity 350ms, -webkit-transform 250ms;
     transition: opacity 350ms, transform 250ms;
-    transition: opacity 350ms, transform 250ms, -webkit-transform 250ms;
   }
   ul.menu-level--1 li {
     text-align: left;
@@ -1297,7 +1287,6 @@ h6 {
 @media screen and (min-width: 773px) {
   .js-inactive {
     opacity: 0;
-    -webkit-transform: translate(0px, -20px) scale(1, 0.95);
     -ms-transform: translate(0px, -20px) scale(1, 0.95);
     transform: translate(0px, -20px) scale(1, 0.95);
     overflow: hidden;
@@ -1311,7 +1300,6 @@ h6 {
 @media screen and (min-width: 773px) {
   .js-active {
     opacity: 1;
-    -webkit-transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1);
     -ms-transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1);
     transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1);
     display: block;
@@ -1332,15 +1320,11 @@ h6 {
  * area.
  */
 .main-nav-scrolled {
-  -webkit-transform: translateX(0px) translateY(-100%) translateZ(0px);
   transform: translateX(0px) translateY(-100%) translateZ(0px);
-  transition: -webkit-transform 500ms;
   transition: transform 500ms;
-  transition: transform 500ms, -webkit-transform 500ms;
 }
 
 .main-nav-scrolled.js-active {
-  -webkit-transform: translateX(0px) translateY(0px) translateZ(0px);
   transform: translateX(0px) translateY(0px) translateZ(0px);
 }
 
@@ -1429,28 +1413,19 @@ h6 {
   width: 50px;
   z-index: 9999;
   cursor: pointer;
-  transition: -webkit-transform 200ms;
   transition: transform 200ms;
-  transition: transform 200ms, -webkit-transform 200ms;
-  -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(-0.014px) translateZ(0px);
   -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(-0.014px) translateZ(0px);
   transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(-0.014px) translateZ(0px);
 }
 
 .menu-toggle.active .menu-toggle__item-1 {
-  transition: -webkit-transform 200ms;
   transition: transform 200ms;
-  transition: transform 200ms, -webkit-transform 200ms;
-  -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(45deg) translateX(2px) translateY(5px) translateZ(0px);
   -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(45deg) translateX(2px) translateY(5px) translateZ(0px);
   transform: rotateX(0deg) rotateY(0deg) rotateZ(45deg) translateX(2px) translateY(5px) translateZ(0px);
 }
 
 .menu-toggle.active .menu-toggle__item-2 {
-  transition: -webkit-transform 200ms;
   transition: transform 200ms;
-  transition: transform 200ms, -webkit-transform 200ms;
-  -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(-45deg) translateX(0px) translateY(-4px) translateZ(0px);
   -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(-45deg) translateX(0px) translateY(-4px) translateZ(0px);
   transform: rotateX(0deg) rotateY(0deg) rotateZ(-45deg) translateX(0px) translateY(-4px) translateZ(0px);
 }
@@ -1515,12 +1490,9 @@ h6 {
   float: left;
   position: absolute;
   overflow: hidden;
-  -webkit-transform: rotate(3deg);
   -ms-transform: rotate(3deg);
   transform: rotate(3deg);
-  transition: -webkit-transform 200ms ease-in;
   transition: transform 200ms ease-in;
-  transition: transform 200ms ease-in, -webkit-transform 200ms ease-in;
 }
 
 .photo-holder img {
@@ -1528,7 +1500,6 @@ h6 {
 }
 
 .photo-holder:hover {
-  -webkit-transform: rotate(2deg) scale(1.1);
   -ms-transform: rotate(2deg) scale(1.1);
   transform: rotate(2deg) scale(1.1);
   z-index: 999;
@@ -1548,7 +1519,6 @@ h6 {
 }
 
 .photo-holder--1 {
-  -webkit-transform: rotate(-5deg);
   -ms-transform: rotate(-5deg);
   transform: rotate(-5deg);
   z-index: calc(5 - 2);
@@ -1574,13 +1544,11 @@ h6 {
 }
 
 .photo-holder--1:hover {
-  -webkit-transform: rotate(0deg) scale(1.1);
   -ms-transform: rotate(0deg) scale(1.1);
   transform: rotate(0deg) scale(1.1);
 }
 
 .photo-holder--2 {
-  -webkit-transform: rotate(-3deg);
   -ms-transform: rotate(-3deg);
   transform: rotate(-3deg);
   z-index: calc(5 - 1);
@@ -1617,13 +1585,11 @@ h6 {
 }
 
 .photo-holder--2:hover {
-  -webkit-transform: rotate(-4deg) scale(1.1);
   -ms-transform: rotate(-4deg) scale(1.1);
   transform: rotate(-4deg) scale(1.1);
 }
 
 .photo-holder--3 {
-  -webkit-transform: rotate(3deg);
   -ms-transform: rotate(3deg);
   transform: rotate(3deg);
   z-index: 5;
@@ -1665,7 +1631,6 @@ h6 {
 }
 
 .photo-holder--4 {
-  -webkit-transform: rotate(3deg);
   -ms-transform: rotate(3deg);
   transform: rotate(3deg);
   z-index: calc(5 - 1);
@@ -1701,14 +1666,12 @@ h6 {
 }
 
 .photo-holder--4::hover {
-  -webkit-transform: rotate(4deg) scale(1.1);
   -ms-transform: rotate(4deg) scale(1.1);
   transform: rotate(4deg) scale(1.1);
   z-index: 999;
 }
 
 .photo-holder--5 {
-  -webkit-transform: rotate(3deg);
   -ms-transform: rotate(3deg);
   transform: rotate(3deg);
   z-index: calc(5 - 2);
@@ -1755,7 +1718,6 @@ h6 {
 }
 
 .photo-holder--5:hover {
-  -webkit-transform: rotate(0deg) scale(1.1);
   -ms-transform: rotate(0deg) scale(1.1);
   transform: rotate(0deg) scale(1.1);
   z-index: 999;
@@ -1810,14 +1772,12 @@ h6 {
   .card-gallery-captions.__1 {
     left: 13%;
     top: 63%;
-    -webkit-transform: rotate(-3deg);
     -ms-transform: rotate(-3deg);
     transform: rotate(-3deg);
   }
   .card-gallery-captions.__2 {
     left: 25%;
     top: 76%;
-    -webkit-transform: rotate(3deg);
     -ms-transform: rotate(3deg);
     transform: rotate(3deg);
   }
@@ -2030,14 +1990,12 @@ a.btn, .infomercial-call-ta a, .partners__links a {
 }
 
 .accordion__arrow {
-  -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   transition: all 300ms ease-out;
 }
 
 .active .accordion__arrow {
-  -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
@@ -2495,7 +2453,6 @@ ul.atcb-list li {
 }
 
 .paragraph--type--infomercial {
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   min-height: 57.14286em;
@@ -2503,19 +2460,16 @@ ul.atcb-list li {
   padding-left: 10%;
   box-orient: vertical;
   box-direction: normal;
-  -webkit-flex-direction: column;
   -moz-flex-direction: column;
   flex-direction: column;
   -ms-flex-direction: column;
   box-pack: center;
-  -webkit-justify-content: center;
   -moz-justify-content: center;
   -ms-justify-content: center;
   -o-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center;
   box-align: center;
-  -webkit-align-items: center;
   -moz-align-items: center;
   -ms-align-items: center;
   -o-align-items: center;
@@ -2610,7 +2564,6 @@ ul.atcb-list li {
 }
 
 .pager__item--previous:before {
-  -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
@@ -2698,26 +2651,19 @@ ul.news--teaser-list li:hover {
   background-position: 50% 50%;
   background-size: contain;
   background-repeat: no-repeat;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
   overflow: hidden;
-  -webkit-transform: rotate(-7deg);
   -ms-transform: rotate(-7deg);
   transform: rotate(-7deg);
-  transition: -webkit-transform 200ms ease;
   transition: transform 200ms ease;
-  transition: transform 200ms ease, -webkit-transform 200ms ease;
 }
 
 .ticket:hover {
-  -webkit-transform: rotate(-4deg) scale(1.1);
   -ms-transform: rotate(-4deg) scale(1.1);
   transform: rotate(-4deg) scale(1.1);
 }
@@ -2730,7 +2676,6 @@ ul.news--teaser-list li:hover {
   position: relative;
   top: 18%;
   left: 3%;
-  -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   line-height: 3.625em;
@@ -2777,7 +2722,6 @@ ul.news--teaser-list li:hover {
   height: 50vh;
   margin-bottom: 88px;
   position: relative;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-orient: vertical;
@@ -2787,21 +2731,18 @@ ul.news--teaser-list li:hover {
   -ms-flex-align: center;
   box-orient: vertical;
   box-direction: normal;
-  -webkit-flex-direction: column;
   -moz-flex-direction: column;
   flex-direction: column;
   -ms-flex-direction: column;
   box-pack: center;
   -ms-flex-pack: center;
   box-pack: center;
-  -webkit-justify-content: center;
   -moz-justify-content: center;
   -ms-justify-content: center;
   -o-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center;
   box-align: center;
-  -webkit-align-items: center;
   -moz-align-items: center;
   -ms-align-items: center;
   -o-align-items: center;
@@ -2871,13 +2812,11 @@ ul.news--teaser-list li:hover {
 }
 
 .slant-left {
-  -webkit-transform: rotate(-3deg);
   -ms-transform: rotate(-3deg);
   transform: rotate(-3deg);
 }
 
 .slant-right {
-  -webkit-transform: rotate(2deg);
   -ms-transform: rotate(2deg);
   transform: rotate(2deg);
 }
@@ -3641,27 +3580,19 @@ body:not(.path-frontpage) .node__content .node__content {
   background-color: white;
   padding: 0vh 10% 10vh;
   margin: 0;
-  transition: opacity 350ms, -webkit-transform 250ms;
   transition: opacity 350ms, transform 250ms;
-  transition: opacity 350ms, transform 250ms, -webkit-transform 250ms;
   box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
   opacity: 0;
-  -webkit-transform: translateX(0px) translateY(-20px) translateZ(0px) scaleX(1) scaleY(0.95) scaleZ(1);
   transform: translateX(0px) translateY(-20px) translateZ(0px) scaleX(1) scaleY(0.95) scaleZ(1);
-  transition: opacity 350ms, -webkit-transform 350ms;
   transition: opacity 350ms, transform 350ms;
-  transition: opacity 350ms, transform 350ms, -webkit-transform 350ms;
   z-index: -9999;
 }
 
 .nav-search.js-active {
   opacity: 1;
-  -webkit-transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1);
   transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1);
   display: block;
-  transition: opacity 350ms, -webkit-transform 250ms;
   transition: opacity 350ms, transform 250ms;
-  transition: opacity 350ms, transform 250ms, -webkit-transform 250ms;
   z-index: 1000;
 }
 
