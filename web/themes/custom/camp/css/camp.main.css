@@ -3090,7 +3090,7 @@ ul.news--teaser-list li:hover {
   }
 }
 
-.sponsor-block {
+.spnsor-block {
   display: inline-block;
   width: 23%;
   height: 100%;
@@ -3101,7 +3101,7 @@ ul.news--teaser-list li:hover {
   position: relative;
 }
 
-.sponsor-block a {
+.spnsor-block a {
   position: absolute;
   top: 0;
   left: 0;
@@ -3115,7 +3115,7 @@ ul.news--teaser-list li:hover {
 }
 
 @media screen and (max-width: 772px) {
-  .sponsor-block {
+  .spnsor-block {
     float: left;
     width: 50%;
   }
