@@ -49,7 +49,7 @@ services:
       PATH: '/var/www/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
 
   db:
-    image: reload/spejderneslejr:mariadb-10-prod
+    image: reload/spejderneslejr:mariadb-10-prod-novol
     ports:
       - '3306:3306'
 
