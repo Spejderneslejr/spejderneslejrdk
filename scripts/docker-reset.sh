@@ -4,7 +4,9 @@ IFS=$'\n\t'
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 echoc () {
-	echo -e "\e[38;5;34m$1\e[0m"
+    GREEN=$(tput setaf 2)
+    RESET=$(tput sgr 0)
+	echo -e "${GREEN}$1${RESET}"
 }
 
 # Preemptive sudo lease - to let you go out and grab a coffee while the script
@@ -26,7 +28,8 @@ echoc "*** Starting new containers"
 docker-compose up --remove-orphans -d
 
 # Sleep while containers are starting up then perform a reset
-sleep 15 
+echoc "*** Waiting for containers to be ready"
+sleep 15
 
 # Perform the drupal-specific reset
 echoc "*** Resetting Drupal"
