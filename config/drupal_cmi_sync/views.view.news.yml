@@ -180,7 +180,10 @@ display:
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:entityqueue.entity_queue.news_da'
+        - entity_field_info
+        - views_data
   news_da:
     display_plugin: page
     id: news_da
@@ -201,7 +204,10 @@ display:
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:entityqueue.entity_queue.news_da'
+        - entity_field_info
+        - views_data
   news_de:
     display_plugin: page
     id: news_de
@@ -235,7 +241,10 @@ display:
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:entityqueue.entity_queue.news_de'
+        - entity_field_info
+        - views_data
   news_en:
     display_plugin: page
     id: news_en
@@ -269,4 +278,7 @@ display:
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:entityqueue.entity_queue.news_en'
+        - entity_field_info
+        - views_data
