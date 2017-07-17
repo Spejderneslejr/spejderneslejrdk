@@ -23,6 +23,7 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
   field_link:
     weight: 2
     label: hidden
@@ -34,4 +35,5 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
+    region: content
 hidden: {  }

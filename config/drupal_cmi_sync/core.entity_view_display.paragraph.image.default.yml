@@ -22,6 +22,7 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: responsive_image
+    region: content
 hidden:
   created: true
   field_layout: true

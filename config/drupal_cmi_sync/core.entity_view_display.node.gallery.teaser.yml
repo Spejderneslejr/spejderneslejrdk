@@ -23,6 +23,7 @@ content:
       image_style: thumbnail
       image_link: ''
     third_party_settings: {  }
+    region: content
 hidden:
   langcode: true
   links: true

@@ -22,11 +22,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_layout:
     weight: 2
     settings: {  }
     third_party_settings: {  }
     type: layout
+    region: content
   field_paragraph_text:
     weight: 1
     settings:
@@ -34,6 +36,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
 hidden:
   created: true
   status: true

@@ -5,7 +5,9 @@ dependencies: {  }
 _core:
   default_config_hash: 4w1vDIuPlVqNIiynysHZHU-9sBCpx5uiEIPlo4SW1tw
 id: personal
-label: 'Personal contact form'
+label: 'Personlig kontaktformular'
 recipients: {  }
 reply: ''
 weight: 0
+message: 'Your message has been sent.'
+redirect: ''

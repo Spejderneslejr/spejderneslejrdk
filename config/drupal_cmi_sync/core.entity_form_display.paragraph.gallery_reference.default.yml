@@ -24,6 +24,7 @@ content:
       override_labels: false
     third_party_settings: {  }
     type: inline_entity_form_complex
+    region: content
 hidden:
   created: true
   status: true

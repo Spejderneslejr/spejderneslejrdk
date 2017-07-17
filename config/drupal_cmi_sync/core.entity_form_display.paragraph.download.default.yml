@@ -23,12 +23,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
   field_download_file:
     weight: 2
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
+    region: content
   field_download_title:
     weight: 0
     settings:
@@ -36,11 +38,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_layout:
     weight: 3
     settings: {  }
     third_party_settings: {  }
     type: layout
+    region: content
 hidden:
   created: true
   status: true

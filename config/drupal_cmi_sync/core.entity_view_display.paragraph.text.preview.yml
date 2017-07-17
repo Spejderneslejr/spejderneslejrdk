@@ -29,6 +29,7 @@ content:
       use_summary: 0
     third_party_settings: {  }
     type: advanced_text
+    region: content
 hidden:
   created: true
   field_layout: true

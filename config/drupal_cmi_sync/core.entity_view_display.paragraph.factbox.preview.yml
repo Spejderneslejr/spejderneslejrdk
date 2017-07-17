@@ -45,12 +45,14 @@ content:
       autop: 0
     third_party_settings: {  }
     type: advanced_text
+    region: content
   field_paragraph_text:
     weight: 0
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
 hidden:
   created: true
   field_layout: true
