@@ -23,6 +23,7 @@ content:
       link_image_to: ''
     third_party_settings: {  }
     type: video_embed_field_thumbnail
+    region: content
 hidden:
   created: true
   field_layout: true

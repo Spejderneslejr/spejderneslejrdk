@@ -93,7 +93,7 @@ AddEncoding gzip svgz
   # If you do not have mod_rewrite installed, you should remove these
   # directories from your webroot or otherwise protect them from being
   # downloaded.
-  RewriteRule "(^|/)\.(?!well-known)" - [F]
+  RewriteRule "/\.|^\.(?!well-known/)" - [F]
 
   # If your site can be accessed both with and without the 'www.' prefix, you
   # can use one of the following settings to redirect users to your preferred
@@ -109,8 +109,8 @@ AddEncoding gzip svgz
   # To redirect all users to access the site WITHOUT the 'www.' prefix,
   # (http://www.example.com/foo will be redirected to http://example.com/foo)
   # uncomment the following:
-  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-  RewriteRule ^ http%{ENV:protossl}://%1%{REQUEST_URI} [L,R=301]
+  # RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  # RewriteRule ^ http%{ENV:protossl}://%1%{REQUEST_URI} [L,R=301]
 
   # Modify the RewriteBase if you are using Drupal in a subdirectory or in a
   # VirtualDocumentRoot and the rewrite rules are not working properly.
@@ -121,26 +121,6 @@ AddEncoding gzip svgz
   # If your site is running in a VirtualDocumentRoot at http://example.com/,
   # uncomment the following line:
   # RewriteBase /
-
-  # Language specific redirects that cant be made via drupal right now.
-  RewriteRule ^in-english$ /en [R,L]
-  RewriteRule ^english$ /en [R,L]
-  RewriteRule ^deutsch /de [R,L]
-
-  ### Add language-prefix if missing, default to danish
-  RewriteCond %{REQUEST_URI} !^/(da|en|de)$
-  RewriteCond %{REQUEST_URI} !^/(da|en|de)/
-  # Special case for files - they should be accessed without a prefix
-  RewriteCond %{REQUEST_URI} !^/sites/default/files
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^(.*)$ /da/$1 [L,QSA,R=301]
-
-  # Handle the frontpage (which is a directory and thus wont be matched by the
-  # general prefix injection.
-  RewriteCond %{REQUEST_URI} ^/$
-  RewriteRule ^(.*)$ /da/$1 [L,QSA,R=301]
-
 
   # Redirect common PHP files to their new locations.
   RewriteCond %{REQUEST_URI} ^(.*)?/(install.php) [OR]

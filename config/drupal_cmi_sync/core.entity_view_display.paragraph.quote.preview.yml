@@ -46,6 +46,7 @@ content:
       autop: 0
     third_party_settings: {  }
     type: advanced_text
+    region: content
   field_quote_byline:
     weight: 1
     label: hidden
@@ -53,6 +54,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_quote_link:
     weight: 2
     label: hidden
@@ -64,6 +66,7 @@ content:
       target: ''
     third_party_settings: {  }
     type: link_separate
+    region: content
 hidden:
   created: true
   field_layout: true

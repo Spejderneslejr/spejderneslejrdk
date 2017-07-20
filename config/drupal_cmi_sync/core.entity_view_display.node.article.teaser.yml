@@ -50,6 +50,7 @@ content:
       token_replace: 0
       autop: 0
     third_party_settings: {  }
+    region: content
   field_top_image:
     type: image
     weight: 0
@@ -58,6 +59,7 @@ content:
       image_style: teaser
       image_link: ''
     third_party_settings: {  }
+    region: content
 hidden:
   field_paragraphs: true
   field_tagline: true

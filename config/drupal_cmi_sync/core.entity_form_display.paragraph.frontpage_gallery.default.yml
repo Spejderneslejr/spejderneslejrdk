@@ -18,6 +18,8 @@ content:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_editable
+    region: content
 hidden:
   created: true
+  status: true
   uid: true

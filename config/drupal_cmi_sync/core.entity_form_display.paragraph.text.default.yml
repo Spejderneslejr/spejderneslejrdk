@@ -19,6 +19,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: layout
+    region: content
   field_paragraph_text:
     weight: 0
     settings:
@@ -26,6 +27,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
 hidden:
   created: true
   status: true

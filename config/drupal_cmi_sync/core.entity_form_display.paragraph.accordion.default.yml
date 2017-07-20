@@ -20,6 +20,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: layout
+    region: content
   field_paragraphs:
     type: entity_reference_paragraphs
     weight: 1
@@ -30,6 +31,7 @@ content:
       add_mode: dropdown
       form_display_mode: default
     third_party_settings: {  }
+    region: content
   field_title:
     weight: 0
     settings:
@@ -37,6 +39,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
 hidden:
   created: true
   status: true

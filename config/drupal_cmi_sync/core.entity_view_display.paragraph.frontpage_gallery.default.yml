@@ -21,6 +21,7 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: card_gallery
+    region: content
 hidden:
   created: true
   uid: true
