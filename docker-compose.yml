@@ -4,7 +4,7 @@ services:
   web:
     image: reload/drupal-apache-fpm
     ports:
-      - '8080:80'
+      - '80'
     volumes_from:
       - webroot
     links:
@@ -13,7 +13,7 @@ services:
   https:
     image: zazukoians/hitch
     ports:
-      - '443:443'
+      - '443'
     environment:
       HITCH_PARAMS: --write-proxy-v2 --backend=[proxy]:6086 --frontend=[*]:443
     links:
@@ -22,7 +22,7 @@ services:
   proxy:
     image: zazukoians/varnish
     ports:
-      - '80:80'
+      - '80'
       - '6086'
     links:
       - web
@@ -39,7 +39,7 @@ services:
   php:
     image: reload/drupal-php7-fpm
     ports:
-      - '9000:9000'
+      - '9000'
     volumes_from:
       - webroot
     links:
@@ -49,9 +49,9 @@ services:
       PATH: '/var/www/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
 
   db:
-    image: reload/spejderneslejr:mariadb-10-prod-novol
+    image: reload/spejderneslejr:mariadb-10-prod-fulldb
     ports:
-      - '3306:3306'
+      - '3306'
 
   drush:
     image: reload/drupal-php7-fpm
