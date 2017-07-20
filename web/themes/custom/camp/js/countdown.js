@@ -13,11 +13,19 @@
       initializeClock(deadline);
 
       function getTimeRemaining(endtime) {
+        var seconds = 0;
+        var minutes = 0;
+        var hours = 0;
+        var days = 0;
         var t = Date.parse(endtime) - Date.parse(new Date());
-        var seconds = Math.floor((t / 1000) % 60);
-        var minutes = Math.floor((t / 1000 / 60) % 60);
-        var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-        var days = Math.floor(t / (1000 * 60 * 60 * 24));
+
+        // Only set time-parts if we haven't hit the endtime.
+        if (t > 0) {
+          seconds = Math.floor((t / 1000) % 60);
+          minutes = Math.floor((t / 1000 / 60) % 60);
+          hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+          days = Math.floor(t / (1000 * 60 * 60 * 24));
+        }
 
         return {
           'total': t,
@@ -48,17 +56,21 @@
 
         function updateClock() {
           var t = getTimeRemaining(endtime);
-
-          daysSpan.html(t.days);
-          hoursSpan.html(('0' + t.hours).slice(-2));
-          minutesSpan.html(('0' + t.minutes).slice(-2));
-          secondsSpan.html(('0' + t.seconds).slice(-2));
-
           if (t.total <= 0) {
+            // We're past the deadline, de-register our callback and clear out
+            // the element.
             clearInterval(timeinterval);
+            clock.empty();
+          } else {
+            // Update the countdown.
+            daysSpan.html(t.days);
+            hoursSpan.html(('0' + t.hours).slice(-2));
+            minutesSpan.html(('0' + t.minutes).slice(-2));
+            secondsSpan.html(('0' + t.seconds).slice(-2));
           }
         }
 
+        // First execution to have the element populated.
         updateClock();
         var timeinterval = setInterval(updateClock, 1000);
       }
