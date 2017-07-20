@@ -45,7 +45,7 @@ cd web
 drush cim --preview=diff -y
 
 # Perform any updates required by updated modules.
-drush updb
+drush updb -y
 
 # Clear cache.
 drush cr
