@@ -1,0 +1,7 @@
+uuid: 3cc9e093-6b50-4b49-8006-f470520f6bfc
+langcode: da
+status: true
+dependencies: {  }
+id: clear
+label: 'Clear floats'
+behavior_plugins: {  }

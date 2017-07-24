@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_paragraphs
     - node.type.article
     - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.clear
     - paragraphs.paragraphs_type.download
     - paragraphs.paragraphs_type.factbox
     - paragraphs.paragraphs_type.gallery_reference
@@ -40,6 +41,7 @@ settings:
       accordion: accordion
       markup: markup
       gallery_reference: gallery_reference
+      clear: clear
       partners: partners
     target_bundles_drag_drop:
       text:
@@ -75,6 +77,9 @@ settings:
       infomercial:
         weight: -13
         enabled: false
+      clear:
+        enabled: true
+        weight: 14
       partners:
         enabled: true
         weight: 21
