@@ -1,34 +1,35 @@
 vcl 4.0;
 
 sub vcl_recv {
-        if  (req.http.host ~ "^(?i)(www.spejderneslejr.dk|(www\.)?sl2017.dk|(www\.)?spejderneslejr2017.dk|(www\.)?jamboreedenmark.dk|(jobs?\.)?(www\.)?sl17.dk)$") {
+  if (req.http.host ~ "^(?i)((www\.)?spejderneslejr.dk|(www\.)?sl2017.dk|(www\.)?spejderneslejr2017.dk|(www\.)?jamboreedenmark.dk|(jobs?\.)?(www\.)?sl17.dk)$") {
 
-	    // Redirect to job page for this special domain
-	    if (req.http.host ~ "job.sl17.dk" || req.http.host ~ "jobs.sl17.dk") {
-		set req.url = "/da/job";
-	    }
-            
-	    // Show the English site for English domains
-	    if (req.http.host ~ "jamboreedenmark.dk") {
-		set req.http.X-lang = "en";
-	    } else {
-		set req.http.X-lang = "da";
-	    }
+    // Redirect to job page for this special domain
+    if (req.http.host ~ "job.sl17.dk" || req.http.host ~ "jobs.sl17.dk") {
+      set req.url = "/da/job";
+    }
 
-	    // Respect connecting protocol
-            if (std.port(local.ip) == 80) {
-		set req.http.X-protocol = "http";
-	    } else {
-		set req.http.X-protocol = "https";
-	    }
+    // Show the English site for English domains
+    if (req.http.host ~ "jamboreedenmark.dk") {
+      set req.http.X-lang = "en";
+    } else {
+      set req.http.X-lang = "da";
+    }
 
-	    // Serve front page if no resource is requested
-            if (req.url == "/" || req.url == "") {
-                return (synth(720, req.http.X-protocol + "://spejderneslejr.dk/" + req.http.X-lang));
-	    } else {
-                return (synth(720, req.http.X-protocol + "://spejderneslejr.dk" + req.url));
-            }
-	}
+    // Respect connecting protocol
+    if (std.port(local.ip) == 80) {
+      set req.http.X-protocol = "http";
+    } else {
+      set req.http.X-protocol = "https";
+    }
+
+    // Serve front page if no resource is requested
+    if (req.url == "/" || req.url == "") {
+      return (synth(720, req.http.X-protocol + "://spejderneslejr.dk/" + req.http.X-lang));
+    } else if (req.http.host != "spejderneslejr.dk" ) {
+      // If you are on the wrong domain, redirect the domain but leave the path.
+      return (synth(720, req.http.X-protocol + "://spejderneslejr.dk" + req.url));
+    }
+  }
 }
 
 sub vcl_synth {
@@ -51,4 +52,3 @@ sub vcl_synth {
 
   return (deliver);
 }
-
