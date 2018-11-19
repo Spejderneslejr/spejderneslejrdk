@@ -5,14 +5,13 @@ dependencies:
   module:
     - file
     - file_entity
-    - system
     - user
 _core:
   default_config_hash: H7kbXDAkOwaJHC-czbN3OdPc8jbYC3s60VW-Igr_WqQ
 id: file_entity_files
 label: 'File Entity Files'
 module: file_entity
-description: 'Find and manage files.'
+description: 'Find og håndtér filer.'
 tag: default
 base_table: file_managed
 base_field: fid
@@ -45,11 +44,11 @@ display:
         options:
           submit_button: Filter
           reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          reset_button_label: Gendan
+          exposed_sorts_label: 'Sortér efter'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Stigende
+          sort_desc_label: Faldende
       pager:
         type: mini
         options:
@@ -58,16 +57,16 @@ display:
           id: 0
           total_pages: 0
           tags:
-            previous: '‹ previous'
-            next: 'next ›'
+            previous: '‹ forrige'
+            next: 'næste ›'
           expose:
             items_per_page: false
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Antal elementer'
             items_per_page_options: '5, 10, 20, 40, 60'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- Alle -'
             offset: false
-            offset_label: Offset
+            offset_label: Forskydning
       style:
         type: table
         options:
@@ -219,7 +218,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          action_title: 'With selection'
+          action_title: Handling
           include_exclude: exclude
           selected_actions: {  }
           entity_type: file
@@ -263,7 +262,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Name
+          label: Navn
           exclude: false
           alter:
             alter_text: false
@@ -360,7 +359,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Mime type'
+          label: Mime-type
           exclude: false
           alter:
             alter_text: false
@@ -409,7 +408,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Size
+          label: Størrelse
           exclude: false
           alter:
             alter_text: false
@@ -508,7 +507,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Changed
+          label: Ændret
           exclude: false
           alter:
             alter_text: false
@@ -575,7 +574,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Created
+          label: Oprettet
           exclude: false
           alter:
             alter_text: false
@@ -642,7 +641,7 @@ display:
           relationship: fid
           group_type: sum
           admin_label: ''
-          label: 'Used in'
+          label: 'Brugt i'
           exclude: false
           alter:
             alter_text: false
@@ -688,7 +687,7 @@ display:
           decimal: .
           separator: ','
           format_plural: true
-          format_plural_string: "1 place\x03@count places"
+          format_plural_string: !!binary MSBzdGVkA0Bjb3VudCBzdGVkZXI=
           prefix: ''
           suffix: ''
           plugin_id: numeric
@@ -699,7 +698,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Operations
+          label: Handlinger
           exclude: false
           alter:
             alter_text: false
@@ -757,7 +756,7 @@ display:
           exposed: true
           expose:
             operator_id: filemime_op
-            label: Filename
+            label: Filnavn
             description: ''
             use_operator: false
             operator: filename_op
@@ -769,6 +768,7 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -795,7 +795,7 @@ display:
           exposed: true
           expose:
             operator_id: filemime_op
-            label: 'Mime type'
+            label: Mime-type
             description: ''
             use_operator: false
             operator: filemime_op
@@ -807,6 +807,7 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -896,7 +897,7 @@ display:
             group_items: {  }
           plugin_id: file_entity_type
       sorts: {  }
-      title: Files
+      title: Filer
       header: {  }
       footer: {  }
       empty:
@@ -905,7 +906,7 @@ display:
           table: views
           field: area_text_custom
           empty: true
-          content: 'No files available.'
+          content: 'Ingen tilgængelige filer.'
           plugin_id: text_custom
       relationships:
         fid:
@@ -932,7 +933,7 @@ display:
   overview:
     display_plugin: page
     id: overview
-    display_title: 'Files overview'
+    display_title: Filoversigt
     position: 1
     display_options:
       rendering_language: '***LANGUAGE_entity_default***'
@@ -940,7 +941,7 @@ display:
       route_name: entity.file.collection
       menu:
         type: tab
-        title: Files
+        title: Filer
         description: ''
         weight: 0
         context: ''
@@ -1011,16 +1012,16 @@ display:
           id: 0
           total_pages: 0
           tags:
-            previous: '‹ previous'
-            next: 'next ›'
+            previous: '‹ forrige'
+            next: 'næste ›'
           expose:
             items_per_page: false
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Antal elementer'
             items_per_page_options: '5, 10, 20, 40, 60'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- Alle -'
             offset: false
-            offset_label: Offset
+            offset_label: Forskydning
       filters: {  }
       filter_groups:
         operator: AND
@@ -1082,7 +1083,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Entity type'
+          label: Entity-type
           exclude: false
           alter:
             alter_text: false
@@ -1130,7 +1131,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Registering module'
+          label: 'Registrerer modul'
           exclude: false
           alter:
             alter_text: false
@@ -1178,7 +1179,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Use count'
+          label: 'Brug antal'
           exclude: false
           alter:
             alter_text: false
@@ -1223,7 +1224,7 @@ display:
           decimal: .
           separator: ','
           format_plural: false
-          format_plural_string: "1 place\x03@count places"
+          format_plural_string: !!binary MSBzdGVkA0Bjb3VudCBzdGVkZXI=
           prefix: ''
           suffix: ''
           plugin_id: numeric
@@ -1241,9 +1242,9 @@ display:
           exception:
             value: all
             title_enable: false
-            title: All
+            title: Alle
           title_enable: true
-          title: 'File usage information for {{ arguments.fid }}'
+          title: 'Information om brug af filen {{ arguments.fid }}'
           default_argument_type: fixed
           default_argument_options:
             argument: ''
@@ -1326,7 +1327,7 @@ display:
           required: true
       menu:
         type: tab
-        title: Usage
+        title: Brug
         description: 'Overview content that uses this file'
         weight: 5
         context: '0'
@@ -1357,5 +1358,5 @@ display:
         - url.query_args
         - user.permissions
       cacheable: false
-      max-age: 0
+      max-age: -1
       tags: {  }

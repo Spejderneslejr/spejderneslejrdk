@@ -42,7 +42,7 @@ display:
           separator: ', '
         count:
           label: 'Brugt i'
-          format_plural_string: "1 sted\x03@count steder"
+          format_plural_string: !!binary MSBzdGVkA0Bjb3VudCBzdGVkZXI=
         operations:
           label: Handlinger
       filters:
@@ -88,7 +88,7 @@ display:
           label: 'Registrerer modul'
         count:
           label: 'Brug antal'
-          format_plural_string: "1 sted\x03@count steder"
+          format_plural_string: !!binary MSBzdGVkA0Bjb3VudCBzdGVkZXI=
       title: 'File usage'
       arguments:
         fid:
