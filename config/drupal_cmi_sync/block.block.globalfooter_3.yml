@@ -28,7 +28,7 @@ settings:
     value: "<h6>SOZIALE MEDIEN</h6>\r\n\r\n<p>Folgt uns, sprecht mit uns, gebt uns ein \"Like\", teilt uns. Wir sind präsent auf allen soziale Medien. Unser offizielles Hashtag ist #SL2017.&nbsp;</p>\r\n<div class=\"social-holder\">\r\n  <a href=\"https://www.facebook.com/jamboreeDK2017\" class=\"link-social facebook white\"></a>\r\n  <a href=\"https://www.snapchat.com/add/spejderneslejr\" class=\"link-social snap white\"></a>\r\n  <a href=\"https://www.instagram.com/spejderneslejr/\" class=\"link-social insta white\"></a>\r\n  <a href=\"https://twitter.com/spejderneslejr\" class=\"link-social twitter white\"></a>\r\n  <a href=\"https://www.youtube.com/c/SpejderneslejrDk\" class=\"link-social youtube white\"></a>\r\n  <a href=\"https://www.linkedin.com/company/spejdernes-lejr\" class=\"link-social linked white\"></a>\r\n</div>"
     format: plain_text
   footer_column_4:
-    value: "<h5>Kontakt</h5>\r\n\r\n<h6>Das Callcenter des Jamborees</h6>\r\n\r\n<p><a href=\"mailto:info@sl2017.dk\">info@sl2017.dk</a></p>\r\n\r\n<p><a href=\"tel:+4581112017\">+45 8111 2017</a></p>"
+    value: "<h5>Kontakt</h5>\r\n\r\n<h6>Das Callcenter des Jamborees</h6>\r\n\r\n<p><a href=\"mailto:info@sl2017.dk\">info@sl2017.dk</a></p>"
     format: plain_text
 visibility:
   language:

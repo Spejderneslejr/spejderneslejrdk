@@ -17,6 +17,8 @@ content:
   author:
     weight: -2
     region: content
+    settings: {  }
+    third_party_settings: {  }
   comment_body:
     type: text_textarea
     weight: 11
@@ -28,7 +30,8 @@ content:
   langcode:
     type: language_select
     weight: 2
-    settings: {  }
+    settings:
+      include_locked: true
     third_party_settings: {  }
     region: content
   subject:

@@ -38,7 +38,7 @@ display:
           label: Ændringsdato
         count:
           label: 'Brugt i'
-          format_plural_string: "1 sted\x03@count steder"
+          format_plural_string: !!binary MSBzdGVkA0Bjb3VudCBzdGVkZXI=
       filters:
         filename:
           expose:
