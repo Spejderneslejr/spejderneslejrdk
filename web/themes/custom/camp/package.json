@@ -17,6 +17,6 @@
     "node-bourbon": "^4.2.8",
     "node-neat": "^1.7.2",
     "node-sass": "^3.4.2",
-    "eslint": "^2.10.2"
+    "eslint": "^6.6.0"
   }
 }
