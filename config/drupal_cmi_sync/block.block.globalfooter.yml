@@ -15,9 +15,9 @@ provider: null
 plugin: footer_block
 settings:
   id: footer_block
-  label: 'Global Footer danish'
+  label: "Global Footer danish"
   provider: jamden_base
-  label_display: '0'
+  label_display: "0"
   footer_column_1:
     value: "<p>© 2016-2022 Spejdernes Lejr&nbsp;</p>\r\n\r\n<p>CVR. Nr. 33690053</p>\r\n"
     format: plain_text
@@ -37,4 +37,4 @@ visibility:
       da: da
     negate: false
     context_mapping:
-      language: '@language.current_language_context:language_interface'
+      language: "@language.current_language_context:language_interface"
