@@ -19,16 +19,16 @@ settings:
   provider: jamden_base
   label_display: '0'
   footer_column_1:
-    value: "<p>© 2016-2017 Spejdernes Lejr&nbsp;</p>\r\n"
+    value: "<p>© 2016-2022 Spejdernes Lejr&nbsp;</p>\r\n"
     format: plain_text
   footer_column_2:
-    value: "<h2><strong>Follow SL2017</strong></h2>\r\n\r\n<h5><strong>Newsletter</strong></h5>\r\n\r\n<p>Get notified when there is news from Jamboree Denmark 2017. The newsletter is where all the important information will be announced – useful for scouts/guides, parents, leaders and other interested parties.</p>\r\n\r\n<p>&nbsp;</p>\r\n"
+    value: "<h2><strong>Follow SL2022</strong></h2>\r\n\r\n<h5><strong>Newsletter</strong></h5>\r\n\r\n<p>Get notified when there is news from Jamboree Denmark 2022. The newsletter is where all the important information will be announced – useful for scouts/guides, parents, leaders and other interested parties.</p>\r\n\r\n<p>&nbsp;</p>\r\n"
     format: plain_text
   footer_column_3:
-    value: "<h5><strong>SOCIAL MEDIA</strong></h5>\r\n\r\n<p>Follow us, talk to us, like us, share us.&nbsp; We are on all these channels! Our official hashtag is #SL2017.</p>\r\n\r\n<div class=\"social-holder\">\r\n  <a href=\"https://www.facebook.com/jamboree2017\" class=\"link-social facebook white\"></a>\r\n  <a href=\"https://www.snapchat.com/add/spejderneslejr\" class=\"link-social snap white\"></a>\r\n  <a href=\"https://www.instagram.com/spejderneslejr/\" class=\"link-social insta white\"></a>\r\n  <a href=\"https://twitter.com/spejderneslejr\" class=\"link-social twitter white\"></a>\r\n  <a href=\"https://www.youtube.com/c/SpejderneslejrDk\" class=\"link-social youtube white\"></a>\r\n  <a href=\"https://www.linkedin.com/company/spejdernes-lejr\" class=\"link-social linked white\"></a>\r\n</div>"
+    value: "<h5><strong>SOCIAL MEDIA</strong></h5>\r\n\r\n<p>Follow us, talk to us, like us, share us.&nbsp; We are on all these channels! Our official hashtag is #SL2022.</p>\r\n\r\n<div class=\"social-holder\">\r\n  <a href=\"https://www.facebook.com/spejderneslejr" class=\"link-social facebook white\"></a>\r\n  <a href=\"https://www.snapchat.com/add/spejderneslejr\" class=\"link-social snap white\"></a>\r\n  <a href=\"https://www.instagram.com/spejderneslejr/\" class=\"link-social insta white\"></a>\r\n  <a href=\"https://twitter.com/spejderneslejr\" class=\"link-social twitter white\"></a>\r\n  <a href=\"https://www.youtube.com/c/SpejderneslejrDk\" class=\"link-social youtube white\"></a>\r\n  <a href=\"https://www.linkedin.com/company/spejdernes-lejr\" class=\"link-social linked white\"></a>\r\n</div>"
     format: plain_text
   footer_column_4:
-    value: "<h5>Contact</h5>\r\n\r\n<h6>Jamboree callcentre</h6>\r\n\r\n<p><a href=\"mailto:info@sl2017.dk\">info@sl2017.dk</a></p>"
+    value: "<h5>Contact</h5>\r\n\r\n<h6>Jamboree callcentre</h6>\r\n\r\n<p><a href=\"mailto:info@sl2022.dk\">info@sl2022.dk</a></p>"
     format: plain_text
 visibility:
   language:
