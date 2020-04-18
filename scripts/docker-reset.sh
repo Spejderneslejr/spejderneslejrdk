@@ -9,33 +9,26 @@ echoc () {
 	echo -e "${GREEN}$1${RESET}"
 }
 
+# Hostname to send a request to to warm up the cache-cleared site.
+HOST="localhost"
+WEB_CONTAINER="web"
+
 # Preemptive sudo lease - to let you go out and grab a coffee while the script
 # runs.
 sudo echo ""
 
 # Clear all running containers.
 echoc "*** Removing existing containers" 
-docker-compose kill && docker-compose rm --all -v -f
+docker-compose kill && docker-compose rm -v -f && docker-compose down --remove-orphans -v
 
-# Composer silently kills any valid sudo leases, to avoid elevation-exploits in
-# scripts - we disable this to make sure we only have to give sudo a password
-# once.
-echoc "Composer install'ing"
-COMPOSER_ALLOW_SUPERUSER=1 composer install
-
-# Start up containers in the background and continue imidiately
-echoc "*** Starting new containers" 
+# Start up containers in the background and continue immediately
+echoc "*** Starting new containers"
 docker-compose up --remove-orphans -d
-
-# Sleep while containers are starting up then perform a reset
-echoc "*** Waiting for containers to be ready"
-sleep 15
 
 # Perform the drupal-specific reset
 echoc "*** Resetting Drupal"
 "${SCRIPT_DIR}/site-reset.sh"
 
-# Done, bring the background docker-compose logs back into foreground
-echoc "*** Done, watching logs"
-docker-compose logs -f
+echoc "*** Warming cache by doing an initial request"
+docker-compose exec ${WEB_CONTAINER} curl --silent --output /dev/null -H "Host: ${HOST}" localhost
 

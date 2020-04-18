@@ -5,51 +5,36 @@ services:
     image: reload/drupal-apache-fpm
     ports:
       - '80'
-    volumes_from:
-      - webroot
+      - '443'
+    volumes:
+      - 'webroot:/var/www/'
+      # Add Development root CA and our certificate store.
+      - '${HOME}/.local/share/mkcert:/mkcert:ro'
+      - '${HOME}/.local/share/dev_certificates:/cert:rw'
     links:
       - php:fpm
-
-  https:
-    image: zazukoians/hitch
-    ports:
-      - '443'
     environment:
-      HITCH_PARAMS: --write-proxy-v2 --backend=[proxy]:6086 --frontend=[*]:443
-      VIRTUAL_HOST: sl2017.docker
-      VIRTUAL_PROTO: https
-    links:
-      - proxy
-
-  proxy:
-    image: zazukoians/varnish
-    ports:
-      - '80'
-      - '6086'
-    links:
-      - web
-    environment:
-      VCL_CONFIG: /vcl/sl2017.vcl
-      VARNISHD_PARAMS: "-p vcl_dir=/vcl -a :6086,PROXY"
-    volumes:
-      - './documentation/environment-setup/varnish/sl2017.vcl:/vcl/sl2017.vcl'
-      - './documentation/environment-setup/varnish/redirect.vcl:/vcl/redirect.vcl'
-      - './docker/proxy/acl.vcl:/vcl/acl.vcl'
-      - './docker/proxy/backends.vcl:/vcl/backends.vcl'
-      - './docker/proxy/includes.vcl:/vcl/includes.vcl'
+      VIRTUAL_HOST: spejderneslejr.docker
+      # Ensure dory/nginx-proxy goes via port 80.
+      VIRTUAL_PORT: '80'
+      # Ensure dory don't redirect from http to https.
+      HTTPS_METHOD: noredirect
+      MKCERT_DOMAINS: "spejderneslejr.docker mail.spejderneslejr.docker sl2017.docker sl2020.docker"
 
   php:
     image: reload/drupal-php7-fpm
     ports:
       - '9000'
-    volumes_from:
-      - webroot
+    volumes:
+      - 'webroot:/var/www/'
     working_dir: /var/www/web
     links:
       - db
     environment:
       # Make Composer commands universally available
       PATH: '/var/www/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+      PHP_SENDMAIL_PATH: /usr/local/bin/mhsendmail --smtp-addr="mailhog:1025"
+      DRUSH_OPTIONS_URI: https://spejderneslejr.docker
 
   db:
     image: mariadb:10.3
@@ -63,26 +48,20 @@ services:
     volumes:
      - './docker/db/initdb.d/:/docker-entrypoint-initdb.d'
 
-  drush:
-    image: reload/drupal-php7-fpm
-    entrypoint: /usr/local/bin/drush
-    command: version
-    volumes_from:
-      - webroot
-    working_dir: /var/www/web
-    links:
-      - db
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "8025"
     environment:
-      # Make Composer commands universally available
-      PATH: '/var/www/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+      VIRTUAL_HOST: mail.ddsdk.docker
 
-  # Webroot and volumned paths needs to be accessible from multiple containers so
-  # we set up all paths once and for all via a single volumne-container.
+volumes:
+  # NPM cache that survives docker-reset.sh
+  cache:
+  db-datadir:
   webroot:
-    image: tianon/true
-    volumes:
-      - './:/var/www:rw'
-      - './docker/docker.settings.php:/var/www/web/sites/default/settings.php:rw'
-      - './docker/docker.services.yml:/var/www/web/sites/default/services.yml:rw'
-      - './docker/docker.settings.local.php:/var/www/web/sites/default/settings.local.php:rw'
-      - './docker/docker.development.services.yml:/var/www/web/sites/development.services.yml:rw'
+    driver: local
+    driver_opts:
+      type: nfs
+      o: addr=host.docker.internal,rw,nolock,hard,nointr,nfsvers=3
+      device: ":${PWD}"
