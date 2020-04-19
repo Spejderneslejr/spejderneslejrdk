@@ -18,9 +18,10 @@ provider: null
 plugin: 'system_menu_block:main'
 settings:
   id: 'system_menu_block:main'
-  label: 'Main navigation'
+  label: 'Primær navigation'
   provider: system
   label_display: '0'
   level: 1
   depth: 1
+  expand_all_items: false
 visibility: {  }
