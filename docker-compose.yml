@@ -22,7 +22,7 @@ services:
       MKCERT_DOMAINS: "spejderneslejr.docker mail.spejderneslejr.docker sl2017.docker sl2020.docker"
 
   php:
-    image: reload/drupal-php7-fpm
+    image: reload/drupal-php7-fpm:7.2
     ports:
       - '9000'
     volumes:
