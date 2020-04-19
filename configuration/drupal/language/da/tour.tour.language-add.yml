@@ -2,6 +2,7 @@ label: 'Tilføjelse af sprog'
 tips:
   language-add-overview:
     label: 'Tilføjelse af sprog'
+    body: '<p>På denne side kan du tilføje de fleste almindelige sprog til dit site.</p><p>Hvis det ønskede sprog ikke er tilgængeligt, kan du tilføje et brugerdefineret sprog.</p>'
   language-add-choose:
     label: 'Vælg sprog'
   language-add-continue:

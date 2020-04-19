@@ -1,8 +1,27 @@
-label: Inhalt
-description: 'Die Inhalte finden und verwalten.'
 display:
   default:
     display_options:
+      filters:
+        status:
+          group_info:
+            group_items:
+              1:
+                value: '1'
+                title: Veröffentlicht
+              2:
+                title: Unveröffentlicht
+            label: 'Status „veröffentlicht“'
+          expose:
+            label: Status
+        title:
+          expose:
+            label: Titel
+        type:
+          expose:
+            label: Inhaltstyp
+        langcode:
+          expose:
+            label: Sprache
       exposed_form:
         options:
           submit_button: Filter
@@ -15,6 +34,8 @@ display:
           tags:
             previous: '< Zurück'
             next: 'Weiter >'
+            first: '« Anfang'
+            last: 'Ende »'
       fields:
         title:
           label: Titel
@@ -25,31 +46,13 @@ display:
           label: Autor
         status:
           label: Status
+          settings:
+            format_custom_true: Veröffentlicht
+            format_custom_false: Unveröffentlicht
         changed:
           label: Aktualisiert
         operations:
           label: Operationen
-      filters:
-        status:
-          expose:
-            label: Status
-          group_info:
-            label: 'Status „veröffentlicht“'
-            group_items:
-              1:
-                title: Veröffentlicht
-                value: '1'
-              2:
-                title: Unveröffentlicht
-        type:
-          expose:
-            label: Inhaltstyp
-        title:
-          expose:
-            label: Titel
-        langcode:
-          expose:
-            label: Sprache
       title: Inhalt
       empty:
         area_text_custom:
@@ -63,3 +66,5 @@ display:
         title: Inhalt
         description: 'Inhalt finden und verwalten'
     display_title: Seite
+label: Inhalt
+description: 'Die Inhalte finden und verwalten.'

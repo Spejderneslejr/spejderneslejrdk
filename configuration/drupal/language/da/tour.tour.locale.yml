@@ -2,7 +2,6 @@ label: Oversættelse
 tips:
   locale-overview:
     label: 'Oversættelse af brugergrænseflade'
-    body: 'På denne side kan du oversætte brugergrænsefladen eller redigere eksisterende oversættelser. Hvis du oprindeligt har installeret dit site på engelsk, skal du først tilføje et sprog på <a href="[site:url]/admin/config/regional/language">Sprog</a>-siden, før du kan bruge denne side.'
   locale-language:
     label: 'Sprog til oversættelse'
     body: 'Vælg det sprog, som du ønsker at oversætte.'
@@ -23,4 +22,3 @@ tips:
     body: 'Når du er færdig med dine oversættelser skal du klikke på knappen <em>Gem oversættelser</em>. Du skal gemme dine oversættelser før du skifter side eller laver en ny søgning.'
   locale-continue:
     label: 'Fortsætter på'
-    body: 'Oversættelserne, som du laver her, anvendes i sitets brugergrænseflade. Hvis du ønsker at bruge dem på et andet sitet eller at redigere dem i en ekstern editor, kan du <a href="[site:url]/admin/config/regional/translate/export">eksportere dem</a> til en .po file og <a href="[site:url]/admin/config/regional/translate/import">importere dem</a> igen senere.'

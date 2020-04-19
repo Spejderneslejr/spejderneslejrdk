@@ -1,4 +1,5 @@
 label: 'Bibliothek benutzerdefinierter Blöcke'
+description: 'Benutzerdefinierte Blöcke finden und verwalten.'
 display:
   default:
     display_title: Master
@@ -18,7 +19,7 @@ display:
           expose:
             items_per_page_label: 'Elemente pro Seite'
             items_per_page_options_all_label: '- Alle -'
-            offset_label: Offset
+            offset_label: Versatz
       fields:
         info:
           label: Blockbeschreibung
@@ -38,6 +39,9 @@ display:
           expose:
             label: 'Art des Blocks'
       title: 'Bibliothek benutzerdefinierter Blöcke'
+      empty:
+        area_text_custom:
+          content: 'Es sind keine benutzerdefinierten Blöcke verfügbar.'
   page_1:
     display_title: Seite
     display_options:

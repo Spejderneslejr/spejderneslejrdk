@@ -2,8 +2,10 @@ label: 'Redigering af sprog'
 tips:
   language-edit-overview:
     label: 'Redigering af sprog'
+    body: '<p>På denne side kan du redigere sitets sprog, inklusive brugerdefinerede sprog.</p>'
   language-edit-langcode:
     label: Sprogkode
+    body: '<p>Du kan ikke ændre en sprogkode på sitet. Det skyldes at systemet bruger koden til at holde styr på sproget.</p>'
   language-edit-label:
     label: Sprognavn
   language-edit-direction:

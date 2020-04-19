@@ -5,7 +5,7 @@ display:
     display_options:
       empty:
         area_text_custom:
-          content: 'Der er ikke blevet oprettet forsideindhold endnu.'
+          content: 'Der er ikke oprettet noget indhold på forsiden endnu.<br>Læs <a href="https://www.drupal.org/docs/user_guide/en/index.html">manualen</a> for at komme i gang med at bygge din hjemmeside.'
         title:
           title: 'Velkommen til [site:name]'
       exposed_form:

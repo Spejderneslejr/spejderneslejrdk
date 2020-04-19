@@ -1,8 +1,27 @@
-label: Indhold
-description: 'Find og håndtér indhold.'
 display:
   default:
     display_options:
+      filters:
+        status:
+          group_info:
+            group_items:
+              1:
+                value: '1'
+                title: Udgivet
+              2:
+                title: 'Ikke udgivet'
+            label: Publiceringsstatus
+          expose:
+            label: Status
+        title:
+          expose:
+            label: Titel
+        type:
+          expose:
+            label: Indholdstype
+        langcode:
+          expose:
+            label: Sprog
       exposed_form:
         options:
           submit_button: Filter
@@ -27,31 +46,13 @@ display:
           label: Forfatter
         status:
           label: Status
+          settings:
+            format_custom_true: Udgivet
+            format_custom_false: 'Ikke udgivet'
         changed:
           label: Opdateret
         operations:
           label: Handlinger
-      filters:
-        status:
-          expose:
-            label: Status
-          group_info:
-            label: Publiceringsstatus
-            group_items:
-              1:
-                title: Udgivet
-                value: '1'
-              2:
-                title: 'Ikke udgivet'
-        type:
-          expose:
-            label: Indholdstype
-        title:
-          expose:
-            label: Titel
-        langcode:
-          expose:
-            label: Sprog
       title: Indhold
       empty:
         area_text_custom:
@@ -65,3 +66,5 @@ display:
         title: Indhold
         description: 'Find og håndtér indhold'
     display_title: Side
+label: Indhold
+description: 'Find og håndtér indhold.'

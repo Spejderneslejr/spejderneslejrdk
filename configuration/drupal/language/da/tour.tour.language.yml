@@ -2,8 +2,10 @@ label: Sprog
 tips:
   language-overview:
     label: Sprog
+    body: '<p>På siden "sprog" kan du tilføje, redigere, slette og sortere sitets sprog.</p>'
   language-add:
     label: 'Tilføjelse af sprog'
+    body: '<p>For at tilføje flere sprog til sitet skal du klikke på knappen "Tilføj sprog".</p><p>Tilføjede sprog vises på sproglisten og kan derefter redigeres eller slettes.</p>'
   language-reorder:
     label: 'Omorganisering af sprog'
   language-default:

@@ -32,6 +32,9 @@ display:
           label: Størrelse
         status:
           label: Status
+          settings:
+            format_custom_false: Midlertidig
+            format_custom_true: Permanent
         created:
           label: Upload-dato
         changed:

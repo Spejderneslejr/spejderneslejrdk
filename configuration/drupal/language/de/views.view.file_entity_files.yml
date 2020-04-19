@@ -1,3 +1,4 @@
+description: 'Dateien suchen und verwalten.'
 display:
   default:
     display_title: Master
@@ -17,8 +18,10 @@ display:
           expose:
             items_per_page_label: 'Elemente pro Seite'
             items_per_page_options_all_label: '- Alle -'
-            offset_label: Offset
+            offset_label: Versatz
       fields:
+        fid:
+          label: Fid
         filename:
           label: Name
         type:
@@ -33,7 +36,7 @@ display:
           label: Geändert
           separator: ', '
         created:
-          label: 'Erstellt am'
+          label: Erstellt
           separator: ', '
         count:
           label: 'Verwendet in'
@@ -57,10 +60,12 @@ display:
         area_text_custom:
           content: 'Keine Dateien verfügbar'
   overview:
+    display_title: Dateiübersicht
     display_options:
       menu:
         title: Dateien
   usage:
+    display_title: Dateinutzung
     display_options:
       pager:
         options:
@@ -70,17 +75,21 @@ display:
           expose:
             items_per_page_label: 'Elemente pro Seite'
             items_per_page_options_all_label: '- Alle -'
-            offset_label: Offset
+            offset_label: Versatz
       fields:
         entity_label:
           label: Entität
         type:
           label: Entitätstyp
+        module:
+          label: 'Registrierendes Modul'
         count:
           label: 'Anzahl der Verwendung'
+      title: Dateinutzung
       arguments:
         fid:
           exception:
             title: Alle
+          title: 'Dateiverwendungsinformationen für {{ arguments.fid }}'
       menu:
         title: Verwendung

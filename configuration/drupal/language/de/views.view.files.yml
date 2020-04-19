@@ -1,4 +1,5 @@
 label: Dateien
+description: 'Dateien suchen und verwalten.'
 display:
   default:
     display_title: Master
@@ -18,8 +19,10 @@ display:
           expose:
             items_per_page_label: 'Elemente pro Seite'
             items_per_page_options_all_label: '- Alle -'
-            offset_label: Offset
+            offset_label: Versatz
       fields:
+        fid:
+          label: Fid
         filename:
           label: Name
           separator: ', '
@@ -29,6 +32,9 @@ display:
           label: Größe
         status:
           label: Status
+          settings:
+            format_custom_false: Temporär
+            format_custom_true: Dauerhaft
         created:
           label: 'Upload Datum'
         changed:
@@ -50,10 +56,12 @@ display:
         area_text_custom:
           content: 'Keine Dateien verfügbar'
   page_1:
+    display_title: Dateiübersicht
     display_options:
       menu:
         title: Dateien
   page_2:
+    display_title: Dateinutzung
     display_options:
       pager:
         options:
@@ -63,16 +71,20 @@ display:
           expose:
             items_per_page_label: 'Elemente pro Seite'
             items_per_page_options_all_label: '- Alle -'
-            offset_label: Offset
+            offset_label: Versatz
       fields:
         entity_label:
           label: Entität
         type:
           label: Entitätstyp
+        module:
+          label: 'Registrierendes Modul'
         count:
           label: 'Anzahl der Verwendung'
           format_plural_string: !!binary MQNAY291bnQ=
+      title: Dateinutzung
       arguments:
         fid:
           exception:
             title: Alle
+          title: 'Dateiverwendungsinformationen für {{ arguments.fid }}'

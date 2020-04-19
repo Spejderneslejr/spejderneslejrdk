@@ -20,13 +20,13 @@ display:
           expose:
             items_per_page_label: 'Elemente pro Seite'
             items_per_page_options_all_label: '- Alle -'
-            offset_label: Offset
+            offset_label: Versatz
       fields:
         redirect_source__path:
           label: Von
           separator: ', '
         created:
-          label: 'Erstellt am'
+          label: Erstellt
       filters:
         redirect_source__path:
           expose:
@@ -35,7 +35,10 @@ display:
           expose:
             label: An
         status_code:
+          expose:
+            label: Statuscode
           group_info:
+            label: Statuscode
             group_items:
               1:
                 title: '300 Multiple Choices'

@@ -1,4 +1,5 @@
 label: 'Neue Mitglieder'
+description: 'Zeigt eine Liste der neuesten Benutzerkonten der Website.'
 display:
   default:
     display_title: Master
@@ -14,5 +15,6 @@ display:
   block_1:
     display_title: 'Neue Mitglieder'
     display_options:
+      display_description: 'A list of new users'
       block_description: 'Neue Mitglieder'
       block_category: Benutzer

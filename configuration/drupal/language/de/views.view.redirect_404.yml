@@ -1,3 +1,4 @@
+label: 'Redirect 404'
 display:
   default:
     display_title: Master
@@ -14,7 +15,7 @@ display:
           expose:
             items_per_page_label: 'Elemente pro Seite'
             items_per_page_options_all_label: '- Alle -'
-            offset_label: Offset
+            offset_label: Versatz
           tags:
             previous: ‹‹
             next: ››
@@ -36,5 +37,14 @@ display:
         langcode:
           expose:
             label: Sprache
+        resolved:
+          expose:
+            label: 'Konflikt aufgelöst'
+      title: '404-Seiten reparieren'
+      empty:
+        area_text_custom:
+          content: 'Es sind keine 404-Fehler zu beheben.'
   page_1:
     display_title: Seite
+    display_options:
+      display_description: 'Pfade mit 404-Fehlern auflisten, für die noch keine Umleitung besteht.'

@@ -1,9 +1,25 @@
-label: Personer
-description: 'Find og håndtér personer som bruger dit site.'
 display:
   default:
-    display_title: Master
     display_options:
+      filters:
+        status:
+          group_info:
+            group_items:
+              1:
+                value: '1'
+                title: Aktiv
+              2:
+                title: Blokeret
+            label: Status
+        combine:
+          expose:
+            label: 'Navn eller e-mail indeholder'
+        roles_target_id:
+          expose:
+            label: Rolle
+        permission:
+          expose:
+            label: Tilladelse
       exposed_form:
         options:
           submit_button: Filter
@@ -29,6 +45,9 @@ display:
           label: Brugernavn
         status:
           label: Status
+          settings:
+            format_custom_true: Aktiv
+            format_custom_false: Blokeret
         roles_target_id:
           label: Roller
         created:
@@ -39,30 +58,12 @@ display:
           label: Handlinger
         mail:
           separator: ', '
-      filters:
-        combine:
-          expose:
-            label: 'Navn eller e-mail indeholder'
-        roles_target_id:
-          expose:
-            label: Rolle
-        permission:
-          expose:
-            label: Tilladelse
-        status:
-          group_info:
-            label: Status
-            group_items:
-              1:
-                title: Aktiv
-                value: '1'
-              2:
-                title: Blokeret
       title: Personer
       empty:
         area_text_custom:
           content: 'Ingen personer til rådighed.'
       use_more_text: mere
+    display_title: Master
   page_1:
     display_title: Side
     display_options:
@@ -72,3 +73,5 @@ display:
       tab_options:
         title: Personer
         description: 'Håndtér brugerkonti, roller og tilladelser.'
+label: Personer
+description: 'Find og håndtér personer som bruger dit site.'

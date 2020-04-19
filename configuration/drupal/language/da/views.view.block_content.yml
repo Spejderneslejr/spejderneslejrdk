@@ -41,7 +41,7 @@ display:
       title: 'Brugerdefineret blokbibliotek'
       empty:
         area_text_custom:
-          content: 'Der er ingen brugerdefinerede blokke. '
+          content: 'Der er ingen tilpassede blokke tilgængeligt.'
   page_1:
     display_title: Side
     display_options:
