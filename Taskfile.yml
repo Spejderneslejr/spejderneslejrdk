@@ -1,0 +1,20 @@
+# https://taskfile.dev
+version: '2'
+
+tasks:
+  getdb:
+    desc: "Fetch database dump"
+    cmds:
+      - rm -fr docker/db/fetch
+      - mkdir -p docker/db/fetch
+      - platform db:dump -e {{.ENV}} --gzip -d docker/db/fetch
+      - rm -f docker/db/initdb.d/*.gz
+      - mv docker/db/fetch/* docker/db/initdb.d/
+      - rm -fr docker/db/fetch
+    vars:
+      ENV: '{{.ENV | default "master"}}'
+
+  reset:
+    desc: "Reset docker-environment and bring site back up"
+    cmds:
+      - scripts/docker-reset.sh
