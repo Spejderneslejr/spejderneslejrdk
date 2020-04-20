@@ -19,28 +19,32 @@
 
         var menuElements = $('.menu-level--0 .not-clickable > a');
 
-        // Make menu toggleable.
-        $(menuElements).click(function(event) {
-          // Only if not a phone.
-          if ($(window).width() > 768 && $(this).parent().index() <= 1) {
-            toggleSubMenu(event, $(this));
-          }
-        });
+        if (menuElements.length) {
+          // Make menu toggleable.
+          $(menuElements).click(function(event) {
+            // Only if not a phone.
+            if ($(window).width() > 768 && $(this).parent().index() <= 1) {
+              toggleSubMenu(event, $(this));
+            }
+          });
 
-        // Trigger click outside.
-        clickOutside(menuElements);
+          // Trigger click outside.
+          clickOutside(menuElements);
 
-        // ****************** //
-        // Menu toggle (mobile).
-        // ****************** //
-        $('.menu-toggle').click(function() {
+          // ****************** //
+          // Menu toggle (mobile).
+          // ****************** //
+          $('.menu-toggle').click(function() {
 
-          // Make sure the burger does its animation.
-          $(this).toggleClass('active');
+            // Make sure the burger does its animation.
+            $(this).toggleClass('active');
 
-          // Open main menu.
-          $('.menu--site-menu-danish, .menu--site-menu-german, .menu--site-menu-english').toggleClass('js-mobile-active');
-        });
+            // Open main menu.
+            $('.menu--site-menu-danish, .menu--site-menu-german, .menu--site-menu-english').toggleClass('js-mobile-active');
+          });
+        } else {
+          $('#menu-toggle').hide();
+        }
       }
 
       /**
@@ -106,7 +110,6 @@
        * Make the header sticky to top when not visible in window.
        */
       function stickyHeader() {
-
         var applied = false;
 
         // Inititalize sticky header dom element
@@ -114,6 +117,12 @@
 
         // First find header and clone it.
         var originalHeader = $('.page-header');
+
+        // Ensure we have a menu, if not, bail out.
+        if (!originalHeader.find('.menu--site-menu').length) {
+          return;
+        }
+
         var clonedHeader = originalHeader
           .clone()
           .addClass('main-nav-scrolled');
