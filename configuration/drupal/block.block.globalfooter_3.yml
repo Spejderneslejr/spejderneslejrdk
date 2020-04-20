@@ -22,10 +22,10 @@ settings:
     value: "<p>© 2016-2022 Spejdernes Lejr</p>\r\n"
     format: plain_text
   footer_column_2:
-    value: "<h5>Folgt mit beim Jamboree Dänemark 2022!</h5>\r\n\r\n<h6>Newsletter</h6>\r\n\r\n<p>Erfahrt alles Neue vom Jamboree Dänemark 2022! Alle wichtigen Auskünfte werden im Newsletter veröffentlicht – aufschlussreich für Pfadfinder, Pfadfinderinnen, Eltern, Leiter, Leiterinnen und alle anderen Interesssierten.</p>\r\n"
+    value: "<h5>Folgt mit beim Jamboree Dänemark 2022!</h5>\r\n"
     format: plain_text
   footer_column_3:
-    value: "<h6>SOZIALE MEDIEN</h6>\r\n\r\n<p>Folgt uns, sprecht mit uns, gebt uns ein \"Like\", teilt uns. Wir sind präsent auf allen soziale Medien. Unser offizielles Hashtag ist #SL2022.&nbsp;</p>\r\n<div class=\"social-holder\">\r\n  <a href=\"https://www.facebook.com/spejderneslejr\" class=\"link-social facebook white\"></a>\r\n  <a href=\"https://www.snapchat.com/add/spejderneslejr\" class=\"link-social snap white\"></a>\r\n  <a href=\"https://www.instagram.com/spejderneslejr/\" class=\"link-social insta white\"></a>\r\n  <a href=\"https://twitter.com/spejderneslejr\" class=\"link-social twitter white\"></a>\r\n  <a href=\"https://www.youtube.com/c/SpejderneslejrDk\" class=\"link-social youtube white\"></a>\r\n  <a href=\"https://www.linkedin.com/company/spejdernes-lejr\" class=\"link-social linked white\"></a>\r\n</div>"
+    value: "<h6>SOZIALE MEDIEN</h6>\r\n\r\n<p>Folgt uns, sprecht mit uns, gebt uns ein \"Like\", teilt uns. Wir sind präsent auf allen soziale Medien. Unser offizielles Hashtag ist #SL2022.&nbsp;</p>\r\n<div class=\"social-holder\">\r\n  <a href=\"https://www.facebook.com/spejderneslejr\" class=\"link-social facebook white\"></a>\r\n  <a href=\"https://www.instagram.com/spejderneslejr/\" class=\"link-social insta white\"></a>\r\n  <a href=\"https://twitter.com/spejderneslejr\" class=\"link-social twitter white\"></a>\r\n</div>"
     format: plain_text
   footer_column_4:
     value: "<h5>Kontakt</h5>\r\n\r\n<h6>Das Callcenter des Jamborees</h6>\r\n\r\n<p><a href=\"mailto:info@sl2022.dk\">info@sl2022.dk</a></p>"
