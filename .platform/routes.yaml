@@ -3,10 +3,24 @@
 # Each route describes how an incoming URL is going
 # to be processed by Platform.sh.
 
+# Default domain is spejderneslejr.dk
 "https://{default}/":
   type: upstream
   upstream: "drupal:http"
 
 "http://{default}/":
+  type: redirect
+  to: "https://{default}/"
+
+"https://sl2017.dk":
+  type: redirect
+  to: "https://{default}/"
+
+"https://sl2022.dk":
+  type: redirect
+  to: "https://{default}/"
+
+
+"https://spejderneslejr2017.dk":
   type: redirect
   to: "https://{default}/"
