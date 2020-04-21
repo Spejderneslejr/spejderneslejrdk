@@ -12,15 +12,3 @@
   type: redirect
   to: "https://{default}/"
 
-"https://sl2017.dk":
-  type: redirect
-  to: "https://{default}/"
-
-"https://sl2022.dk":
-  type: redirect
-  to: "https://{default}/"
-
-
-"https://spejderneslejr2017.dk":
-  type: redirect
-  to: "https://{default}/"
