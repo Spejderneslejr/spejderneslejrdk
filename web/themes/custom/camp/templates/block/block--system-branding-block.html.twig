@@ -15,6 +15,8 @@
 #}
 {% block content %}
   <div class="region--header__sonderborg">
+    <div class="region--header__sonderborg__image-wrapper">
+    </div>
   </div>
   <div class="region--header__logo">
     <a href="/{{ language_id }}" class="region--header__logo__image-wrapper">
@@ -23,7 +25,10 @@
     </a>
   </div>
   <div class="region--header__tasks">
-    </div>
+    <div class="date date--header">{{ event_info }}</div>
+    <div id="clock" class="clock"></div>
+  </div>
+
     <ul class="language-flags">
       <li>
         <a class="language-flag language-flag--dk{% if language_id == 'da' %} active{% endif %}" href="/da"></a>
