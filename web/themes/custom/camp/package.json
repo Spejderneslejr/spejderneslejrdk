@@ -6,6 +6,7 @@
     "start": "npm install && gulp"
   },
   "devDependencies": {
+    "eslint": "^6.6.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-jshint": "^2.0.1",
@@ -16,7 +17,6 @@
     "jshint-stylish": "^2.1.0",
     "node-bourbon": "^4.2.8",
     "node-neat": "^1.7.2",
-    "node-sass": "^3.4.2",
-    "eslint": "^6.6.0"
+    "node-sass": "^3.4.2"
   }
 }
