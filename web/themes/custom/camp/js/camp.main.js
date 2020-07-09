@@ -134,7 +134,7 @@
 
         // Apply the clountdown. We do it here to be sure it is not done
         // to the sticky menu, now that we have it multiple times in the DOM.
-        var deadline = new Date("July 22, 2017 08:00:00");
+        var deadline = new Date("July 22, 2022 08:00:00");
         originalHeader
           .find('#clock')
           .first()
