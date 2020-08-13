@@ -9,8 +9,10 @@ logo:
 favicon:
   use_default: 0
   path: themes/custom/camp/images/sl_fav.png
-  mimetype: image/gif
+  mimetype: image/png
 image_path: ''
 image_upload: ''
 default_teaser_image: ''
 default_teaser_image_path: ''
+countdown_enabled: '1'
+countdown_date: 'July 22, 2022 08:00:00'

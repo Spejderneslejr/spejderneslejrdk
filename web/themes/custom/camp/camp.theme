@@ -47,7 +47,9 @@ function camp_preprocess_block(&$variables) {
       $variables['logo'] = '/' . drupal_get_path('theme', 'camp') . '/svg/logo.svg';
       $variables['logo_alt'] = '/' . drupal_get_path('theme', 'camp') . '/svg/logo_alt.svg';
 
-      $variables['event_info'] = t('Hedeland 23.-31. juli 2020');
+      if (theme_get_setting('countdown_enabled', 'camp')) {
+        $variables['event_info'] = t('Hedeland 23.-31. juli 2020');
+      }
       break;
   }
 }
@@ -271,4 +273,7 @@ function camp_page_attachments_alter(array &$page) {
     ),
   );
   $page['#attached']['html_head'][] = [$viewport, 'viewport'];
+  $page['#attached']['drupalSettings']['countdownEnabled'] = theme_get_setting('countdown_enabled', 'camp');
+  $page['#attached']['drupalSettings']['countdownDate'] = theme_get_setting('countdown_date', 'camp');
+
 }

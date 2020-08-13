@@ -10,6 +10,7 @@ main:
   dependencies:
     - core/jquery
     - core/drupal
+    - core/drupalSettings
 
 mailchimp:
   version: '1.0'

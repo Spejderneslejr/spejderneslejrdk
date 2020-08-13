@@ -42,6 +42,36 @@ function camp_form_system_theme_settings_alter(&$form, FormStateInterface &$form
     ),
     '#element_validate' => array('camp_default_teaser_image_validate'),
   );
+
+  // Add a default-images section.
+  $form['countdown'] = array(
+    '#type' => 'details',
+    '#title' => t('Countdown clock'),
+    '#open' => TRUE,
+  );
+
+  $form['countdown']['countdown_enabled'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Show countdown'),
+    '#default_value' => theme_get_setting('countdown_enabled', 'camp'),
+  ];
+
+  // Settings for a default teaser-image.
+  $form['countdown']['settings'] = array(
+    '#type' => 'container',
+    '#states' => [
+      // Hide the favicon settings when using the default favicon.
+      'invisible' => [
+        'input[name="countdown_enabled"]' => ['checked' => FALSE],
+      ],
+    ],
+  );
+  $form['countdown']['settings']['countdown_date'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Javascript-parsable countdown date'),
+    '#default_value' => theme_get_setting('countdown_date', 'camp'),
+  );
+
 }
 
 /**

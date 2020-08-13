@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * @file
+ * Update functionality for Jamboree Denmark update.
+ */
+
+use Drupal\file\Entity\File;
+use Drupal\locale\SourceString;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Theme\ThemeSettings;
+

@@ -1,0 +1,6 @@
+name: Jamden Update
+description: Global update hooks, such as for translations.
+type: module
+package: 'Jamboree Denmark'
+core: 8.x
+core_version_requirement: ^8 || ^9
