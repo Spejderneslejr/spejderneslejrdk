@@ -14,5 +14,6 @@ image_path: ''
 image_upload: ''
 default_teaser_image: ''
 default_teaser_image_path: ''
-countdown_enabled: '1'
+countdown_enabled: 1
 countdown_date: 'July 22, 2022 08:00:00'
+countdown_date_text: 'Hedeland 23.-31. juli 2022'

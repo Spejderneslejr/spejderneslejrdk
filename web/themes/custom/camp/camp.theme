@@ -48,7 +48,7 @@ function camp_preprocess_block(&$variables) {
       $variables['logo_alt'] = '/' . drupal_get_path('theme', 'camp') . '/svg/logo_alt.svg';
 
       if (theme_get_setting('countdown_enabled', 'camp')) {
-        $variables['event_info'] = t('Hedeland 23.-31. juli 2020');
+        $variables['event_info'] = theme_get_setting('countdown_date_text', 'camp');
       }
       break;
   }

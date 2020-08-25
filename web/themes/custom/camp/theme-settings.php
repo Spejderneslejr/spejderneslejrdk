@@ -71,6 +71,11 @@ function camp_form_system_theme_settings_alter(&$form, FormStateInterface &$form
     '#title' => t('Javascript-parsable countdown date'),
     '#default_value' => theme_get_setting('countdown_date', 'camp'),
   );
+  $form['countdown']['settings']['countdown_date_text'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Text displayed over the countdown clock'),
+    '#default_value' => theme_get_setting('countdown_date_text', 'camp'),
+  );
 
 }
 
