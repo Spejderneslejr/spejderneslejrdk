@@ -157,8 +157,8 @@
     > a {
       &:before {
 
+        @include icon('.icon-arrow_down');
         @include media($desktop) {
-          @include icon('.icon-arrow_down');
           @include transform(rotate(0deg));
           @include transition(all 300ms ease-out);
           float: right;
@@ -252,7 +252,7 @@
     // Add search icon to link number 4
     // in the main menu. This is off course an
     // assumption.
-    @include media($desktop) {
+    //@include media($desktop) {
       > li:nth-child(4) {
         > a {
           &:before {
@@ -266,7 +266,7 @@
           }
         }
       }
-    }
+    //}
 
     // Reset the search icon on phone.
     @include media($tablet-p) {

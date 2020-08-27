@@ -3,20 +3,20 @@
   "version": "1.0.0",
   "description": "Spejdernes lejr 2017 theme",
   "scripts": {
-    "start": "npm install && gulp"
+    "start": "yarn install && gulp"
   },
   "devDependencies": {
-    "eslint": "^6.6.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
+    "eslint": "^7.7.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
     "gulp-jshint": "^2.0.1",
-    "gulp-notify": "^2.2.0",
-    "gulp-sass": "^2.2.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "jshint": "^2.9.2",
+    "gulp-notify": "^3.2.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "jshint": "^2.12.0",
     "jshint-stylish": "^2.1.0",
     "node-bourbon": "^4.2.8",
     "node-neat": "^1.7.2",
-    "node-sass": "^3.4.2"
+    "node-sass": "^4.14.1"
   }
 }

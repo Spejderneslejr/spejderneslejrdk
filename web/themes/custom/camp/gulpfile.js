@@ -7,13 +7,14 @@ var sass = require('gulp-sass');
 var jshint = require('gulp-jshint');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
+var bourbon = require('bourbon').includePaths;
 
 // Sass.
-gulp.task('sass', function () {
+function sassCompile() {
   return gulp.src('./sass/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({
-      includePaths: require('node-neat').includePaths,
+      includePaths: [bourbon, 'node_modules/bourbon-neat/app/assets/stylesheets', 'node_modules/neat-omega/core'],
       outputStyle: 'expanded'
     }).on('error', notify.onError(function (error) {
       return 'SASS error: ' + error.message;
@@ -24,24 +25,27 @@ gulp.task('sass', function () {
     }))
     .pipe(sourcemaps.write('sourcemaps'))
     .pipe(gulp.dest('./css'));
-});
+}
 
 // Sass watch.
-gulp.task('sass:watch', function () {
-  gulp.watch('./sass/**/*.scss', ['sass']);
-});
+function sassWatch() {
+  gulp.watch('./sass/**/*.scss', sassCompile);
+}
 
 // JsHint.
-gulp.task('jshint', function() {
+function jshintCheck ()  {
   return gulp.src(['gulpfile.js', './js/*.js'])
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
-});
+}
 
 // JsHint watch.
-gulp.task('jshint:watch', function () {
-  gulp.watch(['gulpfile.js', './js/*.js'], ['jshint']);
-});
+function jshintWatch () {
+  gulp.watch(['gulpfile.js', './js/*.js'], jshint);
+}
 
 // Register workers.
-gulp.task('default', ['jshint', 'sass', 'jshint:watch', 'sass:watch']);
+var defaultTasks =  gulp.parallel (jshintCheck, sassCompile, jshintWatch, sassWatch);
+
+exports.sass = sassCompile;
+exports.default = defaultTasks;

@@ -56,8 +56,6 @@ services:
       VIRTUAL_HOST: mail.ddsdk.docker
 
 volumes:
-  # NPM cache that survives docker-reset.sh
-  cache:
   db-datadir:
   webroot:
     driver: local

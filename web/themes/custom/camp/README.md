@@ -2,6 +2,6 @@
 
 ## Requirements
 ```
-brew install npm
-npm install --global gulp-cli
+brew install yarn
+yarn global add gulp-cli
 ```

@@ -26,12 +26,12 @@
 		var isValid = false;
 		var $fields = $('input:not(:hidden)' , $(element).closest(grouping_class));
 		if ($fields.filter(':filled').length == 0 && this.optional(element)) {
-			isValid = true; // None have been filled out, so no error	
+			isValid = true; // None have been filled out, so no error
 		} else {
 			var dateArray = new Array();
 			dateArray['month'] = $fields.filter("input[name*='[month]']").val();
 			dateArray['day'] = $fields.filter("input[name*='[day]']").val();
-		      
+
 	        // correct month value
 	        dateArray['month'] = dateArray['month'] - 1;
 
@@ -49,13 +49,13 @@
 		var isValid = false;
 		var $fields = $('input:not(:hidden)' , $(element).closest(grouping_class));
 		if ($fields.filter(':filled').length == 0 && this.optional(element)) {
-			isValid = true; // None have been filled out, so no error	
+			isValid = true; // None have been filled out, so no error
 		} else {
 			var dateArray = new Array();
 			dateArray['month'] = $fields.filter("input[name*='[month]']").val();
 			dateArray['day'] = $fields.filter("input[name*='[day]']").val();
 			dateArray['year'] = $fields.filter("input[name*='[year]']").val();
-		      
+
 	        // correct month value
 	        dateArray['month'] = dateArray['month'] - 1;
 
@@ -79,7 +79,7 @@
 		var isValid = false;
 		var $fields = $('input:filled:not(:hidden)' , $(element).closest(grouping_class));
 		if ($fields.length == 0 && this.optional(element)) {
-			isValid = true; // None have been filled out, so no error	
+			isValid = true; // None have been filled out, so no error
 		} else {
 			phone_number = $fields.eq(0).val() + $fields.eq(1).val() + $fields.eq(2).val();
 			isValid = phone_number.length == 10 && phone_number.match(/[0-9]{9}/);
@@ -193,7 +193,7 @@
 		/**
 		 *	Classify text inputs in the same field group as group for validation purposes.
 		 *	All this does is tell jQueryValidation to create one error div for the group, rather
-		 *	than one for each input. Primary use case is birthday and date fields, where we want 
+		 *	than one for each input. Primary use case is birthday and date fields, where we want
 		 *	to display errors about the inputs collectively, not individually.
 		 *
 		 *	NOTE: Grouping inputs will give you one error div, but you still need to specify where
@@ -201,7 +201,7 @@
 		 *	validation error, which can break up a set of inputs. Use the errorPlacement setting in
 		 *	the validator to control error div placement.
 		 */
-		getGroups: function (){ 
+		getGroups: function (){
 			var groups = {};
 			$(".mc-field-group").each(function(index) {
 				var inputs = $(this).find("input:text:not(:hidden)");
@@ -223,7 +223,7 @@
 			return ($('input:not(:hidden)' , $(element).closest(".mc-field-group")).length > 1);
 		},
 		/**
-		 *	Checks if the element is the last input in its fieldgroup. 
+		 *	Checks if the element is the last input in its fieldgroup.
 		 *	If the field is not the last in a set of inputs we don't want to validate it on certain events (onfocusout, onblur)
 		 *	because the user might not be finished yet.
 		 */
@@ -252,11 +252,11 @@
 		    // If the form has errors, display them, inline if possible, or appended to #mce-error-response
 		    } else {
 
-				// Example errors - Note: You only get one back at a time even if you submit several that are bad. 
+				// Example errors - Note: You only get one back at a time even if you submit several that are bad.
 				// Error structure - number indicates the index of the merge field that was invalid, then details
-				// Object {result: "error", msg: "6 - Please enter the date"} 
-				// Object {result: "error", msg: "4 - Please enter a value"} 
-				// Object {result: "error", msg: "9 - Please enter a complete address"} 
+				// Object {result: "error", msg: "6 - Please enter the date"}
+				// Object {result: "error", msg: "4 - Please enter a value"}
+				// Object {result: "error", msg: "9 - Please enter a complete address"}
 
 				// Try to parse the error into a field index and a message.
 				// On failure, just put the dump thing into in the msg variable.
@@ -286,7 +286,7 @@
 		        	// Just lump the error message into the generic response div.
 		            if (index == -1){
 		                $('#mce-'+resp.result+'-response').show();
-		                $('#mce-'+resp.result+'-response').html(msg);      
+		                $('#mce-'+resp.result+'-response').html(msg);
 
 		            } else {
 		                var fieldName = $("input[name*='"+fnames[index]+"']").attr('name'); // Make sure this exists (they haven't deleted the fnames array lookup)
@@ -305,26 +305,26 @@
 	window.mc.mce_validator = $("#mc-embedded-subscribe-form").validate({
 
 		// Set error HTML: <div class="mce_inline_error"></div>
-		errorClass: "mce_inline_error", 
-  		errorElement: "div", 
-		
-  		// Validate fields on keyup, focusout and blur. 
+		errorClass: "mce_inline_error",
+  		errorElement: "div",
+
+  		// Validate fields on keyup, focusout and blur.
 		onkeyup: false,
-		onfocusout: function(element) { 
+		onfocusout: function(element) {
 			if (!mc.isTooEarly(element)) {
 				$(element).valid();
 			}
 		},
-		onblur: function(element) { 
+		onblur: function(element) {
 			if (!mc.isTooEarly(element)) {
 				$(element).valid();
 			}
 		},
 		// Grouping fields makes jQuery Validation display one error for all the fields in the group
-		// It doesn't have anything to do with how the fields are validated (together or separately), 
+		// It doesn't have anything to do with how the fields are validated (together or separately),
 		// it's strictly for visual display of errors
 		groups: mc.getGroups(),
-		// Place a field's inline error HTML just before the div.mc-field-group closing tag 
+		// Place a field's inline error HTML just before the div.mc-field-group closing tag
 		errorPlacement: function(error, element) {
 			element.closest('.mc-field-group').append(error);
       	},
@@ -334,10 +334,10 @@
 		}
  	});
 
- 	window.mc.ajaxOptions = { 
-		url: mc.getAjaxSubmitUrl(), 
-		type: 'GET', 
-		dataType: 'json', 
+ 	window.mc.ajaxOptions = {
+		url: mc.getAjaxSubmitUrl(),
+		type: 'GET',
+		dataType: 'json',
 		contentType: "application/json; charset=utf-8",
 		success: mc.mce_success_cb
 	};
@@ -348,8 +348,8 @@
 	$.validator.addClassRules("phonepart", { digits: true, mc_phone: ".phonefield" });
 
 	// Evil Popup
-	$('#mc_embed_signup a.mc_embed_close').click(function(){ 
-		mc.closePopup(); 
+	$('#mc_embed_signup a.mc_embed_close').click(function(){
+		mc.closePopup();
 	});
 	$(document).keydown(function(e){
         keycode = (e == null) ? event.keyCode : e.which;

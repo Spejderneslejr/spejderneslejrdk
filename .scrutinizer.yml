@@ -13,7 +13,7 @@ build:
     redis: false
   dependencies:
     after:
-      - 'cd web/themes/custom/camp/ && npm install && cd -'
+      - 'cd web/themes/custom/camp/ && yarn install && cd -'
   tests:
     override:
       -

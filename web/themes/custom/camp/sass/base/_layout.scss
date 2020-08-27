@@ -36,7 +36,8 @@
 
   // Make sure everything without a defined width goes full width unless
   // it's a .paragraph--type--text.
-  &:not(.paragraph--type--text):not('.path-frontpath .span-default') {
+  &:not(.paragraph--type--text):not(.path-frontpath .span-default) {
+
     @include span-columns(12);
     float: none;
     display: inline-block;
