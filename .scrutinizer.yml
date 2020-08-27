@@ -7,7 +7,7 @@ checks:
 build:
   environment:
     php: '7.2'
-    node: 'v14.2.0'
+    node: 'v14.0.0'
     # Disable default dependencies - we where getting postgresql and redis.
     postgresql: false
     redis: false
