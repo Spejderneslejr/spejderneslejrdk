@@ -18,11 +18,6 @@ build:
   tests:
     override:
       -
-        command: 'composer phpunit-custom-clover'
-        coverage:
-          file: 'tests/reports/clover.xml'
-          format: 'php-clover'
-      -
         command: 'web/themes/custom/camp/node_modules/.bin/eslint --config web/themes/custom/camp/.eslintrc --ignore-path web/themes/custom/camp/.eslintignore --format checkstyle --output-file eslint-data web/modules/custom web/themes/custom/camp/'
         analysis:
             file: 'eslint-data'
