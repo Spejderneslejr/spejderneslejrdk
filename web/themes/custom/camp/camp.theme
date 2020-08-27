@@ -41,7 +41,7 @@ function camp_preprocess_block(&$variables) {
   switch ($variables['base_plugin_id']) {
     case 'system_branding_block':
       // Camp logo.
-      $variables['sonderborg_logo'] = '/' . drupal_get_path('theme', 'camp') . '/images/sonderborg_logo.png';
+      $variables['host_logo'] = '/' . drupal_get_path('theme', 'camp') . '/images/host_logo.png';
 
       // Site logo.
       $variables['logo'] = '/' . drupal_get_path('theme', 'camp') . '/svg/logo.svg';
