@@ -41,14 +41,14 @@
 
 .paragraph--type--infomercial {
   display: flex;
-  .min-height {
+  &.min-height {
     min-height: em(800, $base-font-size);
   }
   padding-right: 10%;
   padding-left: 10%;
 
   @include media($tablet-l) {
-    .min-height {
+    &.min-height {
       min-height: em(600, $base-font-size);
     }
 

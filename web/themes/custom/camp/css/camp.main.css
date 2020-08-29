@@ -2561,7 +2561,7 @@ ul.atcb-list li {
   background-size: auto, cover;
 }
 
-.paragraph--type--infomercial .min-height {
+.paragraph--type--infomercial.min-height {
   min-height: 57.14286em;
 }
 
@@ -2571,7 +2571,7 @@ ul.atcb-list li {
     padding-left: 3%;
     background-position: 0px 0px, 50% 50%;
   }
-  .paragraph--type--infomercial .min-height {
+  .paragraph--type--infomercial.min-height {
     min-height: 42.85714em;
   }
 }
