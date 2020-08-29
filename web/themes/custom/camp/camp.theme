@@ -125,6 +125,11 @@ function camp_preprocess_paragraph(&$variables) {
         $variables['field_infomercial_background_image_uri'] = camp_url_to_protocol_relative($image_url);
       }
 
+      $variables['min_height'] = true;
+      if ($paragraph->field_height_hint && $paragraph->field_height_hint->value === 'contracted') {
+        $variables['min_height'] = false;
+      };
+
       break;
   }
 }

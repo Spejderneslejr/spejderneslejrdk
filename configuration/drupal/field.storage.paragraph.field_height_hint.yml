@@ -1,0 +1,27 @@
+uuid: 8097ded3-0a02-474d-9066-181d078fbaa6
+langcode: da
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_height_hint
+field_name: field_height_hint
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: high
+      label: High
+    -
+      value: contracted
+      label: Contracted
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

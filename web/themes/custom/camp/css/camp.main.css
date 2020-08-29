@@ -2534,7 +2534,6 @@ ul.atcb-list li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  min-height: 57.14286em;
   padding-right: 10%;
   padding-left: 10%;
   -webkit-box-orient: vertical;
@@ -2562,12 +2561,18 @@ ul.atcb-list li {
   background-size: auto, cover;
 }
 
+.paragraph--type--infomercial .min-height {
+  min-height: 57.14286em;
+}
+
 @media screen and (max-width: 1024px) {
   .paragraph--type--infomercial {
-    min-height: 42.85714em;
     padding-right: 3%;
     padding-left: 3%;
     background-position: 0px 0px, 50% 50%;
+  }
+  .paragraph--type--infomercial .min-height {
+    min-height: 42.85714em;
   }
 }
 

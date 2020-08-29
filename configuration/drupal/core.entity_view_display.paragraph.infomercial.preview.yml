@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.infomercial.field_height_hint
     - field.field.paragraph.infomercial.field_infomercial_bg_image
     - field.field.paragraph.infomercial.field_infomercial_body
     - field.field.paragraph.infomercial.field_infomercial_call_to_action
@@ -14,13 +15,21 @@ dependencies:
     - advanced_text_formatter
     - image
     - link
+    - options
 id: paragraph.infomercial.preview
 targetEntityType: paragraph
 bundle: infomercial
 mode: preview
 content:
+  field_height_hint:
+    type: list_default
+    weight: 2
+    region: content
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
   field_infomercial_bg_image:
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       image_style: medium
@@ -59,7 +68,7 @@ content:
     type: advanced_text
     region: content
   field_infomercial_call_to_action:
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       trim_length: 80

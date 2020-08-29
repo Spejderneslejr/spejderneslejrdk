@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.infomercial.field_height_hint
     - field.field.paragraph.infomercial.field_infomercial_bg_image
     - field.field.paragraph.infomercial.field_infomercial_body
     - field.field.paragraph.infomercial.field_infomercial_call_to_action
@@ -17,8 +18,14 @@ targetEntityType: paragraph
 bundle: infomercial
 mode: default
 content:
+  field_height_hint:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_infomercial_bg_image:
-    weight: 3
+    weight: 4
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -34,7 +41,7 @@ content:
     type: string_textarea
     region: content
   field_infomercial_call_to_action:
-    weight: 2
+    weight: 3
     settings:
       placeholder_url: ''
       placeholder_title: ''

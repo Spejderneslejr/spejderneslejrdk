@@ -1,0 +1,23 @@
+uuid: 4edca2c6-7284-499a-87cb-9e5d8339fe4b
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_height_hint
+    - paragraphs.paragraphs_type.infomercial
+  module:
+    - options
+id: paragraph.infomercial.field_height_hint
+field_name: field_height_hint
+entity_type: paragraph
+bundle: infomercial
+label: 'Height hint'
+description: 'Whether to render the informercial at a minimum hight, or to contract the hight to fit the contents.'
+required: false
+translatable: false
+default_value:
+  -
+    value: high
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.infomercial.field_height_hint
     - field.field.paragraph.infomercial.field_infomercial_bg_image
     - field.field.paragraph.infomercial.field_infomercial_body
     - field.field.paragraph.infomercial.field_infomercial_call_to_action
@@ -12,11 +13,19 @@ dependencies:
   module:
     - image
     - link
+    - options
 id: paragraph.infomercial.default
 targetEntityType: paragraph
 bundle: infomercial
 mode: default
 content:
+  field_height_hint:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
   field_infomercial_bg_image:
     weight: 3
     label: hidden
