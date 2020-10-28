@@ -264,6 +264,9 @@ function camp_preprocess_views_view(&$variables) {
   // This is necessary as we're not outputting the title via a block-layout as
   // core expects.
   if (in_array($view->id(), ['news'])) {
+    if (!$variables['title']) {
+      $variables['title'] = [];
+    }
     $variables['title']['#markup'] = '<h1>' . $view->getTitle() . '</h1>';
   }
 }
