@@ -19,7 +19,7 @@ settings:
   provider: jamden_base
   label_display: '0'
   footer_column_1:
-    value: "<p>© 2016-2022 Spejdernes Lejr&nbsp;</p>\r\n\r\n<p>CVR. Nr. 34434034</p>\r\n"
+    value: "<p>© 2016-2022 Spejdernes Lejr&nbsp;</p>\r\n\r\n<p>CVR. Nr. 33690053</p>\r\n"
     format: plain_text
   footer_column_2:
     value: "<h5>Følg med i SL2022</h5>\r\n"
@@ -28,7 +28,7 @@ settings:
     value: "<h6>SOCIALE MEDIER</h6>\r\n\r\n<p>Følg os, snak med os, like os, del os. Vi er på alle de her kanaler! Vores officielle hashtag er #SL2022.</p>\r\n\r\n<div class=\"social-holder\">\r\n  <a href=\"https://www.facebook.com/spejderneslejr\" class=\"link-social facebook white\"></a>\r\n  <a href=\"https://www.instagram.com/spejderneslejr/\" class=\"link-social insta white\"></a>\r\n  <a href=\"https://linkedin.com/spejderneslejr\" class=\"link-social linked white\"></a>\r\n<a href=\"https://twitter.com/spejderneslejr\" class=\"link-social linkdin white\"></a>\r\n</div>\r\n"
     format: plain_text
   footer_column_4:
-    value: "<h5>Kontakt</h5>\r\n\r\n<h6>Sekretariat</h6>\r\n\r\n<p>Tlf: 8188 4791<p>\r\n<p><a href=\"mailto:sekretariatet@sl2022.dk\">sekretariatet@sl2022.dk</a></p>\r\n\r\n<h6>Lejrens callcenter</h6>\r\n\r\n<p><a href=\"mailto:info@sl2022.dk\">info@sl2022.dk</a></p>\r\n"
+    value: "<h5>Kontakt</h5>\r\n\r\n<h6>Sekretariat</h6>\r\n\r\n<p>Tlf: 8188 4791<p>\r\n\r\n<h6>Lejrens callcenter</h6>\r\n\r\n<p><a href=\"mailto:info@sl2022.dk\">info@sl2022.dk</a></p>\r\n"
     format: plain_text
 visibility:
   language:
