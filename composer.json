@@ -16,9 +16,8 @@
         }
     ],
     "require": {
-        "composer/installers": "^1.0.20",
-        "cweagans/composer-patches": "~1.0",
-        "drupal-composer/drupal-scaffold": "^2.0.1",
+        "composer/installers": "^1.9",
+        "cweagans/composer-patches": "^1.7",
         "drupal/core": "^8.6.0",
         "drupal/paragraphs": "1.11.0",
         "drush/drush": "~8.1",
@@ -62,13 +61,16 @@
         ]
     },
     "scripts": {
-        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+        "pre-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "pre-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
         "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::buildScaffold",
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
         ],
         "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::buildScaffold",
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
         ],
         "phpcs": "vendor/bin/phpcs --standard=vendor/drupal/coder/coder_sniffer/Drupal/ruleset.xml --extensions='php,module,inc,install,test,profile,theme,js,css,info,txt' web/modules/custom",
@@ -87,10 +89,12 @@
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/contrib/{$name}": ["type:drupal-drush"]
         },
-        "patches": {
-            "drupal/core": {
-                "2408549: Notify about overridden configuration": "https://www.drupal.org/files/issues/2408549-106.patch"
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "web/"
             }
+        },
+        "patches": {
         }
     }
 }

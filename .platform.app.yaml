@@ -5,7 +5,7 @@
 name: 'drupal'
 
 # The runtime the application uses.
-type: "php:7.3"
+type: "php:7.4"
 
 # Configuration of the build of this application.
 build:
@@ -18,8 +18,7 @@ variables:
 # The build-time dependencies of the app.
 dependencies:
   php:
-    "drush/drush": "^9.0"
-    "drupal/console": "@stable"
+    "composer/composer": "^2.0"
   nodejs:
     "gulp-cli": "latest"
 
@@ -96,11 +95,11 @@ hooks:
   # We run deploy hook after your application has been deployed and started.
   deploy: |
     cd "$PLATFORM_DOCUMENT_ROOT"
-    drush --yes updatedb
-    drush --yes config:import
-    drush locale-check
-    drush locale-update
-    drush --yes cache:rebuild
+    $PLATFORM_APP_DIR/vendor/bin/drush --yes updatedb
+    $PLATFORM_APP_DIR/vendor/bin/drush --yes config:import
+    $PLATFORM_APP_DIR/vendor/bin/drush locale-check
+    $PLATFORM_APP_DIR/vendor/bin/drush locale-update
+    $PLATFORM_APP_DIR/vendor/bin/drush --yes cache:rebuild
 
 # The configuration of scheduled execution.
 crons:
@@ -108,7 +107,7 @@ crons:
     spec: "*/5 * * * *"
     cmd: |
       cd "$PLATFORM_DOCUMENT_ROOT"
-      drush core:cron --uri=$(platform route:get --primary --property=url)
+      $PLATFORM_APP_DIR/vendor/bin/drush core:cron --uri=$(platform route:get --primary --property=url)
   snapshot:
     spec: '15 0 * * *'
     cmd: |
