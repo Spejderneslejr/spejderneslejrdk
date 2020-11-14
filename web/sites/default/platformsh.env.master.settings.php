@@ -1,4 +1,5 @@
 <?php
-# Google analytics overrides
-$config['google_analytics.settings']['account'] = 'UA-79955027-5';
+// Tagmanager override.
+$config['google_tag.container.production']['status'] = false;
+
 
