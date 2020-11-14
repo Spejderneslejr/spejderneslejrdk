@@ -54,3 +54,6 @@ $settings['rebuild_access'] = TRUE;
 
 // Set up stage file proxy.
 $config['stage_file_proxy.settings']['origin'] = 'http://spejderneslejr.dk/';
+
+// Disable the production tag-manager container in development.
+$config['google_tag.container.production']['status'] = false;
