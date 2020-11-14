@@ -38,7 +38,8 @@
         "drupal/redirect": "~1.0",
         "drupal/field_collection": "~1.0",
         "drupal/editor_advanced_link": "~1.0",
-        "drupal/exif": "^1.0"
+        "drupal/exif": "^1.0",
+        "drupal/google_tag": "^1"
     },
     "require-dev": {
         "behat/mink": "~1.6",
