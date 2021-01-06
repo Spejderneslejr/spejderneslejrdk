@@ -38,7 +38,7 @@
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token|raw }}">
     <script type="text/javascript" async src="https://cse.google.com/cse.js?cx=009398517490841201049:dfs1pn8rmoy"></script>
-    {% include directory ~ '/templates/components/cookiebot-header.twig' %}
+
 
     <js-placeholder token="{{ placeholder_token|raw }}">
   </head>
@@ -53,7 +53,6 @@
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
-    {% include directory ~ '/templates/components/cookiebot-declaration.twig' %}
     <js-bottom-placeholder token="{{ placeholder_token|raw }}">
 
   </body>
