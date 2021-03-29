@@ -11,7 +11,8 @@ echoc () {
 
 # Hostname to send a request to to warm up the cache-cleared site.
 HOST="localhost"
-WEB_CONTAINER="web"
+WEB_SERVICE="web"
+PHP_SERVICE="php"
 
 # Preemptive sudo lease - to let you go out and grab a coffee while the script
 # runs.
@@ -30,5 +31,7 @@ echoc "*** Resetting Drupal"
 "${SCRIPT_DIR}/site-reset.sh"
 
 echoc "*** Warming cache by doing an initial request"
-docker-compose exec ${WEB_CONTAINER} curl --silent --output /dev/null -H "Host: ${HOST}" localhost
+docker-compose exec ${WEB_SERVICE} curl --silent --output /dev/null -H "Host: ${HOST}" localhost
 
+echoc "*** Access the site via http://spejderneslejr.docker (or http://localhost:$(docker-compose port web 80 | cut -d ":" -f2) if you don't have a development proxy)"
+echoc "*** Access the site as user 1 via $(docker-compose exec ${PHP_SERVICE} drush -l spejderneslejr.docker uli)"

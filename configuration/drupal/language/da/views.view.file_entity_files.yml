@@ -5,7 +5,7 @@ display:
     display_options:
       exposed_form:
         options:
-          submit_button: Filter
+          submit_button: Udfør
           reset_button_label: Gendan
           exposed_sorts_label: 'Sortér efter'
           sort_asc_label: Stigende

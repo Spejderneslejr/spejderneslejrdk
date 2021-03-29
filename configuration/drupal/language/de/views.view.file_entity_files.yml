@@ -5,7 +5,7 @@ display:
     display_options:
       exposed_form:
         options:
-          submit_button: Filter
+          submit_button: Anwenden
           reset_button_label: Zurücksetzen
           exposed_sorts_label: 'Sortieren nach'
           sort_asc_label: Aufsteigend
@@ -20,6 +20,8 @@ display:
             items_per_page_options_all_label: '- Alle -'
             offset_label: Versatz
       fields:
+        bulk_form:
+          action_title: Handling
         fid:
           label: Fid
         filename:
@@ -40,6 +42,7 @@ display:
           separator: ', '
         count:
           label: 'Verwendet in'
+          format_plural_string: !!binary MSBzdGVkA0Bjb3VudCBzdGVkZXI=
         operations:
           label: Operationen
       filters:
@@ -85,6 +88,7 @@ display:
           label: 'Registrierendes Modul'
         count:
           label: 'Anzahl der Verwendung'
+          format_plural_string: !!binary MSBzdGVkA0Bjb3VudCBzdGVkZXI=
       title: Dateinutzung
       arguments:
         fid:

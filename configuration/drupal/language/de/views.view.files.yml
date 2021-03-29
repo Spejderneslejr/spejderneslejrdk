@@ -6,7 +6,7 @@ display:
     display_options:
       exposed_form:
         options:
-          submit_button: Filter
+          submit_button: Anwenden
           reset_button_label: Zurücksetzen
           exposed_sorts_label: 'Sortieren nach'
           sort_asc_label: Aufsteigend
@@ -41,6 +41,7 @@ display:
           label: 'Datum geändert'
         count:
           label: 'Verwendet in'
+          format_plural_string: !!binary MSBzdGVkA0Bjb3VudCBzdGVkZXI=
       filters:
         filename:
           expose:

@@ -48,6 +48,11 @@ services:
     volumes:
      - './docker/db/initdb.d/:/docker-entrypoint-initdb.d'
 
+  redis:
+    image: redis:5.0
+    ports:
+      - "6379"
+
   mailhog:
     image: mailhog/mailhog
     ports:

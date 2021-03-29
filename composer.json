@@ -1,104 +1,116 @@
 {
-    "name": "drupal-composer/drupal-project",
-    "description": "Project template for Drupal 8 projects with composer",
-    "type": "project",
-    "license": "GPL-2.0+",
-    "authors": [
-        {
-            "name": "",
-            "role": ""
-        }
-    ],
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://packages.drupal.org/8"
-        }
-    ],
-    "require": {
-        "composer/installers": "^1.9",
-        "cweagans/composer-patches": "^1.7",
-        "drupal/core": "^8.6.0",
-        "drupal/paragraphs": "1.11.0",
-        "drush/drush": "~8.1",
-        "drupal/purge": "~3.0",
-        "drupal/purge_purger_http": "~1.0",
-        "drupal/file_entity": "~2.0",
-        "drupal/admin_toolbar": "~1.0",
-        "drupal/video_embed_field": "~1.0",
-        "drupal/stage_file_proxy": "~1.0",
-        "drupal/juicebox": "~2.0",
-        "drupal/inline_entity_form": "~1.0",
-        "drupal/node_view_permissions": "~1.0",
-        "drupal/entity_browser": "~1.0",
-        "drupal/google_analytics": "~2.0",
-        "drupal/entityqueue": "~1.0",
-        "drupal/advanced_text_formatter": "~1.0",
-        "drupal/pathauto": "~1.0",
-        "drupal/redirect": "~1.0",
-        "drupal/field_collection": "~1.0",
-        "drupal/editor_advanced_link": "~1.0",
-        "drupal/exif": "^1.0",
-        "drupal/google_tag": "^1"
-    },
-    "require-dev": {
-        "behat/mink": "~1.6",
-        "behat/mink-goutte-driver": "~1.2",
-        "jcalderonzumba/gastonjs": "^1.1@dev",
-        "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
-        "mikey179/vfsstream": "~1.2",
-        "phpunit/phpunit": "~4.8",
-        "symfony/css-selector": "2.7.*",
-        "drupal/coder": "^8.2"
-    },
-    "conflict": {
-        "drupal/drupal": "*"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "autoload": {
-        "classmap": [
-            "scripts/composer/ScriptHandler.php"
-        ]
-    },
-    "scripts": {
-        "pre-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "pre-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "phpcs": "vendor/bin/phpcs --standard=vendor/drupal/coder/coder_sniffer/Drupal/ruleset.xml --extensions='php,module,inc,install,test,profile,theme,js,css,info,txt' web/modules/custom",
-        "phpcs-checkstyle": "vendor/bin/phpcs --standard=vendor/drupal/coder/coder_sniffer/Drupal/ruleset.xml --extensions='php,module,inc,install,test,profile,theme,js,css,info,txt' web/modules/custom --report=checkstyle --report-file=tests/reports/phpcs-checkstyle.xml",
-        "drupal-db-dump": [
-            "docker-compose run --rm --entrypoint /bin/bash drush -c \"drush site-install standard --locale=en --site-name='Spejdernes lejr 2017' --site-mail='info@example.com' --account-name='admin' --account-pass='admin' --account-mail='admin@example.com' -y && drush config-set 'system.site' uuid '612cb743-f9d0-4819-b2bd-f394154a885b' -y && drush sql-dump --result-file='/var/www/web/db.sql' --structure-tables-list='cache_*,semaphore,sessions,watchdog' --ordered-dump\"",
-            "mv web/db.sql docker/db/initdb.d/100-db.sql"
-        ],
-        "phpunit-custom-clover": "vendor/bin/phpunit -c tests/phpunit.xml.dist --testsuite unit --log-junit tests/reports/phpunit-custom.xml --coverage-clover=tests/reports/clover.xml"
-    },
-    "extra": {
-        "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/contrib/{$name}": ["type:drupal-drush"]
-        },
-        "drupal-scaffold": {
-            "locations": {
-                "web-root": "web/"
-            }
-        },
-        "patches": {
-            "drupal/core": {
-               "2408549: Notify about overridden configuration": "https://www.drupal.org/files/issues/2020-09-17/2408549-139.patch"
-             }
-        }
+  "name": "drupal-composer/drupal-project",
+  "description": "Project template for Drupal 8 projects with composer",
+  "type": "project",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "",
+      "role": ""
     }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    }
+  ],
+  "require": {
+    "composer/installers": "^1.9",
+    "cweagans/composer-patches": "^1.7",
+    "drupal/core": "^8.6.0",
+    "drupal/paragraphs": "1.11.0",
+    "drush/drush": "^10",
+    "drupal/purge": "~3.0",
+    "drupal/purge_purger_http": "~1.0",
+    "drupal/file_entity": "~2.0",
+    "drupal/admin_toolbar": "~1.0",
+    "drupal/video_embed_field": "~1.0",
+    "drupal/stage_file_proxy": "~1.0",
+    "drupal/juicebox": "~2.0",
+    "drupal/inline_entity_form": "~1.0",
+    "drupal/node_view_permissions": "~1.0",
+    "drupal/entity_browser": "~1.0",
+    "drupal/google_analytics": "~2.0",
+    "drupal/entityqueue": "~1.0",
+    "drupal/advanced_text_formatter": "~1.0",
+    "drupal/pathauto": "~1.0",
+    "drupal/redirect": "~1.0",
+    "drupal/field_collection": "~1.0",
+    "drupal/editor_advanced_link": "~1.0",
+    "drupal/exif": "^1.0",
+    "drupal/google_tag": "^1",
+    "drupal/redis": "^1.5",
+    "predis/predis": "^1.1"
+  },
+  "require-dev": {
+    "behat/mink": "~1.6",
+    "behat/mink-goutte-driver": "~1.2",
+    "jcalderonzumba/gastonjs": "^1.1@dev",
+    "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
+    "mikey179/vfsstream": "~1.2",
+    "phpunit/phpunit": "~4.8",
+    "symfony/css-selector": "2.7.*",
+    "drupal/coder": "^8.2"
+  },
+  "conflict": {
+    "drupal/drupal": "*"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload": {
+    "classmap": [
+      "scripts/composer/ScriptHandler.php"
+    ]
+  },
+  "scripts": {
+    "pre-install-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+    ],
+    "pre-update-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+    ],
+    "post-install-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+    ],
+    "post-update-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+    ],
+    "phpcs": "vendor/bin/phpcs --standard=vendor/drupal/coder/coder_sniffer/Drupal/ruleset.xml --extensions='php,module,inc,install,test,profile,theme,js,css,info,txt' web/modules/custom",
+    "phpcs-checkstyle": "vendor/bin/phpcs --standard=vendor/drupal/coder/coder_sniffer/Drupal/ruleset.xml --extensions='php,module,inc,install,test,profile,theme,js,css,info,txt' web/modules/custom --report=checkstyle --report-file=tests/reports/phpcs-checkstyle.xml",
+    "drupal-db-dump": [
+      "docker-compose run --rm --entrypoint /bin/bash drush -c \"drush site-install standard --locale=en --site-name='Spejdernes lejr 2017' --site-mail='info@example.com' --account-name='admin' --account-pass='admin' --account-mail='admin@example.com' -y && drush config-set 'system.site' uuid '612cb743-f9d0-4819-b2bd-f394154a885b' -y && drush sql-dump --result-file='/var/www/web/db.sql' --structure-tables-list='cache_*,semaphore,sessions,watchdog' --ordered-dump\"",
+      "mv web/db.sql docker/db/initdb.d/100-db.sql"
+    ],
+    "phpunit-custom-clover": "vendor/bin/phpunit -c tests/phpunit.xml.dist --testsuite unit --log-junit tests/reports/phpunit-custom.xml --coverage-clover=tests/reports/clover.xml"
+  },
+  "extra": {
+    "installer-paths": {
+      "web/core": [
+        "type:drupal-core"
+      ],
+      "web/modules/contrib/{$name}": [
+        "type:drupal-module"
+      ],
+      "web/profiles/contrib/{$name}": [
+        "type:drupal-profile"
+      ],
+      "web/themes/contrib/{$name}": [
+        "type:drupal-theme"
+      ],
+      "drush/contrib/{$name}": [
+        "type:drupal-drush"
+      ]
+    },
+    "drupal-scaffold": {
+      "locations": {
+        "web-root": "web/"
+      }
+    },
+    "patches": {
+      "drupal/core": {
+        "2408549: Notify about overridden configuration": "https://www.drupal.org/files/issues/2020-09-17/2408549-139.patch"
+      }
+    }
+  }
 }
