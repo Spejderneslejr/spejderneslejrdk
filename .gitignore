@@ -19,3 +19,4 @@ web/profiles/contrib
 # Ignore composer-override
 docker-compose.override.yml
 docker/db/initdb.d
+web/themes/custom/camp/.yarn
