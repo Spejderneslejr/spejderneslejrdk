@@ -17,12 +17,11 @@ time docker-compose exec php sh -c  "\
   && echo 'composer installing' \
   && cd /var/www && composer install && cd /var/www/web \
   echo 'Site reset' && \
-  echo ' * Rebuilding cache' && \
-  drush -y cache-rebuild && \
-  echo ' * Update database' && \
-  drush -y updatedb && \
-  echo ' * Import configuration' && \
-  drush -y config-import --preview=diff && \
+  echo ' * Drush deploy' && \
+  drush deploy && \ 
+  echo ' * Locale check and update' && \
+  drush locale-check && \
+  drush locale-update && \
   echo ' * Cache rebuild' && \
   drush cache-rebuild
   "
