@@ -1,5 +1,5 @@
 # https://taskfile.dev
-version: '2'
+version: 3
 
 tasks:
   getdb:
@@ -18,3 +18,10 @@ tasks:
     desc: "Reset docker-environment and bring site back up"
     cmds:
       - scripts/docker-reset.sh
+
+  down:
+    desc: "Take down a running site removing any state"
+    cmds:
+      - docker-compose kill
+      - docker-compose rm -v -f
+      - docker-compose down --remove-orphans -v
