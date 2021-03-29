@@ -7,6 +7,10 @@ name: "drupal"
 # The runtime the application uses.
 type: "php:7.4"
 
+runtime:
+  extensions:
+    - redis
+
 # Configuration of the build of this application.
 build:
   flavor: composer
