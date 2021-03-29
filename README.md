@@ -6,21 +6,45 @@ The project structure is based on [`drupal-composer/drupal-project`](https://git
 
 ## Development dependencies
 
-* Docker and Docker Compose
-* Composer
+Required
 
-## Installation instructions
+- Git
+- Docker, Docker Compose and (on Mac/Windows) preferable Docker for Mac/Windows
+- [Task](https://taskfile.dev/#/installation) as a task-runener.
+- [Yarn](https://yarnpkg.com/getting-started/install) We use a project-installed
+  Yarn 2 but you can keep your global Yarn on version 1 if you wish.
+- [Composer](https://getcomposer.org/download/) for local php development you
+  probably want a locally installed Composer
+- The [Platform.sh cli](https://docs.platform.sh/development/cli.html#installation)
 
-1. Clone this repository
-2. From the root of the cloned repository:
-  1. Run `docker-compose run php composer install`
-  2. Run `docker-compose build`
-  3. Run `docker-compose up`
-  4. Run `docker-compose run php drush cim -y`
-3. Profit!
+Optional
+
+- Some kind of development proxy that makes it easier to access your sites, [dory](https://github.com/FreedomBen/dory)
+  is recommended.
+
+## Initial setup
+
+1. Clone this repository and enter it.
+2. Authenticate against platform.sh: `platform login`
+3. Verify that you have access: `platform info`
+
+## Development workflow, getting started
+
+We use Docker/docker-compose for running the development-instance of the site. Whenever available, you should always use `task` over "raw" docker/docker-compose commands.
+
+1. Fetch a fresh database dump to ensure you are in sync with production: `task getdb`
+2. Branch off the master branch to prepare for development: `git checkout -b feature/myfeature`
+3. Reset your local environment, this will give you a fresh site that should be very close to production: `task reset`
+4. Access your site, on eg [spejderneslejr.docker]() if you're using Dory, or use `docker-compose port web 80` to get the random port-mapping for the site.
+
+5. Develop your feature
+
+You a now ready to develop. 3. Bring up a site: `task reset` 4. Profit!
+
+A reset will throw away your current database, so make sure to persist eg. any config with `drush cex` before resetting.
 
 ## Continuous Integration
 
-* We use Scrutinizer to analyze the code for code standards, debugging code and general mistakes.
-  * Codesniffer runs with Drupal standards.
-  * The ESLint file (`.eslintrc`) in the root of the project is a duplicate of Drupal 8's `.eslintrc` file. This is needed because Scrutinizer assumes that the ESLint config file is placed in the root.
+The site is hosted on platform.sh, and all pull-request will create a temporary
+test-environment where the change can be verified. The environment is destroyed
+on merge.
