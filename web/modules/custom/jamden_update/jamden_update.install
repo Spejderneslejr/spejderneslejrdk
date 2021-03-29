@@ -5,8 +5,27 @@
  * Update functionality for Jamboree Denmark update.
  */
 
-use Drupal\file\Entity\File;
-use Drupal\locale\SourceString;
-use Drupal\node\Entity\Node;
-use Drupal\Core\Theme\ThemeSettings;
+/**
+ * Truncate cache tables after switch to using Redis as cache backend.
+ */
+function jamden_update_update_8001()
+{
+    $cache_tables = [
+        'cache_bootstrap',
+        'cache_config',
+        'cache_container',
+        'cache_data',
+        'cache_default',
+        'cache_discovery',
+        'cache_dynamic_page_cache',
+        'cache_entity',
+        'cache_menu',
+        'cache_page',
+        'cache_render',
+        'cache_toolbar',
+    ];
 
+    foreach ($cache_tables as $cache_table) {
+        \Drupal::database()->truncate($cache_table)->execute();
+    }
+}

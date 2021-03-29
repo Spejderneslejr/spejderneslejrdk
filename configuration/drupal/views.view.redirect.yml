@@ -40,7 +40,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Udfør
+          submit_button: Filter
           reset_button: false
           reset_button_label: Gendan
           exposed_sorts_label: 'Sortér efter'
