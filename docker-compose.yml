@@ -1,22 +1,22 @@
-version: "2"
+version: "3"
 
 services:
   web:
     image: reload/drupal-apache-fpm
     ports:
-      - '80'
-      - '443'
+      - target: 80
+      - target: 443
     volumes:
-      - 'webroot:/var/www/'
+      - "webroot:/var/www/"
       # Add Development root CA and our certificate store.
-      - '${HOME}/.local/share/mkcert:/mkcert:ro'
-      - '${HOME}/.local/share/dev_certificates:/cert:rw'
+      - "${HOME}/.local/share/mkcert:/mkcert:ro"
+      - "${HOME}/.local/share/dev_certificates:/cert:rw"
     links:
       - php:fpm
     environment:
       VIRTUAL_HOST: spejderneslejr.docker
       # Ensure dory/nginx-proxy goes via port 80.
-      VIRTUAL_PORT: '80'
+      VIRTUAL_PORT: "80"
       # Ensure dory don't redirect from http to https.
       HTTPS_METHOD: noredirect
       MKCERT_DOMAINS: "spejderneslejr.docker mail.spejderneslejr.docker sl2017.docker sl2020.docker"
@@ -24,29 +24,29 @@ services:
   php:
     image: reload/drupal-php7-fpm:7.4-composer-2
     ports:
-      - '9000'
+      - "9000"
     volumes:
-      - 'webroot:/var/www/'
+      - "webroot:/var/www/"
     working_dir: /var/www/web
     links:
       - db
     environment:
       # Make Composer commands universally available
-      PATH: '/var/www/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+      PATH: "/var/www/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       PHP_SENDMAIL_PATH: /usr/local/bin/mhsendmail --smtp-addr="mailhog:1025"
       DRUSH_OPTIONS_URI: https://spejderneslejr.docker
 
   db:
     image: mariadb:10.3
     ports:
-      - '3306'
+      - "3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: db
       MYSQL_USER: db
       MYSQL_PASSWORD: db
     volumes:
-     - './docker/db/initdb.d/:/docker-entrypoint-initdb.d'
+      - "./docker/db/initdb.d/:/docker-entrypoint-initdb.d"
 
   redis:
     image: redis:5.0
