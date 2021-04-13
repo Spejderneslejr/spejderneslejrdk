@@ -2,8 +2,9 @@
 version: 3
 
 tasks:
-  getdb:
+  drupal:getdb:
     desc: "Fetch database dump"
+    dir: drupal
     cmds:
       - rm -fr docker/db/fetch
       - mkdir -p docker/db/fetch
@@ -14,13 +15,15 @@ tasks:
     vars:
       ENV: '{{.ENV | default "master"}}'
 
-  reset:
+  drupal:reset:
     desc: "Reset docker-environment and bring site back up"
+    dir: drupal
     cmds:
       - scripts/docker-reset.sh
 
-  down:
+  drupal:down:
     desc: "Take down a running site removing any state"
+    dir: drupal
     cmds:
       - docker-compose kill
       - docker-compose rm -v -f

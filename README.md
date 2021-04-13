@@ -32,14 +32,14 @@ Optional
 
 We use Docker/docker-compose for running the development-instance of the site. Whenever available, you should always use `task` over "raw" docker/docker-compose commands.
 
-1. Fetch a fresh database dump to ensure you are in sync with production: `task getdb`
+1. Fetch a fresh database dump to ensure you are in sync with production: `task drupal:getdb`
 2. Branch off the master branch to prepare for development: `git checkout -b feature/myfeature`
-3. Reset your local environment, this will give you a fresh site that should be very close to production: `task reset`
+3. Reset your local environment, this will give you a fresh site that should be very close to production: `task drupal:reset`
 4. Access your site, on eg [spejderneslejr.docker]() if you're using Dory, or use `docker-compose port web 80` to get the random port-mapping for the site.
 
 5. Develop your feature
 
-You a now ready to develop. 3. Bring up a site: `task reset` 4. Profit!
+You a now ready to develop. 3. Bring up a site: `task drupal:reset` 4. Profit!
 
 A reset will throw away your current database, so make sure to persist eg. any config with `drush cex` before resetting.
 
