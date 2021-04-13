@@ -1,0 +1,28 @@
+name: api
+type: nodejs:14
+
+build:
+  flavor: none
+
+dependencies:
+  nodejs:
+    yarn: "*"
+
+# The relationships of the application with services or other applications.
+# The left-hand side is the name of the relationship as it will be exposed
+# to the application in the PLATFORM_RELATIONSHIPS variable. The right-hand
+# side is in the form `<service name>:<endpoint name>`.
+relationships: ~
+
+# The configuration of app when it is exposed to the web.
+web:
+  commands:
+    start: "cd api && yarn start:prod"
+
+# The hooks that will be performed when the package is deployed.
+hooks:
+  build: |
+    set -e
+    cd api
+    yarn install
+    yarn build

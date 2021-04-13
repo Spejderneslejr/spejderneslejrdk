@@ -19,3 +19,8 @@
 "https://www.{default}/":
     type: redirect
     to: "https://{default}/"
+
+# API
+"https://api.{default}/":
+  type: upstream
+  upstream: "api:http"
