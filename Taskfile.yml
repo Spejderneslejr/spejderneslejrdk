@@ -15,6 +15,13 @@ tasks:
     vars:
       ENV: '{{.ENV | default "master"}}'
 
+  api:reset:
+    desc: "Reset docker-environment and bring api back up"
+    dir: api
+    cmds:
+      - yarn install
+      - yarn start:dev
+
   drupal:reset:
     desc: "Reset docker-environment and bring site back up"
     dir: drupal
