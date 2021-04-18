@@ -13,6 +13,7 @@ Required
 - [Task](https://taskfile.dev/#/installation) as a task-runener.
 - [Yarn](https://yarnpkg.com/getting-started/install) We use a project-installed
   Yarn 2 but you can keep your global Yarn on version 1 if you wish.
+- [Node 14](https://nodejs.org/en/download/), and/or [NVM](https://github.com/nvm-sh/nvm) for administering the versions (we have .nvmrc files in the Drupal theme and API-server)
 - [Composer](https://getcomposer.org/download/) for local php development you
   probably want a locally installed Composer
 - The [Platform.sh cli](https://docs.platform.sh/development/cli.html#installation)
@@ -42,8 +43,9 @@ Notice: A reset will throw away your current database, so make sure to persist e
 
 ## API development workflow
 1. Branch off the master branch to prepare for development: `git checkout -b feature/myfeature`
-2. Reset and start the api-server `task api:reset`
-3. Develop your feature
+2. (initial use) copy `api/dist.env` to `api/.env` and update it with credentials.
+3. Reset and start the api-server `task api:reset`
+4. Develop your feature
 
 ## Continuous Integration
 
