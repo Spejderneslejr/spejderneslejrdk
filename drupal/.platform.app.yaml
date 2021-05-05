@@ -88,7 +88,16 @@ web:
         "^/sites/default/files/(css|js)":
           expires: 2w
 
-# The size of the persistent disk of the application (in MB).
+    "/apps/job":
+      # Setup a route for the job app
+      allow: true
+      expires: 7d
+      root: "apps/jobs/dist"
+
+      # Do not execute PHP scripts.
+      scripts: false
+
+          # The size of the persistent disk of the application (in MB).
 disk: 8192
 
 # The mounts that will be performed when the package is deployed.
@@ -112,8 +121,6 @@ hooks:
     cd $PLATFORM_APP_DIR/apps/jobs
     yarn install
     yarn build
-    mkdir -p $PLATFORM_APP_DIR/web/apps
-    mv dist $PLATFORM_APP_DIR/web/apps/jobs
 
   # We run deploy hook after your application has been deployed and started.
   deploy: |
