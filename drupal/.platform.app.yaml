@@ -95,6 +95,11 @@ mounts:
 hooks:
   # We don't build assets at this point as everything is comitted
   build: |
+    set -e
+    cd $PLATFORM_APP_DIR/apps/jobs
+    yarn install
+    yarn build
+    mv dist $PLATFORM_APP_DIR/web/apps/jobs
     curl -sS https://platform.sh/cli/installer | php
 
   # We run deploy hook after your application has been deployed and started.
