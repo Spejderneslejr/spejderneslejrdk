@@ -112,6 +112,7 @@ hooks:
     cd $PLATFORM_APP_DIR/apps/jobs
     yarn install
     yarn build
+    mkdir -p $PLATFORM_APP_DIR/web/apps
     mv dist $PLATFORM_APP_DIR/web/apps/jobs
 
   # We run deploy hook after your application has been deployed and started.
