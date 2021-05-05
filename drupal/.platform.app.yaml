@@ -18,6 +18,11 @@ build:
 variables:
   php:
     memory_limit: 256M
+  env:
+      # Update these for your desired NVM and Node versions.
+      NVM_VERSION: v0.38.0
+      NODE_VERSION: v14
+
 
 # The build-time dependencies of the app.
 dependencies:
@@ -94,14 +99,20 @@ mounts:
 
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
-  # We don't build assets at this point as everything is comitted
   build: |
     set -e
+    curl -sS https://platform.sh/cli/installer | php
+    # Install alternative node version
+    unset NPM_CONFIG_PREFIX
+    export NVM_DIR="$PLATFORM_APP_DIR/.nvm"
+    # install.sh will automatically install NodeJS based on the presence of $NODE_VERSION
+    curl -f -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    # Build and deploy apps
     cd $PLATFORM_APP_DIR/apps/jobs
     yarn install
     yarn build
     mv dist $PLATFORM_APP_DIR/web/apps/jobs
-    curl -sS https://platform.sh/cli/installer | php
 
   # We run deploy hook after your application has been deployed and started.
   deploy: |
