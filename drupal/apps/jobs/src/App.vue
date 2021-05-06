@@ -54,9 +54,9 @@ export default {
           description_we_give: job.description_we_give,
           state: job.state,
           write_date: job.write_date,
-          create_date: job.write_date,
+          create_date: job.create_date,
           formatted_write_date: this.formatDate(job.write_date),
-          formatted_create_date: this.formatDate(job.write_date),
+          formatted_create_date: this.formatDate(job.create_date),
         }));
         this.jobs = this.jobs.filter((job) => {
           return (job.state == "recruit");
@@ -95,8 +95,8 @@ export default {
         case "0":
           this.jobs = this.jobs.sort(
             (a, b) =>
-              new Date(a.write_date).getDate() -
-              new Date(b.write_date).getDate()
+              new Date(a.create_date).getDate() -
+              new Date(b.create_date).getDate()
           );
           break;
         case "1":
