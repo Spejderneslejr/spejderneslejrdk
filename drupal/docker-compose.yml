@@ -8,6 +8,7 @@ services:
       - target: 443
     volumes:
       - "webroot:/var/www/"
+      - "./docker/apache/apps-alias.conf:/etc/apache2/conf-enabled/apps-alias.conf"
       # Add Development root CA and our certificate store.
       - "${HOME}/.local/share/mkcert:/mkcert:ro"
       - "${HOME}/.local/share/dev_certificates:/cert:rw"

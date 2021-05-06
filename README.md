@@ -36,10 +36,12 @@ We use Docker/docker-compose for running the development-instance of the site. W
 1. Branch off the master branch to prepare for development: `git checkout -b feature/myfeature`
 2. Fetch a fresh database dump to ensure you are in sync with production: `task drupal:getdb`
 3. Reset your local environment, this will give you a fresh site that should be very close to production: `task drupal:reset`
-4. Access your site, on eg [spejderneslejr.docker]() if you're using Dory, or use `docker-compose port web 80` to get the random port-mapping for the site.
-5. Develop your feature
+4. Build the jobs api (only needed if you actually develop on this part of the site): `task apps:build`
+5. Access your site, on eg [spejderneslejr.docker]() if you're using Dory, or use `docker-compose port web 80` to get the random port-mapping for the site.
+6. Develop your feature
 
 Notice: A reset will throw away your current database, so make sure to persist eg. any config with `drush cex` before resetting.
+
 
 ## API development workflow
 1. Branch off the master branch to prepare for development: `git checkout -b feature/myfeature`

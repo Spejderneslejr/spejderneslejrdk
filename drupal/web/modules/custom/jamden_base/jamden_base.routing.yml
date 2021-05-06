@@ -1,0 +1,7 @@
+jamden_base.content:
+  path: '/jobs'
+  defaults:
+    _controller: 'Drupal\jamden_base\Controller\JamDenBaseController::content'
+    _title: 'Opgavebanken'
+  requirements:
+    _permission: 'access content'
