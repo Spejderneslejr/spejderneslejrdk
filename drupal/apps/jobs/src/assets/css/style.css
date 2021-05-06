@@ -89,6 +89,7 @@ transition: all .2s ease-in-out;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+  margin-right: 10px;
 }
 
 .jobs .card .content {
@@ -235,6 +236,8 @@ label {
   display: flex;
   flex-direction: column;
   width: 90%;
+  max-height: 95vh;
+  max-width:1300px;
   padding: 10px 10px 0;
 }
 
@@ -256,10 +259,13 @@ label {
 .modal-body {
   position: relative;
   padding: 20px;
-  max-height: 70vh;
   overflow-y: auto;
   white-space: pre-line;
-  font-size: 14px;
+  font-size: 15px;
+}
+
+.modal-body .content {
+  margin-bottom: 15px;
 }
 
 .btn-close {
@@ -318,5 +324,6 @@ label {
   }
   .modal {
     width: 80%;
+    max-height: 85vh;
   }
 }

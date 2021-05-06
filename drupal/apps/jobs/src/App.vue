@@ -16,6 +16,7 @@ import JobFilter from "./components/JobFilter.vue";
 import JobList from "./components/JobList.vue";
 import DepartmentSelector from "./components/DepartmentSelector.vue";
 import JobModal from "./components/JobModal.vue";
+import moment from 'moment';
 
 import axios from "axios";
 
@@ -48,8 +49,12 @@ export default {
         this.jobs = results.map((job) => ({
           name: job.name,
           description: job.description,
+          description_scope: job.description_time_and_scope,
+          description_you_give: job.description_you_give,
+          description_we_give: job.description_we_give,
           state: job.state,
-          write_date: job.write_date,
+          write_date: this.formatDate(job.write_date),
+          create_date: this.formatDate(job.write_date),
         }));
         this.job = this.jobs.slice(0, 1); //Get first job and pass to JobModal
       } catch (err) {
@@ -75,6 +80,9 @@ export default {
     },
     closeModal() {
       this.isModalVisible = false;
+    },
+      formatDate(date) {
+      return moment(String(date)).format('DD/MM hh:mm')
     },
     sortJobs() {
       console.log(this.sortBy);

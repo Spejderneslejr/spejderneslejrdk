@@ -11,8 +11,30 @@
       <hr>
       <section class="modal-body">
         <slot name="body">
+          <div class="content">
           <p class="title">Beskrivelse</p>
           {{job.description}}
+          </div>
+          <div class="content">
+          <p class="title">Du giver</p>
+          {{job.description_you_give}}
+          </div>
+          <div class="content">
+          <p class="title">Vi giver</p>
+          {{job.description_we_give}}
+          </div>
+          <div class="content">
+          <p class="title">Vi giver</p>
+          {{job.description_we_give}}
+          </div>
+          <div class="content">
+          <p class="title">Ansøg</p>
+          bla bla
+          </div>
+          <div class="content">
+          <p class="title">Om Spejdernes Lejr</p>
+          bla bla
+          </div>
           </slot>
       </section>
       <hr>
