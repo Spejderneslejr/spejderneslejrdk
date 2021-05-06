@@ -24,10 +24,6 @@
           {{job.description_we_give}}
           </div>
           <div class="content">
-          <p class="title">Vi giver</p>
-          {{job.description_we_give}}
-          </div>
-          <div class="content">
           <p class="title">Ansøg</p>
           bla bla
           </div>
