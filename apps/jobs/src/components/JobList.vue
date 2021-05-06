@@ -1,15 +1,17 @@
 <template>
-  <h3 class="results" style="text-align: center">
-    Resultater (<span>{{ jobs.length }}</span
-    >)
-  </h3>
-  <div class="jobs">
-    <div class="wrapper">
-      <JobCard v-for="(job, index) in jobs" :key="index" :job="job" />
+  <section>
+    <h3 class="results" style="text-align: center">
+      Resultater (<span>{{ jobs.length }}</span
+      >)
+    </h3>
+    <div class="jobs">
+      <div class="wrapper">
+        <JobCard v-on:JobModal="onJobModal" v-for="(job, index) in jobs" :key="index" :job="job" />
+      </div>
     </div>
-  </div>
-  <!-- <pagination :records="jobs.length" v-model="page" :per-page="50" @paginate="callback">
+    <!-- <pagination :records="jobs.length" v-model="page" :per-page="50" @paginate="callback">
   </pagination> -->
+  </section>
 </template>
 
 <script>
@@ -32,6 +34,9 @@ export default {
     },
   },
   methods: {
+   onJobModal: function (job) {
+    this.$emit('JobModal', job);
+  },
     callback: function (page) {
       console.log(`Page ${page} was selected`);
     },

@@ -1,10 +1,11 @@
 <template>
   <Layout>
     <h1>Opgavebanken</h1>
-    <DepartmentSelector />
+    <!-- <DepartmentSelector /> -->
     <hr />
     <JobFilter v-model="sortBy" :fetch="sortJobs" />
-    <JobList :jobs="jobs" />
+    <JobList v-on:JobModal="showModal" :jobs="jobs" />
+    <JobModal :job="job" v-show="isModalVisible" @close="closeModal"/>
   </Layout>
 </template>
 
@@ -14,6 +15,7 @@ import Layout from "./components/Layout.vue";
 import JobFilter from "./components/JobFilter.vue";
 import JobList from "./components/JobList.vue";
 import DepartmentSelector from "./components/DepartmentSelector.vue";
+import JobModal from "./components/JobModal.vue";
 
 import axios from "axios";
 
@@ -23,11 +25,14 @@ export default {
     JobFilter,
     JobList,
     DepartmentSelector,
+    JobModal,
   },
   data() {
     return {
+      isModalVisible: false,
       sortBy: "0",
       jobs: [],
+      job: Object,
     };
   },
   beforeMount() {
@@ -46,6 +51,7 @@ export default {
           state: job.state,
           write_date: job.write_date,
         }));
+        this.job = this.jobs.slice(0, 1); //Get first job and pass to JobModal
       } catch (err) {
         if (err.response) {
           // client received an error response (5xx, 4xx)
@@ -62,6 +68,13 @@ export default {
     },
     mounted() {
       this.fetchJobs();
+    },
+      showModal(job) {
+      this.job = job;
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
     },
     sortJobs() {
       console.log(this.sortBy);
