@@ -43,7 +43,7 @@ export default {
     async fetchJobs() {
       try {
         const url =
-          "https://api.pr-139-qvrewla-kigwipdp3tsiq.eu-4.platformsh.site/campos/jobs";
+          "https://api.spejderneslejr.dk/campos/jobs";
         const response = await axios.get(url);
         const results = response.data;
         this.jobs = results.map((job) => ({
@@ -56,6 +56,9 @@ export default {
           write_date: this.formatDate(job.write_date),
           create_date: this.formatDate(job.write_date),
         }));
+        this.jobs = this.jobs.filter((job) => {
+          return (job.state == "recruit");
+        });
         this.job = this.jobs.slice(0, 1); //Get first job and pass to JobModal
       } catch (err) {
         if (err.response) {
