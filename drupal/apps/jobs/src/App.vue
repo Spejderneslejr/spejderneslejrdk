@@ -53,8 +53,10 @@ export default {
           description_you_give: job.description_you_give,
           description_we_give: job.description_we_give,
           state: job.state,
-          write_date: this.formatDate(job.write_date),
-          create_date: this.formatDate(job.write_date),
+          write_date: job.write_date,
+          create_date: job.write_date,
+          formatted_write_date: this.formatDate(job.write_date),
+          formatted_create_date: this.formatDate(job.write_date),
         }));
         this.jobs = this.jobs.filter((job) => {
           return (job.state == "recruit");
