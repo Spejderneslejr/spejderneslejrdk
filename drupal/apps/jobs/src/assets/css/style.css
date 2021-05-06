@@ -16,6 +16,11 @@ hr {
   border-radius: 0;
 }
 
+.modal hr {
+  border-top: 2px dashed #979797;
+  margin: 0;
+}
+
 h1 {
   font-weight: 300;
   font-size: 36px;
@@ -29,6 +34,17 @@ h2 {
 h3 {
   font-weight: 300;
   font-size: 22px;
+}
+
+h4 {
+  font-weight: 300;
+  font-size: 18px;
+  color: #2398A0;
+  margin: 0;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 .departments {
@@ -57,6 +73,11 @@ border-radius: 4px;
 padding: 14px;
 min-height: 116px;
 position: relative;
+transition: all .2s ease-in-out;
+}
+
+.jobs .card:hover {
+  transform: scale(1.02);
 }
 
 .jobs .card .title {
@@ -130,8 +151,7 @@ i.fa-comment-alt.reverse {
   grid-auto-flow: column;
 }
 
-button:hover,
-.card:hover {
+button:hover {
   opacity: 0.8;
   cursor: pointer;
 }
@@ -142,6 +162,7 @@ button {
   font-size: 12px;
   background: #e1477d;
   border: 1px solid #e1477d;
+  color: white;
   outline: none;
 }
 
@@ -158,14 +179,14 @@ button {
   background-color: white;
   border: 2px solid #2398a0;
   padding: 12px 10px;
+  color: #333333;
 }
 
 .disabled {
   background: #cecece !important;
 }
 
-button.reset {
-  color: white;
+button.right {
   float: right;
 }
 
@@ -195,6 +216,65 @@ label {
   font-size: 14px;
 }
 
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: #ffffff;
+  box-shadow: 2px 2px 20px 1px;
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding: 10px 10px 0;
+}
+
+.modal .title {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0;
+}
+
+.modal-header,
+.modal-footer {
+  padding: 15px;
+}
+
+.modal-header {
+  position: relative;
+}
+
+.modal-body {
+  position: relative;
+  padding: 20px;
+  max-height: 70vh;
+  overflow-y: auto;
+  white-space: pre-line;
+  font-size: 14px;
+}
+
+.btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333333;
+  background: transparent;
+}
+
 @media (min-width: 600px) {
   .departments .wrapper {
     grid-template-columns: repeat(2, 1fr);
@@ -212,6 +292,9 @@ label {
   input,
   select {
     width: 150px;
+  }
+  .modal {
+    width: 90%;
   }
 }
 
@@ -232,5 +315,8 @@ label {
   input,
   select {
     width: 200px;
+  }
+  .modal {
+    width: 80%;
   }
 }

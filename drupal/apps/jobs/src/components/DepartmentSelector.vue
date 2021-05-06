@@ -26,7 +26,7 @@
         <p><i class="fas fa-coins"></i><br />ØKONOMI</p>
       </div>
     </div>
-    <button class="reset">NULSTIL</button>
+    <button class="reset right">NULSTIL</button>
   </section>
 </template>
 

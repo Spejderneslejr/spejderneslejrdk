@@ -1,8 +1,8 @@
 <template>
-  <section class="card" v-on:click="$emit('JobModal', job)">
+  <section class="job card pointer" v-on:click="onJobModal(job)">
       <p class="title">{{job.name}}</p>
       <p class="content">{{job.description}}</p><div class="button-wrapper">
-      <button>LÆS MERE</button>
+      <button v-on:click.stop="onJobModal(job)">LÆS MERE</button>
       </div>
       <i class="far fa-compass"></i>
   </section>
@@ -19,6 +19,9 @@ export default {
     },
   },
   methods: {
+    onJobModal: function (job) {
+    this.$emit('JobModal', job);
+  },
   },
 }
 </script>
