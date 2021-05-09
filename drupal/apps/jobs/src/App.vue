@@ -18,6 +18,7 @@ import JobList from "./components/JobList.vue";
 import DepartmentSelector from "./components/DepartmentSelector.vue";
 import JobModal from "./components/JobModal.vue";
 import moment from 'moment';
+import da from 'moment/locale/da';
 
 import axios from "axios";
 
@@ -44,7 +45,7 @@ export default {
     async fetchJobs() {
       try {
         const url =
-          "http://localhost:3000/campos/jobs";
+          "https://api.spejderneslejr.dk/campos/jobs";
         const response = await axios.get(url);
         const results = response.data;
         this.jobs = results.map((job) => ({
@@ -97,7 +98,9 @@ export default {
       this.isModalVisible = false;
     },
       formatDate(date) {
-      return moment(String(date)).format('DD/MM hh:mm')
+      moment.locale('da');
+      return moment(String(date)).format('DD/MM/YYYY')
+      //return moment(String(date)).format('LL');
     },
       formatArea(org) {
         var areas = org[1].split(" - ");
