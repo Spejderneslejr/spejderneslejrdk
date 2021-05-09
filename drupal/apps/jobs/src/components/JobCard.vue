@@ -1,17 +1,21 @@
 <template>
   <section class="job card pointer" v-on:click="onJobModal(job)">
       <p class="title">{{job.name}}</p>
-      <p class="content">{{job.description}}</p><div class="button-wrapper">
+      <p class="content">{{job.teaser}}</p><div class="button-wrapper">
       <button v-on:click.stop="onJobModal(job)">LÆS MERE</button>
       </div>
-      <i class="far fa-compass"></i>
+      <JobIcon :area="job.area" />
   </section>
 </template>
 
 <script>
 
+import JobIcon from "./JobIcon.vue";
 
 export default {
+    components: {
+      JobIcon,
+  },
   props: {
     job: {
       type: Object,
