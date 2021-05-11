@@ -105,9 +105,10 @@ transition: all .2s ease-in-out;
 .jobs .card i {
   position: absolute;
   right: 0;
-  top: 0;
-  margin: 10px 10px 0px 0px;
+  bottom: 14px;
+  right: 14px;
   font-size: 18px;
+  color: #2398A0;
 }
 
 .jobs .wrapper {
@@ -237,8 +238,12 @@ label {
   flex-direction: column;
   width: 90%;
   max-height: 95vh;
-  max-width:1300px;
+  max-width:900px;
   padding: 10px 10px 0;
+}
+
+.modal .header {
+  margin: 0;
 }
 
 .modal .title {
@@ -247,12 +252,24 @@ label {
   margin: 0;
 }
 
+.modal .teaser {
+  font-style: italic;
+  margin: 0;
+  white-space: pre-line;
+  margin-top: 8px;
+  font-size: 18px;
+}
+
+.modal .date {
+    bottom: 28px;
+    position: absolute;
+    font-size: 13px;
+    font-style: italic;
+}
+
 .modal-header,
 .modal-footer {
   padding: 15px;
-}
-
-.modal-header {
   position: relative;
 }
 
