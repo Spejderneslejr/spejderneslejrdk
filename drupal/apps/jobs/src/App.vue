@@ -105,6 +105,7 @@ export default {
             .toUpperCase()
             .includes(searchValue.toUpperCase())
         })
+        this.sortJobs();
     },
       formatDate(date) {
       moment.locale('da');
