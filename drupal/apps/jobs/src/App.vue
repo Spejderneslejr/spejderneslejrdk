@@ -48,6 +48,7 @@ export default {
         const response = await axios.get(url);
         const results = response.data;
         this.jobs = results.map((job) => ({
+          id: job.id,
           area: this.formatArea(job.organization_id),
           name: job.name,
           teaser: job.teaser,
