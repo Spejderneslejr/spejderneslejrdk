@@ -6,6 +6,7 @@
   font-family: Roboto;
   font-style: normal;
   color: #333333;
+  max-width:1300px;
 }
 
 #app .jobs-app {
@@ -119,7 +120,6 @@ transition: all .2s ease-in-out;
   display: grid;
   gap: 15px;
   position: relative;
-  max-width:1300px;
   margin:auto;
   margin-bottom: 20px;
 }
