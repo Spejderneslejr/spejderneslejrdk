@@ -228,7 +228,7 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9998;
+  z-index: 99998;
 }
 
 #app .jobs-app .modal {
@@ -241,7 +241,7 @@ select {
   max-height: 95vh;
   max-width:900px;
   padding: 10px 10px 0;
-  z-index: 9999;
+  z-index: 99999;
 }
 
 #app .jobs-app .modal .header {
