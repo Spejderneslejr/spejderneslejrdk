@@ -3,7 +3,7 @@
     <h1>Opgavebanken</h1>
     <!-- <DepartmentSelector /> -->
     <hr />
-    <JobFilter v-model="sortBy" :fetch="sortJobs" />
+    <JobFilter v-model="sortBy" v-on:search="searchFilter" :fetch="sortJobs" />
     <JobList v-on:JobModal="showModal" :jobs="jobs" />
     <JobModal v-scroll-lock="isModalVisible" :job="job" v-show="isModalVisible" @close="closeModal"/>
   </Layout>
@@ -34,6 +34,7 @@ export default {
       isModalVisible: false,
       sortBy: "0",
       jobs: [],
+      unfilteredJobs: [],
       job: Object,
     };
   },
@@ -72,6 +73,7 @@ export default {
         this.jobs = this.jobs.filter((job) => {
           return (job.no_of_recruitment != job.no_of_hired_employee); //Filter fully staffed jobs
         });
+        this.unfilteredJobs = this.jobs;
         this.job = this.jobs.slice(0, 1); //Get first job and pass to JobModal
       } catch (err) {
         if (err.response) {
@@ -96,6 +98,13 @@ export default {
     },
     closeModal() {
       this.isModalVisible = false;
+    },
+      searchFilter(searchValue) {
+        this.jobs = this.unfilteredJobs.filter((job) => {
+          return job.name
+            .toUpperCase()
+            .includes(searchValue.toUpperCase())
+        })
     },
       formatDate(date) {
       moment.locale('da');
