@@ -1,7 +1,6 @@
 <template>
   <Layout class="jobs-app">
     <h1>Opgavebanken</h1>
-    <!-- <h1 style="text-align:center;color:red;">UNDER UDARBEJDELSE</h1> -->
     <!-- <DepartmentSelector /> -->
     <hr />
     <JobFilter v-model="sortBy" :fetch="sortJobs" />
