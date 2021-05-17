@@ -5,7 +5,7 @@
     <hr />
     <JobFilter v-model="sortBy" :fetch="sortJobs" />
     <JobList v-on:JobModal="showModal" :jobs="jobs" />
-    <JobModal :job="job" v-show="isModalVisible" @close="closeModal"/>
+    <JobModal v-scroll-lock="isModalVisible" :job="job" v-show="isModalVisible" @close="closeModal"/>
   </Layout>
 </template>
 
