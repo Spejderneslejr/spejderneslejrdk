@@ -26,7 +26,9 @@
           </div>
           <div class="content">
           <p class="title">Ansøg</p>
-          bla bla
+          For at ansøge dette job, skal du sende en mail til <a href="mailto:sljob@sl2022.dk">sljob@sl2022.dk</a>, hvor du i emnefeltet skriver "SL job {{job.id}}".<br> 
+          Efterfølgende vil du blive kontaktet af kontaktpersonen til jobbet. Har du yderligere spørgsmål, er du velkommen til at skrive til <a href="mailto:sljob@sl2022.dk">sljob@sl2022.dk</a>.<br> 
+          OBS. Af hensyn til GDPR, skal du kun oplyse navn og alder i ansøgning. Andre oplysninger bliver indhentet, når det bliver nødvendigt. 
           </div>
           <div class="content">
           <p class="title">Om Spejdernes Lejr</p>
