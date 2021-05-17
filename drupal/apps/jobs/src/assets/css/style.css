@@ -169,7 +169,7 @@ transition: all .2s ease-in-out;
 }
 
 #app .jobs-app .search button {
-  padding: 9px 20px;
+  padding: 10px 20px;
   font-size: 15px;
   background: #2398a0;
   border: 1px solid #2398a0;
@@ -196,6 +196,7 @@ transition: all .2s ease-in-out;
 select {
   width: 70%;
   padding: 9px;
+  min-width: 100px;
   margin-top: 0;
   font-size: 15px;
   border: 1px solid;
@@ -316,7 +317,7 @@ select {
   }
   #app .jobs-app input,
   #app .jobs-app select {
-    width: 150px;
+    width: 180px;
   }
   #app .jobs-app .modal {
     width: 90%;
