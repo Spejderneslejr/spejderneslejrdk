@@ -1,5 +1,5 @@
 jamden_base.content:
-  path: '/jobs'
+  path: '/opgaver'
   defaults:
     _controller: 'Drupal\jamden_base\Controller\JamDenBaseController::content'
     _title: 'Opgavebanken'
