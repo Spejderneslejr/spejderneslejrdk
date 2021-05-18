@@ -2375,7 +2375,7 @@ ul.atcb-list li {
   float: right;
   background-image: url("../images/host_logo.png");
   background-position: 50% 50%;
-  background-size: 190px;
+  background-size: 200px;
   background-repeat: no-repeat;
 }
 
@@ -2430,6 +2430,7 @@ ul.atcb-list li {
     position: absolute;
     margin: 0;
     padding: 0;
+    display: none;
   }
   .region--header__tasks .date,
   .region--header__tasks .clock {

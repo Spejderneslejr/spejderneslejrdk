@@ -2,7 +2,8 @@
   <section class="wrapper search">
     <div class="input-wrapper search">
       <label>Søg efter opgaver</label>
-            <input type="text" id="search" placeholder="Søg..." name="search"><button type="submit"><i class="fa fa-search"></i></button>
+            <input v-on:keyup.enter="$emit('search', searchValue)" v-model="searchValue" type="text" id="search" placeholder="Søg..." name="search">
+            <button v-on:click="$emit('search', searchValue)"><i class="fa fa-search"></i></button>
     </div>
         <div class="input-wrapper select">
       <label>Sortering</label>
@@ -33,7 +34,6 @@ export default {
       get: () => props.modelValue,
       set: value => emit("update:modelValue", value),
     })
-
     return {
       sortBy,
     }
