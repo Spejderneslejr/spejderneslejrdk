@@ -250,6 +250,10 @@ select {
   z-index: 99999;
 }
 
+#app .jobs-app .modal .header {
+  margin: 0;
+}
+
 #app .jobs-app .modal .title {
   font-weight: bold;
   font-size: 18px;
