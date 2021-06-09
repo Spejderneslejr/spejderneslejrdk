@@ -121,8 +121,8 @@ export default {
         case "0":
           this.jobs = this.jobs.sort(
             (a, b) =>
-              new Date(a.create_date).getDate() -
-              new Date(b.create_date).getDate()
+              new Date(b.create_date) -
+              new Date(a.create_date)
           );
           break;
         case "1":
