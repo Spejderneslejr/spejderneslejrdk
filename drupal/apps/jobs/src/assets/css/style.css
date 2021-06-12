@@ -279,6 +279,7 @@ select {
 #app .jobs-app .modal-footer {
   padding: 15px;
   position: relative;
+  margin: 0;
 }
 
 #app .jobs-app .modal-body {
