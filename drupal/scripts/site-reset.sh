@@ -18,7 +18,7 @@ time docker-compose exec php sh -c  "\
   && cd /var/www && composer install && cd /var/www/web \
   echo 'Site reset' && \
   echo ' * Drush deploy' && \
-  drush deploy && \ 
+  drush deploy && \
   echo ' * Locale check and update' && \
   drush locale-check && \
   drush locale-update && \
