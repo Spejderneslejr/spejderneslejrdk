@@ -10,7 +10,7 @@ find web/sites/default/files \! -uid 33  \! -print0 -name .gitkeep | sudo xargs 
 
 # Make sites/default read-only and executable
 sudo chmod 555 web/sites/default
-time docker-compose exec php sh -c  "\
+time docker compose exec php sh -c  "\
   echo ' * Waiting php container to be ready' \
   && wait-for-it -t 60 localhost:9000 \
   && echo ' * Waiting for the database to be available' \

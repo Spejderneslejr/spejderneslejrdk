@@ -19,19 +19,19 @@ PHP_SERVICE="php"
 sudo echo ""
 
 # Clear all running containers.
-docker-compose kill && docker-compose rm -v -f && docker-compose down --remove-orphans -v
 echoc "*** Removing existing containers"
+docker compose kill && docker compose rm -v -f && docker compose down --remove-orphans -v
 
 # Start up containers in the background and continue immediately
 echoc "*** Starting new containers"
-docker-compose up --remove-orphans -d
+docker compose up --remove-orphans -d
 
 # Perform the drupal-specific reset
 echoc "*** Resetting Drupal"
 "${SCRIPT_DIR}/site-reset.sh"
 
 echoc "*** Warming cache by doing an initial request"
-docker-compose exec ${WEB_SERVICE} curl --silent --output /dev/null -H "Host: ${HOST}" localhost
+docker compose exec ${WEB_SERVICE} curl --silent --output /dev/null -H "Host: ${HOST}" localhost
 
 echoc "*** Access the site via http://spejderneslejr.docker (or http://localhost:$(docker compose port web 80 | cut -d ":" -f2) if you don't have a development proxy)"
 echoc "*** Access the site as user 1 via $(docker compose exec ${PHP_SERVICE} drush -l spejderneslejr.docker uli)"

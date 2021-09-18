@@ -40,6 +40,6 @@ tasks:
     desc: "Take down a running site removing any state"
     dir: drupal
     cmds:
-      - docker-compose kill
-      - docker-compose rm -v -f
-      - docker-compose down --remove-orphans -v
+      - docker compose kill
+      - docker compose rm -v -f
+      - docker compose down --remove-orphans -v
