@@ -24,7 +24,7 @@
     "drupal/purge": "~3.0",
     "drupal/purge_purger_http": "~1.0",
     "drupal/file_entity": "~2.0",
-    "drupal/admin_toolbar": "~1.0",
+    "drupal/admin_toolbar": "^3.0.2",
     "drupal/video_embed_field": "~1.0",
     "drupal/stage_file_proxy": "~1.0",
     "drupal/juicebox": "~2.0",
