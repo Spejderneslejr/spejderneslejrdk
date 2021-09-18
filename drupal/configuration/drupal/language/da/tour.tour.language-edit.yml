@@ -8,7 +8,10 @@ tips:
     body: '<p>Du kan ikke ændre en sprogkode på sitet. Det skyldes at systemet bruger koden til at holde styr på sproget.</p>'
   language-edit-label:
     label: Sprognavn
+    body: '<p>The language name is used throughout the site for all users and is written in English. Names of built-in languages can be translated using the Interface Translation module, and names of both built-in and custom languages can be translated using the Configuration Translation module.</p>'
   language-edit-direction:
     label: Sprogretning
+    body: '<p>Choose if the language is a "Left to right" or "Right to left" language.</p><p>Note that not all themes support "Right to left" layouts, so test your theme if you are using "Right to left".</p>'
   language-edit-continue:
     label: 'Fortsætter på'
+    body: '<p>Now that you have an overview of the "Edit language" feature, you can continue by:<ul><li>Editing a language</li><li><a href="[site:url]/admin/config/regional/language">Viewing configured languages</a></li></ul></p>'

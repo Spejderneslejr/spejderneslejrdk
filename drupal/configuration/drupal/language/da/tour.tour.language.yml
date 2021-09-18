@@ -8,9 +8,13 @@ tips:
     body: '<p>For at tilføje flere sprog til sitet skal du klikke på knappen "Tilføj sprog".</p><p>Tilføjede sprog vises på sproglisten og kan derefter redigeres eller slettes.</p>'
   language-reorder:
     label: 'Omorganisering af sprog'
+    body: '<p>To reorder the languages on your site, use the drag icons next to each language.</p><p>The order shown here is the display order for language lists on the site such as in the language switcher blocks provided by the Interface Translation and Content Translation modules.</p><p>When you are done with reordering the languages, click the "Save configuration" button for the changes to take effect.</p>'
   language-default:
     label: 'Vælg standardsprog'
+    body: '<p>You can change the default language of the site by choosing one of your configured languages as default. The site will use the default language in situations where no choice is made but a language should be set, for example as the language of the displayed interface.</p>'
   language-operations:
     label: 'Tilpasning af sprog'
+    body: '<p>Operations are provided for editing and deleting your languages.</p><p>You can edit the name and the direction of the language.</p><p>Deleted languages can be added back at a later time. Deleting a language will remove all interface translations associated with it, and content in this language will be set to be language neutral. Note that you cannot delete the default language of the site.</p>'
   language-continue:
     label: 'Fortsætter på'
+    body: '<p>Now that you have an overview of the "Languages" page, you can continue by:<ul><li><a href="[site:url]/admin/config/regional/language/add">Adding a language</a></li><li>Reordering languages</li><li>Editing a language</li><li>Deleting a language</li></ul></p>'

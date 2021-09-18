@@ -11,6 +11,7 @@ register_no_approval_required:
   body: "[user:display-name],\n\nTak fordi du har oprettet dig som bruger på [site:name]. Du kan nu logge ind ved at klikke på linket eller ved at kopiere og indsætte det i din browser:\n\n[user:one-time-login-url]\n\nDette link kan kun bruges til at logge ind, og det sender dig til en side hvor du kan vælge en adgangskode.\n\nNår du har valgt en adgangskode kan du logge ind på [site:login-url] med:\n\nBrugernavn: [user:name]\nAdgangskode: Din adgangskode\n\n--  Holdet bag [site:name]"
   subject: 'Kontoinformationer for [user:display-name] på [site:name] (blokeret)'
 register_pending_approval:
+  body: "[user:display-name],\n\nThank you for registering at [site:name]. Your application for an account is currently pending approval. Once it has been approved, you will receive another email containing information about how to log in, set your password, and other details.\n\n\n--  [site:name] team"
   subject: 'Kontoinformation for [user:display-name] på [site:name] (afventer godkendelse af administrator)'
 register_pending_approval_admin:
   body: "[user:display-name] har anmodet om en konto.\n\n[user:edit-url]"
