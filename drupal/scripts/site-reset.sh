@@ -18,6 +18,8 @@ time docker compose exec php sh -c  "\
   && echo 'composer installing' \
   && cd /var/www && composer install && cd /var/www/web \
   echo 'Site reset' && \
+  echo 'Exporting current configuration' && \
+  drush cex -y --destination=/var/www/configuration/export && \
   echo ' * Drush deploy' && \
   drush deploy && \
   echo ' * Locale check and update' && \

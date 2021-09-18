@@ -20,3 +20,6 @@ web/profiles/contrib
 docker-compose.override.yml
 docker/db/initdb.d
 web/themes/custom/camp/.yarn
+
+# Ignore local export of config made during reset
+configuration/export
