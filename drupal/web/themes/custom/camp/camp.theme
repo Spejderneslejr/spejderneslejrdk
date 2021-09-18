@@ -22,9 +22,9 @@ function camp_preprocess_field_collection_item(&$variables) {
     $variables['image_uri'] = NULL;
     /** @var \Drupal\file_entity\Entity\FileEntity $image */
     $field_collection_item = $variables['item']['#field_collection_item'];
-    $image = $field_collection_item->field_image->first()->entity;
-
-    if (!empty($image)) {
+    $first = $field_collection_item->field_image->first();
+    if (!empty($first)) {
+      $image = $first->entity;
       $uri = $image->getFileUri();
       $variables['image_uri'] = camp_url_to_protocol_relative(ImageStyle::load('max_325x325')->buildUrl($uri));
     }
