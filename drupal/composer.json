@@ -32,7 +32,7 @@
     "drupal/entity_browser": "~1.0",
     "drupal/google_analytics": "~2.0",
     "drupal/entityqueue": "~1.0",
-    "drupal/advanced_text_formatter": "~1.0",
+    "drupal/advanced_text_formatter": "^2.1.1",
     "drupal/pathauto": "~1.0",
     "drupal/redirect": "~1.0",
     "drupal/field_collection": "~1.0",

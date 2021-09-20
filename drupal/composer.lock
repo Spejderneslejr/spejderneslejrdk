@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a38170f7fc326726678ceef287e7b10a",
+    "content-hash": "a607e6af5c470536fc504c1ae619649a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1770,26 +1770,26 @@
         },
         {
             "name": "drupal/advanced_text_formatter",
-            "version": "1.0.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/advanced_text_formatter.git",
-                "reference": "8.x-1.0"
+                "reference": "2.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/advanced_text_formatter-8.x-1.0.zip",
-                "reference": "8.x-1.0",
-                "shasum": "406e6d86ea617bcdeea1565fdbd6354a75448adf"
+                "url": "https://ftp.drupal.org/files/projects/advanced_text_formatter-2.1.1.zip",
+                "reference": "2.1.1",
+                "shasum": "c656349ce20bf6ca1f561b18bd223a993700bc6f"
             },
             "require": {
-                "drupal/core": "^8"
+                "drupal/core": "^8 || ^9"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0",
-                    "datestamp": "1557589686",
+                    "version": "2.1.1",
+                    "datestamp": "1631794804",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
