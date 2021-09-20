@@ -8,7 +8,7 @@ tasks:
     cmds:
       - rm -fr docker/db/fetch
       - mkdir -p docker/db/fetch
-      - platform db:dump -e {{.ENV}} --gzip -d docker/db/fetch
+      - platform db:dump -e {{.ENV}} --app drupal -p kigwipdp3tsiq --gzip -d docker/db/fetch
       - rm -f docker/db/initdb.d/*.gz
       - mkdir -p docker/db/initdb.d/
       - mv docker/db/fetch/* docker/db/initdb.d/
