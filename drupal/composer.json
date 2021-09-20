@@ -41,7 +41,7 @@
     "drupal/google_tag": "^1",
     "drupal/redis": "^1.5",
     "predis/predis": "^1.1",
-    "drupal/core-recommended": "^8.8"
+    "drupal/core-recommended": "^8.9"
   },
   "require-dev": {
     "behat/mink": "~1.6",
