@@ -1,8 +1,32 @@
-description: 'Find og håndtér filer.'
 display:
   default:
-    display_title: Master
     display_options:
+      fields:
+        changed:
+          separator: ', '
+          label: Ændret
+        created:
+          separator: ', '
+          label: Oprettet
+        bulk_form:
+          action_title: Handling
+        fid:
+          label: Fid
+        filename:
+          label: Navn
+        type:
+          label: Type
+        filemime:
+          label: Mime-type
+        filesize:
+          label: Størrelse
+        status:
+          label: Status
+        count:
+          label: 'Brugt i'
+          format_plural_string: !!binary MSBzdGVkA0Bjb3VudCBzdGVkZXI=
+        operations:
+          label: Handlinger
       exposed_form:
         options:
           submit_button: Udfør
@@ -19,32 +43,6 @@ display:
             items_per_page_label: 'Antal elementer'
             items_per_page_options_all_label: '- Alle -'
             offset_label: Forskydning
-      fields:
-        bulk_form:
-          action_title: Handling
-        fid:
-          label: Fid
-        filename:
-          label: Navn
-        type:
-          label: Type
-        filemime:
-          label: Mime-type
-        filesize:
-          label: Størrelse
-        status:
-          label: Status
-        changed:
-          label: Ændret
-          separator: ', '
-        created:
-          label: Oprettet
-          separator: ', '
-        count:
-          label: 'Brugt i'
-          format_plural_string: !!binary MSBzdGVkA0Bjb3VudCBzdGVkZXI=
-        operations:
-          label: Handlinger
       filters:
         filename:
           expose:
@@ -62,6 +60,7 @@ display:
       empty:
         area_text_custom:
           content: 'Ingen tilgængelige filer.'
+    display_title: Master
   overview:
     display_title: Filoversigt
     display_options:
@@ -97,3 +96,4 @@ display:
           title: 'Information om brug af filen {{ arguments.fid }}'
       menu:
         title: Brug
+description: 'Find og håndtér filer.'

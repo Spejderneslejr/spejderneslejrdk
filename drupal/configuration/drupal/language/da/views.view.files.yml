@@ -27,7 +27,7 @@ display:
           label: Navn
           separator: ', '
         filemime:
-          label: 'MIME type'
+          label: Mime-type
         filesize:
           label: Størrelse
         status:
@@ -38,7 +38,7 @@ display:
         created:
           label: Upload-dato
         changed:
-          label: Ændringsdato
+          label: Ændret
         count:
           label: 'Brugt i'
           format_plural_string: !!binary MSBzdGVkA0Bjb3VudCBzdGVkZXI=
@@ -48,7 +48,7 @@ display:
             label: Filnavn
         filemime:
           expose:
-            label: 'MIME type'
+            label: Mime-type
         status:
           expose:
             label: Status

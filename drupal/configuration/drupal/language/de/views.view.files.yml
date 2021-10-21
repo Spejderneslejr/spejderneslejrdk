@@ -38,7 +38,7 @@ display:
         created:
           label: 'Upload Datum'
         changed:
-          label: 'Datum geändert'
+          label: Geändert
         count:
           label: 'Verwendet in'
           format_plural_string: !!binary MSBzdGVkA0Bjb3VudCBzdGVkZXI=
