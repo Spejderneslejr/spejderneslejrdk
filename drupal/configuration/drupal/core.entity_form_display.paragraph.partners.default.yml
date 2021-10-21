@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.partners.field_linked_image
+    - field.field.paragraph.partners.field_linked_images
     - field.field.paragraph.partners.field_partners_column_1
     - field.field.paragraph.partners.field_partners_column_2
     - field.field.paragraph.partners.field_partners_links
@@ -12,6 +13,7 @@ dependencies:
   module:
     - field_collection
     - link
+    - paragraphs
     - text
 id: paragraph.partners.default
 targetEntityType: paragraph
@@ -23,6 +25,18 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: field_collection_embed
+    region: content
+  field_linked_images:
+    type: entity_reference_paragraphs
+    weight: 6
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   field_partners_column_1:
     weight: 1

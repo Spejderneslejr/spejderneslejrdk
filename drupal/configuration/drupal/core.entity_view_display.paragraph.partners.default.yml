@@ -4,12 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.partners.field_linked_image
+    - field.field.paragraph.partners.field_linked_images
     - field.field.paragraph.partners.field_partners_column_1
     - field.field.paragraph.partners.field_partners_column_2
     - field.field.paragraph.partners.field_partners_links
     - field.field.paragraph.partners.field_title
     - paragraphs.paragraphs_type.partners
   module:
+    - entity_reference_revisions
     - field_collection
     - link
     - text
@@ -24,6 +26,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: field_collection_items
+    region: content
+  field_linked_images:
+    type: entity_reference_revisions_entity_view
+    weight: 6
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
   field_partners_column_1:
     weight: 2
