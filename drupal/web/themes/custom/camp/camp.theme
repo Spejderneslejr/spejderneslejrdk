@@ -131,6 +131,18 @@ function camp_preprocess_paragraph(&$variables) {
       };
 
       break;
+
+    case 'linked_image':
+      $variables['image_uri'] = NULL;
+      /** @var \Drupal\file_entity\Entity\FileEntity $image */
+      $first = $paragraph->field_linked_image_image->first();
+      if (!empty($first)) {
+        $image = $first->entity;
+        $uri = $image->getFileUri();
+        $variables['image_uri'] = camp_url_to_protocol_relative(ImageStyle::load('max_325x325')->buildUrl($uri));
+      }
+
+      break;
   }
 }
 

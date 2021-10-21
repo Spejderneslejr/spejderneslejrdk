@@ -1,0 +1,10 @@
+uuid: 9e4ebaa5-7354-4417-b889-8dc70b1eb20c
+langcode: en
+status: true
+dependencies: {  }
+id: linked_image
+label: 'Linked image'
+icon_uuid: null
+icon_default: null
+description: 'A linked image used inline in the partner paragraph type.'
+behavior_plugins: {  }

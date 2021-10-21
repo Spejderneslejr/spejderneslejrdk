@@ -71,7 +71,6 @@
 
 .paragraph--type--partners {
   position: relative;
-    height: 80vh;
     min-height: 800px;
     width: 100%;
     display: block;
@@ -94,7 +93,6 @@
 .partners__images {
   position: relative;
   width: 100%;
-  height: 70px;
   margin-top: 10vh;
   text-align: center;
 
@@ -112,7 +110,7 @@
 .spnsor-block {
   display: inline-block;
   width: 23%;
-  height: 100%;
+  height: 70px;
   margin-bottom: 50px;
   background-position: 50% 50%;
   background-size: contain;
