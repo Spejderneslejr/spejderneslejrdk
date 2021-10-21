@@ -1,8 +1,32 @@
-description: 'Dateien suchen und verwalten.'
 display:
   default:
-    display_title: Master
     display_options:
+      fields:
+        changed:
+          separator: ', '
+          label: Geändert
+        created:
+          separator: ', '
+          label: Erstellt
+        bulk_form:
+          action_title: Handling
+        fid:
+          label: Fid
+        filename:
+          label: Name
+        type:
+          label: Typ
+        filemime:
+          label: MIME-Typ
+        filesize:
+          label: Größe
+        status:
+          label: Status
+        count:
+          label: 'Verwendet in'
+          format_plural_string: !!binary MSBzdGVkA0Bjb3VudCBzdGVkZXI=
+        operations:
+          label: Operationen
       exposed_form:
         options:
           submit_button: Anwenden
@@ -19,32 +43,6 @@ display:
             items_per_page_label: 'Elemente pro Seite'
             items_per_page_options_all_label: '- Alle -'
             offset_label: Versatz
-      fields:
-        bulk_form:
-          action_title: Handling
-        fid:
-          label: Fid
-        filename:
-          label: Name
-        type:
-          label: Typ
-        filemime:
-          label: MIME-Typ
-        filesize:
-          label: Größe
-        status:
-          label: Status
-        changed:
-          label: Geändert
-          separator: ', '
-        created:
-          label: Erstellt
-          separator: ', '
-        count:
-          label: 'Verwendet in'
-          format_plural_string: !!binary MSBzdGVkA0Bjb3VudCBzdGVkZXI=
-        operations:
-          label: Operationen
       filters:
         filename:
           expose:
@@ -62,6 +60,7 @@ display:
       empty:
         area_text_custom:
           content: 'Keine Dateien verfügbar'
+    display_title: Master
   overview:
     display_title: Dateiübersicht
     display_options:
@@ -97,3 +96,4 @@ display:
           title: 'Dateiverwendungsinformationen für {{ arguments.fid }}'
       menu:
         title: Verwendung
+description: 'Dateien suchen und verwalten.'
