@@ -91,7 +91,7 @@ function camp_default_teaser_image_validate(array $element, FormState &$form_sta
   $validators = array('file_validate_is_image' => array());
 
   /** @var File $file */
-  $file = file_save_upload('default_teaser_image', $validators, "public://", NULL, FILE_EXISTS_REPLACE);
+  $file = file_save_upload('default_teaser_image', $validators, "public://", NULL, Drupal\Core\File\FileSystemInterface::EXISTS_REPLACE);
   if (!empty($file)) {
     $uri = $file[0]->getFileUri();
     $form_state->setValue('default_teaser_image_path', $uri);
