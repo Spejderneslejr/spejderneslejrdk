@@ -2,4 +2,5 @@ name: Jamden Juicbox
 type: module
 description: Alter Juicebox data
 core: 8.x
+core_version_requirement: ^8 || ^9
 package: Jamboree Denmark

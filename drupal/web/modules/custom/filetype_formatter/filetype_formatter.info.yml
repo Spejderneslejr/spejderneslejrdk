@@ -2,3 +2,4 @@ name: Filetype formatter
 type: module
 description: Displays the type of file next to a download link
 core: 8.x
+core_version_requirement: ^8 || ^9
