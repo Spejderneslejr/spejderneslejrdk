@@ -2,3 +2,4 @@ name: Card Gallery
 type: module
 description: Displays images as a gallery of cards
 core: 8.x
+core_version_requirement: ^8 || ^9

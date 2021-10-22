@@ -9,6 +9,7 @@ libraries-override:
     camp/camp.drupal.dialog
 
 core: 8.x
+core_version_requirement: ^8 || ^9
 regions:
   header: Header
   featured: Featured

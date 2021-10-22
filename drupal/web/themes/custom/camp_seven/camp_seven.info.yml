@@ -3,6 +3,7 @@ type: theme
 base theme: seven
 description: 'Camp Seven(teen)- Admin-theme for the Jamboree Denmark site'
 core: 8.x
+core_version_requirement: ^8 || ^9
 libraries:
  - camp_seven/global-styling
 regions:
