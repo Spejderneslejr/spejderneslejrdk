@@ -104,6 +104,9 @@
     "patches": {
       "drupal/core": {
         "2408549: Notify about overridden configuration": "https://www.drupal.org/files/issues/2020-09-17/2408549-139.patch"
+      },
+      "drupal/field_collection": {
+        "tbd: Support cleanup": "patches/field_collections.patch"
       }
     }
   }
