@@ -1,0 +1,15 @@
+diff --git a/src/Entity/FieldCollectionItem.php b/src/Entity/FieldCollectionItem.php
+index 498f650..17209ac 100644
+--- a/src/Entity/FieldCollectionItem.php
++++ b/src/Entity/FieldCollectionItem.php
+@@ -78,6 +78,10 @@ class FieldCollectionItem extends ContentEntityBase implements FieldCollectionIt
+    * Overrides \Drupal\Core\Entity\label().
+    */
+   public function label() {
++    if (empty($this->getHost())) {
++      return parent::label();
++    }
++
+     $field_label = $this->getHost()
+       ->getFieldDefinition($this->bundle())
+       ->label();
