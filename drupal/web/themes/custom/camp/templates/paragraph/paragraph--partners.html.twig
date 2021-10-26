@@ -62,12 +62,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
       </div>
     </div>
     <div class="row partners__images">
-      {{ content.field_linked_image }}
-    </div>
-{% if logged_in %}
-    <div class="row partners__images">
       {{ content.field_linked_images }}
     </div>
-{% endif %}
   </div>
 </div>
