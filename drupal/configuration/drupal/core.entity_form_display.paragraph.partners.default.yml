@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.partners.field_linked_image
     - field.field.paragraph.partners.field_linked_images
     - field.field.paragraph.partners.field_partners_column_1
     - field.field.paragraph.partners.field_partners_column_2
@@ -11,7 +10,6 @@ dependencies:
     - field.field.paragraph.partners.field_title
     - paragraphs.paragraphs_type.partners
   module:
-    - field_collection
     - link
     - paragraphs
     - text
@@ -20,12 +18,6 @@ targetEntityType: paragraph
 bundle: partners
 mode: default
 content:
-  field_linked_image:
-    weight: 5
-    settings: {  }
-    third_party_settings: {  }
-    type: field_collection_embed
-    region: content
   field_linked_images:
     type: entity_reference_paragraphs
     weight: 6
