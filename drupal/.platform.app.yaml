@@ -137,12 +137,13 @@ crons:
     cmd: |
       cd "$PLATFORM_DOCUMENT_ROOT"
       $PLATFORM_APP_DIR/vendor/bin/drush core:cron --uri=$(platform route:get --primary --property=url)
-  snapshot:
-    spec: "15 0 * * *"
+
+  backup:
+    spec: '15 0 * * *'
     cmd: |
-      if [ "$PLATFORM_BRANCH" = "master" ] || [ "$PLATFORM_BRANCH" = "develop" ]; then
-          platform backup:create --yes --no-wait
-      fi
+        if [ "$PLATFORM_ENVIRONMENT_TYPE" = production ]; then
+            platform backup:create --yes --no-wait
+        fi
   renewcert:
     # Force a redeploy at 3 am (UTC) on the 1st and 15th of every month.
     spec: "0 3 1,15 * *"
