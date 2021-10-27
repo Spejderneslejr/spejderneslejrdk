@@ -33,12 +33,13 @@
     "drupal/advanced_text_formatter": "^2.1.1",
     "drupal/pathauto": "~1.0",
     "drupal/redirect": "~1.0",
-    "drupal/field_collection": "~1.0",
     "drupal/editor_advanced_link": "~1.0",
     "drupal/google_tag": "^1",
     "drupal/redis": "^1.5",
     "predis/predis": "^1.1",
-    "drupal/core-recommended": "^8.9"
+    "drupal/core-recommended": "^9",
+    "drupal/core-composer-scaffold": "^9",
+    "drupal/core-project-message": "^9"
   },
   "require-dev": {
     "jcalderonzumba/gastonjs": "^1.1@dev",
