@@ -1439,6 +1439,16 @@ h6 {
   top: -4px;
 }
 
+body.user-logged-in.toolbar-vertical .main-nav-scrolled.js-active {
+  -webkit-transform: translateX(0px) translateY(40px) translateZ(0px);
+  transform: translateX(0px) translateY(40px) translateZ(0px);
+}
+
+body.user-logged-in.toolbar-horizontal .main-nav-scrolled.js-active {
+  -webkit-transform: translateX(0px) translateY(80px) translateZ(0px);
+  transform: translateX(0px) translateY(80px) translateZ(0px);
+}
+
 .menu-toggle {
   display: none;
   position: fixed;
@@ -1492,7 +1502,7 @@ h6 {
   }
 }
 
-#toolbar-administration {
+.toolbar-oriented .toolbar-bar {
   z-index: 999999;
 }
 

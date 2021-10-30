@@ -515,7 +515,6 @@ ul.menu-level--1 {
  * area.
  */
 .main-nav-scrolled {
-
   // Add transition to sticky menu.
   transform: translateX(0px) translateY(-100%) translateZ(0px);
   transition: transform 500ms;
@@ -622,7 +621,21 @@ ul.menu-level--1 {
   }
 }
 
-// Burger mneu toggle.
+
+body.user-logged-in.toolbar-vertical .main-nav-scrolled.js-active {
+  // Place the menu under the admin menu.
+  // margin-top: 80px;
+  transform: translateX(0px) translateY(40px) translateZ(0px);
+}
+
+
+body.user-logged-in.toolbar-horizontal .main-nav-scrolled.js-active {
+  // Place the menu under the admin menu.
+  // margin-top: 80px;
+  transform: translateX(0px) translateY(80px) translateZ(0px);
+}
+
+// Burger menu toggle.
 .menu-toggle {
   // Hide on bigger screens.
   display: none;
@@ -666,6 +679,7 @@ ul.menu-level--1 {
 }
 
 // When the admin toolbar is active we need to adjust the header a little.
-#toolbar-administration {
-  z-index: 999999;
-}
+  .toolbar-oriented .toolbar-bar {
+    z-index: 999999;
+  }
+
