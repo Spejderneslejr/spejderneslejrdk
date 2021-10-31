@@ -9,6 +9,17 @@
   padding-right: 25px;
   float: none;
 
+
+  body.user-logged-in.toolbar-vertical & {
+    margin-top: 40px;
+  }
+
+
+  body.user-logged-in.toolbar-horizontal & {
+    margin-top: 80px;
+  }
+
+
   li {
     float: left;
     width: 32px;
