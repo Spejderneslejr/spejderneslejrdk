@@ -29,3 +29,4 @@ permissions:
   - 'view paragraph content quote'
   - 'view paragraph content text'
   - 'view paragraph content video'
+  - 'view paragraph content views_reference'

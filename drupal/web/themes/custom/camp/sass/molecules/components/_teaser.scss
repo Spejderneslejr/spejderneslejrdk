@@ -13,13 +13,12 @@
 }
 
 ul.news--teaser-list {
-  list-style-type: none;
-
   // Move the headline and date-field close together.
-  h2 {
+  h3 {
     margin-bottom: 0;
     @include media($phone) {
       & {
+        margin-top: 5px;
         clear: both;
       }
     }
@@ -27,6 +26,12 @@ ul.news--teaser-list {
   }
   .date-field {
     margin-top: 0;
+    margin-bottom: 5px;
+    @include media($phone) {
+      & {
+        margin-bottom: 0;
+      }
+    }
   }
 
   // The <li> is wrapped in an a-tag, we don't want everything underlined.
@@ -44,20 +49,51 @@ ul.news--teaser-list {
     padding: 10px;
     overflow: auto;
     margin: 0;
+
+    @include media($phone) {
+      & {
+        margin-bottom: 5px;
+      }
+    }
+
   }
   li:hover {
     background: $white-dark;
   }
 
-  @include media($tablet-p) {
-    p {
-      margin-bottom: 16px;
-    }
-
-    // We need more spacing to seperate the items when shown in 1 column.
-    li {
-      margin-bottom: 20px;
-    }
+  li {
+    margin-top: 0px;
+    padding-left: 40px;
   }
 
+  h3 {
+    position: relative;
+    &:before {
+      // Use our link green
+      color: $green;
+      left: -47px;
+      top: 5px;
+      float: left;
+      position: absolute;
+      margin-left: 13px;
+      font-size: 12px;
+      line-height: em(22, $base-font-size);
+      @include icon('.icon-arrow_down');
+      @include transform(rotate(270deg));
+    }
+  }
+}
+
+
+// Supplement the standard teaser list above.
+ul.news--teaser-list.news--teaser-list--compact {
+  li {
+    // The before is position relative to
+    a &:before {
+
+    }
+    h3 {
+      margin-top: 0;
+    }
+    }
 }

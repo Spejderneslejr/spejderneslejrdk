@@ -1,9 +1,9 @@
-uuid: 4f4bf932-39e2-4b80-82d6-41014927a3fa
+uuid: db399735-6263-412c-9088-d272416e22b9
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.compact
     - field.field.node.article.field_paragraphs
     - field.field.node.article.field_summary
     - field.field.node.article.field_tagline
@@ -13,14 +13,13 @@ dependencies:
     - advanced_text_formatter
     - user
 _core:
-  default_config_hash: U8ghxJXn8JE2p6Q2wLpPWAxpz4r_8crL1LxtapSrHAE
-id: node.article.teaser
+  default_config_hash: JtAg_-waIt1quMtdDtHIaXJMxvTuSmxW7bWyO6Zd68E
+id: node.article.compact
 targetEntityType: node
 bundle: article
-mode: teaser
+mode: compact
 content:
   field_summary:
-    type: advanced_text
     weight: 0
     label: hidden
     settings:
@@ -48,6 +47,7 @@ content:
       token_replace: 0
       autop: 0
     third_party_settings: {  }
+    type: advanced_text
     region: content
 hidden:
   field_paragraphs: true

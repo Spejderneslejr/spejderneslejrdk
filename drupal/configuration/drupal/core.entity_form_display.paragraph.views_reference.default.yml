@@ -1,0 +1,36 @@
+uuid: 3cd8f2a6-cbbd-4c14-a3f8-b873aeaa6b3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.views_reference.field_views_reference
+    - field.field.paragraph.views_reference.field_views_reference_title
+    - paragraphs.paragraphs_type.views_reference
+  module:
+    - viewsreference
+id: paragraph.views_reference.default
+targetEntityType: paragraph
+bundle: views_reference
+mode: default
+content:
+  field_views_reference:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: viewsreference_autocomplete
+    region: content
+  field_views_reference_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

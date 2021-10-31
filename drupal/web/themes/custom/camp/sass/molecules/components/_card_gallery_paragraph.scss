@@ -1,0 +1,7 @@
+// Basic setup of font-sizes during breakpoints.
+.paragraph--type--frontpage-gallery {
+  // We have a lot of absolute positioning and motion inside the paragraph
+  // so we have to clear quite a bit of space.
+  margin-top:65px;
+
+}

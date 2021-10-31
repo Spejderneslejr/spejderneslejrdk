@@ -1,0 +1,45 @@
+uuid: 2b05799a-08f7-48f2-b275-46fa4bfe706a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.views_reference.field_views_reference
+    - field.field.paragraph.views_reference.field_views_reference_title
+    - paragraphs.paragraphs_type.views_reference
+  module:
+    - advanced_text_formatter
+    - viewsreference
+id: paragraph.views_reference.default
+targetEntityType: paragraph
+bundle: views_reference
+mode: default
+content:
+  field_views_reference:
+    weight: 1
+    label: hidden
+    settings:
+      plugin_types:
+        block: block
+        default: 0
+        page: 0
+        feed: 0
+    third_party_settings: {  }
+    type: viewsreference_formatter
+    region: content
+  field_views_reference_title:
+    weight: 0
+    label: above
+    settings:
+      trim_length: 600
+      ellipsis: 1
+      word_boundary: 1
+      token_replace: 0
+      filter: input
+      format: plain_text
+      allowed_html: '<a> <b> <br> <dd> <dl> <dt> <em> <i> <li> <ol> <p> <strong> <u> <ul>'
+      autop: 0
+      use_summary: 0
+    third_party_settings: {  }
+    type: advanced_text
+    region: content
+hidden: {  }
