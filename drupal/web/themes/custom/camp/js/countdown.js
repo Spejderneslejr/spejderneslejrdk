@@ -1,7 +1,7 @@
 (function ($, Drupal) {
 
   /**
-   * Inserts a dountdown inside an element.
+   * Inserts a countdown inside an element.
    *
    * @param <Date> deadline
    */
@@ -37,11 +37,11 @@
       }
 
       function initializeClock(endtime) {
-
+        var lang_hours = drupalSettings.path.currentLanguage == 'en' ? 'H' : 'T';
         var html = '<span class="days clock__number"></span>' +
         '<span class="clock__unit">D</span>' +
         '<span class="hours clock__number"></span>' +
-        '<span class="clock__unit">T</span>' +
+        '<span class="clock__unit">'+ lang_hours +'</span>' +
         '<span class="minutes clock__number"></span>' +
         '<span class="clock__unit">M</span>' +
         '<span class="seconds clock__number"></span>' +
