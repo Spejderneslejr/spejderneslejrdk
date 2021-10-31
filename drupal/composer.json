@@ -39,7 +39,8 @@
     "predis/predis": "^1.1",
     "drupal/core-recommended": "^9",
     "drupal/core-composer-scaffold": "^9",
-    "drupal/core-project-message": "^9"
+    "drupal/core-project-message": "^9",
+    "drupal/viewsreference": "^2"
   },
   "require-dev": {
     "jcalderonzumba/gastonjs": "^1.1@dev",
