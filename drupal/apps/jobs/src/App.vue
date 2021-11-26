@@ -1,6 +1,9 @@
 <template>
   <Layout class="jobs-app">
     <h1>Opgavebanken</h1>
+    <p>
+    Fandt du ikke en opgave som matchede dig? Så kom med på holdet ved at udfylde <a href="/da/kom-med-pa-holdet-bag-spejdernes-lejr-2022">denne formular</a>
+    </p>
     <!-- <DepartmentSelector /> -->
     <hr />
     <JobFilter v-model="sortBy" v-on:search="searchFilter" :fetch="sortJobs" />
