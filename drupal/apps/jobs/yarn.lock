@@ -437,10 +437,10 @@ vite@^2.2.3:
   optionalDependencies:
     fsevents "~2.3.1"
 
-vue-pagination-2@^3.0.8:
-  version "3.0.9"
-  resolved "https://registry.npmjs.org/vue-pagination-2/-/vue-pagination-2-3.0.9.tgz"
-  integrity sha512-dFB+NBLjUrAVIabs7/1JIb2QIf8qFDo9OzlLknSalSJy2bkEwggIF5/UB3BUaqvl+V+zhOeqf8btkbK4fodfyw==
+vue-pagination-2@^3.0.91:
+  version "3.0.91"
+  resolved "https://registry.yarnpkg.com/vue-pagination-2/-/vue-pagination-2-3.0.91.tgz#f0bb50762a08118c387e9ea8530b33b7b860751c"
+  integrity sha512-gmbh6S8e8/WanhteRe4W3dgIOL9b6HuONkQmk6vq1AB8U42nWvc+c30kEbIt2lZ9eTVjE69xDvalHUh9f666wQ==
   dependencies:
     babel-plugin-add-module-exports "^0.2.1"
     merge "^2.1.1"
