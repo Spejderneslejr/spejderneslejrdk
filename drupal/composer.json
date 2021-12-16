@@ -16,7 +16,7 @@
     }
   ],
   "require": {
-    "composer/installers": "^1.7",
+    "composer/installers": "^2.0",
     "cweagans/composer-patches": "^1.7",
     "drupal/paragraphs": "^1.12",
     "drush/drush": "^10",
