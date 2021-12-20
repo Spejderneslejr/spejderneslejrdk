@@ -26,9 +26,7 @@
           </div>
           <div class="content">
           <p class="title">Ansøg</p>
-          For at ansøge dette job, skal du sende en mail til <a href="mailto:sljob@sl2022.dk">sljob@sl2022.dk</a>, hvor du i emnefeltet skriver "SL job {{job.id}}".<br> 
-          Efterfølgende vil du blive kontaktet af kontaktpersonen til jobbet. Har du yderligere spørgsmål, er du velkommen til at skrive til <a href="mailto:sljob@sl2022.dk">sljob@sl2022.dk</a>.<br> 
-          OBS. Af hensyn til GDPR, skal du kun oplyse navn og alder i ansøgning. Andre oplysninger bliver indhentet, når det bliver nødvendigt. 
+          For at ansøge dette job, skal du klikke på <a v-bind:href="'https://sl2022-test.steingabelgaard.dk/member/job/' + job.id">dette link</a>. Linket fører dig videre til tilmeldings-systemet, hvor du hvis du er medlem af et spejderkorps kan logge på og fuldføre din ansøgning. Hvis du ikke er medlem af et spejderkorps skal du oprette en bruger først.
           </div>
           <div class="content">
           <p class="title">Om Spejdernes Lejr</p>
