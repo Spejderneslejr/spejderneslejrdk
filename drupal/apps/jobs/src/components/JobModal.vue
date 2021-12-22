@@ -24,6 +24,10 @@
           <p class="title">Vi giver</p>
           {{job.description_we_give}}
           </div>
+          <div v-if="job.description_scope" class="content">
+          <p class="title">Tid og omfang</p>
+          {{job.description_scope}}
+          </div>
           <div class="content">
           <p class="title">Ansøg</p>
           For at ansøge dette job, skal du klikke på <a v-bind:href="'https://sl2022-test.steingabelgaard.dk/member/job/' + job.id">dette link</a>. Linket fører dig videre til tilmeldings-systemet, hvor du hvis du er medlem af et spejderkorps kan logge på og fuldføre din ansøgning. Hvis du ikke er medlem af et spejderkorps skal du oprette en bruger først.

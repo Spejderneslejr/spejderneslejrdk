@@ -117,7 +117,8 @@ export default {
     },
       formatArea(org) {
         var areas = org[1].split(" - ");
-        return areas[1];
+        var area = areas[1].replace(/\d+/g, '').trim();
+        return area;
       },
     sortJobs() {
       switch (this.sortBy) {
