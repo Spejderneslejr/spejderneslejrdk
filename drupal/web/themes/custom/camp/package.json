@@ -6,7 +6,7 @@
     "start": "yarn install && gulp"
   },
   "devDependencies": {
-    "eslint": "^7.7.0",
+    "eslint": "^8.6.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-jshint": "^2.0.1",
