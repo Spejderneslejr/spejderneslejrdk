@@ -2,13 +2,7 @@
   <Layout class="jobs-app">
     <h1>Opgavebanken</h1>
     <p>
-      I opgavebanken finder du konkrete opgaver lejren har brug for hjælp til. Klik ind på de enkelte opgaver for at se beskrivelsen, samt linket til at ansøge.
-    </p>
-    <p>
-      <ul>
-        <li>Har du allerede har en aftale om et konkret job? Så brug <a href="https://tilmelding.spejderneslejr.dk/member/job/110">dette link</a> i stedet</li>
-        <li>Har du ikke fundet et konkret job, men vil gerne være lejrfrivillig? Så brug <a href="https://tilmelding.spejderneslejr.dk/member/job/111">dette link</a> i stedet</li>
-      </ul>
+    Fandt du ikke en opgave som matchede dig? Så kom med på holdet ved at udfylde <a href="/da/kom-med-pa-holdet-bag-spejdernes-lejr-2022">denne formular</a>
     </p>
     <!-- <DepartmentSelector /> -->
     <hr />
