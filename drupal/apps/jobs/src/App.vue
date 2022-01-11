@@ -1,9 +1,15 @@
 <template>
   <Layout class="jobs-app">
     <h1>Opgavebanken</h1>
+    <div class="paragraph--type--text">
     <p>
-    Fandt du ikke en opgave som matchede dig? Så kom med på holdet ved at udfylde <a href="/da/kom-med-pa-holdet-bag-spejdernes-lejr-2022">denne formular</a>
+      I opgavebanken finder du konkrete opgaver lejren har brug for hjælp til. Klik ind på de enkelte opgaver for at se beskrivelsen. Her finder du også et link til at ansøge.
     </p>
+    <ul>
+      <li>Har du allerede en aftale om et konkret job - så brug <a href="https://tilmelding.spejderneslejr.dk/member/job/110">dette link</a></li>
+      <li>Har du ikke fundet et konkret job, men gerne vil være lejrfrivillig - så brug <a href="https://tilmelding.spejderneslejr.dk/member/job/111">dette link</a> i stedet</li>
+    </ul>
+    </div>
     <!-- <DepartmentSelector /> -->
     <hr />
     <JobFilter v-model="sortBy" v-on:search="searchFilter" :fetch="sortJobs" />
