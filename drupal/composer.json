@@ -19,7 +19,7 @@
     "composer/installers": "^1.7",
     "cweagans/composer-patches": "^1.7",
     "drupal/paragraphs": "^1.12",
-    "drush/drush": "^10",
+    "drush/drush": "^11",
     "drupal/file_entity": "~2.0",
     "drupal/admin_toolbar": "^3.0.2",
     "drupal/video_embed_field": "^2.4",
