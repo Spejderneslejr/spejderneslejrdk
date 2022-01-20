@@ -1718,7 +1718,7 @@
         },
         {
             "name": "drupal/core-project-message",
-            "version": "9.2.7",
+            "version": "9.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-project-message.git",
@@ -1753,7 +1753,7 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-project-message/tree/9.2.7"
+                "source": "https://github.com/drupal/core-project-message/tree/9.3.3"
             },
             "time": "2020-09-14T13:40:36+00:00"
         },
@@ -8310,5 +8310,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }
