@@ -3458,7 +3458,6 @@ a[href^=mailto]:before {
   text-align: left;
   color: white;
   font-size: 70px;
-  margin-left: 20px;
   margin-bottom: 40px;
   float: left;
   width: 100%;
@@ -3466,7 +3465,7 @@ a[href^=mailto]:before {
 
 @media screen and (max-width: 1024px) {
   .icon-logo_alt--footer {
-    font-size: 38px;
+    font-size: 70px;
   }
 }
 
