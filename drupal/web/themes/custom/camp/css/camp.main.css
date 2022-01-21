@@ -726,6 +726,12 @@ h1 {
   font-family: 'FB Hermes', sans-serif;
 }
 
+@media screen and (max-width: 772px) {
+  h1 {
+    font-size: 2.14286em;
+  }
+}
+
 h2 {
   font-size: 1.8em;
 }
@@ -2538,7 +2544,7 @@ ul.atcb-list li {
     font-size: 0.875em;
   }
   .paragraph--type--infomercial h1 {
-    font-size: 4.28571em;
+    font-size: 2.85714em;
     margin-bottom: 0.35714em;
   }
   .paragraph--type--infomercial h2 {
