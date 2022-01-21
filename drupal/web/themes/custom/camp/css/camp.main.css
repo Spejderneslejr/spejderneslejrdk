@@ -966,15 +966,12 @@ body.user-logged-in.toolbar-horizontal .language-flags {
     left: auto;
     z-index: 9998;
     display: block;
-    overflow: auto;
-    width: 60%;
+    width: 90%;
     height: 100vh;
     margin: 0;
     padding-top: 70px;
     padding-left: 31px;
     background-color: white;
-    -webkit-box-shadow: 1px 1px 16px 0 rgba(0, 0, 0, 0.36);
-    box-shadow: 1px 1px 16px 0 rgba(0, 0, 0, 0.36);
     -webkit-transform: translate(100%, 0px);
     -ms-transform: translate(100%, 0px);
     transform: translate(100%, 0px);
@@ -996,6 +993,8 @@ body.user-logged-in.toolbar-horizontal .language-flags {
     -o-transition: transform 200ms;
     transition: transform 200ms;
     transition: transform 200ms, -webkit-transform 200ms;
+    -webkit-box-shadow: 1px 1px 16px 0 rgba(0, 0, 0, 0.36);
+    box-shadow: 1px 1px 16px 0 rgba(0, 0, 0, 0.36);
   }
 }
 
