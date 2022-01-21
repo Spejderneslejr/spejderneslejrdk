@@ -2680,14 +2680,14 @@ ul.atcb-list li {
 
 @media screen and (max-width: 1024px) {
   .newsletter-deck__bg-image {
-    background-position: 410px bottom;
-    background-size: 96%;
+    background-position: bottom right;
+    background-size: 50%;
   }
 }
 
 @media screen and (max-width: 500px) {
   .newsletter-deck__bg-image {
-    background-position: 208px bottom;
+    background-size: 100%;
   }
 }
 
