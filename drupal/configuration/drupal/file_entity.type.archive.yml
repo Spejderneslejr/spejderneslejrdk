@@ -1,0 +1,9 @@
+uuid: 14ff68d3-2edc-4eb8-bd5a-21e42ab83be5
+langcode: da
+status: true
+dependencies: {  }
+id: archive
+label: Archive
+description: 'An Archive is a zip-fil consisting of more files'
+mimetypes:
+  - application/zip
