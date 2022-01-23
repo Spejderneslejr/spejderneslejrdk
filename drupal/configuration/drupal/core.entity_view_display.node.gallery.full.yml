@@ -15,7 +15,7 @@ bundle: gallery
 mode: full
 content:
   field_image:
-    weight: 0
+    type: juicebox_formatter
     label: hidden
     settings:
       image_style: juicebox_medium
@@ -30,16 +30,16 @@ content:
       jlib_showOpenButton: true
       jlib_showExpandButton: true
       jlib_showThumbsButton: true
+      jlib_useThumbDots: false
+      jlib_useFullscreenExpand: '0'
       manual_config: ''
-      incompatible_file_action: show_icon_and_link
+      custom_parent_classes: ''
+      apply_markup_filter: true
       linkurl_source: ''
       linkurl_target: _blank
-      custom_parent_classes: ''
-      jlib_useFullscreenExpand: '0'
-      jlib_useThumbDots: false
-      apply_markup_filter: true
+      incompatible_file_action: show_icon_and_link
     third_party_settings: {  }
-    type: juicebox_formatter
+    weight: 0
     region: content
 hidden:
   langcode: true

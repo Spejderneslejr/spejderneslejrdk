@@ -13,11 +13,11 @@ bundle: markup
 mode: default
 content:
   field_markup:
-    weight: 0
+    type: raw_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: raw_string
+    weight: 0
     region: content
 hidden:
   created: true

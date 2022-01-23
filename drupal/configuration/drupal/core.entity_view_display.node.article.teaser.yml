@@ -21,7 +21,6 @@ mode: teaser
 content:
   field_summary:
     type: advanced_text
-    weight: 0
     label: hidden
     settings:
       trim_length: '300'
@@ -48,6 +47,7 @@ content:
       token_replace: 0
       autop: 0
     third_party_settings: {  }
+    weight: 0
     region: content
 hidden:
   field_paragraphs: true

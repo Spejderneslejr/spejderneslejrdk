@@ -23,22 +23,22 @@ mode: preview
 content:
   field_height_hint:
     type: list_default
-    weight: 2
-    region: content
     label: inline
     settings: {  }
     third_party_settings: {  }
+    weight: 2
+    region: content
   field_infomercial_bg_image:
-    weight: 4
+    type: image
     label: hidden
     settings:
-      image_style: medium
       image_link: ''
+      image_style: medium
     third_party_settings: {  }
-    type: image
+    weight: 4
     region: content
   field_infomercial_body:
-    weight: 1
+    type: advanced_text
     label: hidden
     settings:
       trim_length: '600'
@@ -65,10 +65,10 @@ content:
       token_replace: 0
       autop: 0
     third_party_settings: {  }
-    type: advanced_text
+    weight: 1
     region: content
   field_infomercial_call_to_action:
-    weight: 3
+    type: link_separate
     label: hidden
     settings:
       trim_length: 80
@@ -77,15 +77,15 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
-    type: link_separate
+    weight: 3
     region: content
   field_infomercial_title:
-    weight: 0
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 0
     region: content
 hidden:
   created: true

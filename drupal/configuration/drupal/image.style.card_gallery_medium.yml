@@ -6,10 +6,10 @@ name: card_gallery_medium
 label: card_gallery_medium
 effects:
   086c536f-aab1-4cdd-8dd5-47313b6dd5a7:
-    uuid: 086c536f-aab1-4cdd-8dd5-47313b6dd5a7
     id: image_scale_and_crop
-    weight: 1
     data:
       width: 538
       height: 503
       anchor: center-center
+    weight: 1
+    uuid: 086c536f-aab1-4cdd-8dd5-47313b6dd5a7

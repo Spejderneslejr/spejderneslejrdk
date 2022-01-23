@@ -18,7 +18,7 @@ bundle: quote
 mode: preview
 content:
   field_quote_body:
-    weight: 0
+    type: advanced_text
     label: hidden
     settings:
       trim_length: '600'
@@ -45,18 +45,18 @@ content:
       token_replace: 0
       autop: 0
     third_party_settings: {  }
-    type: advanced_text
+    weight: 0
     region: content
   field_quote_byline:
-    weight: 1
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 1
     region: content
   field_quote_link:
-    weight: 2
+    type: link_separate
     label: hidden
     settings:
       trim_length: 80
@@ -65,7 +65,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link_separate
+    weight: 2
     region: content
 hidden:
   created: true

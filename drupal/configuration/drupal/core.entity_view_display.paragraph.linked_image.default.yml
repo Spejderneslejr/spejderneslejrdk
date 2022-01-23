@@ -16,16 +16,16 @@ bundle: linked_image
 mode: default
 content:
   field_linked_image_image:
-    weight: 0
+    type: image
     label: hidden
     settings:
-      image_style: max_325x325
       image_link: ''
+      image_style: max_325x325
     third_party_settings: {  }
-    type: image
+    weight: 0
     region: content
   field_linked_image_link:
-    weight: 1
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -34,6 +34,6 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
-    type: link
+    weight: 1
     region: content
 hidden: {  }

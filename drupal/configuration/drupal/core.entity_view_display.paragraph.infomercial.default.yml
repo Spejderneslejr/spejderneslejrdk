@@ -20,30 +20,30 @@ bundle: infomercial
 mode: default
 content:
   field_height_hint:
-    weight: 4
+    type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: list_default
+    weight: 4
     region: content
   field_infomercial_bg_image:
-    weight: 3
+    type: image
     label: hidden
     settings:
-      image_style: max_1300x1300
       image_link: ''
+      image_style: max_1300x1300
     third_party_settings: {  }
-    type: image
+    weight: 3
     region: content
   field_infomercial_body:
-    weight: 1
+    type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 1
     region: content
   field_infomercial_call_to_action:
-    weight: 2
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -52,15 +52,15 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
-    type: link
+    weight: 2
     region: content
   field_infomercial_title:
-    weight: 0
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 0
     region: content
 hidden:
   created: true

@@ -20,7 +20,7 @@ bundle: article
 mode: compact
 content:
   field_summary:
-    weight: 0
+    type: advanced_text
     label: hidden
     settings:
       trim_length: '300'
@@ -47,7 +47,7 @@ content:
       token_replace: 0
       autop: 0
     third_party_settings: {  }
-    type: advanced_text
+    weight: 0
     region: content
 hidden:
   field_paragraphs: true

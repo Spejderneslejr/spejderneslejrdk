@@ -11,10 +11,10 @@ name: juicebox_large
 label: 'Juicebox large (2048x2048)'
 effects:
   ca5fe360-0fb0-11e4-9191-0800200c9a66:
-    uuid: ca5fe360-0fb0-11e4-9191-0800200c9a66
     id: image_scale
-    weight: 0
     data:
       width: 2048
       height: 2048
       upscale: false
+    weight: 0
+    uuid: ca5fe360-0fb0-11e4-9191-0800200c9a66

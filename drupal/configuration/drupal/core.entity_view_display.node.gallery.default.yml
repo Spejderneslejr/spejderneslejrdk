@@ -14,7 +14,7 @@ bundle: gallery
 mode: default
 content:
   field_image:
-    weight: 0
+    type: juicebox_formatter
     label: hidden
     settings:
       image_style: juicebox_large
@@ -28,21 +28,21 @@ content:
       jlib_thumbFrameColor: 'rgba(255,255,255,.5)'
       jlib_showOpenButton: true
       jlib_showExpandButton: true
+      jlib_showThumbsButton: false
+      jlib_useThumbDots: false
       jlib_useFullscreenExpand: '1'
       manual_config: |-
         captionPosition="OVERLAY_IMAGE"
         captionBackColor="rgba(0,0,0,.2)"
         captionBackTopColor="rgba(0,0,0,.2)"
         showImageOverlay="ALWAYS"
-      incompatible_file_action: ''
+      custom_parent_classes: ''
+      apply_markup_filter: true
       linkurl_source: ''
       linkurl_target: _blank
-      custom_parent_classes: ''
-      jlib_showThumbsButton: false
-      jlib_useThumbDots: false
-      apply_markup_filter: true
+      incompatible_file_action: ''
     third_party_settings: {  }
-    type: juicebox_formatter
+    weight: 0
     region: content
 hidden:
   langcode: true

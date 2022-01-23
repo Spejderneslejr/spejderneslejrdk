@@ -15,7 +15,7 @@ bundle: views_reference
 mode: default
 content:
   field_views_reference:
-    weight: 1
+    type: viewsreference_formatter
     label: hidden
     settings:
       plugin_types:
@@ -24,10 +24,10 @@ content:
         page: 0
         feed: 0
     third_party_settings: {  }
-    type: viewsreference_formatter
+    weight: 1
     region: content
   field_views_reference_title:
-    weight: 0
+    type: advanced_text
     label: above
     settings:
       trim_length: 600
@@ -40,6 +40,6 @@ content:
       autop: 0
       use_summary: 0
     third_party_settings: {  }
-    type: advanced_text
+    weight: 0
     region: content
 hidden: {  }

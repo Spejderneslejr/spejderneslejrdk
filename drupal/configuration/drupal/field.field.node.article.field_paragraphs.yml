@@ -44,43 +44,43 @@ settings:
       clear: clear
       partners: partners
     target_bundles_drag_drop:
-      text:
-        enabled: true
-        weight: -23
-      image:
-        enabled: true
-        weight: -22
-      factbox:
-        enabled: true
-        weight: -21
-      quote:
-        enabled: true
-        weight: -20
-      video:
-        enabled: true
-        weight: -19
-      download:
-        enabled: true
-        weight: -18
       accordion:
-        enabled: true
         weight: -17
-      markup:
         enabled: true
-        weight: -16
-      gallery_reference:
+      clear:
+        weight: 14
         enabled: true
-        weight: -15
+      download:
+        weight: -18
+        enabled: true
+      factbox:
+        weight: -21
+        enabled: true
       frontpage_gallery:
         weight: -14
         enabled: false
+      gallery_reference:
+        weight: -15
+        enabled: true
+      image:
+        weight: -22
+        enabled: true
       infomercial:
         weight: -13
         enabled: false
-      clear:
+      markup:
+        weight: -16
         enabled: true
-        weight: 14
       partners:
-        enabled: true
         weight: 21
+        enabled: true
+      quote:
+        weight: -20
+        enabled: true
+      text:
+        weight: -23
+        enabled: true
+      video:
+        weight: -19
+        enabled: true
 field_type: entity_reference_revisions

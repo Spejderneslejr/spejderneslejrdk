@@ -14,13 +14,13 @@ bundle: frontpage_gallery
 mode: default
 content:
   field_frontpage_gallery_image:
-    weight: 0
+    type: card_gallery
     label: hidden
     settings:
       image_style: medium
       image_link: ''
     third_party_settings: {  }
-    type: card_gallery
+    weight: 0
     region: content
 hidden:
   created: true

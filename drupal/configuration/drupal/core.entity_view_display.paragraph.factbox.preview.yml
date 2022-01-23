@@ -17,7 +17,7 @@ bundle: factbox
 mode: preview
 content:
   field_factbox_title:
-    weight: 1
+    type: advanced_text
     label: hidden
     settings:
       trim_length: '600'
@@ -44,14 +44,14 @@ content:
       token_replace: 0
       autop: 0
     third_party_settings: {  }
-    type: advanced_text
+    weight: 1
     region: content
   field_paragraph_text:
-    weight: 0
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 0
     region: content
 hidden:
   created: true
