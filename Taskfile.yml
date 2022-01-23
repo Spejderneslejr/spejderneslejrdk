@@ -43,6 +43,20 @@ tasks:
     dir: drupal
     cmds:
       - scripts/update-core.sh
+    preconditions:
+      - sh: "docker compose ps php -q > /dev/null"
+        msg: "Could not detect running php container"
+
+  drupal:upgrade:status:
+    desc: "Get a status for updatable composer packages"
+    summary: |
+      Assumes docker-compose is up and running
+    dir: drupal
+    cmds:
+      - docker compose exec php bash -c "cd .. && composer outdated"
+    preconditions:
+      - sh: "docker compose ps php -q > /dev/null"
+        msg: "Could not detect running php container"
 
   drupal:down:
     desc: "Take down a running site removing any state"
