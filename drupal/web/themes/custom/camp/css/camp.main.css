@@ -3682,6 +3682,10 @@ a[href^=mailto]:before {
   padding-left: 5%;
 }
 
+.view-id-news {
+  margin-top: -32px;
+}
+
 #main-content {
   display: block;
 }
