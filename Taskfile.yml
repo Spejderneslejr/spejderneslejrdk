@@ -36,6 +36,14 @@ tasks:
     cmds:
       - scripts/docker-reset.sh
 
+  drupal:upgrade:core:
+    desc: "Reset docker-environment and bring site back up"
+    summary: |
+      Assumes docker-compose is up and running
+    dir: drupal
+    cmds:
+      - scripts/update-core.sh
+
   drupal:up:
     desc: "Start Drupal site containers"
     dir: drupal

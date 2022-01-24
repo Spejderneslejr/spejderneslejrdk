@@ -16,8 +16,8 @@ plugin: footer_block
 settings:
   id: footer_block
   label: 'Global Footer german'
-  provider: jamden_base
   label_display: '0'
+  provider: jamden_base
   footer_column_1:
     value: "<p>© 2016-2022 Spejdernes Lejr</p>\r\n"
     format: plain_text
@@ -33,8 +33,8 @@ settings:
 visibility:
   language:
     id: language
-    langcodes:
-      de: de
     negate: false
     context_mapping:
       language: '@language.current_language_context:language_interface'
+    langcodes:
+      de: de

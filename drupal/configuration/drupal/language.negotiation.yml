@@ -1,3 +1,6 @@
+_core:
+  default_config_hash: uEePITI9tV6WqzmsTb7MfPCi5yPWXSxAN1xeLcYFQbM
+langcode: en
 session:
   parameter: language
 url:
@@ -12,6 +15,3 @@ url:
     da: ''
     de: ''
 selected_langcode: da
-_core:
-  default_config_hash: uEePITI9tV6WqzmsTb7MfPCi5yPWXSxAN1xeLcYFQbM
-langcode: en

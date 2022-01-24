@@ -1,7 +1,28 @@
 uuid: cc693d12-b9d1-437c-9c58-8771b7148a00
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.full_html
+    - node.type.article
+    - node.type.gallery
+    - node.type.page
+  module:
+    - block
+    - contextual
+    - entityqueue
+    - file
+    - file_entity
+    - filter
+    - locale
+    - node
+    - paragraphs_type_permissions
+    - path
+    - shortcut
+    - system
+    - toolbar
+    - tour
+    - video_embed_field
 id: super_editor
 label: 'Super editor'
 weight: 3

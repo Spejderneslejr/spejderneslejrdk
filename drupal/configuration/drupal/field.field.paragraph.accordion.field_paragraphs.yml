@@ -37,30 +37,21 @@ settings:
       accordion:
         weight: 7
         enabled: false
+      download:
+        weight: 14
+        enabled: true
+      factbox:
+        weight: 15
+        enabled: true
       frontpage_gallery:
         weight: 8
         enabled: false
-      image:
-        enabled: true
-        weight: 9
-      quote:
-        enabled: true
-        weight: 10
-      text:
-        enabled: true
-        weight: 11
-      video:
-        enabled: true
-        weight: 12
-      download:
-        enabled: true
-        weight: 14
-      factbox:
-        enabled: true
-        weight: 15
       gallery_reference:
         weight: 17
         enabled: false
+      image:
+        weight: 9
+        enabled: true
       infomercial:
         weight: 19
         enabled: false
@@ -70,4 +61,13 @@ settings:
       partners:
         weight: 21
         enabled: false
+      quote:
+        weight: 10
+        enabled: true
+      text:
+        weight: 11
+        enabled: true
+      video:
+        weight: 12
+        enabled: true
 field_type: entity_reference_revisions

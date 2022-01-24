@@ -6,10 +6,10 @@ name: infomercial_background_image
 label: 'Infomercial Background Image'
 effects:
   e737d516-c2f0-4e4c-9cfb-9e5e92bc1476:
-    uuid: e737d516-c2f0-4e4c-9cfb-9e5e92bc1476
     id: image_scale
-    weight: 1
     data:
       width: 1600
       height: null
       upscale: false
+    weight: 1
+    uuid: e737d516-c2f0-4e4c-9cfb-9e5e92bc1476

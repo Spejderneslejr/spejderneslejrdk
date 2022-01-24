@@ -6,10 +6,10 @@ name: card_gallery_small
 label: card_gallery_small
 effects:
   7bf8f9f5-22e8-4069-9327-38e093ec20d8:
-    uuid: 7bf8f9f5-22e8-4069-9327-38e093ec20d8
     id: image_scale_and_crop
-    weight: 1
     data:
       width: 538
       height: 387
       anchor: center-center
+    weight: 1
+    uuid: 7bf8f9f5-22e8-4069-9327-38e093ec20d8

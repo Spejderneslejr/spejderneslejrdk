@@ -19,10 +19,10 @@ bundle: article
 mode: rss
 content:
   links:
-    weight: 100
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 100
+    region: content
 hidden:
   field_paragraphs: true
   field_summary: true

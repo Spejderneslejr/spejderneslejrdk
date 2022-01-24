@@ -6,10 +6,10 @@ name: teaser
 label: Teaser
 effects:
   adb95f96-4b1a-4ebe-a0b4-1e63b93a692d:
-    uuid: adb95f96-4b1a-4ebe-a0b4-1e63b93a692d
     id: image_scale_and_crop
-    weight: 1
     data:
       width: 300
       height: 200
       anchor: center-center
+    weight: 1
+    uuid: adb95f96-4b1a-4ebe-a0b4-1e63b93a692d

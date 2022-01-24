@@ -15,17 +15,17 @@ bundle: video
 mode: default
 content:
   field_layout:
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
     type: layout
+    weight: 1
     region: content
-  field_video:
-    weight: 0
     settings: {  }
     third_party_settings: {  }
+  field_video:
     type: video_embed_field_textfield
+    weight: 0
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   status: true

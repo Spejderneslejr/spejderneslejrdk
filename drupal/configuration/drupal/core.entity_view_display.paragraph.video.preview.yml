@@ -16,13 +16,13 @@ bundle: video
 mode: preview
 content:
   field_video:
-    weight: 0
+    type: video_embed_field_thumbnail
     label: hidden
     settings:
       image_style: medium
       link_image_to: ''
     third_party_settings: {  }
-    type: video_embed_field_thumbnail
+    weight: 0
     region: content
 hidden:
   created: true

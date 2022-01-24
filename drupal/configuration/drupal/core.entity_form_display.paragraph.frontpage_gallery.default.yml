@@ -13,12 +13,12 @@ bundle: frontpage_gallery
 mode: default
 content:
   field_frontpage_gallery_image:
+    type: file_editable
     weight: 0
+    region: content
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
-    type: file_editable
-    region: content
 hidden:
   created: true
   status: true
