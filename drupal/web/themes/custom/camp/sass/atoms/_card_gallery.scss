@@ -22,7 +22,7 @@ $cg-xsmall: new-breakpoint(max-width 610px);
   }
 
   @include media($cg-xsmall) {
-    min-height: 400px;
+    min-height: 300px;
   }
 }
 
@@ -334,6 +334,6 @@ $cg-xsmall: new-breakpoint(max-width 610px);
   }
 
   @include media($cg-xsmall) {
-    top: 270px;
+    top: 200px;
   }
 }

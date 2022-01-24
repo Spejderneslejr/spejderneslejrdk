@@ -1545,7 +1545,7 @@ body.user-logged-in.toolbar-horizontal .main-nav-scrolled.js-active {
 
 @media screen and (max-width: 610px) {
   .image-intro {
-    min-height: 400px;
+    min-height: 300px;
   }
 }
 
@@ -1901,7 +1901,7 @@ body.user-logged-in.toolbar-horizontal .main-nav-scrolled.js-active {
 
 @media screen and (max-width: 610px) {
   .card-gallery-captions {
-    top: 270px;
+    top: 200px;
   }
 }
 
