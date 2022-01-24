@@ -39,14 +39,12 @@
     left: auto;
     z-index: 9998;
     display: block;
-    overflow: auto;
-    width: 60%;
+    overflow-x: hidden; // Removes the horizontal scroll. No time for re-writing the menu to prevent it otherwise.
+    width: 90%;
     height: 100vh;
     margin: 0;
-    padding-top: 70px;
-    padding-left: 31px;
+    padding: 30px 15px 30px;
     background-color: white;
-    box-shadow: 1px 1px 16px 0 rgba(0, 0, 0, .36);
 
     a {
       padding: 0;
@@ -59,6 +57,7 @@
     &.js-mobile-active {
       @include transform(translateX(0px) translateY(0px) translateZ(0px));
       @include transition(transform 200ms);
+      box-shadow: 1px 1px 16px 0 rgba(0, 0, 0, .36);
     }
   }
 }
@@ -98,7 +97,6 @@
       }
 
       @include media($tablet-l) {
-        margin: 0 10px;
         font-size: em(12, $base-font-size);
       }
     }

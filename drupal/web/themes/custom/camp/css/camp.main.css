@@ -5,37 +5,37 @@
   src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg#icomoon") format("svg");
 }
 
-/**
- * Breakpoints.
- */
 @font-face {
   font-family: "Calibri";
   font-style: normal;
   font-weight: normal;
-  src: url("../fonts/Calibri.ttf") format("truetype");
+  src: url("../fonts/Calibri.eot?#iefix") format("embedded-opentype"), url("../fonts/Calibri.woff2") format("woff2"), url("../fonts/Calibri.woff") format("woff"), url("../fonts/Calibri.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Calibri Italic";
   font-style: normal;
   font-weight: normal;
-  src: url("../fonts/Calibri Italic.ttf") format("truetype");
+  src: url("../fonts/Calibri-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/Calibri-Italic.woff2") format("woff2"), url("../fonts/Calibri-Italic.woff") format("woff"), url("../fonts/Calibri-Italic.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Calibri Bold";
   font-style: normal;
   font-weight: normal;
-  src: url("../fonts/Calibri Bold.ttf") format("truetype");
+  src: url("../fonts/Calibri-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Calibri-Bold.woff2") format("woff2"), url("../fonts/Calibri-Bold.woff") format("woff"), url("../fonts/Calibri-Bold.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Calibri Bold Italic";
   font-style: normal;
   font-weight: normal;
-  src: url("../fonts/Calibri Bold Italic.ttf") format("truetype");
+  src: url("../fonts/Calibri-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/Calibri-Italic.woff2") format("woff2"), url("../fonts/Calibri-Italic.woff") format("woff"), url("../fonts/Calibri-Italic.ttf") format("truetype");
 }
 
+/**
+ * Breakpoints.
+ */
 @font-face {
   font-family: "FB Hermes";
   src: url("../fonts/FB Hermes Bold.otf") format("opentype");
@@ -281,37 +281,37 @@ main:last-child {
   src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg#icomoon") format("svg");
 }
 
-/**
- * Breakpoints.
- */
 @font-face {
   font-family: "Calibri";
   font-style: normal;
   font-weight: normal;
-  src: url("../fonts/Calibri.ttf") format("truetype");
+  src: url("../fonts/Calibri.eot?#iefix") format("embedded-opentype"), url("../fonts/Calibri.woff2") format("woff2"), url("../fonts/Calibri.woff") format("woff"), url("../fonts/Calibri.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Calibri Italic";
   font-style: normal;
   font-weight: normal;
-  src: url("../fonts/Calibri Italic.ttf") format("truetype");
+  src: url("../fonts/Calibri-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/Calibri-Italic.woff2") format("woff2"), url("../fonts/Calibri-Italic.woff") format("woff"), url("../fonts/Calibri-Italic.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Calibri Bold";
   font-style: normal;
   font-weight: normal;
-  src: url("../fonts/Calibri Bold.ttf") format("truetype");
+  src: url("../fonts/Calibri-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Calibri-Bold.woff2") format("woff2"), url("../fonts/Calibri-Bold.woff") format("woff"), url("../fonts/Calibri-Bold.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Calibri Bold Italic";
   font-style: normal;
   font-weight: normal;
-  src: url("../fonts/Calibri Bold Italic.ttf") format("truetype");
+  src: url("../fonts/Calibri-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/Calibri-Italic.woff2") format("woff2"), url("../fonts/Calibri-Italic.woff") format("woff"), url("../fonts/Calibri-Italic.ttf") format("truetype");
 }
 
+/**
+ * Breakpoints.
+ */
 @font-face {
   font-family: "FB Hermes";
   src: url("../fonts/FB Hermes Bold.otf") format("opentype");
@@ -726,6 +726,12 @@ h1 {
   font-family: 'FB Hermes', sans-serif;
 }
 
+@media screen and (max-width: 772px) {
+  h1 {
+    font-size: 2.14286em;
+  }
+}
+
 h2 {
   font-size: 1.8em;
 }
@@ -966,15 +972,12 @@ body.user-logged-in.toolbar-horizontal .language-flags {
     left: auto;
     z-index: 9998;
     display: block;
-    overflow: auto;
-    width: 60%;
+    overflow-x: hidden;
+    width: 90%;
     height: 100vh;
     margin: 0;
-    padding-top: 70px;
-    padding-left: 31px;
+    padding: 30px 15px 30px;
     background-color: white;
-    -webkit-box-shadow: 1px 1px 16px 0 rgba(0, 0, 0, 0.36);
-    box-shadow: 1px 1px 16px 0 rgba(0, 0, 0, 0.36);
     -webkit-transform: translate(100%, 0px);
     -ms-transform: translate(100%, 0px);
     transform: translate(100%, 0px);
@@ -996,6 +999,8 @@ body.user-logged-in.toolbar-horizontal .language-flags {
     -o-transition: transform 200ms;
     transition: transform 200ms;
     transition: transform 200ms, -webkit-transform 200ms;
+    -webkit-box-shadow: 1px 1px 16px 0 rgba(0, 0, 0, 0.36);
+    box-shadow: 1px 1px 16px 0 rgba(0, 0, 0, 0.36);
   }
 }
 
@@ -1031,7 +1036,6 @@ body.user-logged-in.toolbar-horizontal .language-flags {
 
 @media screen and (max-width: 1024px) {
   .menu--site-menu.menu-level--0 > .menu-item {
-    margin: 0 10px;
     font-size: 0.85714em;
   }
 }
@@ -1541,7 +1545,7 @@ body.user-logged-in.toolbar-horizontal .main-nav-scrolled.js-active {
 
 @media screen and (max-width: 610px) {
   .image-intro {
-    min-height: 400px;
+    min-height: 300px;
   }
 }
 
@@ -1897,7 +1901,7 @@ body.user-logged-in.toolbar-horizontal .main-nav-scrolled.js-active {
 
 @media screen and (max-width: 610px) {
   .card-gallery-captions {
-    top: 270px;
+    top: 200px;
   }
 }
 
@@ -2057,6 +2061,17 @@ a.btn, .infomercial-call-ta a, .partners__links a {
 
 .accordion__header:hover {
   background-color: #f8f8f8;
+}
+
+@media screen and (max-width: 1024px) {
+  .accordion__header {
+    font-size: 14px;
+    white-space: initial;
+  }
+}
+
+.accordion__header__title {
+  width: 90%;
 }
 
 .accordion__content {
@@ -2342,6 +2357,8 @@ ul.atcb-list li {
 
 .region--header__logo img {
   height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 
 @media screen and (max-width: 1024px) {
@@ -2356,6 +2373,7 @@ ul.atcb-list li {
 @media screen and (max-width: 772px) {
   .region--header__logo {
     padding: 0;
+    width: auto;
   }
   .region--header__logo img {
     max-height: 60px;
@@ -2538,7 +2556,7 @@ ul.atcb-list li {
     font-size: 0.875em;
   }
   .paragraph--type--infomercial h1 {
-    font-size: 4.28571em;
+    font-size: 2.85714em;
     margin-bottom: 0.35714em;
   }
   .paragraph--type--infomercial h2 {
@@ -2663,14 +2681,14 @@ ul.atcb-list li {
 
 @media screen and (max-width: 1024px) {
   .newsletter-deck__bg-image {
-    background-position: 410px bottom;
-    background-size: 96%;
+    background-position: bottom right;
+    background-size: 50%;
   }
 }
 
 @media screen and (max-width: 500px) {
   .newsletter-deck__bg-image {
-    background-position: 208px bottom;
+    background-size: 100%;
   }
 }
 
@@ -3441,7 +3459,6 @@ a[href^=mailto]:before {
   text-align: left;
   color: white;
   font-size: 70px;
-  margin-left: 20px;
   margin-bottom: 40px;
   float: left;
   width: 100%;
@@ -3449,7 +3466,7 @@ a[href^=mailto]:before {
 
 @media screen and (max-width: 1024px) {
   .icon-logo_alt--footer {
-    font-size: 38px;
+    font-size: 70px;
   }
 }
 
@@ -3467,6 +3484,18 @@ a[href^=mailto]:before {
 .three-col-deck .col-deck .deck-inner {
   text-align: center;
   padding: 1.8125em 0.9375em 0.9375em;
+  position: relative;
+}
+
+.three-col-deck .col-deck .deck-inner > ul,
+.three-col-deck .col-deck .deck-inner .ticket-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
 }
 
 .three-col-deck .deck-inner {
@@ -3665,6 +3694,10 @@ a[href^=mailto]:before {
   padding-left: 5%;
 }
 
+.view-id-news {
+  margin-top: -32px;
+}
+
 #main-content {
   display: block;
 }
@@ -3748,7 +3781,6 @@ body:not(.path-frontpage) .node__content .node__content {
   right: 0px;
   width: 100%;
   background-color: white;
-  padding: 0vh 10% 10vh;
   margin: 0;
   transition: opacity 350ms, -webkit-transform 250ms;
   -webkit-transition: opacity 350ms, -webkit-transform 250ms;
@@ -3779,10 +3811,6 @@ body:not(.path-frontpage) .node__content .node__content {
   transition: opacity 350ms, transform 250ms;
   transition: opacity 350ms, transform 250ms, -webkit-transform 250ms;
   z-index: 1000;
-}
-
-.form-search {
-  margin-top: 8vh;
 }
 
 /*# sourceMappingURL=sourcemaps/camp.main.css.map */

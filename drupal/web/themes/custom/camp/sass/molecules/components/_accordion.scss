@@ -30,6 +30,15 @@
   &:hover {
     background-color: $white-dark;
   }
+
+  @include media($tablet-l){
+    font-size: $base-font-size;
+    white-space: initial;
+  }
+
+  &__title {
+    width: 90%;
+  }
 }
 
 .accordion__content {

@@ -152,12 +152,11 @@ a[href^=mailto] {
   text-align: left;
   color: white;
   font-size: 70px;
-  margin-left: 20px;
   margin-bottom: 40px;
   float: left;
   width: 100%;
 
   @include media($tablet-l) {
-    font-size: 38px;
+    font-size: 70px;
   }
 }
