@@ -3484,6 +3484,18 @@ a[href^=mailto]:before {
 .three-col-deck .col-deck .deck-inner {
   text-align: center;
   padding: 1.8125em 0.9375em 0.9375em;
+  position: relative;
+}
+
+.three-col-deck .col-deck .deck-inner > ul,
+.three-col-deck .col-deck .deck-inner .ticket-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
 }
 
 .three-col-deck .deck-inner {
