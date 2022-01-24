@@ -9,38 +9,46 @@
  * Breakpoints.
  */
 @font-face {
-  font-family: "Calibri";
-  font-style: normal;
-  font-weight: normal;
-  src: url("../fonts/Calibri.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Calibri Italic";
-  font-style: normal;
-  font-weight: normal;
-  src: url("../fonts/Calibri Italic.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Calibri Bold";
-  font-style: normal;
-  font-weight: normal;
-  src: url("../fonts/Calibri Bold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Calibri Bold Italic";
-  font-style: normal;
-  font-weight: normal;
-  src: url("../fonts/Calibri Bold Italic.ttf") format("truetype");
-}
-
-@font-face {
   font-family: "FB Hermes";
   src: url("../fonts/FB Hermes Bold.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+  font-family: 'Calibri';
+  src: url("../fonts/Calibri.eot");
+  src: local("Calibri Italic"), local("Calibri-Italic"), url("../fonts/Calibri.eot?#iefix") format("embedded-opentype"), url("../fonts/Calibri.woff2") format("woff2"), url("../fonts/Calibri.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Calibri Italic';
+  src: url("../fonts/Calibri-Italic.eot");
+  src: local("Calibri Italic"), local("Calibri-Italic"), url("../fonts/Calibri-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/Calibri-Italic.woff2") format("woff2"), url("../fonts/Calibri-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Calibri Bold';
+  src: url("../fonts/Calibri-Bold.eot");
+  src: local("Calibri Italic"), local("Calibri-Bold"), url("../fonts/Calibri-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Calibri-Bold.woff2") format("woff2"), url("../fonts/Calibri-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Calibri Bold Italic';
+  src: url("../fonts/Calibri-BoldItalic.eot");
+  src: local("Calibri Bold Italic"), local("Calibri-BoldItalic"), url("../fonts/Calibri-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Calibri-BoldItalic.woff2") format("woff2"), url("../fonts/Calibri-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
 }
 
 html {
@@ -285,38 +293,46 @@ main:last-child {
  * Breakpoints.
  */
 @font-face {
-  font-family: "Calibri";
-  font-style: normal;
-  font-weight: normal;
-  src: url("../fonts/Calibri.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Calibri Italic";
-  font-style: normal;
-  font-weight: normal;
-  src: url("../fonts/Calibri Italic.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Calibri Bold";
-  font-style: normal;
-  font-weight: normal;
-  src: url("../fonts/Calibri Bold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Calibri Bold Italic";
-  font-style: normal;
-  font-weight: normal;
-  src: url("../fonts/Calibri Bold Italic.ttf") format("truetype");
-}
-
-@font-face {
   font-family: "FB Hermes";
   src: url("../fonts/FB Hermes Bold.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+  font-family: 'Calibri';
+  src: url("../fonts/Calibri.eot");
+  src: local("Calibri Italic"), local("Calibri-Italic"), url("../fonts/Calibri.eot?#iefix") format("embedded-opentype"), url("../fonts/Calibri.woff2") format("woff2"), url("../fonts/Calibri.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Calibri Italic';
+  src: url("../fonts/Calibri-Italic.eot");
+  src: local("Calibri Italic"), local("Calibri-Italic"), url("../fonts/Calibri-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/Calibri-Italic.woff2") format("woff2"), url("../fonts/Calibri-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Calibri Bold';
+  src: url("../fonts/Calibri-Bold.eot");
+  src: local("Calibri Italic"), local("Calibri-Bold"), url("../fonts/Calibri-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Calibri-Bold.woff2") format("woff2"), url("../fonts/Calibri-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Calibri Bold Italic';
+  src: url("../fonts/Calibri-BoldItalic.eot");
+  src: local("Calibri Bold Italic"), local("Calibri-BoldItalic"), url("../fonts/Calibri-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Calibri-BoldItalic.woff2") format("woff2"), url("../fonts/Calibri-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
 }
 
 @media screen and (max-width: 1024px) {
