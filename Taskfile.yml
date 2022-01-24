@@ -36,6 +36,12 @@ tasks:
     cmds:
       - scripts/docker-reset.sh
 
+  drupal:up:
+    desc: "Start Drupal site containers"
+    dir: drupal
+    cmds:
+      - docker compose up --remove-orphans -d
+
   drupal:down:
     desc: "Take down a running site removing any state"
     dir: drupal
