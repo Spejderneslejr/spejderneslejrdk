@@ -29,13 +29,19 @@ $blue: rgb(56, 152, 236);
 
 $border-color: rgb(226, 226, 226);
 
-// Icon font.
-@include font-face("icomoon", "../fonts/icomoon", $file-formats: ttf woff svg eot);
 
 // Base font vars.
 $base-font-size: 14px;
 $base-font-color: $black-light;
 $_fonts-path: "../fonts";
+
+// Icon font.
+@include font-face("icomoon", "#{$_fonts-path}/icomoon", $file-formats: ttf woff svg eot);
+
+@include font-face("Calibri", "#{$_fonts-path}/Calibri", $file-formats: ttf woff woff2 eot);
+@include font-face("Calibri Italic", "#{$_fonts-path}/Calibri-Italic", $file-formats: ttf woff woff2 eot);
+@include font-face("Calibri Bold", "#{$_fonts-path}/Calibri-Bold", $file-formats: ttf woff woff2 eot);
+@include font-face("Calibri Bold Italic", "#{$_fonts-path}/Calibri-Italic", $file-formats: ttf woff woff2 eot);
 
 /**
  * Breakpoints.
@@ -58,55 +64,6 @@ $z-index-menu: 2;
   font-weight: normal;
   font-style: normal;
 }
-
-@font-face {
-  font-family: 'Calibri';
-  src: url('#{$_fonts-path}/Calibri.eot');
-  src: local('Calibri Italic'), local('Calibri-Italic'),
-  url('#{$_fonts-path}/Calibri.eot?#iefix') format('embedded-opentype'),
-  url('#{$_fonts-path}/Calibri.woff2') format('woff2'),
-  url('#{$_fonts-path}/Calibri.woff') format('woff');
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Calibri Italic';
-  src: url('#{$_fonts-path}/Calibri-Italic.eot');
-  src: local('Calibri Italic'), local('Calibri-Italic'),
-  url('#{$_fonts-path}/Calibri-Italic.eot?#iefix') format('embedded-opentype'),
-  url('#{$_fonts-path}/Calibri-Italic.woff2') format('woff2'),
-  url('#{$_fonts-path}/Calibri-Italic.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Calibri Bold';
-  src: url('#{$_fonts-path}/Calibri-Bold.eot');
-  src: local('Calibri Italic'), local('Calibri-Bold'),
-  url('#{$_fonts-path}/Calibri-Bold.eot?#iefix') format('embedded-opentype'),
-  url('#{$_fonts-path}/Calibri-Bold.woff2') format('woff2'),
-  url('#{$_fonts-path}/Calibri-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Calibri Bold Italic';
-  src: url('#{$_fonts-path}/Calibri-BoldItalic.eot');
-  src: local('Calibri Bold Italic'), local('Calibri-BoldItalic'),
-  url('#{$_fonts-path}/Calibri-BoldItalic.eot?#iefix') format('embedded-opentype'),
-  url('#{$_fonts-path}/Calibri-BoldItalic.woff2') format('woff2'),
-  url('#{$_fonts-path}/Calibri-BoldItalic.woff') format('woff');
-  font-weight: bold;
-  font-style: italic;
-  font-display: swap;
-}
-
 
 $base-font: Calibri, sans-serif;
 
