@@ -972,11 +972,11 @@ body.user-logged-in.toolbar-horizontal .language-flags {
     left: auto;
     z-index: 9998;
     display: block;
+    overflow-x: hidden;
     width: 90%;
     height: 100vh;
     margin: 0;
-    padding-top: 70px;
-    padding-left: 31px;
+    padding: 30px 15px 30px;
     background-color: white;
     -webkit-transform: translate(100%, 0px);
     -ms-transform: translate(100%, 0px);
@@ -1036,7 +1036,6 @@ body.user-logged-in.toolbar-horizontal .language-flags {
 
 @media screen and (max-width: 1024px) {
   .menu--site-menu.menu-level--0 > .menu-item {
-    margin: 0 10px;
     font-size: 0.85714em;
   }
 }
@@ -3766,7 +3765,6 @@ body:not(.path-frontpage) .node__content .node__content {
   right: 0px;
   width: 100%;
   background-color: white;
-  padding: 0vh 10% 10vh;
   margin: 0;
   transition: opacity 350ms, -webkit-transform 250ms;
   -webkit-transition: opacity 350ms, -webkit-transform 250ms;
@@ -3797,10 +3795,6 @@ body:not(.path-frontpage) .node__content .node__content {
   transition: opacity 350ms, transform 250ms;
   transition: opacity 350ms, transform 250ms, -webkit-transform 250ms;
   z-index: 1000;
-}
-
-.form-search {
-  margin-top: 8vh;
 }
 
 /*# sourceMappingURL=sourcemaps/camp.main.css.map */

@@ -39,11 +39,11 @@
     left: auto;
     z-index: 9998;
     display: block;
+    overflow-x: hidden; // Removes the horizontal scroll. No time for re-writing the menu to prevent it otherwise.
     width: 90%;
     height: 100vh;
     margin: 0;
-    padding-top: 70px;
-    padding-left: 31px;
+    padding: 30px 15px 30px;
     background-color: white;
 
     a {
@@ -97,7 +97,6 @@
       }
 
       @include media($tablet-l) {
-        margin: 0 10px;
         font-size: em(12, $base-font-size);
       }
     }
