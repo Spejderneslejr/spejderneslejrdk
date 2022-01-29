@@ -49,6 +49,7 @@ export default {
   },
   beforeMount() {
     this.fetchJobs();
+
   },
   methods: {
     async fetchJobs() {
@@ -97,16 +98,39 @@ export default {
       }
       // Sort the found jobs
       this.sortJobs();
+
+      this.detectDeeplink();
+    },
+    detectDeeplink() {
+      // Check if the url fragment (the part after #) contains a number
+      if (window.location.hash && window.location.hash.match(/^\#\d+$/)) {
+        // Get the number from the fragment.
+        const jobId = parseInt(window.location.hash.substring(1));
+
+        // See if we've loaded jobs, and if we have find the job with the id
+        // from the fragment and trigger the modal.
+        if (this.jobs && this.jobs.length > 0) {
+          this.showModal(this.jobs.find(job => job.id === jobId));
+        }
+      }
     },
     mounted() {
       this.fetchJobs();
     },
       showModal(job) {
-      this.job = job;
-      this.isModalVisible = true;
+        // Protect against bad invocations.
+        if (!job) {
+          return;
+        }
+        this.job = job;
+        this.isModalVisible = true;
+
+        // Add the job-id to the url fragment so that the url reflects the job.
+        window.location.hash = job.id;
     },
     closeModal() {
       this.isModalVisible = false;
+      window.location.hash = '';
     },
       searchFilter(searchValue) {
         this.jobs = this.unfilteredJobs.filter((job) => {
