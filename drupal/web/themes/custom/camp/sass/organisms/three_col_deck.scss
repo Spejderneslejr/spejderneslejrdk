@@ -12,6 +12,16 @@
     .deck-inner {
       text-align: center;
       padding: em(29, 16) em(15, 16) em(15, 16);
+      position: relative;
+
+      > ul,
+      .ticket-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+      }
     }
   }
 

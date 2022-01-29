@@ -24,12 +24,12 @@ $newsletter-xsmall: new-breakpoint(max-width 610px);
   }
 
   @include media($tablet-l) {
-    background-position: 410px bottom;
-    background-size: 96%;
+    background-position: bottom right;
+    background-size: 50%;
   }
 
   @include media($small) {
-    background-position: 208px bottom;
+    background-size: 100%;
   }
 }
 

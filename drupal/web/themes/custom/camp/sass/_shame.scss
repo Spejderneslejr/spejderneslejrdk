@@ -76,7 +76,6 @@ body:not(.path-frontpage) .node__content {
   right: 0px;
   width: 100%;
   background-color: white;
-  padding: 0vh 10% 10vh;
   margin: 0;
   transition: opacity 350ms, -webkit-transform 250ms;
   transition: opacity 350ms, transform 250ms;
@@ -98,8 +97,4 @@ body:not(.path-frontpage) .node__content {
     transition: opacity 350ms, transform 250ms;
     z-index: 1000;
   }
-}
-
-.form-search {
-  margin-top: 8vh;
 }
