@@ -21,8 +21,6 @@ $settings['container_yamls'][] = __DIR__.'/docker.services.yml';
 
 $settings['config_sync_directory'] = __DIR__.'/../../../configuration/drupal';
 
-$settings['install_profile'] = 'standard';
-
 // Allow *.docker and *.ngrok.io domains
 $settings['trusted_host_patterns'] = ['^.*\.docker$', '.*\.ngrok\.io$', 'localhost', '(.*\.)?spejderneslejr\.dk', 'sl2020.dk', 'sl2017.dk'];
 
@@ -45,9 +43,6 @@ $settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
 
 // Allow test modules and themes to be installed.
 $settings['extension_discovery_scan_tests'] = true;
-
-// Enable access to rebuild.php.
-$settings['rebuild_access'] = true;
 
 // Set up stage file proxy.
 $config['stage_file_proxy.settings']['origin'] = 'http://spejderneslejr.dk/';
