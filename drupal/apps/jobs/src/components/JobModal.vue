@@ -16,11 +16,11 @@
           <p class="title">Beskrivelse</p>
           {{job.description}}
           </div>
-          <div class="content">
+          <div v-if="job.description_you_give" class="content">
           <p class="title">Du giver</p>
           {{job.description_you_give}}
           </div>
-          <div class="content">
+          <div v-if="job.description_we_give" class="content">
           <p class="title">Vi giver</p>
           {{job.description_we_give}}
           </div>
