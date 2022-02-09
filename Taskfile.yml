@@ -42,7 +42,7 @@ tasks:
       Assumes docker-compose is up and running
     dir: drupal
     cmds:
-      - scripts/update-core.sh
+      - scripts/upgrade-core.sh
     preconditions:
       - sh: "docker compose ps php -q > /dev/null"
         msg: "Could not detect running php container"
