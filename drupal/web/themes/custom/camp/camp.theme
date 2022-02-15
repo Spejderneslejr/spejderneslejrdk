@@ -222,6 +222,18 @@ function _camp_preprocess_node_article($node, &$variables) {
     ];
 
     $variables['top_image'] = $top_image;
+
+    // When a node is created and thus saved, it also generates a timestamp for
+    // getChangedTime(). You would expect it to be equal to getCreatedTime()
+    // but that is not the case. getChangedTime() is actually a little off
+    // compared to getCreatedTime(). Therefore, we add a check to only show the
+    // updated_timestamp if a specific time has passed which is the $threshold.
+    $diff_in_timestamps = $node->getChangedTime() - $node->getCreatedTime();
+    $threshold = 120; // Two minutes
+    if ($diff_in_timestamps > $threshold) {
+      $variables['updated_timestamp'] = \Drupal::service('date.formatter')->format($node->getChangedTime(), 'custom', 'd/m/Y');
+    }
+
   }
   elseif ($variables['view_mode'] == 'teaser') {
 

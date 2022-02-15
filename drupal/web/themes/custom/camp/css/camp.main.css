@@ -504,6 +504,10 @@ ul.centered li, ol.centered li {
   list-style-type: none;
 }
 
+.typo-italic {
+  font-style: italic;
+}
+
 blockquote {
   margin-right: 10%;
   margin-bottom: 18px;
