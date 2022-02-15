@@ -3687,6 +3687,11 @@ a[href^=mailto]:before {
   max-width: 100%;
 }
 
+.page-node-type-article .last-updated--timestamp {
+  color: #a79d96;
+  font-size: 1rem;
+}
+
 .view-id-news, .paragraph--type--views-reference {
   display: block;
   max-width: 1200px;

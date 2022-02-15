@@ -231,7 +231,7 @@ function _camp_preprocess_node_article($node, &$variables) {
     $diff_in_timestamps = $node->getChangedTime() - $node->getCreatedTime();
     $threshold = 120; // Two minutes
     if ($diff_in_timestamps > $threshold) {
-      $variables['updated_timestamp'] = \Drupal::service('date.formatter')->format($node->getChangedTime(), 'custom', 'd/m/Y');
+      $variables['updated_timestamp'] = \Drupal::service('date.formatter')->format($node->getChangedTime(), 'custom', 'j. F Y');
     }
 
   }
