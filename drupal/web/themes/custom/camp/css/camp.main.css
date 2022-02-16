@@ -504,6 +504,10 @@ ul.centered li, ol.centered li {
   list-style-type: none;
 }
 
+.typo-italic {
+  font-style: italic;
+}
+
 blockquote {
   margin-right: 10%;
   margin-bottom: 18px;
@@ -3681,6 +3685,11 @@ a[href^=mailto]:before {
   padding: 0;
   margin: 0;
   max-width: 100%;
+}
+
+.page-node-type-article .last-updated--timestamp {
+  color: #a79d96;
+  font-size: 1rem;
 }
 
 .view-id-news, .paragraph--type--views-reference {
