@@ -40,6 +40,7 @@ permissions:
   - 'view paragraph content gallery_reference'
   - 'view paragraph content image'
   - 'view paragraph content infomercial'
+  - 'view paragraph content linked_image'
   - 'view paragraph content markup'
   - 'view paragraph content partners'
   - 'view paragraph content quote'
