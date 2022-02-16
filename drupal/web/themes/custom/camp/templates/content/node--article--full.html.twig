@@ -94,7 +94,9 @@
         {{ label }}
       </h1>
     {{ title_suffix }}
-    <p class="typo-italic last-updated--timestamp">{{ 'Last updated @updated_timestamp'|trans({'@updated_timestamp': updated_timestamp}) }}</p>
+    {% if updated_timestamp %}
+      <p class="typo-italic last-updated--timestamp">{{ 'Last updated @updated_timestamp'|trans({'@updated_timestamp': updated_timestamp}) }}</p>
+    {% endif %}
 
     {{ content.field_paragraphs }}
   </div>
