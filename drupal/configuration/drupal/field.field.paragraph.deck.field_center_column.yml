@@ -5,11 +5,9 @@ dependencies:
   config:
     - field.storage.paragraph.field_center_column
     - paragraphs.paragraphs_type.deck
-    - paragraphs.paragraphs_type.download
     - paragraphs.paragraphs_type.factbox
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.markup
-    - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.video
   module:
@@ -28,11 +26,9 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      download: download
       factbox: factbox
       image: image
       markup: markup
-      quote: quote
       text: text
       video: video
     negate: 0
@@ -48,7 +44,7 @@ settings:
         enabled: false
       download:
         weight: 21
-        enabled: true
+        enabled: false
       factbox:
         weight: 22
         enabled: true
@@ -78,7 +74,7 @@ settings:
         enabled: false
       quote:
         weight: 31
-        enabled: true
+        enabled: false
       text:
         weight: 32
         enabled: true

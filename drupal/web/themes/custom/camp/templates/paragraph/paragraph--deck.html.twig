@@ -11,8 +11,6 @@
  *   - createdtime: Formatted creation date. Preprocess functions can
  *     reformat it by calling format_date() with the desired parameters on
  *     $variables['paragraph']->getCreatedTime().
- *   - caption: The image caption.
- *   - credits: The source of the image.
  * - content: All paragraph items. Use {{ content }} to print them all,
  *   or print a subset such as {{ content.field_example }}. Use
  *   {{ content|without('field_example') }} to temporarily suppress the printing
@@ -38,21 +36,16 @@
  * @ingroup themeable
  */
 #}
-{%
-set classes = [
-'paragraph',
-'paragraph--type--' ~ paragraph.bundle|clean_class,
-view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-]
-%}
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+] %}
+
 <div{{ attributes.addClass(classes) }}>
-    {{ content }}
-  {% if caption %}
-    <figcaption class="figcaption">
-      <em>
-        {{ caption }}
-        {{ credits }}
-      </em>
-    </figcaption>
-  {% endif %}
+  <ul class="deck-grid--container">
+    <li>{{ content.field_left_column }}</li>
+    <li>{{ content.field_center_column }}</li>
+    <li>{{ content.field_right_column }}</li>
+  </ul>
 </div>

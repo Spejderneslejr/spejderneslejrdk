@@ -15,8 +15,8 @@ third_party_settings:
     group_deck:
       children:
         - group_left
-        - group_right
         - group_center
+        - group_right
       label: Deck
       region: content
       parent_name: ''
@@ -34,7 +34,7 @@ third_party_settings:
       label: Left
       region: content
       parent_name: group_deck
-      weight: 20
+      weight: 3
       format_type: tab
       format_settings:
         classes: ''
@@ -47,15 +47,15 @@ third_party_settings:
       children:
         - field_center_column
       label: Center
-      region: hidden
+      region: content
       parent_name: group_deck
-      weight: 21
+      weight: 4
       format_type: tab
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        formatter: open
+        formatter: closed
         description: ''
         required_fields: true
     group_right:
@@ -64,13 +64,13 @@ third_party_settings:
       label: Right
       region: content
       parent_name: group_deck
-      weight: 22
+      weight: 6
       format_type: tab
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        formatter: open
+        formatter: closed
         description: ''
         required_fields: true
 id: paragraph.deck.default
@@ -80,7 +80,7 @@ mode: default
 content:
   field_center_column:
     type: entity_reference_paragraphs
-    weight: 2
+    weight: 5
     region: content
     settings:
       title: Paragraph
