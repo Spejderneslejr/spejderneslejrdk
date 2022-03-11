@@ -8,7 +8,71 @@ dependencies:
     - field.field.paragraph.deck.field_right_column
     - paragraphs.paragraphs_type.deck
   module:
+    - field_group
     - paragraphs
+third_party_settings:
+  field_group:
+    group_deck:
+      children:
+        - group_left
+        - group_right
+        - group_center
+      label: Deck
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_left:
+      children:
+        - field_left_column
+      label: Left
+      region: content
+      parent_name: group_deck
+      weight: 20
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: open
+        description: ''
+        required_fields: true
+    group_center:
+      children:
+        - field_center_column
+      label: Center
+      region: hidden
+      parent_name: group_deck
+      weight: 21
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: open
+        description: ''
+        required_fields: true
+    group_right:
+      children:
+        - field_right_column
+      label: Right
+      region: content
+      parent_name: group_deck
+      weight: 22
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: open
+        description: ''
+        required_fields: true
 id: paragraph.deck.default
 targetEntityType: paragraph
 bundle: deck
@@ -16,7 +80,7 @@ mode: default
 content:
   field_center_column:
     type: entity_reference_paragraphs
-    weight: 1
+    weight: 2
     region: content
     settings:
       title: Paragraph
@@ -28,7 +92,7 @@ content:
     third_party_settings: {  }
   field_left_column:
     type: entity_reference_paragraphs
-    weight: 0
+    weight: 1
     region: content
     settings:
       title: Paragraph
@@ -40,7 +104,7 @@ content:
     third_party_settings: {  }
   field_right_column:
     type: entity_reference_paragraphs
-    weight: 2
+    weight: 3
     region: content
     settings:
       title: Paragraph

@@ -40,7 +40,8 @@
     "drupal/core-recommended": "^9",
     "drupal/core-composer-scaffold": "^9",
     "drupal/core-project-message": "^9",
-    "drupal/viewsreference": "^2"
+    "drupal/viewsreference": "^2",
+    "drupal/field_group": "^3.2"
   },
   "require-dev": {
     "jcalderonzumba/gastonjs": "^1.1@dev",
@@ -104,5 +105,14 @@
       }
     },
     "patches": {}
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "composer/installers": true,
+      "cweagans/composer-patches": true,
+      "drupal/core-composer-scaffold": true,
+      "drupal/core-project-message": true
+    }
   }
 }
