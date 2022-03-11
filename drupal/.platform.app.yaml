@@ -117,6 +117,11 @@ hooks:
     # install.sh will automatically install NodeJS based on the presence of $NODE_VERSION
     curl -f -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+    # Build css assets
+    cd $PLATFORM_APP_DIR/web/themes/custom/camp
+    yarn build:css
+
     # Build and deploy apps
     cd $PLATFORM_APP_DIR/apps/jobs
     yarn install
