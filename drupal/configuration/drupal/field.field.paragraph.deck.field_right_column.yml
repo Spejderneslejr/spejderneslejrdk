@@ -1,0 +1,77 @@
+uuid: d1f3bbee-2c1d-409d-8cbb-bf2d6bbbbe81
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_right_column
+    - paragraphs.paragraphs_type.deck
+  module:
+    - entity_reference_revisions
+id: paragraph.deck.field_right_column
+field_name: field_right_column
+entity_type: paragraph
+bundle: deck
+label: 'Right column'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    negate: 1
+    target_bundles_drag_drop:
+      accordion:
+        weight: 18
+        enabled: false
+      clear:
+        weight: 19
+        enabled: false
+      deck:
+        weight: 20
+        enabled: false
+      download:
+        weight: 21
+        enabled: false
+      factbox:
+        weight: 22
+        enabled: false
+      frontpage_gallery:
+        weight: 23
+        enabled: false
+      gallery_reference:
+        weight: 24
+        enabled: false
+      image:
+        weight: 25
+        enabled: false
+      infomercial:
+        weight: 26
+        enabled: false
+      latests_news:
+        weight: 27
+        enabled: false
+      linked_image:
+        weight: 28
+        enabled: false
+      markup:
+        weight: 29
+        enabled: false
+      partners:
+        weight: 30
+        enabled: false
+      quote:
+        weight: 31
+        enabled: false
+      text:
+        weight: 32
+        enabled: false
+      video:
+        weight: 33
+        enabled: false
+      views_reference:
+        weight: 34
+        enabled: false
+field_type: entity_reference_revisions
