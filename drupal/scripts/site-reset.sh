@@ -8,6 +8,10 @@ cd "${SCRIPT_DIR}/../"
 mkdir -p web/sites/default/files
 find web/sites/default/files \! -uid 33  \! -print0 -name .gitkeep | sudo xargs -0 chmod 777
 
+# Compile css and change directory back to script dir.
+cd web/themes/custom/camp && yarn build:css
+cd "${SCRIPT_DIR}/../"
+
 # Make sites/default read-only and executable
 sudo chmod 555 web/sites/default
 time docker compose exec php sh -c  "\
