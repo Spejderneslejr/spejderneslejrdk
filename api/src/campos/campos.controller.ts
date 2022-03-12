@@ -37,6 +37,8 @@ export class CamposController {
       // already instructed about how to find the job.
       if (job.name.indexOf(preAssignedJobPrefix) === 0) {
         return false;
+      } else {
+        return true;
       }
     }).map((job) => {
       job.description = cleanDotHack(job.description);
