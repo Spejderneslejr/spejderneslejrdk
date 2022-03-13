@@ -44,8 +44,14 @@
 
 <div{{ attributes.addClass(classes) }}>
   <ul class="deck-grid--container">
+  {% if content.field_left_column.0 is not empty %}
     <li>{{ content.field_left_column }}</li>
+  {% endif %}
+  {% if content.field_center_column.0 is not empty %}
     <li>{{ content.field_center_column }}</li>
+  {% endif %}
+  {% if content.field_right_column.0 is not empty %}
     <li>{{ content.field_right_column }}</li>
+  {% endif %}
   </ul>
 </div>
