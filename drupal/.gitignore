@@ -23,3 +23,6 @@ web/themes/custom/camp/.yarn
 
 # Ignore local export of config made during reset
 configuration/export
+
+# Ignore generated css assets.
+/web/themes/custom/camp/css/

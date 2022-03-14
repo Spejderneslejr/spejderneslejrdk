@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Spejdernes lejr 2017 theme",
   "scripts": {
-    "start": "yarn install && gulp"
+    "start": "yarn install && gulp",
+    "build:css": "yarn install && gulp sass"
   },
   "devDependencies": {
     "eslint": "^7.7.0",

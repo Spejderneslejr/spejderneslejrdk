@@ -29,7 +29,18 @@ export class CamposController {
       context: { show_org_path: true, "lang": "da_DK" },
     }) as unknown) as Array<Job>;
 
-    const cleanedJobs = jobs.map((job) => {
+
+    const preAssignedJobPrefix = "Jeg er en del af"
+
+    const cleanedJobs = jobs.filter((job) => {
+      // Filter out jobs that are not ment to be searchable as the user is
+      // already instructed about how to find the job.
+      if (job.name.indexOf(preAssignedJobPrefix) === 0) {
+        return false;
+      } else {
+        return true;
+      }
+    }).map((job) => {
       job.description = cleanDotHack(job.description);
       job.description_time_and_scope = cleanDotHack(job.description_time_and_scope);
       job.description_we_give = cleanDotHack(job.description_we_give);

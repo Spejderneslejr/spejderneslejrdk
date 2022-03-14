@@ -1,6 +1,10 @@
 <template>
   <Layout class="jobs-app">
-    <h1>Opgavebanken</h1>
+    <h1>Opgaver til lejrfrivillige</h1>
+    <p>
+      Der er mange forskellige muligheder for at hjælpe som lejrfrivillig både før, under og efter Spejdernes Lejr 2022. Hvis du gerne vil vide mere kan du læse mere <a href="/da/lejrfrivillig">via dette link</a>. Hvis du allerede er klar til at hjælpe til på lejren så fortsæt med at læse på denne side.
+    </p>
+    <h2>Opgavebanken</h2>
     <div class="paragraph--type--text">
     <p>
       I opgavebanken finder du konkrete opgaver lejren har brug for hjælp til. Klik ind på de enkelte opgaver for at se beskrivelsen. Her finder du også et link til at ansøge.
