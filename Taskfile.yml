@@ -37,7 +37,7 @@ tasks:
       - scripts/docker-reset.sh
 
   drupal:upgrade:core:
-    desc: "Reset docker-environment and bring site back up"
+    desc: "Upgrades core and performs an config export"
     summary: |
       Assumes docker-compose is up and running
     dir: drupal
@@ -46,6 +46,22 @@ tasks:
     preconditions:
       - sh: "docker compose ps php -q > /dev/null"
         msg: "Could not detect running php container"
+
+  drupal:upgrade:module:
+    desc: "Upgrades a module and performes a config export"
+    summary: |
+      Assumes docker-compose is up and running.
+      Pass the module as argument via
+        task drupal:upgrade:module -- module
+    dir: drupal
+    cmds:
+      - scripts/upgrade-module.sh {{.CLI_ARGS}}
+    preconditions:
+      - sh: "docker compose ps php -q > /dev/null"
+        msg: "Could not detect running php container"
+
+      - sh: "test -n \"{{.CLI_ARGS}}\""
+        msg: "Please specify the module as the last argument"
 
   drupal:upgrade:status:
     desc: "Get a status for updatable composer packages"
