@@ -28,6 +28,8 @@ services:
       - "9000"
     volumes:
       - "webroot:/var/www/"
+      - ./docker/php/xdebug-use-docker-remote-host.ini:/etc/php/7.4/mods-available/xdebug-use-docker-remote-host.ini
+      - ./docker/php/xdebug.ini:/etc/php/7.4/mods-available/xdebug.ini
     working_dir: /var/www/web
     links:
       - db
