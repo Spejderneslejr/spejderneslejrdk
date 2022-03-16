@@ -14,10 +14,6 @@ HOST="localhost"
 WEB_SERVICE="web"
 PHP_SERVICE="php"
 
-# Preemptive sudo lease - to let you go out and grab a coffee while the script
-# runs.
-sudo echo ""
-
 # Clear all running containers.
 echoc "*** Removing existing containers"
 docker compose kill && docker compose rm -v -f && docker compose down --remove-orphans -v
