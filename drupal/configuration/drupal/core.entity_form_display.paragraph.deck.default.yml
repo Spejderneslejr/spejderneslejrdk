@@ -1,0 +1,119 @@
+uuid: e4f2a30b-9a4b-4fea-9b70-82919eaeff44
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.deck.field_center_column
+    - field.field.paragraph.deck.field_left_column
+    - field.field.paragraph.deck.field_right_column
+    - paragraphs.paragraphs_type.deck
+  module:
+    - field_group
+    - paragraphs
+third_party_settings:
+  field_group:
+    group_deck:
+      children:
+        - group_left
+        - group_center
+        - group_right
+      label: Deck
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_left:
+      children:
+        - field_left_column
+      label: Left
+      region: content
+      parent_name: group_deck
+      weight: 3
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: open
+        description: ''
+        required_fields: true
+    group_center:
+      children:
+        - field_center_column
+      label: Center
+      region: content
+      parent_name: group_deck
+      weight: 4
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_right:
+      children:
+        - field_right_column
+      label: Right
+      region: content
+      parent_name: group_deck
+      weight: 6
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+id: paragraph.deck.default
+targetEntityType: paragraph
+bundle: deck
+mode: default
+content:
+  field_center_column:
+    type: entity_reference_paragraphs
+    weight: 5
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  field_left_column:
+    type: entity_reference_paragraphs
+    weight: 1
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  field_right_column:
+    type: entity_reference_paragraphs
+    weight: 3
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

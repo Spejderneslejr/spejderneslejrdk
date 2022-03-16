@@ -34,6 +34,7 @@ permissions:
   - 'use text format restricted_html'
   - 'view files'
   - 'view paragraph content accordion'
+  - 'view paragraph content deck'
   - 'view paragraph content download'
   - 'view paragraph content factbox'
   - 'view paragraph content frontpage_gallery'

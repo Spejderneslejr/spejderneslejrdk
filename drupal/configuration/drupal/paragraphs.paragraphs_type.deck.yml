@@ -1,0 +1,10 @@
+uuid: b3aaa1a3-55e5-423d-ac6e-199da156411f
+langcode: en
+status: true
+dependencies: {  }
+id: deck
+label: Deck
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,40 @@
+$_gap: 1rem;
+
+.deck-grid--container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $_gap;
+  max-width: 1600px;
+  padding: 0 5%;
+  margin: auto;
+
+  > * {
+    flex: 1 1 100%;
+    box-shadow: #959da533 0 8px 24px;
+    padding: $_gap;
+    list-style-type: none;
+
+    // Adjust certain paragraphs' height to make it fill the entire container. More might be added later :)
+    img,
+    .paragraph,
+    .video-embed-field-responsive-video {
+      height: 100%;
+    }
+
+    .paragraph {
+      overflow: hidden;
+      margin: 0;
+    }
+
+    img {
+      display: block;
+      object-fit: cover;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    > * {
+      flex-basis: calc(33.33% - #{$_gap});
+    }
+  }
+}
