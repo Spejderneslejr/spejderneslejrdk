@@ -8,7 +8,7 @@ logo:
   path: ''
 favicon:
   use_default: 0
-  path: themes/custom/camp/images/sl_fav.png
+  path: themes/custom/camp/images/sl_fav_generic.png
   mimetype: image/png
 image_path: ''
 image_upload: ''
