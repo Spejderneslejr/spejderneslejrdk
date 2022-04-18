@@ -145,11 +145,17 @@ export default {
         this.sortJobs();
     },
       formatDate(date) {
+        if(!date) {
+          return "";
+        }
       moment.locale('da');
       return moment(String(date)).format('DD/MM/YYYY')
       //return moment(String(date)).format('LL');
     },
       formatArea(org) {
+        if (!org) {
+          return "";
+        }
         var areas = org[1].split(" - ");
         var area = areas[1].replace(/\d+/g, '').trim();
         return area;
