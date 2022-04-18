@@ -37,9 +37,21 @@ export class CamposController {
       // already instructed about how to find the job.
       if (job.name.indexOf(preAssignedJobPrefix) === 0) {
         return false;
-      } else {
-        return true;
       }
+
+      // Only handle jobs that has been placed in the org.
+      if (!job.area_organization_id) {
+        return false;
+      }
+
+      // Don't display jobs without a description.
+      if (!job.description) {
+        return false;
+      }
+
+      // Default if we did not explicitly filter the job out.
+      return true;
+
     }).map((job) => {
       job.description = cleanDotHack(job.description);
       job.description_time_and_scope = cleanDotHack(job.description_time_and_scope);
