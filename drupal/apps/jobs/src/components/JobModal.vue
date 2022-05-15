@@ -30,7 +30,7 @@
           </div>
           <div class="content">
           <p class="title">Ansøg</p>
-          For at ansøge dette job, skal du klikke på <a v-bind:href="'https://tilmelding.spejderneslejr.dk/member/job/' + job.id">dette link</a>. Linket fører dig videre til tilmeldings-systemet, hvor du hvis du er medlem af et spejderkorps kan logge på og fuldføre din ansøgning. Hvis du ikke er medlem af et spejderkorps skal du oprette en bruger først.
+          For at ansøge dette job, skal du klikke på <a v-bind:href="'https://tilmelding.spejderneslejr.dk/da/member/job/' + job.id">dette link</a>. Linket fører dig videre til tilmeldings-systemet, hvor du hvis du er medlem af et spejderkorps kan logge på og fuldføre din ansøgning. Hvis du ikke er medlem af et spejderkorps skal du oprette en bruger først.
           </div>
           <div class="content">
           <p class="title">Om Spejdernes Lejr</p>
