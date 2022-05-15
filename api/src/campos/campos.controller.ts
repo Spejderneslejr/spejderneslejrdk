@@ -15,6 +15,11 @@ type Job = {
   description_you_give: boolean | string,
 };
 
+const ignoreList = [
+  // IST job
+  257
+]
+
 @Controller('campos')
 export class CamposController {
   constructor(private camposService: CamposService) { }
@@ -46,6 +51,11 @@ export class CamposController {
 
       // Don't display jobs without a description.
       if (!job.description) {
+        return false;
+      }
+
+      // Ignore-list of specific jobs.
+      if (ignoreList.includes(job.id)) {
         return false;
       }
 
