@@ -1,0 +1,33 @@
+uuid: 37671056-81bf-4aea-9e30-f7bcfe526e17
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:ac3376dd-1c38-4b0d-b018-9c5e955641ad'
+  module:
+    - block_content
+    - language
+  theme:
+    - camp
+id: globalmessageda
+theme: camp
+region: content
+weight: -10
+provider: null
+plugin: 'block_content:ac3376dd-1c38-4b0d-b018-9c5e955641ad'
+settings:
+  id: 'block_content:ac3376dd-1c38-4b0d-b018-9c5e955641ad'
+  label: 'Global message da'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  language:
+    id: language
+    negate: false
+    context_mapping:
+      language: '@language.current_language_context:language_interface'
+    langcodes:
+      da: da

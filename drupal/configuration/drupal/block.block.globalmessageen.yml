@@ -1,0 +1,33 @@
+uuid: 964b2732-8bf8-44f8-b5a6-3f70a3a4ea03
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:6c7c63da-c2d2-423e-b500-0d2fba7285de'
+  module:
+    - block_content
+    - language
+  theme:
+    - camp
+id: globalmessageen
+theme: camp
+region: content
+weight: -9
+provider: null
+plugin: 'block_content:6c7c63da-c2d2-423e-b500-0d2fba7285de'
+settings:
+  id: 'block_content:6c7c63da-c2d2-423e-b500-0d2fba7285de'
+  label: 'Global message en'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  language:
+    id: language
+    negate: false
+    context_mapping:
+      language: '@language.current_language_context:language_interface'
+    langcodes:
+      en: en

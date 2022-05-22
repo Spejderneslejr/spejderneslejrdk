@@ -1,0 +1,25 @@
+// Make sure we don't take the full width of the page.
+.block.global-message {
+  display: block;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-left: auto;
+  padding-right: 5%;
+  padding-left: 5%;
+
+  .messages--warning {
+    background-color: #f9ff81;
+    color: black;
+  }
+
+  // We cheat a bit and borrow .paragraph--type--text for messages (see
+  // block--globalmessage.html.twig) - as such we need to clean a bit up.
+  p {
+    margin-bottom: 1em;
+  }
+
+  ol,ul {
+    font-size: 1.3em;
+  }
+}

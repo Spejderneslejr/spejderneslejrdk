@@ -69,6 +69,26 @@ function camp_inject_language_variable(&$variables) {
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  *
+ * We handle global site messages via a simple custom block added to the top
+ * of the content area. In order to have a single template for both languages
+ * we alter the suggestions and add a single shared suggestion for both
+ * english and danish.
+ */
+function camp_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  // See if we can find the id of the element.
+  $id = empty($variables["elements"]["#id"]) ? "" : $variables["elements"]["#id"];
+  // As an alternative we could also switch on $suggestions - we could loop trough
+  // all suggestions, and if we detect a "block__globalmessageda" or en add our
+  // own.
+  switch ($id) {
+    case 'globalmessageda':
+    case 'globalmessageen':
+      $suggestions[] = 'block__globalmessage';
+      break;
+  }}
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
  * Use custom template for language site menus.
  */
 function camp_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
