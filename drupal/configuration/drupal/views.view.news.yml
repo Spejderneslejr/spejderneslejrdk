@@ -598,6 +598,8 @@ display:
         use_more: false
         use_more_always: false
         use_more_text: false
+        link_display: false
+        link_url: false
         relationships: false
         filters: false
         filter_groups: false
@@ -616,7 +618,9 @@ display:
       display_description: 'Paragraph used for english news-lists'
       use_more: true
       use_more_always: true
-      use_more_text: 'Gå til alle nyheder'
+      use_more_text: 'All news'
+      link_display: news_en
+      link_url: ''
       rendering_language: da
       display_extenders: {  }
     cache_metadata:
