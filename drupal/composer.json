@@ -41,7 +41,8 @@
     "drupal/video_embed_field": "^2.4",
     "drupal/viewsreference": "^2",
     "drush/drush": "^11",
-    "predis/predis": "^1.1"
+    "predis/predis": "^1.1",
+    "drupal/auto_anchors": "^1.0@alpha"
   },
   "require-dev": {
     "jcalderonzumba/gastonjs": "^1.1@dev",

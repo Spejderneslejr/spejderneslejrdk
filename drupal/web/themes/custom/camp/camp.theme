@@ -6,6 +6,7 @@
  */
 
 use Drupal\Component\Plugin\Exception\PluginException;
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Menu\MenuLinkManagerInterface;
 use Drupal\file_entity\Entity\FileEntity;
@@ -91,6 +92,13 @@ function camp_preprocess_paragraph(&$variables) {
 
   // Do things based on bundle.
   switch ($bundle) {
+    case 'accordion':
+      // Generate unique id
+      $title = $paragraph->field_title->value;
+      $id = Html::getUniqueId($title);
+      $variables['accordion_id'] = $id;
+      break;
+
     case 'image':
       // Get Caption.
       $image = $paragraph->field_paragraph_image->entity;

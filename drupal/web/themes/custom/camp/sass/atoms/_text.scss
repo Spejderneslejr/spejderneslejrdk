@@ -128,4 +128,10 @@ ul, ol {
   font-style: italic;
 }
 
-
+// Push down the anchor a bit to compensate for the fixed menu.
+.anchor {
+  display: block;
+  position: relative;
+  top: -100px;
+  visibility: hidden;
+}
