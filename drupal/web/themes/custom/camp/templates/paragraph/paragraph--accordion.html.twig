@@ -47,7 +47,11 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 <div{{ attributes.addClass(classes) }}>
   <div class="accordion__header">
     <div class="accordion__header__title">
+    <a name="{{ accordion_id }}" class="anchor"></a>
       {{ content.field_title }}
+      {% if logged_in %}
+        <a class="auto-anchor" title="Permalink to this item" href="#{{ accordion_id }}">#</a>
+      {% endif %}
     </div>
     <div class="icon-arrow_down accordion__arrow"></div>
   </div>
