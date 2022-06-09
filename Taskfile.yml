@@ -74,6 +74,17 @@ tasks:
       - sh: "docker compose ps php -q > /dev/null"
         msg: "Could not detect running php container"
 
+  drupal:xdebug:
+    desc: "start xdebug"
+    summary: |
+      Assumes docker-compose is up and running
+    dir: drupal
+    cmds:
+      - docker compose exec php bash -c "xdebug-start"
+    preconditions:
+      - sh: "docker compose ps php -q > /dev/null"
+        msg: "Could not detect running php container"
+
   drupal:up:
     desc: "Start Drupal site containers"
     dir: drupal
