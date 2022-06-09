@@ -12,6 +12,7 @@
     <ul>
       <li>Har du allerede en aftale om et konkret job - så brug <a href="https://tilmelding.spejderneslejr.dk/da/member/job/110">dette link</a></li>
       <li>Har du ikke fundet et konkret job, men gerne vil være lejrfrivillig - så brug <a href="https://tilmelding.spejderneslejr.dk/da/member/job/111">dette link</a> i stedet</li>
+      <li>Hvis du deltager på lejren som spejderleder og måske kan hjælpe nogle timer så skriv dig op <a href="https://tilmelding.spejderneslejr.dk/member/job/185">her</a> helt uforpligtende</li>
       <li>Sign-up for IST - International Service Team - <a href="https://tilmelding.spejderneslejr.dk/en/member/job/257">use this link</a>.</li>
     </ul>
     </div>
