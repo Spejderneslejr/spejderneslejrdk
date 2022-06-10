@@ -157,12 +157,13 @@ transition: all .2s ease-in-out;
   grid-auto-flow: column;
 }
 
-#app .jobs-app button:hover {
+#app .jobs-app button:hover, #app .jobs-app a.button:hover {
   opacity: 0.8;
   cursor: pointer;
 }
 
-#app .jobs-app button {
+#app .jobs-app button, #app .jobs-app a.button {
+  text-decoration: none;
   border-radius: 20px;
   padding: 12px 20px;
   font-size: 12px;
@@ -181,11 +182,19 @@ transition: all .2s ease-in-out;
   border-radius: 0px 3px 3px 0px;
 }
 
-#app .jobs-app .jobs button {
-  background-color: white;
-  border: 2px solid #2398a0;
-  padding: 12px 10px;
-  color: #333333;
+#app .jobs-app .modal .button-wrapper {
+  display: grid;
+  justify-content: end;
+  align-content: center;
+  gap: 10px;
+  grid-auto-flow: column;
+}
+
+#app .jobs-app .button-secondary {
+  background-color: white !important;
+  border: 2px solid #2398a0 !important;
+  padding: 12px 10px !important;
+  color: #333333 !important;
 }
 
 #app .jobs-app .disabled {
@@ -196,7 +205,7 @@ transition: all .2s ease-in-out;
   float: right;
 }
 
-#app .jobs-app input, #app .jobs-app 
+#app .jobs-app input, #app .jobs-app
 select {
   width: 70%;
   padding: 9px;
