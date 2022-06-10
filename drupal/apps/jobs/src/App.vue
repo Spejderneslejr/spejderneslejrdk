@@ -139,11 +139,11 @@ export default {
       window.location.hash = '';
     },
       searchFilter(searchValue) {
-        this.jobs = this.unfilteredJobs.filter((job) => {
-          return job.name
-            .toUpperCase()
-            .includes(searchValue.toUpperCase())
-        })
+        this.jobs = this.unfilteredJobs.filter(job =>
+          job.name.toString().toUpperCase().includes(searchValue.toUpperCase()) ||
+          job.description.toString().toUpperCase().includes(searchValue.toUpperCase()) ||
+          job.teaser.toString().toUpperCase().includes(searchValue.toUpperCase())
+          );
         this.sortJobs();
     },
       formatDate(date) {
