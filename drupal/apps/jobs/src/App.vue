@@ -13,7 +13,7 @@
       <li>Har du allerede en aftale om et konkret job - så brug <a href="https://tilmelding.spejderneslejr.dk/da/member/job/110">dette link</a>.</li>
       <li>Har du ikke fundet et konkret job, men gerne vil være lejrfrivillig - så brug <a href="https://tilmelding.spejderneslejr.dk/da/member/job/111">dette link</a> i stedet.</li>
       <li>Hvis du deltager på lejren som spejderleder og måske kan hjælpe nogle timer så skriv dig op <a href="https://tilmelding.spejderneslejr.dk/member/job/185">her</a> helt uforpligtende.</li>
-      <li>Hvis du kommer på lejren som gæst og gerne vil bidrage med nogen timers arbejde så skriv dig op <a href="https://tilmelding.spejderneslejr.dk/member/job/274">her</a>.</li>
+      <li>Hvis du kommer på lejren som gæst og gerne vil bidrage med nogen timers arbejde så skriv dig op <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=JppXab0CD0u65500XHER6p3MV0ySoCpJtQcHUDSEVthUNk5ZTzdMVTBTNzdFREJKTFBUNUFLSVNYQS4u">her</a>. Alternativt kan du også skrive antal timer og dag, hvor du kan være frivillig til gaestehjaelp@sl2022.dk</li>
       <li>Sign-up for IST - International Service Team - <a href="https://tilmelding.spejderneslejr.dk/en/member/job/257">use this link</a>.</li>
     </ul>
     </div>
