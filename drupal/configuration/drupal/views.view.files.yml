@@ -130,7 +130,7 @@ display:
           entity_type: file
           entity_field: filemime
           plugin_id: field
-          label: 'MIME type'
+          label: Mime-type
           exclude: false
           alter:
             alter_text: false
@@ -470,7 +470,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Filter
+          submit_button: Udfør
           reset_button: false
           reset_button_label: Gendan
           exposed_sorts_label: 'Sortér efter'
@@ -554,7 +554,7 @@ display:
           exposed: true
           expose:
             operator_id: filemime_op
-            label: 'MIME type'
+            label: Mime-type
             description: ''
             use_operator: false
             operator: filemime_op
