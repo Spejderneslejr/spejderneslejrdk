@@ -8,7 +8,7 @@ cd "${SCRIPT_DIR}/../"
 mkdir -p web/sites/default/files
 
 # Compile css and change directory back to script dir.
-cd web/themes/custom/camp && yarn build:css
+docker compose run --rm yarn build:css
 cd "${SCRIPT_DIR}/../"
 
 # Make sites/default read-only and executable
