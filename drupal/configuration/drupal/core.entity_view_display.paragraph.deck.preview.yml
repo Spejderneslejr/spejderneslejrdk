@@ -1,0 +1,45 @@
+uuid: a992e944-ea1f-4fb4-8107-efdec5954ce9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.deck.field_center_column
+    - field.field.paragraph.deck.field_left_column
+    - field.field.paragraph.deck.field_right_column
+    - paragraphs.paragraphs_type.deck
+  module:
+    - entity_reference_revisions
+id: paragraph.deck.preview
+targetEntityType: paragraph
+bundle: deck
+mode: preview
+content:
+  field_center_column:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: preview
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_left_column:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: preview
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_right_column:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: preview
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }
