@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_left_column
     - paragraphs.paragraphs_type.deck
+    - paragraphs.paragraphs_type.deck_link
     - paragraphs.paragraphs_type.factbox
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.markup
@@ -26,6 +27,7 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
+      deck_link: deck_link
       factbox: factbox
       image: image
       markup: markup
@@ -42,6 +44,9 @@ settings:
       deck:
         weight: 20
         enabled: false
+      deck_link:
+        weight: 22
+        enabled: true
       download:
         weight: 21
         enabled: false

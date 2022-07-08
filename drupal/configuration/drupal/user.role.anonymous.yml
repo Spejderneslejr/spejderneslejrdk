@@ -35,6 +35,7 @@ permissions:
   - 'view files'
   - 'view paragraph content accordion'
   - 'view paragraph content deck'
+  - 'view paragraph content deck_link'
   - 'view paragraph content download'
   - 'view paragraph content factbox'
   - 'view paragraph content frontpage_gallery'

@@ -30,6 +30,22 @@ $_gap: 1rem;
       display: block;
       object-fit: cover;
     }
+
+    // Contain image in container instead of growing it.
+    .paragraph--type--deck-link img {
+      object-fit: contain;
+      height: auto;
+    }
+
+    // Hover state for deck links.
+    .paragraph--type--deck-link a {
+      text-decoration: none;
+    }
+    .paragraph--type--deck-link a:hover {
+      text-decoration: underline;
+    }
+
+
   }
 
   @media screen and (min-width: 768px) {

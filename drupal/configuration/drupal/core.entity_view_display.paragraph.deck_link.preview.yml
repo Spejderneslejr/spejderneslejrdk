@@ -1,0 +1,44 @@
+uuid: abdb15c0-18ed-430d-9058-5ed1363e3a8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.deck_link.field_deck_link_image
+    - field.field.paragraph.deck_link.field_deck_link_link
+    - field.field.paragraph.deck_link.field_deck_link_titel
+    - image.style.deck_link_image
+    - paragraphs.paragraphs_type.deck_link
+  module:
+    - image
+    - link
+id: paragraph.deck_link.preview
+targetEntityType: paragraph
+bundle: deck_link
+mode: preview
+content:
+  field_deck_link_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: deck_link_image
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_deck_link_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_deck_link_titel: true

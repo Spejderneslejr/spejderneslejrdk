@@ -1,0 +1,38 @@
+uuid: 6b7417a7-0c1a-43c6-a14a-002604256afd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_deck_link_image
+    - paragraphs.paragraphs_type.deck_link
+  module:
+    - image
+id: paragraph.deck_link.field_deck_link_image
+field_name: field_deck_link_image
+entity_type: paragraph
+bundle: deck_link
+label: 'Link image'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

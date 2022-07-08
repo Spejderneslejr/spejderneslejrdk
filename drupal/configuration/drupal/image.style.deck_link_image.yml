@@ -1,0 +1,15 @@
+uuid: 7f1b323a-c5fe-4f02-a9e7-d6bfaa2c6351
+langcode: en
+status: true
+dependencies: {  }
+name: deck_link_image
+label: 'Deck Link Image'
+effects:
+  0d4c2ade-925d-418a-affe-e6297e92f4d0:
+    id: image_scale_and_crop
+    data:
+      width: 480
+      height: 270
+      anchor: center-center
+    weight: 1
+    uuid: 0d4c2ade-925d-418a-affe-e6297e92f4d0
