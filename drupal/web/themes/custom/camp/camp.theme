@@ -216,7 +216,7 @@ function _camp_preprocess_deck_link(&$variables)
 
     // Default to using link title if available, might be overriden for internal
     // links.
-    $title = empty($paragraph->get('field_deck_link_titel')) ? '' : $paragraph->get('field_deck_link_titel')->getString();
+    $title = empty($paragraph->get('field_deck_link_titel')) ? '' : trim($paragraph->get('field_deck_link_titel')->getString());
 
     // Setup the variables we'll try to prepare for the template.
     $thumbnail = null;
@@ -245,6 +245,9 @@ function _camp_preprocess_deck_link(&$variables)
         // TODO, get image from article.
     }
 
+    if ($title == '<empty>' || $title == '<tom>' ) {
+      $title = '';
+    }
     // Add our RAs.
     $variables['content']['thumbnail'] = $thumbnail;
     $variables['content']['url'] = empty($link) ? '' : $link->getUrl()->toString();

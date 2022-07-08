@@ -10,7 +10,7 @@ field_name: field_deck_link_titel
 entity_type: paragraph
 bundle: deck_link
 label: 'Link titel'
-description: ''
+description: 'The title that should be displayed under the image. Set to <tom> or <empty> to explicitly remove the title from eg. an external link.'
 required: false
 translatable: false
 default_value: {  }
