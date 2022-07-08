@@ -1,0 +1,50 @@
+uuid: 6b7c66c8-242d-406f-996b-29ae1b2ef4c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.deck_link.field_deck_link_image
+    - field.field.paragraph.deck_link.field_deck_link_link
+    - field.field.paragraph.deck_link.field_deck_link_titel
+    - image.style.deck_link_image
+    - paragraphs.paragraphs_type.deck_link
+  module:
+    - image
+    - link
+id: paragraph.deck_link.default
+targetEntityType: paragraph
+bundle: deck_link
+mode: default
+content:
+  field_deck_link_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: deck_link_image
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_deck_link_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_deck_link_titel:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

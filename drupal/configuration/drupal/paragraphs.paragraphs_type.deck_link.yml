@@ -1,0 +1,10 @@
+uuid: 05d5ed64-b15b-4252-81e4-2e9588262675
+langcode: en
+status: true
+dependencies: {  }
+id: deck_link
+label: 'Deck Link'
+icon_uuid: null
+icon_default: null
+description: 'A CTA style element that allows you to link to content'
+behavior_plugins: {  }

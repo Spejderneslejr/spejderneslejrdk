@@ -1,0 +1,19 @@
+uuid: 981aaea7-b061-4b37-a820-beb29fbf3736
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_deck_link_titel
+    - paragraphs.paragraphs_type.deck_link
+id: paragraph.deck_link.field_deck_link_titel
+field_name: field_deck_link_titel
+entity_type: paragraph
+bundle: deck_link
+label: 'Link titel'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
