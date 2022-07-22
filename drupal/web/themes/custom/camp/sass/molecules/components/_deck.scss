@@ -44,8 +44,6 @@ $_gap: 1rem;
     .paragraph--type--deck-link a:hover {
       text-decoration: underline;
     }
-
-
   }
 
   @media screen and (min-width: 768px) {
@@ -53,4 +51,30 @@ $_gap: 1rem;
       flex-basis: calc(33.33% - #{$_gap});
     }
   }
+
+  &.deck-grid--container-col-2 {
+    > * {
+      // Dont shrink
+      flex: 1 0 100%;
+    }
+    @media screen and (min-width: 768px) {
+      > * {
+        flex-basis: calc(50% - #{$_gap});
+      }
+    }
+  }
+
+  &.deck-grid--container-col-3 {
+    > * {
+      // Dont shrink
+      flex: 1 0 100%;
+    }
+    @media screen and (min-width: 768px) {
+      > * {
+        flex-basis: calc(33.33% - #{$_gap});
+      }
+    }
+  }
+
 }
+
