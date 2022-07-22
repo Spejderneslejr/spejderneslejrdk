@@ -1,7 +1,7 @@
-jamden_base.content:
-  path: '/opgaver'
-  defaults:
-    _controller: 'Drupal\jamden_base\Controller\JamDenBaseController::content'
-    _title: 'Opgavebanken'
-  requirements:
-    _permission: 'access content'
+# jamden_base.content:
+#   path: '/opgaver'
+#   defaults:
+#     _controller: 'Drupal\jamden_base\Controller\JamDenBaseController::content'
+#     _title: 'Opgavebanken'
+#   requirements:
+#     _permission: 'access content'
