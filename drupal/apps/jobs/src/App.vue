@@ -136,7 +136,7 @@ export default {
     },
     closeModal() {
       this.isModalVisible = false;
-      window.location.hash = '';
+      window.location.hash = '/';
     },
       searchFilter(searchValue) {
         this.jobs = this.unfilteredJobs.filter(job =>
