@@ -20,7 +20,7 @@ mode: default
 content:
   field_linked_images:
     type: entity_reference_paragraphs
-    weight: 6
+    weight: 4
     region: content
     settings:
       title: Paragraph
@@ -62,7 +62,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
 hidden:
   created: true
-  status: true
   uid: true
