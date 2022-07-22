@@ -93,7 +93,7 @@ web:
       allow: true
       expires: 5m
       passthru: "/index.php"
-      root: "web/sites/default/files"
+      root: "web/sites/default/files/mastecam"
 
       # Do not execute PHP scripts.
       scripts: false
