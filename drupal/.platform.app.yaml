@@ -103,7 +103,7 @@ web:
       allow: true
       expires: 5m
       passthru: "/index.php"
-      root: "web"/themes/custom/camp/static"
+      root: "web/themes/custom/camp/static"
 
       # Do not execute PHP scripts.
       scripts: false
