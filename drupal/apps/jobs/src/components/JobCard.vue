@@ -2,7 +2,7 @@
   <section class="job card pointer" v-on:click="onJobModal(job)">
       <p class="title">{{job.name}}</p>
       <p class="content">{{job.teaser}}</p><div class="button-wrapper">
-      <button v-on:click.stop="onJobModal(job)">LÆS MERE</button>
+      <button v-on:click.stop="onJobModal(job)" class="button-secondary">LÆS MERE</button>
       </div>
       <JobIcon :area="job.area" />
   </section>

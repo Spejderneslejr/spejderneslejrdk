@@ -42,9 +42,10 @@
       <footer class="modal-footer">
         <slot name="footer"></slot>
         <span class="date">Oprettet {{job.formatted_create_date}}</span>
-        <button type="button" class="right" @click="close">
-          LUK
-        </button>
+        <div class="button-wrapper">
+          <a v-bind:href="'https://tilmelding.spejderneslejr.dk/da/member/job/' + job.id" class="button button-secondary" target="_blank">ANSØG JOB</a>
+          <button type="button" class="button-primary" @click="close">LUK</button>
+        </div>
       </footer>
     </div>
   </div>
