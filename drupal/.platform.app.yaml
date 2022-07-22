@@ -143,6 +143,11 @@ crons:
       cd "$PLATFORM_DOCUMENT_ROOT"
       $PLATFORM_APP_DIR/vendor/bin/drush core:cron --uri=$(platform route:get --primary --property=url)
 
+  mastecam:
+    spec: "*/5 * * * *"
+    cmd: |
+      $PLATFORM_APP_DIR/scripts/fetch-mastecam.sh
+
   backup:
     spec: '15 0 * * *'
     cmd: |
