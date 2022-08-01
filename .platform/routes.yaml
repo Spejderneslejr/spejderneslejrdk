@@ -21,6 +21,6 @@
     to: "https://{default}/"
 
 # API
-"https://api.{default}/":
-  type: upstream
-  upstream: "api:http"
+# "https://api.{default}/":
+#   type: upstream
+#   upstream: "api:http"
