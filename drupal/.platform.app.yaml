@@ -108,6 +108,16 @@ web:
       # Do not execute PHP scripts.
       scripts: false
 
+    "libraries/juicebox":
+      # Allow access to juicebox assets
+      allow: true
+      expires: 5m
+      passthru: "/index.php"
+      root: "web/libraries/juicebox"
+
+      # Do not execute PHP scripts.
+      scripts: false
+
     "/apps/job":
       # Setup a route for the job app
       allow: true
