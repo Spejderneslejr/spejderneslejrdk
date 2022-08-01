@@ -1,5 +1,5 @@
 /**
- * Juicebox 1.5.0 Classic Theme
+ * Juicebox 1.5.1 Classic Theme
  *
  * Copyright (c) 2015 Juicebox Inc. All rights reserved.
  * http://www.juicebox.net
@@ -9,9 +9,14 @@
  *
  * Support and Documentation: http://www.juicebox.net/support
  *
- * Build Time: 05/24/2016 11:13:09 AM
+ * Build Time: 07/31/2017 12:38:07 PM
  */
 
+body
+{
+	-ms-overflow-style: scrollbar;
+}
+ 
 .juicebox-gallery
 {
 	outline: none;
@@ -54,6 +59,13 @@
 .juicebox-gallery .jb-status-message,
 #jb-glry-dlg{
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.juicebox-gallery .jb-splash h3 p,
+.juicebox-gallery .jb-splash h3 a,
+.juicebox-gallery .jb-splash p a,
+.juicebox-gallery .jb-go-back h3 a{
+	font-family: inherit;
 }
 
 .juicebox-gallery table, .juicebox-gallery tr, .juicebox-gallery td, .juicebox-gallery tbody{
@@ -449,6 +461,12 @@ div.jb-bb-splitter
 	height: 28px;
 	padding:0;
 }
+
+.dt-nav-disabled .jbn-nav-button-icon
+{
+	display: none !important;
+}
+
 .jb-navigation .jbn-nav-button-icon
 {
 	padding: 4px 2px 0 2px;
@@ -582,7 +600,7 @@ a.jb-go-back-icon
 {
 	cursor: pointer;
 	text-align: center;
-	margin: 0px;
+	margin: 0;
 	padding: 0px;
 	font-size: 13px;
 	height: 28px;
@@ -1167,7 +1185,7 @@ input#jb-dialog-login-text:-ms-input-placeholder {
 }
 
 .jcbx-glry-classic a{
-	color:#FFF;
+	color: inherit;
 }
 .jcbx-glry-classic:hover .button_bar {
 }
