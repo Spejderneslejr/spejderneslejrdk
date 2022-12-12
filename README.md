@@ -1,6 +1,6 @@
 # spejderneslejr.dk
 
-This is the main website for Spejdernes Lejr 2017
+This was  the main website for Spejdernes Lejr 2017 and 2022. It has since been archived.
 
 The project structure is based on [`drupal-composer/drupal-project`](https://github.com/drupal-composer/drupal-project).
 
